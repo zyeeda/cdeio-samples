@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id$ -->
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+
+    <persistence-unit name="default" transaction-type="JTA">
+        <class>com.zyeeda.coala.commons.organization.entity.Account</class>
+        <class>com.zyeeda.coala.commons.organization.entity.Department</class>
+        <class>com.zyeeda.coala.commons.resource.entity.MenuItem</class>
+        <class>com.zyeeda.coala.commons.resource.entity.SettingItem</class>
+        <class>com.zyeeda.coala.commons.authc.entity.Permission</class>
+        <class>com.zyeeda.coala.commons.authc.entity.Role</class>
+        <class>com.zyeeda.coala.commons.resource.entity.Attachment</class>
+
+        <validation-mode>NONE</validation-mode>
+
+        <properties>
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.use_sql_comments" value="true" />
+
+            <property name="hibernate.transaction.manager_lookup_class"
+                value="org.hibernate.transaction.WeblogicTransactionManagerLookup" />
+
+            <!-- 配置索引文件夹路径 
+            <property name="hibernate.search.default.indexBase" value="/Users/chenhaifeng/Resource/study/coala/indexes"/> -->
+
+            <!-- 自动更新索引 -->
+            <property name="hibernate.search.indexing_strategy"  value="event"/>
+            <property name="hibernate.search.autoregister_listeners" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

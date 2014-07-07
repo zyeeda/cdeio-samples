@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- $Id: pom.xml,v c71beec06dc5 2012/07/28 07:13:56 tangrui $ -->
+
+<!--
+$License$
+-->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.zyeeda</groupId>
+        <artifactId>zyeeda-project</artifactId>
+        <version>3-SNAPSHOT</version>
+    </parent>
+
+    <!--
+     | Change the following artifactId, version, name and url tags according to the project.
+    -->
+    <artifactId>zyeeda-coala-example</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Zyeeda :: Projects :: Coala :: Example</name>
+    <url>http://www.zyeeda.com/projects/zyeeda/zyeeda-coala-example</url>
+    <packaging>war</packaging>
+
+    <properties>
+        <coala.framework.version>2.0.0-SNAPSHOT</coala.framework.version>
+        <jetty.config>${project.build.outputDirectory}/META-INF/jetty</jetty.config>
+    </properties>
+
+    <!--
+     | Change the dependencies if necessary.
+     | Please refer to global parent project (https://bitbucket.org/zyeeda/zyeeda-project) to see some pre-defined dependencies.
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>com.zyeeda</groupId>
+            <artifactId>zyeeda-coala-core</artifactId>
+            <version>${coala.framework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zyeeda</groupId>
+            <artifactId>zyeeda-sso-openid</artifactId>
+            <version>${coala.framework.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-search</artifactId>
+            <version>4.1.1.Final</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/processes</directory>
+                <targetPath>${project.build.outputDirectory}/processes</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/rules</directory>
+                <targetPath>${project.build.outputDirectory}/rules</targetPath>
+            </resource>
+            <resource>
+                <directory>src/main/sql</directory>
+                <targetPath>${project.build.outputDirectory}/sql</targetPath>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>set-system-properties</goal>
+                        </goals>
+                        <configuration>
+                            <properties>
+                                <!--
+                                 | Make jetty use the project level logback configuration file.
+                                -->
+                                <property>
+                                    <name>logback.configurationFile</name>
+                                    <value>src/main/resources/logback.xml</value>
+                                </property>
+                            </properties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <configuration>
+                    <jettyXml>
+                        ${jetty.config}/jetty.xml,${jetty.config}/jetty-http.xml,${jetty.config}/jetty-ssl.xml,${jetty.config}/jetty-https.xml,${jetty.config}/jetty-plus.xml,${jetty.config}/jetty-btm.xml
+                    </jettyXml>
+
+                    <webApp>
+                        <!--
+                         | Specify the correct context path.
+                        -->
+                        <contextPath>/coala-example</contextPath>
+                    </webApp>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.cj.jshintmojo</groupId>
+                <artifactId>jshint-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <scm>
+        <!--
+         | Change the SCM repository according to the project.
+        -->
+        <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-coala-example</connection>
+        <developerConnection>scm:hg:${basedir}/../${project.artifactId}</developerConnection>
+        <url>http://bitbucket.org/zyeeda/zyeeda-coala-example</url>
+        <tag>HEAD</tag>
+    </scm>
+</project>
