@@ -1,3 +1,5 @@
+@import url('highlight-themes/solarized_dark.css');
+
 .c-ds-footer {
     height: 100%;
     background-color: #F1F1F1;
@@ -171,4 +173,3 @@
 .no-online-system {
     text-align: center;
 }
-

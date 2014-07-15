@@ -1,5 +1,5 @@
 var {json} = require('coala/response');
-var data = require('system/menu.feature/menu-data');
+var data = require('system/menu.feature/data');
 
 exports.doWithRouter = function(router) {
     router.get('all', function(request) {

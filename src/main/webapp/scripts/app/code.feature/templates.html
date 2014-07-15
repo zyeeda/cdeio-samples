@@ -1,0 +1,50 @@
+{{#layout}}
+<div class="widget-box" id="widget-box"></div>
+{{/layout}}
+
+{{#view "widget-box"}}
+<div class="widget-header" id="widget-header">
+    <h5 class="smaller">代码</h5>
+    <div class="widget-toolbar no-border">
+        <ul class="nav nav-tabs">
+            {{#each sources}}
+            {{#if isLeaf}}
+            <li class="{{#active}}active{{/active}}">
+                <a data-toggle="tab" data-target="#{{id}}">{{name}}</a>
+            </li>
+            {{else}}
+            <li class="dropdown {{#active}}active{{/active}}">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    {{name}}
+                    <b class="caret"></b>
+                </a>
+
+                <ul class="dropdown-menu dropdown-info">
+                    {{#each children}}
+                    <li>
+                        <a data-toggle="tab" data-target="#{{id}}">{{name}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="widget-body" id="widget-body">
+    <div class="tab-content">
+        {{#each sources}}
+        <div id="{{id}}" class="tab-pane {{#isLeaf}}{{#active}}active{{/active}}{{/isLeaf}}">
+            <pre><code class="lang-{{lang}}">{{code}}</code></pre>
+        </div>
+        {{#each children}}
+            <div id="{{id}}" class="tab-pane {{#active}}active{{/active}}">
+                <pre><code class="lang-{{lang}}">{{code}}</code></pre>
+            </div>
+        {{/each}}
+        {{/each}}
+    </div>
+</div>
+{{/view}}

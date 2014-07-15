@@ -15,9 +15,8 @@
         <class>com.zyeeda.coala.commons.authc.entity.Permission</class>
         <class>com.zyeeda.coala.commons.authc.entity.Role</class>
         <class>com.zyeeda.coala.commons.resource.entity.Attachment</class>
-
+        
         <validation-mode>NONE</validation-mode>
-
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update" />
             <property name="hibernate.show_sql" value="true" />

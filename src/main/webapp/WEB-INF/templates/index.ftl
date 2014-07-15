@@ -1,7 +1,7 @@
 <#import "boilerplates/html.ftl" as bp>
 
 <@bp.html>
-<body>
+<body class="navbar-fixed">
     <#include "boilerplates/chrome-frame.ftl">
 
     <!--[if !IE]> -->

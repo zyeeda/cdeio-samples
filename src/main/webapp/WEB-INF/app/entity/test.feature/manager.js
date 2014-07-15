@@ -1,0 +1,3 @@
+exports.createManager = function() {
+
+}

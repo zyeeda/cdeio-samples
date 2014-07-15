@@ -6,8 +6,10 @@ var {mark} = require('coala/mark');
 exports.coala = {
     entityPackages : [
         // 'com.zyeeda.coala.commons.authc.entity',
-        'com.zyeeda.coala.commons.resource.entity'
-        // 'com.zyeeda.coala.commons.organization.entity'
+        'com.zyeeda.coala.commons.resource.entity',
+        // 'com.zyeeda.coala.commons.organization.entity',
+        'com.zyeeda.coala.example.entity.entity',
+        'com.zyeeda.coala.example.extension.ui.form.entity'
     ],
 
     orms: [

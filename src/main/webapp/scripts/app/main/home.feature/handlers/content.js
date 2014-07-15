@@ -1,5 +1,5 @@
 define({
     hello: function() {
-        app.info('Hello Starter-Kit');
+        app.startFeature('code', {codeFeature: 'entity/scaffold:test'});
     }
 });

@@ -21,7 +21,7 @@ define([
         
         app.done(function() {
             if (location.hash) {
-                app.startFeature('coala:viewport', { container: $(document.body), ignoreExists: true }).done(function() {
+                app.startFeature('main/viewport', { container: $(document.body), ignoreExists: true }).done(function() {
                     deferred.resolve();
                 });
             } else {

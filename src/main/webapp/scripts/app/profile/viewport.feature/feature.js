@@ -61,13 +61,13 @@ define({
 
             app.config.featureContainer = this.layout.$('content');
 
-            app.startFeature('coala:header', { container: this.layout.$('header'), ignoreExists: true }).done(function(headerFeature) {
+            app.startFeature('main/header', { container: this.layout.$('header'), ignoreExists: true }).done(function(headerFeature) {
                 app.startFeature('profile/account-menu', { container: headerFeature.views['inline:inner-header'].$('notification'), ignoreExists: true });
             });
         },
 
         onStop: function(_super) {
-            app['coala-features'].findFeature('header').stop();
+            app.findModule('main').findFeature('header').stop();
             app.findModule('profile').findFeature('account-menu').stop();
         }
     }

@@ -1,3 +1,4 @@
 var require = require || {};
 
-require.shim['vendors/jquery/jquery.colorbox'] = ['jquery'];
+require.shim['vendors/highlight.pack'] = [];
+require.shim['vendors/marked.min'] = { exports: 'marked' };

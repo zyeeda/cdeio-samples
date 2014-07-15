@@ -73,6 +73,10 @@ $License$
                 <directory>src/main/sql</directory>
                 <targetPath>${project.build.outputDirectory}/sql</targetPath>
             </resource>
+            <resource>
+                <directory>src/main/java</directory>
+                <targetPath>${project.build.outputDirectory}/java</targetPath>
+            </resource>
         </resources>
         <plugins>
             <plugin>
