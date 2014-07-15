@@ -15,11 +15,10 @@ define([
 		},
 
         showHome: function() {
+            me = this;
             return app.startFeature('main/viewport', { container: $(document.body), ignoreExists: true }).done(function () {
-                if (location.hash) {
-                    return;
-                }
-                app.startFeature('main/home');
+                me._activateMenu('#');
+                app.startFeature('main/home', {container: $(document).body, ignoreExists: true});
             });
         },
 

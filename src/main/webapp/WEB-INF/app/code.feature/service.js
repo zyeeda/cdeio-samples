@@ -129,7 +129,7 @@ exports.createService = function() {
 
             if(results.length > 0) {
                 results[0].active = true;
-                if(!results[0].isLeaf) {
+                if(results[0] && !results[0].isLeaf && results[0].children[0]) {
                     results[0].children[0].active = true;
                 }
             }
