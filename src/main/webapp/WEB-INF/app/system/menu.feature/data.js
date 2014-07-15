@@ -3,7 +3,7 @@ exports.results = [
 
 	{id: "800", name: "实体", iconClass: "icon-lock", path: "#/"},
 	
-	{id: "800003", name: "Scaffold", iconClass: "icon-lock", path: "#feature/entity/scaffold:test", parent: {id: "800"}},
+	{id: "800003", name: "Scaffold", iconClass: "icon-lock", path: "#feature/entity/scaffold:test", parent: {id: "800", name: '实体'}},
 	{id: "800002", name: "JPA", iconClass: "icon-lock", path: "#/", parent: {id: "800"}},
 	{id: "800004", name: "BeanValidator", iconClass: "icon-lock", path: "#/", parent: {id: "800"}},
 	{id: "800005", name: "Jackson", iconClass: "icon-lock", path: "#/", parent: {id: "800"}},
