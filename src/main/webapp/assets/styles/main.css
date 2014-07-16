@@ -1,4 +1,4 @@
-@import url('highlight-themes/solarized_dark.css');
+@import url('prettify.css');
 
 .c-ds-footer {
     height: 100%;
@@ -172,4 +172,14 @@
 
 .no-online-system {
     text-align: center;
+}
+
+pre, code {
+    tab-size: 4;
+}
+
+.copy-btn {
+    float: right;
+    margin-top: 2px;
+    margin-right: 10px;
 }

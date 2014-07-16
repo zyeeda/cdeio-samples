@@ -4,10 +4,10 @@ exports.results = [
 	{id: "800", name: "实体", iconClass: "icon-lock", path: "#/"},
 	
 	{id: "800003", name: "Scaffold", iconClass: "icon-lock", path: "#feature/entity/scaffold:test", parent: {id: "800", name: '实体'}},
-	{id: "800002", name: "JPA", iconClass: "icon-lock", path: "#/", parent: {id: "800"}},
-	{id: "800004", name: "BeanValidator", iconClass: "icon-lock", path: "#/", parent: {id: "800"}},
-	{id: "800005", name: "Jackson", iconClass: "icon-lock", path: "#/", parent: {id: "800"}},
-	{id: "800006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "800"}},
+	{id: "800002", name: "JPA", iconClass: "icon-lock", path: "#feature/entity/scaffold:foo", parent: {id: "800", name: '实体'}},
+	{id: "800004", name: "BeanValidator", iconClass: "icon-lock", path: "#feature/entity/scaffold:bar", parent: {id: "800", name: '实体'}},
+	{id: "800005", name: "Jackson", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
+	{id: "800006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
 	
 	{id: "100", name: "自动生成", opened: true, iconClass: "icon-lock", path: "#/"},
 

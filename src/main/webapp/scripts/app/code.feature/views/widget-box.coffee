@@ -1,18 +1,41 @@
-define ["jquery", "vendors/marked.min", "vendors/highlight.pack"], ($, marked) ->
+define ["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/prettify"], ($, ZeroClipboard, marked) ->
     avoidLoadingHandlers: true
     extend:
         afterRender: ->
-            # hljs.initHighlightingOnLoad() if window.hljs
-            $('pre code').each (i, block) ->
-                if $(block).hasClass('lang-markdown')
-                    md = $(block).text()
-                    $(block).parent().after('<div class="marked">' + marked(md) + '</div>')
-                    $('div.marked pre code').each (i, block) ->
-                        hljs.highlightBlock(block)
-                    $(block).parent().remove()
-                else
-                    hljs.highlightBlock(block)
+            #markdown处理及代码块样式
+            $md = $('.lang-markdown')
+            markup = marked($md.text())
+            $md.parent().after('<div class="marked">' + markup + '</div>')
+            $md.parent().remove()
+            $('.marked pre code').addClass('prettyprint linenums')
 
+            #增加复制代码功能
+            $('pre code').each (i, e) ->
+                $el = $(e)
+                $a = $('<a>')
+                $a.addClass('copy-btn btn btn-minier btn-light')
+                $a.attr('data-clipboard-text', $el.text())
+                $a.append('<i class=\"icon-code\">copy</i>')
+                $el.parent().before($a)
+            client = new ZeroClipboard($('.copy-btn'))
+            client.on 'aftercopy', ->
+                app.info('已复制')
+
+            #代码高亮
+            prettyPrint()
+
+            # 以下是highlight插件用法，但不能显示行号
+            # hljs.initHighlightingOnLoad() if window.hljs
+            # $('pre code').each (i, block) ->
+            #     if $(block).hasClass('lang-markdown')
+            #         md = $(block).text()
+            #         $(block).parent().after('<div class="marked">' + marked(md) + '</div>')
+            #         $('div.marked pre code').each (i, block) ->
+            #             hljs.highlightBlock(block)
+            #         $(block).parent().remove()
+            #     else
+            #         hljs.highlightBlock(block)
+            
         templateHelpers: ->
             codeFeature = @feature.startupOptions.codeFeature
             scaffold = @feature.startupOptions.scaffold
@@ -24,3 +47,4 @@ define ["jquery", "vendors/marked.min", "vendors/highlight.pack"], ($, marked) -
                 obj.sources = data.results
                 obj
             obj
+    

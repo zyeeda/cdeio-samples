@@ -53,10 +53,10 @@ define([
                 app.viewport.inRegionViews.breadcrumbs.$('view-source').show();
             }, this);
 
-            if (app.viewport.module.baseName !== 'coala-features') {
-                this.showHome().done(show);
-                return;
-            }
+            // if (app.viewport.module.baseName !== 'coala-features') {
+            //     this.showHome().done(show);
+            //     return;
+            // }
             show();
         },
 

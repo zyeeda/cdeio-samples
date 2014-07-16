@@ -7,15 +7,29 @@ import javax.persistence.Table;
 import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
+/**
+ * Test类.
+ * @author chenhaifeng
+ *
+ */
 @Entity
-@Table(name = "ZDA_TEST")
+@Table(name = "CDE_TEST")
 @Scaffold("/entity/test")
 public class Test extends DomainEntity {
-    
+
+    /**
+     * 序列化版本 UID.
+     */
     private static final long serialVersionUID = -4335705573994524048L;
 
+    /**
+     * 名称.
+     */
     private String name;
 
+    /**
+     * 描述.
+     */
     private String description;
 
     @Column(name = "F_NAME", length = 100)

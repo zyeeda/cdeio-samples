@@ -14,7 +14,7 @@
             </li>
             {{else}}
             <li class="dropdown {{#active}}active{{/active}}">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">
                     {{name}}
                     <b class="caret"></b>
                 </a>
@@ -37,11 +37,15 @@
     <div class="tab-content">
         {{#each sources}}
         <div id="{{id}}" class="tab-pane {{#isLeaf}}{{#active}}active{{/active}}{{/isLeaf}}">
-            <pre><code class="lang-{{lang}}">{{code}}</code></pre>
+            {{#unless noCode}}
+            <div>》 {{path}}</div>
+            {{/unless}}
+            <pre><code class="lang-{{lang}} {{#unless noCode}}prettyprint linenums{{/unless}}">{{code}}</code></pre>
         </div>
         {{#each children}}
             <div id="{{id}}" class="tab-pane {{#active}}active{{/active}}">
-                <pre><code class="lang-{{lang}}">{{code}}</code></pre>
+                <div>》 {{path}}</div>
+                <pre><code class="lang-{{lang}} prettyprint linenums">{{code}}</code></pre>
             </div>
         {{/each}}
         {{/each}}
