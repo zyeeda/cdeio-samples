@@ -20,10 +20,10 @@ $License$
     <!--
      | Change the following artifactId, version, name and url tags according to the project.
     -->
-    <artifactId>zyeeda-coala-example</artifactId>
+    <artifactId>zyeeda-coala-examples</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Zyeeda :: Projects :: Coala :: Example</name>
-    <url>http://www.zyeeda.com/projects/zyeeda/zyeeda-coala-example</url>
+    <name>Zyeeda :: Projects :: Coala :: Examples</name>
+    <url>http://www.zyeeda.com/projects/zyeeda/zyeeda-coala-examples</url>
     <packaging>war</packaging>
 
     <properties>
@@ -113,7 +113,7 @@ $License$
                         <!--
                          | Specify the correct context path.
                         -->
-                        <contextPath>/coala-example</contextPath>
+                        <contextPath>/coala-examples</contextPath>
                     </webApp>
                 </configuration>
             </plugin>
@@ -128,9 +128,9 @@ $License$
         <!--
          | Change the SCM repository according to the project.
         -->
-        <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-coala-example</connection>
+        <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-coala-examples</connection>
         <developerConnection>scm:hg:${basedir}/../${project.artifactId}</developerConnection>
-        <url>http://bitbucket.org/zyeeda/zyeeda-coala-example</url>
+        <url>http://bitbucket.org/zyeeda/zyeeda-coala-examples</url>
         <tag>HEAD</tag>
     </scm>
 </project>
