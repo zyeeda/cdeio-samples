@@ -9,7 +9,7 @@ exports.results = [
 	{id: "800005", name: "Jackson", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
 	{id: "800006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
 	
-	{id: "100", name: "自动生成", opened: true, iconClass: "icon-lock", path: "#/"},
+	{id: "100", name: "自动生成", opened: false, iconClass: "icon-lock", path: "#/"},
 
 	{id: "100001001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001001001", name: "最简配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001001"}},
@@ -18,21 +18,21 @@ exports.results = [
 
 	{id: "100001002", name: "列表", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001002001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001002"}},
-	{id: "100001002002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001002"}},
+	{id: "100001002002", name: "高级配置", iconClass: "icon-lock", path: "#", parent: {id: "100001002"}},
 	
 	{id: "100001003", name: "树", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001003001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001004002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
+	{id: "100001004002", name: "高级配置", iconClass: "icon-lock", path: "#", parent: {id: "100001003"}},
 
-	{id: "100001003", name: "字段", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
-	{id: "100001003001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003003", name: "下拉列表", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003004", name: "日期选择器", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003002", name: "GridPicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003005", name: "TreePicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003006", name: "FilePicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003007", name: "InlineGrid", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003008", name: "验证规则", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
+	{id: "100001009", name: "字段", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
+	{id: "100001009001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009003", name: "下拉列表", iconClass: "icon-lock", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009004", name: "日期选择器", iconClass: "icon-lock", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009002", name: "GridPicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009005", name: "TreePicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009006", name: "FilePicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009007", name: "InlineGrid", iconClass: "icon-lock", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009008", name: "验证规则", iconClass: "icon-lock", path: "#/", parent: {id: "100001009"}},
 
 	{id: "100001004", name: "表单", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001004001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100001004"}},
@@ -88,7 +88,7 @@ exports.results = [
 	{id: "300007002", name: "用户任务", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 	{id: "300007003", name: "脚本任务", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 	
-	{id: "400", name: "扩展", opened: true, iconClass: "icon-lock", path: "#/"},
+	{id: "400", name: "扩展", opened: false, iconClass: "icon-lock", path: "#/"},
 	{id: "400001", name: "服务", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
 
 	{id: "400001001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "400001"}},
@@ -111,7 +111,15 @@ exports.results = [
 	{id: "500001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
 	{id: "500002", name: "参数", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
 	{id: "500003", name: "自定义参数", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
-	{id: "500004", name: "复杂", iconClass: "icon-lock", path: "#/", parent: {id: "500"}}
+	{id: "500004", name: "复杂", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
+
+	{id: "600", name: "租户", iconClass: "icon-lock", path: "#", opened: true},
+	{id: "600001", name: "文件", iconClass: "icon-lock", path: "#feature/tenant/scaffold:document", parent: {id: "600"}},
+	{id: "600002", name: "文件夹", iconClass: "icon-lock", path: "#feature/tenant/scaffold:folder", parent: {id: "600"}},
+	{id: "600003", name: "项目", iconClass: "icon-lock", path: "#feature/tenant/scaffold:project", parent: {id: "600"}},
+	{id: "600004", name: "用户", iconClass: "icon-lock", path: "#feature/tenant/scaffold:user", parent: {id: "600"}},
+	{id: "600005", name: "数据租户", iconClass: "icon-lock", path: "#feature/tenant/scaffold:tenant", parent: {id: "600"}}
+
 ];
 
 /*
