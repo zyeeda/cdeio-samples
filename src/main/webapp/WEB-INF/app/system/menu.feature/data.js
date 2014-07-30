@@ -2,13 +2,13 @@ exports.results = [
 	{id: "700", name: "工作台", iconClass: "icon-dashboard", path: "#"},
 
 	{id: "800", name: "实体", iconClass: "icon-lock", path: "#/"},
-	
+
 	{id: "800003", name: "Scaffold", iconClass: "icon-lock", path: "#feature/entity/scaffold:test", parent: {id: "800", name: '实体'}},
 	{id: "800002", name: "JPA", iconClass: "icon-lock", path: "#feature/entity/scaffold:foo", parent: {id: "800", name: '实体'}},
 	{id: "800004", name: "BeanValidator", iconClass: "icon-lock", path: "#feature/entity/scaffold:bar", parent: {id: "800", name: '实体'}},
 	{id: "800005", name: "Jackson", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
 	{id: "800006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
-	
+
 	{id: "100", name: "自动生成", opened: true, iconClass: "icon-lock", path: "#/"},
 
 	{id: "100001001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
@@ -19,7 +19,7 @@ exports.results = [
 	{id: "100001002", name: "列表", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001002001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001002"}},
 	{id: "100001002002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001002"}},
-	
+
 	{id: "100001003", name: "树", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001003001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
 	{id: "100001004002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
@@ -38,21 +38,21 @@ exports.results = [
 	{id: "100001004001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100001004"}},
 	{id: "100001004002", name: "分组", iconClass: "icon-lock", path: "#/", parent: {id: "100001004"}},
 	{id: "100001004003", name: "页签", iconClass: "icon-lock", path: "#/", parent: {id: "100001004"}},
-		
+
 	{id: "100001005", name: "操作按钮", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001005001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001005"}},
 	{id: "100001005002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001005"}},
-	
+
 	{id: "100001006", name: "hooks", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001006001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100001006"}},
 
 	{id: "100001007", name: "validations", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001007001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100001007"}},
-	
+
 	{id: "100001007", name: "其它", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001007001", name: "动态Feature", iconClass: "icon-lock", path: "#/", parent: {id: "100001007"}},
-	
-	
+
+
 	{id: "100001008", name: "工作流", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "300001", name: "中间事件", iconClass: "icon-lock", path: "#/", parent: {id: "100001008"}},
 	{id: "300001001", name: "定时中间事件", iconClass: "icon-lock", path: "#/", parent: {id: "300001"}},
@@ -70,7 +70,7 @@ exports.results = [
 	{id: "300003003", name: "包含网关", iconClass: "icon-lock", path: "#/", parent: {id: "300003"}},
 	{id: "300003004", name: "事件网关", iconClass: "icon-lock", path: "#/", parent: {id: "300003"}},
 	{id: "300004", name: "任务", iconClass: "icon-lock", path: "#/", parent: {id: "100001008"}},
-	{id: "300004001", name: "用户任务", iconClass: "icon-lock", path: "#/", parent: {id: "300004"}},
+	{id: "300004001", name: "用户任务", iconClass: "icon-lock", path: "#feature/generate/bpm/task/scaffold:userTask", parent: {id: "300004"}},
 	{id: "300004002", name: "脚本任务", iconClass: "icon-lock", path: "#/", parent: {id: "300004"}},
 	{id: "300004003", name: "召回", iconClass: "icon-lock", path: "#/", parent: {id: "300004"}},
 	{id: "300004004", name: "回退", iconClass: "icon-lock", path: "#/", parent: {id: "300004"}},
@@ -87,7 +87,7 @@ exports.results = [
 	{id: "300007001", name: "子流程", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 	{id: "300007002", name: "用户任务", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 	{id: "300007003", name: "脚本任务", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
-	
+
 	{id: "400", name: "扩展", opened: true, iconClass: "icon-lock", path: "#/"},
 	{id: "400001", name: "服务", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
 

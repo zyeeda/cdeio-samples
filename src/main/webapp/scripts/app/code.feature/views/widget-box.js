@@ -4,7 +4,10 @@ define(["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/pretti
     avoidLoadingHandlers: true,
     extend: {
       afterRender: function() {
-        var $md, client, markup;
+        var $img, $md, client, markup;
+        $img = $('.lang-image');
+        $img.parent().after('<div class="imaged"><br/><br/>' + $img.text() + '</div>');
+        $img.parent().remove();
         $md = $('.lang-markdown');
         markup = marked($md.text());
         $md.parent().after('<div class="marked">' + markup + '</div>');

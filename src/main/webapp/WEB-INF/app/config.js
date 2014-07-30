@@ -9,11 +9,13 @@ exports.coala = {
         'com.zyeeda.coala.commons.resource.entity',
         // 'com.zyeeda.coala.commons.organization.entity',
         'com.zyeeda.coala.example.entity.entity',
+        'com.zyeeda.coala.example.entity.generate',
+        'com.zyeeda.coala.example.entity.generate.bpm.task',
         'com.zyeeda.coala.example.extension.ui.form.entity'
     ],
 
     orms: [
-    
+
     ],
 
     disableAuthz: true

@@ -15,10 +15,13 @@
         <class>com.zyeeda.coala.commons.authc.entity.Permission</class>
         <class>com.zyeeda.coala.commons.authc.entity.Role</class>
         <class>com.zyeeda.coala.commons.resource.entity.Attachment</class>
-        
+        <class>com.zyeeda.coala.bpm.entity.TaskEntity</class>
+        <class>com.zyeeda.coala.bpm.entity.IdentityLinkEntity</class>
+        <class>com.zyeeda.coala.bpm.entity.HistoricTaskInstanceEntity</class>
+
         <validation-mode>NONE</validation-mode>
         <properties>
-            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.hbm2ddl.auto" value="none" />
             <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.use_sql_comments" value="true" />
@@ -26,7 +29,7 @@
             <property name="hibernate.transaction.manager_lookup_class"
                 value="org.hibernate.transaction.WeblogicTransactionManagerLookup" />
 
-            <!-- 配置索引文件夹路径 
+            <!-- 配置索引文件夹路径
             <property name="hibernate.search.default.indexBase" value="/Users/chenhaifeng/Resource/study/coala/indexes"/> -->
 
             <!-- 自动更新索引 -->
