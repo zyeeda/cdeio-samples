@@ -41,7 +41,11 @@ $License$
             <artifactId>zyeeda-coala-core</artifactId>
             <version>${coala.framework.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.zyeeda</groupId>
+            <artifactId>zyeeda-coala-bpm</artifactId>
+            <version>${coala.framework.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.zyeeda</groupId>
             <artifactId>zyeeda-sso-openid</artifactId>

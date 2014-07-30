@@ -1,14 +1,13 @@
 var fs = require('fs');
-var config = require('config.js');
 
 exports.createService = function() {
-    
+
     var svc = {
         test: function(path, feature, scaffold) {
             var codePath = path + '/WEB-INF/code';
             var webinfPath = path + '/WEB-INF/app';
             var scriptsPath = path + '/scripts/app';
-            
+
             var config = require(codePath + '/config.js');
             var results = [];
 
@@ -19,7 +18,14 @@ exports.createService = function() {
                     results.push({id: 'java', name: '实体', lang: 'java', code: java, isLeaf: true, path: 'src/main/java/' + config.docs[feature].java});
                 }
             }
-
+            if(config.docs[feature] && config.docs[feature].bpmn) {
+                var bpmnPath = path + '/WEB-INF/classes/bpmn/' + config.docs[feature].bpmn + '.bpmn';
+                if(fs.exists(bpmnPath)) {
+                    var bpmn = fs.read(bpmnPath, {charset: 'utf8'});
+                    results.push({id: 'bpmn', name: '流程定义', lang: 'xml', code: bpmn, isLeaf: true, path: 'src/main/resources/bpmn/' + config.docs[feature].bpmn + '.bpmn'});
+                    results.push({id: 'image', name: '流程图', lang: 'image', code: '<img src="invoke/scaffold/bpm/image/' + config.docs[feature].bpmn + '"/>', isLeaf: true, path: 'src/main/resources/bpmn/' + config.docs[feature].bpmn + '.bpmn'});
+                }
+            }
             var backendSource = null;
             if(scaffold) {
                 var scaffoldPath = webinfPath + '/' + feature + '.feature/scaffold.js';
@@ -98,7 +104,7 @@ exports.createService = function() {
                 }
                 results.push(frontend);
             }
-  
+
             if(config.docs[feature]) {
                 var others = {id: 'others', name: '其它相关代码', children: []};
                 if(config.docs[feature].webinf) {

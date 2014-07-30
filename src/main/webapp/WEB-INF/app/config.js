@@ -12,10 +12,12 @@ exports.coala = {
         'com.zyeeda.coala.example.extension.ui.form.entity',
         'com.zyeeda.coala.example.extension.service.entity',
         'com.zyeeda.coala.example.tenant.entity'
+        'com.zyeeda.coala.example.entity.generate',
+        'com.zyeeda.coala.example.entity.generate.bpm.task',
     ],
 
     orms: [
-    
+
     ],
     
     disableAuthz: true

@@ -6,9 +6,9 @@ var {SecurityUtils} = org.apache.shiro;
 var logger = require('ringo/logging').getLogger(module.id);
 
 getSession = function() {
-    var subject = SecurityUtils.getSubject(), 
-        p = subject.getPrincipal(), 
-        service = createService(), 
+    var subject = SecurityUtils.getSubject(),
+        p = subject.getPrincipal(),
+        service = createService(),
         isAdmin = false,
         i,
         j;
@@ -22,7 +22,7 @@ getSession = function() {
     if('admin' === (p.getAccountName()).toLowerCase()){
     	isAdmin = true;
     }
-    
+
     o = {
         accountName: p.getAccountName(),
         realName: p.getRealName(),
@@ -60,7 +60,7 @@ exports.doWithRouter = function(router) {
         var baseService = createService(),
             manager = baseService.createManager(SettingItem),
             list = manager.getAll(),
-            result = {}, key, item, 
+            result = {}, key, item,
             frontendSettings = config.frontendSettings;
 
         for (key in frontendSettings) {
