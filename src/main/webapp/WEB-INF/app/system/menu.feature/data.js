@@ -9,7 +9,7 @@ exports.results = [
 	{id: "800005", name: "Jackson", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
 	{id: "800006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
 
-	{id: "100", name: "自动生成", opened: true, iconClass: "icon-lock", path: "#/"},
+	{id: "100", name: "自动生成", opened: false, iconClass: "icon-lock", path: "#/"},
 
 	{id: "100001001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001001001", name: "最简配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001001"}},
@@ -89,7 +89,7 @@ exports.results = [
 	{id: "300007002", name: "用户任务", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 	{id: "300007003", name: "脚本任务", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 
-	{id: "400", name: "扩展", opened: true, iconClass: "icon-lock", path: "#/"},
+	{id: "400", name: "扩展", opened: false, iconClass: "icon-lock", path: "#/"},
 	{id: "400001", name: "服务", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
 
 	{id: "400001001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "400001"}},
@@ -114,12 +114,19 @@ exports.results = [
 	{id: "500003", name: "自定义参数", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
 	{id: "500004", name: "复杂", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
 
-	{id: "600", name: "租户", iconClass: "icon-lock", path: "#", opened: false},
+	{id: "600", name: "数据权限", iconClass: "icon-lock", path: "#", opened: false},
 	{id: "600001", name: "文件", iconClass: "icon-lock", path: "#feature/tenant/scaffold:document", parent: {id: "600"}},
 	{id: "600002", name: "文件夹", iconClass: "icon-lock", path: "#feature/tenant/scaffold:folder", parent: {id: "600"}},
 	{id: "600003", name: "项目", iconClass: "icon-lock", path: "#feature/tenant/scaffold:project", parent: {id: "600"}},
 	{id: "600004", name: "用户", iconClass: "icon-lock", path: "#feature/tenant/scaffold:user", parent: {id: "600"}},
-	{id: "600005", name: "数据租户", iconClass: "icon-lock", path: "#feature/tenant/scaffold:tenant", parent: {id: "600"}}
+	{id: "600005", name: "数据租户", iconClass: "icon-lock", path: "#feature/tenant/scaffold:tenant", parent: {id: "600"}},
+
+	{id: "900", name: "漏斗", iconClass: "icon-lock", path: "#", opened: true},
+	{id: "900001", name: "漏斗类型", iconClass: "icon-lock", path: "#feature/funnel/scaffold:funnel-type", parent: {id: "900", name: "漏斗"}},
+	{id: "900002", name: "漏斗", iconClass: "icon-lock", path: "#feature/funnel/scaffold:funnel", parent: {id: "900", name: "漏斗"}},
+	{id: "900003", name: "漏斗数据类型", iconClass: "icon-lock", path: "#feature/funnel/scaffold:funnel-data-type", parent: {id: "900", name: "漏斗"}},
+	{id: "900004", name: "漏斗数据", iconClass: "icon-lock", path: "#feature/funnel/scaffold:funnel-data", parent: {id: "900", name: "漏斗"}}
+	// {id: "900005", name: "漏斗用户", iconClass: "icon-lock", path: "#feature/funnel/scaffold:funnel-account", parent: {id: "900", name: "漏斗"}}
 
 ];
 

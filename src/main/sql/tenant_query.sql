@@ -1,41 +1,25 @@
+SELECT d.* from (
 
-select * from (select  d.* from CDE_DOCUMENT d 
-inner join CDE_DATA_TENANT dt on  (d.f_id = dt.F_data_id)
-inner join CDE_TENANT t on (dt.Tenant_id = t.F_id)
-inner join CDE_USER_TENANT ut on (t.f_id = ut.tenant_id)
-inner join CDE_USER u on (u.f_id = ut.user_id)
+(select  t.* from CDE_DOCUMENT  t
+inner join ZDA_FUNNEL_DATA fd on  (t.f_id = fd.F_data_id)
+inner join ZDA_FUNNEL f on (fd.f_funnel_id = f.F_id)
+inner join ZDA_FUNNEL_ACCOUNT fa on (f.f_id = fa.f_funnel_id)
+inner join ZDA_ACCOUNT a on (a.f_id = fa.f_account_id)
 
-where dt.F_DATA_TYPE = 'CDE_DOCUMENT' and  u.f_name = '刘镇伟' and t.f_type = 'Project'
-) a
-inner join  (
-select  d.* from CDE_DOCUMENT d 
-inner join CDE_DATA_TENANT dt on  (d.f_id = dt.F_data_id)
-inner join CDE_TENANT t on (dt.Tenant_id = t.F_id)
-inner join CDE_USER_TENANT ut on (t.f_id = ut.tenant_id)
-inner join CDE_USER u on (u.f_id = ut.user_id)
-
-where dt.F_DATA_TYPE = 'CDE_DOCUMENT' and  u.f_name = '刘镇伟' and
-t.f_type = 'Folder'
-) b on a.F_id = b.F_id;
-
---或者--
-
-SELECT t.* from (
-  (select  d.* from CDE_DOCUMENT d 
-inner join CDE_DATA_TENANT dt on  (d.f_id = dt.F_data_id)
-inner join CDE_TENANT t on (dt.Tenant_id = t.F_id)
-inner join CDE_USER_TENANT ut on (t.f_id = ut.tenant_id)
-inner join CDE_USER u on (u.f_id = ut.user_id)
-
-where dt.F_DATA_TYPE = 'CDE_DOCUMENT' and  u.f_name = '王家卫' and t.f_type = 'Project'
+where fd.F_DATA_TYPE = 'com.zyeeda.coala.example.tenant.entity.Document' 
+and  a.f_account_name = 'liu' and f.f_type = 'com.zyeeda.coala.example.tenant.entity.Folder'
 )
-  UNION ALL 
-  (select  d.* from CDE_DOCUMENT d 
-inner join CDE_DATA_TENANT dt on  (d.f_id = dt.F_data_id)
-inner join CDE_TENANT t on (dt.Tenant_id = t.F_id)
-inner join CDE_USER_TENANT ut on (t.f_id = ut.tenant_id)
-inner join CDE_USER u on (u.f_id = ut.user_id)
 
-where dt.F_DATA_TYPE = 'CDE_DOCUMENT' and  u.f_name = '王家卫' and t.f_type = 'Folder'
-) 
-) AS t GROUP BY t.f_id HAVING count(t.f_id) >= 2;
+UNION ALL 
+
+(select  t.* from CDE_DOCUMENT  t
+inner join ZDA_FUNNEL_DATA fd on  (t.f_id = fd.F_data_id)
+inner join ZDA_FUNNEL f on (fd.f_funnel_id = f.F_id)
+inner join ZDA_FUNNEL_ACCOUNT fa on (f.f_id = fa.f_funnel_id)
+inner join ZDA_ACCOUNT a on (a.f_id = fa.f_account_id)
+
+where fd.F_DATA_TYPE = 'com.zyeeda.coala.example.tenant.entity.Document' 
+and  a.f_account_name = 'liu' and f.f_type = 'com.zyeeda.coala.example.tenant.entity.Project'
+)
+
+) AS d GROUP BY d.f_id HAVING count(d.f_id) >= 2;
