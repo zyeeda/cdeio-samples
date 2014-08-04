@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
+  <process id="example-generate-bpm-multiple-subprocess" name="样例-自动生成-多实例-子流程-营销计划审批流程" isExecutable="true">
+    <documentation>营销计划审批流程，用于演示多实例用子流程业务</documentation>
+    <startEvent id="start_event"></startEvent>
+    <subProcess id="subProcess" name="subProcess">
+      <!-- multiInstanceLoopCharacteristics 代表多实例，isSequential 代表顺序执行还是并发执行-->
+      <!-- 流程到此节点首先会获取部门列表，根据部门个数同时创建多个并发流程-->
+      <multiInstanceLoopCharacteristics isSequential="false" activiti:collection="${multipleSubprocessService.getDepartments()}" activiti:elementVariable="department"></multiInstanceLoopCharacteristics>
+      <startEvent id="sub_start_event"></startEvent>
+      <!-- 根据部门获取初审人员信息  -->
+      <userTask id="sub_user_task_01" name="部门初审" activiti:assignee="${multipleSubprocessService.getAssigneeByDepartment4Trial(department)}"></userTask>
+      <!-- 根据部门获取复审人员信息  -->
+      <userTask id="sub_user_task_02" name="部门复审 " activiti:assignee="${multipleSubprocessService.getAssigneeByDepartment4Review(department)}"></userTask>
+      <endEvent id="sub_end_event"></endEvent>
+      <sequenceFlow id="flow12" sourceRef="sub_start_event" targetRef="sub_user_task_01"></sequenceFlow>
+      <sequenceFlow id="flow13" sourceRef="sub_user_task_01" targetRef="sub_user_task_02"></sequenceFlow>
+      <sequenceFlow id="flow14" sourceRef="sub_user_task_02" targetRef="sub_end_event"></sequenceFlow>
+    </subProcess>
+    <userTask id="user_task_01" name="领导审核" activiti:candidateGroups="leader"></userTask>
+    <endEvent id="end_event"></endEvent>
+    <sequenceFlow id="flow1" sourceRef="start_event" targetRef="subProcess"></sequenceFlow>
+    <sequenceFlow id="flow10" sourceRef="subProcess" targetRef="user_task_01"></sequenceFlow>
+    <sequenceFlow id="flow11" sourceRef="user_task_01" targetRef="end_event"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_example-generate-bpm-multiple-subprocess">
+    <bpmndi:BPMNPlane bpmnElement="example-generate-bpm-multiple-subprocess" id="BPMNPlane_example-generate-bpm-multiple-subprocess">
+      <bpmndi:BPMNShape bpmnElement="start_event" id="BPMNShape_start_event">
+        <omgdc:Bounds height="35.0" width="35.0" x="0.0" y="32.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="subProcess" id="BPMNShape_subProcess">
+        <omgdc:Bounds height="100.0" width="450.0" x="80.0" y="0.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sub_start_event" id="BPMNShape_sub_start_event">
+        <omgdc:Bounds height="35.0" width="35.0" x="100.0" y="32.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sub_user_task_01" id="BPMNShape_sub_user_task_01">
+        <omgdc:Bounds height="60.0" width="100.0" x="180.0" y="20.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sub_user_task_02" id="BPMNShape_sub_user_task_02">
+        <omgdc:Bounds height="60.0" width="100.0" x="330.0" y="20.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sub_end_event" id="BPMNShape_sub_end_event">
+        <omgdc:Bounds height="35.0" width="35.0" x="480.0" y="32.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="user_task_01" id="BPMNShape_user_task_01">
+        <omgdc:Bounds height="60.0" width="100.0" x="580.0" y="20.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end_event" id="BPMNShape_end_event">
+        <omgdc:Bounds height="35.0" width="35.0" x="730.0" y="32.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
+        <omgdi:waypoint x="135.0" y="49.0"></omgdi:waypoint>
+        <omgdi:waypoint x="142.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="142.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="180.0" y="50.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow13" id="BPMNEdge_flow13">
+        <omgdi:waypoint x="280.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="292.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="292.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="330.0" y="50.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow14" id="BPMNEdge_flow14">
+        <omgdi:waypoint x="430.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="442.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="442.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="480.0" y="49.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="35.0" y="49.0"></omgdi:waypoint>
+        <omgdi:waypoint x="42.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="42.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="80.0" y="50.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
+        <omgdi:waypoint x="530.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="542.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="542.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="580.0" y="50.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
+        <omgdi:waypoint x="680.0" y="50.0"></omgdi:waypoint>
+        <omgdi:waypoint x="730.0" y="49.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

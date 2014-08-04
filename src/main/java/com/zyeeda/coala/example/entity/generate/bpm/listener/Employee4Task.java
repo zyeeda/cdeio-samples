@@ -1,4 +1,4 @@
-package com.zyeeda.coala.example.entity.generate.bpm.task;
+package com.zyeeda.coala.example.entity.generate.bpm.listener;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -6,19 +6,10 @@ import javax.persistence.Table;
 import com.zyeeda.coala.bpm.entity.BpmDomainEntity;
 import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 
-/**
- * 人工任务实体
- *
- ****************************
- * @author child          *
- * @date   2014年7月24日        *
- ****************************
- */
-
 @Entity
-@Table(name = "CDE_GENERATE_BPM_TASK_USERTASK")
-@Scaffold("/generate/bpm/task/userTask")
-public class UserTask extends BpmDomainEntity {
+@Table(name = "CDE_GENERATE_BPM_LISTENER_TASK")
+@Scaffold("/generate/bpm/listener/task")
+public class Employee4Task extends BpmDomainEntity {
 
     private static final long serialVersionUID = 4653079620355710257L;
 

@@ -1,7 +1,7 @@
 // 表示使用流程样式
 exports.style = 'process';
-// 指定流程定义id，需要与 example-generate-bpm-task-userTask.bpmn 中的 process 的 id 属性一致
-exports.processDefinitionKey = 'example-generate-bpm-task-userTask';
+// 指定流程定义id，需要与 example-generate-bpm-listener-task.bpmn 中的 process 的 id 属性一致
+exports.processDefinitionKey = 'example-generate-bpm-listener-task';
 exports.enableFrontendExtension = false;
 
 // 活动的标签，默认为 '待认领'
@@ -9,7 +9,7 @@ exports.activeTab = 'waiting'
 
 exports.filters = {
     defaults: {
-        '!employee4UserTaskFilter': ''
+        '!employee4TaskFilter': ''
     }
 };
 
@@ -21,7 +21,6 @@ exports.labels = {
 	address: '地址',
 	description: '备注',
 	submitter: '发起人',
-	// 继承 BpmDomainEntity 的实体会拥有此属性，同时流程引擎会自动与流程同步此状态信息
 	status: '状态'
 };
 

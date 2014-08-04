@@ -1,7 +1,7 @@
 // 表示使用流程样式
 exports.style = 'process';
-// 指定流程定义id，需要与 example-generate-bpm-task-userTask.bpmn 中的 process 的 id 属性一致
-exports.processDefinitionKey = 'example-generate-bpm-task-userTask';
+// 指定流程定义id，需要与 example-generate-bpm-task-callback.bpmn 中的 process 的 id 属性一致
+exports.processDefinitionKey = 'example-generate-bpm-task-callback';
 exports.enableFrontendExtension = false;
 
 // 活动的标签，默认为 '待认领'
@@ -9,7 +9,7 @@ exports.activeTab = 'waiting'
 
 exports.filters = {
     defaults: {
-        '!employee4UserTaskFilter': ''
+        '!employee4CallbackFilter': ''
     }
 };
 

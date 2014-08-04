@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
-  <process id="example-generate-bpm-task-userTask" name="样例-自动生成-任务-人工任务-员工入职审批流程" isExecutable="true">
-    <documentation>员工入职审批流程，用于演示任务的创建、认领和完成</documentation>
+  <!--
+    创建信号，用于召回业务
+    name="recall-to-user_task_01" ，其中 'recall-to-' 表示此信号用于召回业务，user_task_01表示所要召回的位置
+  -->
+  <signal id="recallSignal" name="recall-to-user_task_01"></signal>
+  <process id="example-generate-bpm-task-callback" name="样例-自动生成-任务-人工任务-员工入职审批流程" isExecutable="true">
+    <documentation>员工入职审批流程，用户演示召回业务</documentation>
     <startEvent id="start_event"></startEvent>
-    <!-- 参与者可以为用户、组织机构和角色，使用 activiti:candidateUsers 时只能指定为用户，多个可以以逗号枚举 -->
-    <!-- activiti:candidateUsers="luffy" 表示任务的参与者为 luffy -->
     <userTask id="user_task_01" name="入职初审" activiti:candidateUsers="luffy">
       <documentation>入职初审</documentation>
     </userTask>
-    <!-- 使用 activiti:candidateGroups 时可以指定组织机构和角色，多个可以以逗号枚举 -->
-    <!-- activiti:candidateGroups ="d-1002" 表示任务的参与者为人资部(d-1002) -->
-    <userTask id="user_task_02" name="入职复审" activiti:candidateGroups ="d-1002">
+    <userTask id="user_task_02" name="入职复审" activiti:candidateGroups="d-1002">
       <documentation>入职复审</documentation>
     </userTask>
+    <!-- 定义边界事件，并将其附加到'入职复审'任务上 -->
+    <boundaryEvent id="boundary_signal_02" name="召回" attachedToRef="user_task_02" cancelActivity="true">
+      <signalEventDefinition signalRef="recallSignal"></signalEventDefinition>
+    </boundaryEvent>
     <endEvent id="end_event"></endEvent>
     <sequenceFlow id="flow1" sourceRef="start_event" targetRef="user_task_01"></sequenceFlow>
     <sequenceFlow id="flow2" sourceRef="user_task_01" targetRef="user_task_02"></sequenceFlow>
+    <sequenceFlow id="flow6" name="召回" sourceRef="boundary_signal_02" targetRef="user_task_01"></sequenceFlow>
     <sequenceFlow id="flow3" sourceRef="user_task_02" targetRef="end_event"></sequenceFlow>
   </process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_example-generate-bpm-task-userTask">
-    <bpmndi:BPMNPlane bpmnElement="example-generate-bpm-task-userTask" id="BPMNPlane_example-generate-bpm-task-userTask">
+  <bpmndi:BPMNDiagram id="BPMNDiagram_test-demo01-process">
+    <bpmndi:BPMNPlane bpmnElement="test-demo01-process" id="BPMNPlane_test-demo01-process">
       <bpmndi:BPMNShape bpmnElement="start_event" id="BPMNShape_start_event">
         <omgdc:Bounds height="35.0" width="35.0" x="4.0" y="95.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
@@ -29,8 +35,11 @@
       <bpmndi:BPMNShape bpmnElement="user_task_02" id="BPMNShape_user_task_02">
         <omgdc:Bounds height="60.0" width="100.0" x="300.0" y="83.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundary_signal_02" id="BPMNShape_boundary_signal_02">
+        <omgdc:Bounds height="30.0" width="30.0" x="360.0" y="129.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="end_event" id="BPMNShape_end_event">
-        <omgdc:Bounds height="35.0" width="35.0" x="500.0" y="95.0"></omgdc:Bounds>
+        <omgdc:Bounds height="35.0" width="35.0" x="510.0" y="95.0"></omgdc:Bounds>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
         <omgdi:waypoint x="39.0" y="112.0"></omgdi:waypoint>
@@ -42,10 +51,24 @@
         <omgdi:waypoint x="258.0" y="112.0"></omgdi:waypoint>
         <omgdi:waypoint x="300.0" y="113.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="375.0" y="159.0"></omgdi:waypoint>
+        <omgdi:waypoint x="374.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="340.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="305.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="270.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="231.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="179.0" y="217.0"></omgdi:waypoint>
+        <omgdi:waypoint x="179.0" y="162.0"></omgdi:waypoint>
+        <omgdi:waypoint x="180.0" y="143.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="24.0" x="351.0" y="179.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
         <omgdi:waypoint x="400.0" y="113.0"></omgdi:waypoint>
         <omgdi:waypoint x="497.0" y="112.0"></omgdi:waypoint>
-        <omgdi:waypoint x="500.0" y="112.0"></omgdi:waypoint>
+        <omgdi:waypoint x="510.0" y="112.0"></omgdi:waypoint>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

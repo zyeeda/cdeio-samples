@@ -1,7 +1,7 @@
 // 表示使用流程样式
 exports.style = 'process';
-// 指定流程定义id，需要与 example-generate-bpm-task-userTask.bpmn 中的 process 的 id 属性一致
-exports.processDefinitionKey = 'example-generate-bpm-task-userTask';
+// 指定流程定义id，需要与 example-generate-bpm-gateway-exclusive.bpmn 中的 process 的 id 属性一致
+exports.processDefinitionKey = 'example-generate-bpm-gateway-exclusive';
 exports.enableFrontendExtension = false;
 
 // 活动的标签，默认为 '待认领'
@@ -9,7 +9,7 @@ exports.activeTab = 'waiting'
 
 exports.filters = {
     defaults: {
-        '!employee4UserTaskFilter': ''
+        '!employee4ExclusiveFilter': ''
     }
 };
 
@@ -19,15 +19,15 @@ exports.labels = {
 	sex: '性别',
 	phone: '电话',
 	address: '地址',
+	workingLife: '工作年限',
 	description: '备注',
 	submitter: '发起人',
-	// 继承 BpmDomainEntity 的实体会拥有此属性，同时流程引擎会自动与流程同步此状态信息
 	status: '状态'
 };
 
 exports.fieldGroups = {
     'base-info-group': [
-        'name', 'age', 'sex', 'phone', 'address'
+        'name', 'age', 'sex', 'phone', 'workingLife', 'address'
     ]
 };
 
@@ -59,25 +59,25 @@ exports.grid = {
 	// 待认领
 	waiting: {
 	    columns: [
-	        'name', 'age', 'sex', 'phone', 'address', 'submitter', 'status'
+	        'name', 'age', 'sex', 'phone', 'workingLife', 'address', 'submitter', 'status'
 	    ]
 	},
 	// 待办理
 	doing: {
 	    columns: [
-	        'name', 'age', 'sex', 'phone', 'submitter', 'status'
+	        'name', 'age', 'sex', 'phone', 'workingLife', 'submitter', 'status'
 	    ]
 	},
 	// 已办理
 	done: {
 	    columns: [
-			'name', 'age', 'sex', 'submitter', 'status'
+			'name', 'age', 'sex', 'workingLife', 'submitter', 'status'
 	    ]
 	},
 	// 全部
 	none: {
 	    columns: [
-	        'name', 'age', 'submitter', 'status'
+	        'name', 'age', 'workingLife', 'submitter', 'status'
 	    ]
 	}
 };
