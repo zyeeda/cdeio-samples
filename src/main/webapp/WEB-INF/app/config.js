@@ -7,8 +7,11 @@ exports.coala = {
     entityPackages : [
         // 'com.zyeeda.coala.commons.authc.entity',
         'com.zyeeda.coala.commons.resource.entity',
-        // 'com.zyeeda.coala.commons.organization.entity',
+        'com.zyeeda.coala.commons.funnel.entity',
         'com.zyeeda.coala.example.entity.entity',
+        'com.zyeeda.coala.example.extension.ui.form.entity',
+        'com.zyeeda.coala.example.extension.service.entity',
+        'com.zyeeda.coala.example.tenant.entity',
         'com.zyeeda.coala.example.entity.generate',
         'com.zyeeda.coala.example.entity.generate.bpm.task',
         'com.zyeeda.coala.example.entity.generate.bpm.gateway',

@@ -20,7 +20,7 @@ define ["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/pretti
                 $a = $('<a>')
                 $a.addClass('copy-btn btn btn-minier btn-light')
                 $a.attr('data-clipboard-text', $el.text())
-                $a.append('<i class=\"icon-code\">copy</i>')
+                $a.append('<i class=\"icon-code\">Copy</i>')
                 $el.parent().before($a)
             client = new ZeroClipboard($('.copy-btn'))
             client.on 'aftercopy', ->
