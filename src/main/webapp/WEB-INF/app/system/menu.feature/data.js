@@ -102,12 +102,12 @@ exports.results = [
 	{id: "400001005", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "400001"}},
 
 	{id: "400002", name: "界面", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
-	{id: "400002001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
-	{id: "400002002", name: "路由", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
+	{id: "400002001", name: "基础", iconClass: "icon-lock", path: "#feature/extension/ui/scaffold:basic", parent: {id: "400002"}},
+	{id: "400002002", name: "路由", iconClass: "icon-lock", path: "#feature/extension/ui/scaffold:router", parent: {id: "400002"}},
 	{id: "400002003", name: "表单视图", iconClass: "icon-lock", path: "#feature/extension/ui/form", parent: {id: "400002"}},
-	{id: "400002004", name: "自定义表单视图", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
+	{id: "400002004", name: "自定义表单视图", iconClass: "icon-lock", path: "#feature/extension/ui/scaffold:custom-form", parent: {id: "400002"}},
 	{id: "400002005", name: "继承", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
-	{id: "400002006", name: "回调", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
+	{id: "400002006", name: "回调", iconClass: "icon-lock", path: "#feature/extension/ui/scaffold:call-back", parent: {id: "400002"}},
 	{id: "400002007", name: "viewport", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
 	{id: "400002008", name: "多级菜单", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
 
