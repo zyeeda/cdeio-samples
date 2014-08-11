@@ -9,6 +9,10 @@ exports.coala = {
         'com.zyeeda.coala.commons.resource.entity',
         // 'com.zyeeda.coala.commons.organization.entity',
         'com.zyeeda.coala.example.entity.entity',
+        'com.zyeeda.coala.example.scaffold.basic.entity',
+        'com.zyeeda.coala.example.scaffold.field.entity',
+        'com.zyeeda.coala.example.scaffold.form.entity',
+        'com.zyeeda.coala.example.scaffold.grid.entity',
         'com.zyeeda.coala.example.extension.ui.form.entity'
     ],
 

@@ -11,28 +11,30 @@ exports.results = [
 	
 	{id: "100", name: "自动生成", opened: true, iconClass: "icon-lock", path: "#/"},
 
-	{id: "100001001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
-	{id: "100001001001", name: "最简配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001001"}},
-	{id: "100001001002", name: "Json序列化", iconClass: "icon-lock", path: "#/", parent: {id: "100001001"}},
-	{id: "100001001003", name: "标签", iconClass: "icon-lock", path: "#/", parent: {id: "100001001"}},
+	{id: "100001001", name: "基础", iconClass: "icon-unlock", path: "#/", parent: {id: "100"}},
+	{id: "100001001001", name: "最简配置", iconClass: "icon-unlock", path: "#feature/scaffold/basic/scaffold:basic-todo", parent: {id: "100001001", name: "基础"}},
+	{id: "100001001002", name: "Json序列化", iconClass: "icon-unlock", path: "#feature/scaffold/basic/scaffold:todo", parent: {id: "100001001", name: "基础"}},
+	{id: "100001001003", name: "标签", iconClass: "icon-unlock", path: "#feature/scaffold/basic/scaffold:tag", parent: {id: "100001001", name: "基础"}},
 
-	{id: "100001002", name: "列表", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
-	{id: "100001002001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001002"}},
-	{id: "100001002002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001002"}},
+	{id: "100001002", name: "列表", iconClass: "icon-unlock", path: "#/", parent: {id: "100"}},
+	{id: "100001002001", name: "基础配置", iconClass: "icon-unlock", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002", name: "列表"}},
+	{id: "100001002002", name: "高级配置", iconClass: "icon-unlock", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002", name: "列表"}},
 	
 	{id: "100001003", name: "树", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001003001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
 	{id: "100001004002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
 
-	{id: "100001003", name: "字段", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
-	{id: "100001003001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003003", name: "下拉列表", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003004", name: "日期选择器", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003002", name: "GridPicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003005", name: "TreePicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003006", name: "FilePicker", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003007", name: "InlineGrid", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003008", name: "验证规则", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
+	{id: "100001009", name: "字段", iconClass: "icon-unlock", path: "#/", parent: {id: "100"}},
+	{id: "100001009001", name: "基础", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:todo", parent: {id: "100001009", name: "字段"}},
+	/*{id: "100001009003", name: "下拉列表", iconClass: "icon-unlock", path: "#/", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009004", name: "日期选择器", iconClass: "icon-unlock", path: "#/", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009002", name: "GridPicker", iconClass: "icon-unlock", path: "#/", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009005", name: "TreePicker", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:tag", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009006", name: "FilePicker", iconClass: "icon-unlock", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009007", name: "InlineGrid", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:user", parent: {id: "100001009", name: "字段"}},*/
+	{id: "100001009008", name: "验证规则", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:account", parent: {id: "100001009", name: "字段"}},
+
+
 
 	{id: "100001004", name: "表单", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001004001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "100001004"}},
