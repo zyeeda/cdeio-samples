@@ -36,7 +36,7 @@ public class FieldTodo extends DomainEntity {
 	private Attachment attach;
 	private List<FieldUser> users;
 	private FieldTag tag;
-	private Project project;
+	private FieldProject project;
 
 	@Column(name = "F_NAME",length=60)
 	@NotNull
@@ -110,11 +110,11 @@ public class FieldTodo extends DomainEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "F_PROJECT")
-	public Project getProject() {
+	public FieldProject getProject() {
 		return project;
 	}
 
-	public void setProject(Project project) {
+	public void setProject(FieldProject project) {
 		this.project = project;
 	}
 }

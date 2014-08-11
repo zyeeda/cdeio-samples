@@ -1,6 +1,6 @@
 exports.filters = {
     defaults: {
-        '!projectFilter': '',
+        '!fieldProjectFilter': '',
         'fieldTodoFilter': 'name'
     }
 };

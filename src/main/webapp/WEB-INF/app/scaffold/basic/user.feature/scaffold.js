@@ -1,6 +1,6 @@
 exports.filters = {
     defaults: {
-        '!userFilter': '',
+        '!basicUserFilter': '',
         'todoFilter': 'name'
     }
 };

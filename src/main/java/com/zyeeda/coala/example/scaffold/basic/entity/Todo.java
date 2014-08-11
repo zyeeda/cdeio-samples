@@ -26,7 +26,7 @@ public class Todo extends DomainEntity {
 	private String name ;
 	private String description ;
 	private Integer status ;
-	private User user ;
+	private BasicUser user ;
 	
 	private List<Tag> tags = null;
 
@@ -61,11 +61,11 @@ public class Todo extends DomainEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "F_USER")
-	public User getUser() {
+	public BasicUser getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(BasicUser user) {
 		this.user = user;
 	}
 
