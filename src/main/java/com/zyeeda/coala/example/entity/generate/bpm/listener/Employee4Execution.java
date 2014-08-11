@@ -17,7 +17,6 @@ public class Employee4Execution extends BpmDomainEntity {
     private Integer age = null;
     private String  sex = null;
     private String  phone = null;
-    private Integer workingLife = null;
     private String  address = null;
 	private String  description = null;
 
@@ -61,14 +60,6 @@ public class Employee4Execution extends BpmDomainEntity {
         this.name = name;
     }
     
-	public Integer getWorkingLife() {
-		return workingLife;
-	}
-
-	public void setWorkingLife(Integer workingLife) {
-		this.workingLife = workingLife;
-	}
-	
     public String getDescription() {
         return description;
     }

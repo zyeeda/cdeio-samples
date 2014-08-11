@@ -6,7 +6,7 @@
 &emsp;研发部(d-1001)<br/>
 &emsp;&emsp;&emsp;－路飞(luffy)<br/>
 &emsp;人资部(d-1002)<br/>
-&emsp;&emsp;&emsp;－索隆(zoro)
+&emsp;&emsp;&emsp;－索隆(zoro)<br/>
 &emsp;综合部(d-1003)<br/>
 &emsp;&emsp;&emsp;－娜美(nami)<br/>
 ###3. 具体操作

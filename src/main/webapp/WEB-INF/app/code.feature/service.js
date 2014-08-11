@@ -23,7 +23,7 @@ exports.createService = function() {
                 if(fs.exists(bpmnPath)) {
                     var bpmn = fs.read(bpmnPath, {charset: 'utf8'});
                     results.push({id: 'bpmn', name: '流程定义', lang: 'xml', code: bpmn, isLeaf: true, path: 'src/main/resources/bpmn/' + config.docs[feature].bpmn + '.bpmn'});
-                    results.push({id: 'image', name: '流程图', lang: 'image', code: '<img src="invoke/scaffold/bpm/image/' + config.docs[feature].bpmn + '"/>', isLeaf: true, path: 'src/main/resources/bpmn/' + config.docs[feature].bpmn + '.bpmn'});
+                    results.push({id: 'image', name: '流程图', lang: 'image', code: '<img src="invoke/scaffold/bpm/diagram/processDefinitionKey/' + config.docs[feature].bpmn + '"/>', isLeaf: true, path: 'src/main/resources/bpmn/' + config.docs[feature].bpmn + '.bpmn'});
                 }
             }
             var backendSource = null;

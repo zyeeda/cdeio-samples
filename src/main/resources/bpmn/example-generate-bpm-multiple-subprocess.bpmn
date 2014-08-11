@@ -17,7 +17,7 @@
       <sequenceFlow id="flow13" sourceRef="sub_user_task_01" targetRef="sub_user_task_02"></sequenceFlow>
       <sequenceFlow id="flow14" sourceRef="sub_user_task_02" targetRef="sub_end_event"></sequenceFlow>
     </subProcess>
-    <userTask id="user_task_01" name="领导审核" activiti:candidateGroups="leader"></userTask>
+    <userTask id="user_task_01" name="领导审核" activiti:candidateGroups="d-1009"></userTask>
     <endEvent id="end_event"></endEvent>
     <sequenceFlow id="flow1" sourceRef="start_event" targetRef="subProcess"></sequenceFlow>
     <sequenceFlow id="flow10" sourceRef="subProcess" targetRef="user_task_01"></sequenceFlow>

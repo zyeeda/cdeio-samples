@@ -10,7 +10,6 @@ $License$
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.zyeeda</groupId>
         <artifactId>zyeeda-project</artifactId>
@@ -29,6 +28,7 @@ $License$
     <properties>
         <coala.framework.version>2.0.0-SNAPSHOT</coala.framework.version>
         <jetty.config>${project.build.outputDirectory}/META-INF/jetty</jetty.config>
+        <argLine>-Dfile.encoding=UTF-8</argLine>
     </properties>
 
     <!--
