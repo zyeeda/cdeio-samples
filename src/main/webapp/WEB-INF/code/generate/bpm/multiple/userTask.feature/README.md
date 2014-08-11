@@ -4,12 +4,12 @@
 
 ###2. 机构及人员
 &emsp;财务部(d-1004)<br/>
-&emsp;&emsp;&emsp;－弗兰奇(franky)<br/>
-&emsp;&emsp;&emsp;－山治(sanji)<br/>
-&emsp;&emsp;&emsp;－乔巴(chopper)<br/>
+&emsp;&emsp;&emsp;－franky<br/>
+&emsp;&emsp;&emsp;－sanji<br/>
+&emsp;&emsp;&emsp;－chopper<br/>
 &emsp;领导(d-1009)<br/>
-&emsp;&emsp;&emsp;－乌索普(usopp)<br/>
-&emsp;&emsp;&emsp;－布鲁克(brook)
+&emsp;&emsp;&emsp;－usopp<br/>
+&emsp;&emsp;&emsp;－brook
 
 ###3. 具体操作
 ######1. 新增营销计划信息。

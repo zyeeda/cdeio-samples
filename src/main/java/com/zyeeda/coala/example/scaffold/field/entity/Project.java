@@ -10,13 +10,13 @@ import javax.validation.constraints.NotNull;
 
 import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
-@Entity
+@Entity(name="ScaffoldProject")
 @Table(name = "ZED_FIELD_Project")
 @Scaffold("/scaffold/field/project")
 public class Project extends DomainEntity {
-	
+
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 786804234696017100L;
 	private String name;
@@ -29,7 +29,7 @@ public class Project extends DomainEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@OneToMany(mappedBy = "project")
 	public List<FieldTodo> getFieldTodos() {
 		return fieldTodos;

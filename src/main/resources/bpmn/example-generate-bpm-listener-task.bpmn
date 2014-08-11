@@ -7,7 +7,7 @@
 	  <extensionElements>
 	  	<!-- 任务在创建时执行此监听 -->
 	    <activiti:taskListener event="create" class="com.zyeeda.coala.example.listener.generate.bpm.listener.task.TaskCreateListener" />
-	    <!-- 任务在创建时执行此监听，次监听会自动认领任务 -->
+	    <!-- 任务在创建时执行此监听，此监听会自动认领任务 -->
       	<activiti:taskListener event="create" class="com.zyeeda.coala.example.listener.generate.bpm.listener.task.TaskAutoClaimListener" />
 	  </extensionElements>
     </userTask>

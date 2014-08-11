@@ -10,7 +10,6 @@ import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 @Table(name = "CDE_GENERATE_BPM_TASK_REJECT")
 @Scaffold("/generate/bpm/task/reject")
 
-// 继承 BpmDomainEntity 的实体，流程引擎将自动为其维护发起人(submitter)和流程状态(status)信息。
 public class Employee4Reject extends BpmDomainEntity {
 
     private static final long serialVersionUID = 4653079620355710257L;

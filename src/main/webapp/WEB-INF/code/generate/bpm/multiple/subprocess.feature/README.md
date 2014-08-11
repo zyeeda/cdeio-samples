@@ -4,13 +4,13 @@
 
 ###2. 机构及人员
 &emsp;综合部(d-1003)<br/>
-&emsp;&emsp;&emsp;－娜美(nami)<br/>
-&emsp;&emsp;&emsp;－罗宾(robin)<br/>
+&emsp;&emsp;&emsp;－nami<br/>
+&emsp;&emsp;&emsp;－robin<br/>
 &emsp;财务部(d-1004)<br/>
-&emsp;&emsp;&emsp;－弗兰奇(franky)<br/>
-&emsp;&emsp;&emsp;－乔巴(chopper)<br/>
+&emsp;&emsp;&emsp;－franky<br/>
+&emsp;&emsp;&emsp;－chopper<br/>
 &emsp;领导(d-1009)<br/>
-&emsp;&emsp;&emsp;－乌索普(usopp)
+&emsp;&emsp;&emsp;－usopp
 
 ###3. 具体操作
 ######1. 新增营销计划信息。

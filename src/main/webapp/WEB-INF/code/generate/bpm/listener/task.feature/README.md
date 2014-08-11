@@ -4,9 +4,9 @@
 
 ###2. 机构及人员
 &emsp;研发部(d-1001)<br/>
-&emsp;&emsp;&emsp;－路飞(luffy)<br/>
+&emsp;&emsp;&emsp;－luffy<br/>
 &emsp;人资部(d-1002)<br/>
-&emsp;&emsp;&emsp;－索隆(zoro)
+&emsp;&emsp;&emsp;－zoro
 
 ###3. 具体操作
 ######1. 新增员工信息，审核流程将启动，在控制台可以看到"'入职初审' 任务已被创建"的日志输出，同时会看到"入职初审' 任务已被 luffy 认领"的日志输出。

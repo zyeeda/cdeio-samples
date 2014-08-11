@@ -123,6 +123,14 @@ exports.createService = function() {
                         others.children.push({id: e.name + i, name: e.name, lang: e.path.substring(e.path.lastIndexOf('.') + 1), code: code, isLeaf: true, path: 'scripts/app/' + e.path});
                     }
                 }
+                if(config.docs[feature].javas) {
+                    var files = config.docs[feature].javas;
+                    for(var i = 0; i < files.length; i++) {
+                        var e = files[i];
+                        var code = fs.read(path + '/WEB-INF/classes/java/' + e.path, {charset: 'utf8'});
+                        others.children.push({id: e.name + i, name: e.name, lang: e.path.substring(e.path.lastIndexOf('.') + 1), code: code, isLeaf: true, path: 'src/main/java/' + e.path});
+                    }
+                }
                 if(others.children.length > 0) {
                     results.push(others);
                 }

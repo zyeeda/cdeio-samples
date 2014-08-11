@@ -4,9 +4,9 @@
 
 ###2. 机构及人员
 &emsp;研发部(d-1001)<br/>
-&emsp;&emsp;&emsp;－路飞(luffy)<br/>
+&emsp;&emsp;&emsp;－luffy<br/>
 &emsp;人资部(d-1002)<br/>
-&emsp;&emsp;&emsp;－索隆(zoro)
+&emsp;&emsp;&emsp;－zoro
 
 ###3. 具体操作
 ######1. 在全部标签下新增员工信息。

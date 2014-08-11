@@ -5,65 +5,40 @@ import java.util.List;
 
 import com.zyeeda.coala.example.service.generate.bpm.multiple.MultipleSubprocessService;
 
-/**
- * 模拟 ldap 服务
- * 此服务提供两个查询方法
- *
- ****************************
- * @author child          *
- * @date   2014年4月22日        *
- ****************************
- */
+
 public class MultipleSubprocessServiceImpl implements MultipleSubprocessService {
-	
+
 	public List<String> getDepartments(){
 		List<String> departments = new ArrayList<String>();
+		// 参与审核的部门为综合部与财务部
 		departments.add("d-1003");
 		departments.add("d-1004");
 		return departments;
 	}
-	/**
-	 * 根据给定的部门查询初审人员
-	 * 
-	 * @param department
-	 * @return
-	 *
-	 ****************************
-	 * @author child          *
-	 * @date   2014年4月22日        *
-	 ****************************
-	 */
 	public String getAssigneeByDepartment4Trial(String department){
 		String actor = null;
 		if("d-1003".equals(department)){
+			// 综合部初审人员为 nami
 			actor = "nami";
 		}else if("d-1004".equals(department)){
+			// 财务部初审人员为 franky
 			actor = "franky";
 		}else{
-			
+
 		}
 		return actor;
 	}
-	/**
-	 * 根据给定对的部门查询复审人员
-	 * 
-	 * @param department
-	 * @return
-	 *
-	 ****************************
-	 * @author child          *
-	 * @date   2014年4月22日        *
-	 ****************************
-	 */
 	public String getAssigneeByDepartment4Review(String department){
 		String actor = null;
 		if("d-1003".equals(department)){
+			// 综合部复审人员为 robin
 			actor = "robin";
 		}else if("d-1004".equals(department)){
+			// 综合部复审人员为 chopper
 			actor = "chopper";
 		}else{
-			
+
 		}
 		return actor;
-	}	
+	}
 }

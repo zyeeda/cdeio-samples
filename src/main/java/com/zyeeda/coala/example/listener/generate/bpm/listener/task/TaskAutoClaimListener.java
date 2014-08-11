@@ -9,11 +9,6 @@ import com.zyeeda.coala.example.listener.generate.bpm.listener.BaseBpmListener;
  * 任务自动分派监听
  * 当任务被创建时将被此监听监听到，此监听会自动的将任务的执行人设置为 'luffy'
  * 此监听监听的事件为 'create'
- *
- ****************************
- * @author child          *
- * @date   2014年4月22日        *
- ****************************
  */
 public class TaskAutoClaimListener extends BaseBpmListener implements TaskListener {
 	private static final long serialVersionUID = -4829766263033792944L;
