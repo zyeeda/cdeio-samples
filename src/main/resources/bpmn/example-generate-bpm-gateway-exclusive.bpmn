@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
+  <process id="example-generate-bpm-gateway-exclusive" name="样例-自动生成-网关-独占(条件)网关-员工入职审批流程" isExecutable="true">
+    <documentation>员工入职审批流程，用于演示条件分支业务</documentation>
+    <startEvent id="start_event"></startEvent>
+    <userTask id="user_task_01" name="入职初审" activiti:candidateGroups="d-1001">
+    </userTask>
+    <userTask id="user_task_02" name="入职复审" activiti:candidateGroups="d-1002">
+    </userTask>
+    <endEvent id="end_event"></endEvent>
+    <sequenceFlow id="flow1" sourceRef="start_event" targetRef="user_task_01"></sequenceFlow>
+    <sequenceFlow id="flow2" sourceRef="exclusivegateway1" targetRef="user_task_02">
+      <!-- 流程引擎会默认将业务实体的属性加上前缀('_e_')后存入流程变量中 -->
+      <!-- 工作年限五年及以上需要人资部审核 -->
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[${_e_workingLife>=5}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="user_task_02" targetRef="end_event"></sequenceFlow>
+    <sequenceFlow id="flow4" sourceRef="exclusivegateway1" targetRef="end_event">
+      <!-- 工作年限五年以下只需要研发部审核 -->
+      <conditionExpression xsi:type="tFormalExpression">
+        <![CDATA[${_e_workingLife<5}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway1" name="Exclusive Gateway"></exclusiveGateway>
+    <sequenceFlow id="flow5" sourceRef="user_task_01" targetRef="exclusivegateway1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_example-generate-bpm-task-userTask">
+    <bpmndi:BPMNPlane bpmnElement="example-generate-bpm-task-userTask" id="BPMNPlane_example-generate-bpm-task-userTask">
+      <bpmndi:BPMNShape bpmnElement="start_event" id="BPMNShape_start_event">
+        <omgdc:Bounds height="35.0" width="35.0" x="10.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="user_task_01" id="BPMNShape_user_task_01">
+        <omgdc:Bounds height="60.0" width="100.0" x="110.0" y="108.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="user_task_02" id="BPMNShape_user_task_02">
+        <omgdc:Bounds height="60.0" width="100.0" x="420.0" y="108.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end_event" id="BPMNShape_end_event">
+        <omgdc:Bounds height="35.0" width="35.0" x="452.0" y="270.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway1" id="BPMNShape_exclusivegateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="280.0" y="117.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="45.0" y="137.0"></omgdi:waypoint>
+        <omgdi:waypoint x="110.0" y="138.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="320.0" y="137.0"></omgdi:waypoint>
+        <omgdi:waypoint x="420.0" y="138.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="470.0" y="168.0"></omgdi:waypoint>
+        <omgdi:waypoint x="469.0" y="270.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
+        <omgdi:waypoint x="300.0" y="157.0"></omgdi:waypoint>
+        <omgdi:waypoint x="299.0" y="287.0"></omgdi:waypoint>
+        <omgdi:waypoint x="452.0" y="287.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="210.0" y="138.0"></omgdi:waypoint>
+        <omgdi:waypoint x="280.0" y="137.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

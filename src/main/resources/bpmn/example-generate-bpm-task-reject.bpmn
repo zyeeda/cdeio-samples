@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
+  <!--
+    创建信号，用于回退业务
+    name="reject-from-user_task_02" ，其中 'reject-from-' 表示此信号用于回退业务，user_task_02表示所要回退的位置
+  -->
+  <signal id="rejectSignal" name="reject-from-user_task_02"></signal>
+  <process id="example-generate-bpm-task-reject" name="样例-自动生成-任务-人工任务-员工入职审批流程" isExecutable="true">
+    <documentation>员工入职审批流程，用户演示回退业务</documentation>
+    <startEvent id="start_event"></startEvent>
+    <userTask id="user_task_01" name="入职初审" activiti:candidateUsers="luffy">
+      <documentation>入职初审</documentation>
+    </userTask>
+    <userTask id="user_task_02" name="入职复审" activiti:candidateGroups="d-1002">
+      <documentation>入职复审</documentation>
+    </userTask>
+    <boundaryEvent id="boundary_signal_01" name="回退" attachedToRef="user_task_02" cancelActivity="true">
+      <signalEventDefinition signalRef="rejectSignal"></signalEventDefinition>
+    </boundaryEvent>
+    <endEvent id="end_event"></endEvent>
+    <sequenceFlow id="flow1" sourceRef="start_event" targetRef="user_task_01"></sequenceFlow>
+    <sequenceFlow id="flow2" sourceRef="user_task_01" targetRef="user_task_02"></sequenceFlow>
+    <sequenceFlow id="flow5" name="回退" sourceRef="boundary_signal_01" targetRef="user_task_01"></sequenceFlow>
+    <sequenceFlow id="flow3" sourceRef="user_task_02" targetRef="end_event"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_test-demo01-process">
+    <bpmndi:BPMNPlane bpmnElement="test-demo01-process" id="BPMNPlane_test-demo01-process">
+      <bpmndi:BPMNShape bpmnElement="start_event" id="BPMNShape_start_event">
+        <omgdc:Bounds height="35.0" width="35.0" x="4.0" y="95.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="user_task_01" id="BPMNShape_user_task_01">
+        <omgdc:Bounds height="60.0" width="100.0" x="130.0" y="83.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="user_task_02" id="BPMNShape_user_task_02">
+        <omgdc:Bounds height="60.0" width="100.0" x="300.0" y="83.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundary_signal_01" id="BPMNShape_boundary_signal_01">
+        <omgdc:Bounds height="30.0" width="30.0" x="360.0" y="70.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end_event" id="BPMNShape_end_event">
+        <omgdc:Bounds height="35.0" width="35.0" x="530.0" y="95.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="39.0" y="112.0"></omgdi:waypoint>
+        <omgdi:waypoint x="73.0" y="112.0"></omgdi:waypoint>
+        <omgdi:waypoint x="130.0" y="113.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="230.0" y="113.0"></omgdi:waypoint>
+        <omgdi:waypoint x="258.0" y="112.0"></omgdi:waypoint>
+        <omgdi:waypoint x="300.0" y="113.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="375.0" y="70.0"></omgdi:waypoint>
+        <omgdi:waypoint x="374.0" y="29.0"></omgdi:waypoint>
+        <omgdi:waypoint x="179.0" y="29.0"></omgdi:waypoint>
+        <omgdi:waypoint x="180.0" y="83.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="24.0" x="381.0" y="1.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="400.0" y="113.0"></omgdi:waypoint>
+        <omgdi:waypoint x="497.0" y="112.0"></omgdi:waypoint>
+        <omgdi:waypoint x="530.0" y="112.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

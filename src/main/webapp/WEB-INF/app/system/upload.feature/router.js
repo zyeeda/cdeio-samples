@@ -6,7 +6,6 @@ var json = require('coala/response').json,
     {getOptionInProperties} = require('coala/config'),
     {mark} = require('coala/mark'),
     {join} = require('coala/util/paths'),
-    URLDecoder = java.net.URLDecoder,
     String = java.lang.String,
     CONFIG_UPLOAD_PATH = 'coala.upload.path';
 
@@ -15,18 +14,19 @@ router.get('/image/:id', upload.createViewer());
 router.get('/file/:id', upload.createViewer());
 
 router.get('/:id', mark('services', 'system/upload').on(function(uploadSvc, request, id) {
-    var attachment, filepath, filename, res;
+    var attachment, filepath;
 
     attachment = uploadSvc.getAttachmentById(id);
     if (!attachment) {
         return notFound('附件不存在');
     }
-
     filepath = join(getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
-
-    filename = new String(new String(attachment.filename).bytes, 'ISO8859-1');
-
-    res = response["static"](filepath, attachment.contentType);
+    var res = response["static"](filepath, attachment.contentType);
+    var filename = new String(new String(attachment.filename).bytes, 'ISO8859-1');
+    // res.headers['Content-Disposition'] = 'attachment;filename=' + filename;
+    res.headers['Content-Disposition'] = 'inline;filename=' + filename;
+    return res;
+}));
     res.headers['Content-Disposition'] = 'attachment;filename=' + filename;
     return res;
 }));

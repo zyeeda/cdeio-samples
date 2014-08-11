@@ -1,8 +1,5 @@
 package com.zyeeda.coala.example.entity.entity;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.Date;
 import java.util.Set;
 

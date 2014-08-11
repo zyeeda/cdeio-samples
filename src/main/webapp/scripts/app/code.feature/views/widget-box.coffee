@@ -2,6 +2,11 @@ define ["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/pretti
     avoidLoadingHandlers: true
     extend:
         afterRender: ->
+            #markdown处理流程图
+            $img = $('.lang-image')
+            $img.parent().after('<div class="imaged"><br/><br/>' + $img.text() + '</div>')
+            $img.parent().remove()
+
             #markdown处理及代码块样式
             $md = $('.lang-markdown')
             markup = marked($md.text())
@@ -15,11 +20,13 @@ define ["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/pretti
                 $a = $('<a>')
                 $a.addClass('copy-btn btn btn-minier btn-light')
                 $a.attr('data-clipboard-text', $el.text())
-                $a.append('<i class=\"icon-code\">copy</i>')
+                $a.append('<i class=\"icon-code\">Copy</i>')
                 $el.parent().before($a)
             client = new ZeroClipboard($('.copy-btn'))
             client.on 'aftercopy', ->
                 app.info('已复制')
+
+
 
             #代码高亮
             prettyPrint()
@@ -35,7 +42,7 @@ define ["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/pretti
             #         $(block).parent().remove()
             #     else
             #         hljs.highlightBlock(block)
-            
+
         templateHelpers: ->
             codeFeature = @feature.startupOptions.codeFeature
             scaffold = @feature.startupOptions.scaffold
@@ -47,4 +54,3 @@ define ["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/pretti
                 obj.sources = data.results
                 obj
             obj
-    

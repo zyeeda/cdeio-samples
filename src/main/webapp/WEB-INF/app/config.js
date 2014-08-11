@@ -7,17 +7,26 @@ exports.coala = {
     entityPackages : [
         // 'com.zyeeda.coala.commons.authc.entity',
         'com.zyeeda.coala.commons.resource.entity',
-        // 'com.zyeeda.coala.commons.organization.entity',
+        'com.zyeeda.coala.commons.funnel.entity',
         'com.zyeeda.coala.example.entity.entity',
         'com.zyeeda.coala.example.scaffold.basic.entity',
         'com.zyeeda.coala.example.scaffold.field.entity',
         'com.zyeeda.coala.example.scaffold.form.entity',
         'com.zyeeda.coala.example.scaffold.grid.entity',
+        'com.zyeeda.coala.example.extension.ui.form.entity',
+        'com.zyeeda.coala.example.extension.service.entity',
+        'com.zyeeda.coala.example.tenant.entity',
+        'com.zyeeda.coala.example.entity.generate',
+        'com.zyeeda.coala.example.entity.generate.bpm.task',
+        'com.zyeeda.coala.example.entity.generate.bpm.gateway',
+        'com.zyeeda.coala.example.entity.generate.bpm.listener',
+        'com.zyeeda.coala.example.entity.generate.bpm.subprocess',
+        'com.zyeeda.coala.example.entity.generate.bpm.multiple',
         'com.zyeeda.coala.example.extension.ui.form.entity'
     ],
 
     orms: [
-    
+
     ],
 
     disableAuthz: true

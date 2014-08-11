@@ -32,6 +32,7 @@
 
     <import resource="classpath:spring/hibernate.xml" />
     <import resource="classpath:spring/coala/validation.xml" />
+    <import resource="classpath:spring/coala/bpm.xml"/>    
     <import resource="classpath:spring/service.xml"/>
     <import resource="classpath:spring/shiro.xml" />
     <import resource="classpath:spring/sso/provider/ehcache.xml" />
