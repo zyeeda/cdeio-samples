@@ -18,7 +18,7 @@ exports.fieldGroups = {
 
 exports.grid = {
     columns: ['name', 'code', 'birthday', 'email']
-}
+};
 
 exports.picker = {
     grid: {

@@ -9,6 +9,6 @@ exports.createService = function() {
             return attachmentMgr.find(id);
         })
     };
+
     return service;
-}
-}
+};
