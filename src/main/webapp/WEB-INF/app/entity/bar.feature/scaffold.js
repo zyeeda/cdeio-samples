@@ -6,9 +6,12 @@ exports.filters = {
 
 exports.labels = {
     name: '名称',
-    description: '描述'
+    age: '年龄',
+    mobile: '手机号码',
+    email: 'Email',
+    address: '住址'
 };
 
 exports.fieldGroups = {
-	defaults: ['name', 'description']
+	defaults: ['name', 'age', 'mobile', 'email', 'address']
 };

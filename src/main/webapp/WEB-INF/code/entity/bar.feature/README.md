@@ -1,81 +1,106 @@
-##Bean Validator
+### Bean Validator
 
-Hibernate验证注解
+#### ——Hibernate验证注解
 
-注解
+****
 
- 适用类型
+1. ##### 标题：@NotNull
+    
+   ##### 注解：`@NotNull`
 
- 说明
+   ##### 适用类型：所有类型
 
- 示例
+   ##### 说明：验证一个字段的值不能为空或空字符串
 
+		@NotNull
+		@Column(name = "F_AGE")
+		public Integer getAge() {
+			return age;
+		}
+
+2. ##### 标题：@NotBlank
+    
+   ##### 注解：`@NotBlank`
+
+   ##### 适用类型：String
+
+   ##### 说明：验证一个 String 类型字段的值不能为空或空字符串
+
+		@NotBlank
+		@Column(name = "F_MOBILE")
+		public String getMobile() {
+			return mobile;
+		}
+
+3. ##### 标题：@NullableSize
+
+   ##### 注解：`@NullableSize`
+
+   ##### 适用类型：String
+
+   ##### 说明：验证一个 String 类型字段的长度是否在 min ~ max 的区间内
+
+		@NotBlank
+		@NullableSize(min = 2, max = 200)
+		@Column(name = "F_ADDRESS")
+		public String getAddress() {
+			return address;
+		}
+
+4. ##### 标题：@Email
+
+   ##### 注解：`@Email`
+
+   ##### 适用类型：String
+
+   ##### 说明：验证一个 String 类型字段的值是否是一个有效的Email地址
+
+		@NotNull
+	    @Email
+	    @Column(name = "F_EMAIL")
+		public String getEmail() {
+			return email;
+		}
+
+5. ##### 标题: @Range
+   
+   ##### 注解：`@Range`
+
+   ##### 适用类型：Long、Integer、Double、BigDecimal
+
+   ##### 说明：验证一个数字类型字段的值是否在 min ~ max 的区间内
+
+		@NotNull
+		@Range(min = 1, max = 100)
+		@Column(name = "F_AGE")
+		public Integer getAge() {
+			return age;
+		}
+
+6. ##### 标题：@Min
+
+   ##### 注解：`@Min`
+
+   ##### 适用类型：Long、Integer、Double、BigDecimal
+
+   ##### 说明：验证一个数字类型字段的值必须不小于指定值
+
+		@Min(value = 5)
+		@Column(name = "F_QQ")
+		public Integer getQq(){
+			return qq;
+		}
  
+7. ##### 标题：@Max
+  
+   ##### 注解：`@Max`
 
-@Pattern
+   ##### 适用类型：Long、Integer、Double、BigDecimal
 
- String
+   ##### 说明：验证一个数字类型字段的值必须不大于指定值
 
- 通过正则表达式来验证字符串
-
- @attern(regex=”[a-z]{6}”)
-
- 
-
-@Length
-
- String
-
- 验证字符串的长度
-
- @length(min=3,max=20)
-
- 
-
-@Email
-
- String
-
- 验证一个Email地址是否有效
-
- @email
-
- 
-
-@Range
-
- Long
-
- 验证一个整型是否在有效的范围内
-
- @Range(min=0,max=100)
-
- 
-
-@Min
-
- Long
-
- 验证一个整型必须不小于指定值
-
- @Min(value=10)
-
- 
-
-@Max
-
- Long
-
- 验证一个整型必须不大于指定值
-
- @Max(value=20)
-
- 
-
-@Size
-
- 集合或数组
-
- 集合或数组的大小是否在指定范围内
-
- @Size(min=1,max=255)
+		@Max(value = 11)
+		@Column(name = "F_QQ")
+		public Integer getQq(){
+			return qq;
+		}
