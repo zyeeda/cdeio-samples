@@ -1,5 +1,7 @@
 var fs = require('fs');
 
+var UUID = java.util.UUID;
+
 exports.createService = function() {
 
     var svc = {
@@ -112,7 +114,7 @@ exports.createService = function() {
                     for(var i = 0; i < files.length; i++) {
                         var e = files[i];
                         var code = fs.read(webinfPath + '/' + e.path, {charset: 'utf8'});
-                        others.children.push({id: e.name + i, name: e.name, lang: e.path.substring(e.path.lastIndexOf('.') + 1), code: code, isLeaf: true, path: 'WEB-INF/app/' + e.path});
+                        others.children.push({id: UUID.randomUUID().toString(), name: e.name, lang: e.path.substring(e.path.lastIndexOf('.') + 1), code: code, isLeaf: true, path: 'WEB-INF/app/' + e.path});
                     }
                 }
                 if(config.docs[feature].scripts) {
@@ -120,7 +122,7 @@ exports.createService = function() {
                     for(var i = 0; i < files.length; i++) {
                         var e = files[i];
                         var code = fs.read(scriptsPath + '/' + e.path, {charset: 'utf8'});
-                        others.children.push({id: e.name + i, name: e.name, lang: e.path.substring(e.path.lastIndexOf('.') + 1), code: code, isLeaf: true, path: 'scripts/app/' + e.path});
+                        others.children.push({id: UUID.randomUUID().toString(), name: e.name, lang: e.path.substring(e.path.lastIndexOf('.') + 1), code: code, isLeaf: true, path: 'scripts/app/' + e.path});
                     }
                 }
                 if(config.docs[feature].javas) {
@@ -128,7 +130,7 @@ exports.createService = function() {
                     for(var i = 0; i < files.length; i++) {
                         var e = files[i];
                         var code = fs.read(path + '/WEB-INF/classes/java/' + e.path, {charset: 'utf8'});
-                        others.children.push({id: e.name + i, name: e.name, lang: e.path.substring(e.path.lastIndexOf('.') + 1), code: code, isLeaf: true, path: 'src/main/java/' + e.path});
+                        others.children.push({id: UUID.randomUUID().toString(), name: e.name, lang: e.path.substring(e.path.lastIndexOf('.') + 1), code: code, isLeaf: true, path: 'src/main/java/' + e.path});
                     }
                 }
                 if(others.children.length > 0) {
