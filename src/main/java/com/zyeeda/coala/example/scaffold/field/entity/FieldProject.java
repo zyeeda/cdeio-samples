@@ -12,7 +12,7 @@ import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "ZED_FIELD_Project")
+@Table(name = "ZED_FIELD_PROJECT")
 @Scaffold("/scaffold/field/project")
 public class FieldProject extends DomainEntity {
 

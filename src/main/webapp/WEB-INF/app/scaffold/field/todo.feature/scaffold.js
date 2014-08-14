@@ -4,7 +4,7 @@ exports.filters = {
         '!attachmentFilter': '',
         '!fieldUserFilter': 'todos',
         '!fieldTagFilter': ['children', 'todos'],
-        '!projectFilter': 'fieldTodos'
+        '!fieldProjectFilter': 'fieldTodos'
     }
 };
 
@@ -27,17 +27,14 @@ exports.labels = {
 
 exports.fieldGroups = {
     defaults: ['name', 'startDate',
-       {name: 'level',
-        type: 'dropdown',
-        defaultValue: '一般',
-        source: [
+       {name: 'level', type: 'dropdown', defaultValue: '一般',
+            source: [
                 {id: '紧急', text: '紧急'},
                 {id: '重大', text: '重大'},
                 {id: '一般', text: '一般'}
             ]
         },
-        {name: 'attach',
-        type: 'file-picker',
+        {name: 'attach', type: 'file-picker',
         url: 'invoke/system/upload',
         acceptFileTypes: "(\\.|\\/)(swf|mp4|avi|wmv|doc|docx|xls|xlsx|ppt|pptx|zip|rar|7z|pdf|txt|jpg|jpeg|png|gif)$"
         },

@@ -1,7 +1,6 @@
 exports.filters = {
     defaults: {
-        '!fieldProjectFilter': '',
-        'fieldTodoFilter': 'name'
+        '!fieldProjectFilter': ''
     }
 };
 
@@ -10,7 +9,7 @@ exports.labels = {
 };
 
 exports.fieldGroups = {
-    defaults: ['name', 'code', 'birthday', 'email']
+    defaults: ['name']
 };
 
 exports.picker = {

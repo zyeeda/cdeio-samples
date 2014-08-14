@@ -1,17 +1,11 @@
-/*var _               = require('underscore');
-var {createService} = require('scaffold/tree/type.feature/service');
-
-exports.service = function(service){
-    return _.extend(service, createService());
-};*/
-
 exports.filters = {
     defaults: {
-        '!fieldTagFilter': 'children'
+        '!fieldTagFilter': ['children', 'todos']
     }
 };
 
 exports.entityLabel = '类别';
+
 exports.style = 'tree';
 
 exports.labels = {
@@ -52,8 +46,6 @@ exports.operators = {
     toggleMove: { icon: 'icon-move', group: 'other', show: 'always' }
 };
 
-
-//设置form页面一行显示2列
 exports.forms = {
     defaults: {
         groups: [

@@ -5,8 +5,6 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -54,10 +52,7 @@ public class FieldTag extends TreeNodeRevisionDomainEntity implements TreeNode<F
 		this.desc = desc;
 	}
 	
-	@ManyToMany
-	@JoinTable(name = "ZED_FIELD_TODO_TAG",
-	joinColumns=@JoinColumn(name = "F_TAG_ID"),
-	inverseJoinColumns = @JoinColumn(name = "F_TODO_ID"))
+	@OneToMany(mappedBy = "tag")
 	public List<FieldTodo> getTodos() {
 		return todos;
 	}
