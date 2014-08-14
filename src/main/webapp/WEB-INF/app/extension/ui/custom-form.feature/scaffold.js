@@ -17,6 +17,12 @@ exports.labels = {
 
 exports.fieldGroups = {
 	defaults: [
+        {name: 'name'},
+        {name: 'applicant'},
+        {name: 'applyTime'},
+        {name: 'description'}
+    ],
+    add: [
         {name: 'name', hideLabel: true},
         {name: 'applicant', hideLabel: true},
         {name: 'applyTime', hideLabel: true},
@@ -30,13 +36,11 @@ exports.forms = {
         custom: true,
         template: 'extension/ui/custom-form.feature/views/add.html',
         groups: [
-            {name: 'defaults', columns: 2}
+            {name: 'add', columns: 2}
         ]
     },
     edit: {
         size: 'large',
-        custom: true,
-        template: 'extension/ui/custom-form.feature/views/edit.html',
         groups: [
             {name: 'defaults', columns: 2}
         ]
@@ -46,7 +50,7 @@ exports.forms = {
         custom: true,
         template: 'extension/ui/custom-form.feature/views/show.html',
         groups: [
-            {name: 'defaults', columns: 2}
+            {name: 'add', columns: 2}
         ]
     }
 };

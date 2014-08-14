@@ -34,7 +34,7 @@ exports.picker = {
     callback: 'routerPickerCallback',
     beforePickerConfirm: 'beforeRouterPickerConfirm',
     afterPickerConfirm: 'afterRouterPickerConfirm',
-    beforeShowPicker: 'beforeRouterShowPicker'
+    beforeShowPicker: 'beforeShowRouterPicker'
 };
 
 exports.doWithRouter = function(router) {

@@ -6,7 +6,6 @@ define([
         //打开增加、编辑、查看页面后调的方法
         afterShowDialog: function(dialogType, view, data){
             var me = this;
-
             if ("add" === dialogType) {
                 //当前用户和时间
                 me.feature.request({

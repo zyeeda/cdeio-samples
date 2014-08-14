@@ -155,7 +155,7 @@ define([
                 app.success('into afterRouterPickerConfirm success');
             },
             //点击picker之前调的方法
-            beforeRouterShowPicker: function (view) {
+            beforeShowRouterPicker: function (view) {
                 app.success('into beforeRouterShowPicker success');
                 return true;
             },
@@ -182,7 +182,7 @@ define([
                 app.success('into afterBasicPickerConfirm success');
             },
             //点击picker之前调的方法
-            beforeBasicShowPicker: function (view) {
+            beforeShowBasicPicker: function (view) {
                 app.success('into beforeBasicShowPicker success');
                 return true;
             }

@@ -58,7 +58,7 @@ exports.picker = {
     callback: 'basicPickerCallback',
     beforePickerConfirm: 'beforeBasicPickerConfirm',
     afterPickerConfirm: 'afterBasicPickerConfirm',
-    beforeShowPicker: 'beforeBasicShowPicker'
+    beforeShowPicker: 'beforeShowBasicPicker'
 };
 
 //定义回收站按钮
