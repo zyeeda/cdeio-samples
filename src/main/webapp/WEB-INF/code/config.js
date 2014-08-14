@@ -67,6 +67,13 @@ exports.docs = {
             {name: '多实例人工任务服务实现', path: 'com/zyeeda/coala/example/service/generate/bpm/multiple/impl/MultipleUserTaskServiceImpl.java'}
         ]
     },
+    'extension/service/advance': {
+        webinf: [
+            {name: '自定义router ', path: 'extension/diyrouter.feature/router.js'},
+            {name: '相关其它service', path: 'extension/diyrouter.feature/service.js'},
+            {name: '相关其它manager', path: 'extension/diyrouter.feature/manager.js'},
+        ]
+    },
     'extension/ui/form': {
         webinf: [
             {name: '树的数据源', path: 'test/trees.feature/scaffold.js'}

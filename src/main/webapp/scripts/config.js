@@ -3,7 +3,7 @@ define({
 
     disableAuthz: true,
     loadSettings: true,
-    
+
     whitelist: [
         'coala/viewport',
         'coala/account-menu',
@@ -14,7 +14,7 @@ define({
     ],
 
     urlPrefix: function(app, path) {
-        if ('/about' === path) {
+        if ('/about' === path || '/extension/diyrouter' === path) {
             return 'invoke' + path;
         }
         return 'invoke/scaffold/' + path;
