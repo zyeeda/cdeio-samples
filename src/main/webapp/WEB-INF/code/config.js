@@ -67,12 +67,22 @@ exports.docs = {
             {name: '多实例人工任务服务实现', path: 'com/zyeeda/coala/example/service/generate/bpm/multiple/impl/MultipleUserTaskServiceImpl.java'}
         ]
     },
+    'extension/service/basic': {
+        java: 'com/zyeeda/coala/example/extension/service/entity/Person.java'
+    },
     'extension/service/advance': {
+        java: 'com/zyeeda/coala/example/extension/service/entity/Person.java',
         webinf: [
             {name: '自定义router ', path: 'extension/diyrouter.feature/router.js'},
             {name: '相关其它service', path: 'extension/diyrouter.feature/service.js'},
             {name: '相关其它manager', path: 'extension/diyrouter.feature/manager.js'},
         ]
+    },
+    'extension/service/downloadfile': {
+        java: 'com/zyeeda/coala/example/extension/service/entity/DataFile.java'
+    },
+    'extension/service/uploadfile': {
+        java: 'com/zyeeda/coala/example/extension/service/entity/DataFile.java'
     },
     'extension/ui/form': {
         webinf: [

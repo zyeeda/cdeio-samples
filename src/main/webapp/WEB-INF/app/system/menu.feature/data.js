@@ -3,53 +3,52 @@ exports.results = [
 
 	{id: "800", name: "实体", iconClass: "icon-lock", path: "#/"},
 
-	{id: "800003", name: "Scaffold", iconClass: "icon-lock", path: "#feature/entity/scaffold:test", parent: {id: "800", name: '实体'}},
-	{id: "800002", name: "JPA", iconClass: "icon-lock", path: "#feature/entity/scaffold:foo", parent: {id: "800", name: '实体'}},
-	{id: "800004", name: "BeanValidator", iconClass: "icon-lock", path: "#feature/entity/scaffold:bar", parent: {id: "800", name: '实体'}},
+	{id: "800003", name: "Scaffold", iconClass: "green icon-key", path: "#feature/entity/scaffold:test", parent: {id: "800", name: '实体'}},
+	{id: "800002", name: "JPA", iconClass: "green icon-key", path: "#feature/entity/scaffold:foo", parent: {id: "800", name: '实体'}},
+	{id: "800004", name: "BeanValidator", iconClass: "green icon-key", path: "#feature/entity/scaffold:bar", parent: {id: "800", name: '实体'}},
 	{id: "800005", name: "Jackson", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
 	{id: "800006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "800", name: '实体'}},
 
 	{id: "100", name: "自动生成", opened: false, iconClass: "icon-lock", path: "#/"},
 
-	{id: "100001001", name: "基础", iconClass: "icon-unlock", path: "#/", parent: {id: "100"}},
-	{id: "100001001001", name: "最简配置", iconClass: "icon-unlock", path: "#feature/scaffold/basic/scaffold:basic-todo", parent: {id: "100001001", name: "基础"}},
-	{id: "100001001002", name: "Json序列化", iconClass: "icon-unlock", path: "#feature/scaffold/basic/scaffold:todo", parent: {id: "100001001", name: "基础"}},
-	{id: "100001001003", name: "标签", iconClass: "icon-unlock", path: "#feature/scaffold/basic/scaffold:tag", parent: {id: "100001001", name: "基础"}},
+	{id: "100001001", name: "基础", iconClass: "green icon-key", path: "#/", parent: {id: "100", name: "自动生成"}},
+	{id: "100001001001", name: "最简配置", iconClass: "green icon-key", path: "#feature/scaffold/basic/scaffold:basic-todo", parent: {id: "100001001", name: "基础"}},
+	{id: "100001001002", name: "Json序列化", iconClass: "green icon-key", path: "#feature/scaffold/basic/scaffold:todo", parent: {id: "100001001", name: "基础"}},
+	{id: "100001001003", name: "标签", iconClass: "green icon-key", path: "#feature/scaffold/basic/scaffold:tag", parent: {id: "100001001", name: "基础"}},
 
-	{id: "100001002", name: "列表", iconClass: "icon-unlock", path: "#/", parent: {id: "100"}},
-	{id: "100001002001", name: "基础配置", iconClass: "icon-unlock", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002", name: "列表"}},
-	{id: "100001002002", name: "高级配置", iconClass: "icon-unlock", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002", name: "列表"}},
+	{id: "100001002", name: "列表", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
+	{id: "100001002001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002", name: "列表"}},
+	{id: "100001002002", name: "高级配置", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002", name: "列表"}},
 
 	{id: "100001003", name: "树", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
-	{id: "100001003001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003"}},
-	{id: "100001003002", name: "高级配置", iconClass: "icon-lock", path: "#feature/scaffold/tree/scaffold:tree-advanced", parent: {id: "100001003"}},
+	{id: "100001003001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003", name: "树"}},
+	{id: "100001003002", name: "高级配置", iconClass: "icon-lock", path: "#feature/scaffold/tree/scaffold:tree-advanced", parent: {id: "100001003", name: "树"}},
 
-	{id: "100001009", name: "字段", iconClass: "icon-unlock", path: "#/", parent: {id: "100"}},
-	{id: "100001009001", name: "基础", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:todo", parent: {id: "100001009", name: "字段"}},
-	/*{id: "100001009003", name: "下拉列表", iconClass: "icon-unlock", path: "#/", parent: {id: "100001009", name: "字段"}},
-	{id: "100001009004", name: "日期选择器", iconClass: "icon-unlock", path: "#/", parent: {id: "100001009", name: "字段"}},
-	{id: "100001009002", name: "GridPicker", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:project", parent: {id: "100001009", name: "字段"}},
-	{id: "100001009005", name: "TreePicker", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:tag", parent: {id: "100001009", name: "字段"}},
-	{id: "100001009006", name: "FilePicker", iconClass: "icon-unlock", path: "#/", parent: {id: "100001009"}},
-	{id: "100001009007", name: "InlineGrid", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:user", parent: {id: "100001009", name: "字段"}},*/
-	{id: "100001009008", name: "验证规则", iconClass: "icon-unlock", path: "#feature/scaffold/field/scaffold:account", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009", name: "字段", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
+	{id: "100001009001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:todo", parent: {id: "100001009", name: "字段"}},
+	/*{id: "100001009003", name: "下拉列表", iconClass: "green icon-key", path: "#/", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009004", name: "日期选择器", iconClass: "green icon-key", path: "#/", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009002", name: "GridPicker", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:project", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009005", name: "TreePicker", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:tag", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009006", name: "FilePicker", iconClass: "green icon-key", path: "#/", parent: {id: "100001009"}},
+	{id: "100001009007", name: "InlineGrid", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:user", parent: {id: "100001009", name: "字段"}},*/
+	{id: "100001009008", name: "验证规则", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:account", parent: {id: "100001009", name: "字段"}},
 
 
-
-	{id: "100001004", name: "表单", iconClass: "green icon-unlock", path: "#/", parent: {id: "100"}},
-	{id: "100001004001", name: "基础", iconClass: "green icon-unlock", path: "#feature/scaffold/form/scaffold:user", parent: {id: "100001004", name: "表单"}},
-	{id: "100001004002", name: "分组", iconClass: "green icon-unlock", path: "#feature/scaffold/form/scaffold:todo", parent: {id: "100001004", name: "表单"}},
-	{id: "100001004003", name: "页签", iconClass: "green icon-unlock", path: "#feature/scaffold/form/scaffold:project", parent: {id: "100001004", name: "表单"}},
+	{id: "100001004", name: "表单", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
+	{id: "100001004001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:user", parent: {id: "100001004", name: "表单"}},
+	{id: "100001004002", name: "分组", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:todo", parent: {id: "100001004", name: "表单"}},
+	{id: "100001004003", name: "页签", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:project", parent: {id: "100001004", name: "表单"}},
 
 	{id: "100001005", name: "操作按钮", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
-	{id: "100001005001", name: "基础配置", iconClass: "icon-lock", path: "#feature/scaffold/form/scaffold:tag", parent: {id: "100001005"}},
-	{id: "100001005002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001005"}},
+	{id: "100001005001", name: "基础配置", iconClass: "icon-lock", path: "#feature/scaffold/form/scaffold:tag", parent: {id: "100001005", name: "操作按钮"}},
+	{id: "100001005002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001005", name: "操作按钮"}},
 
-	{id: "100001006", name: "hooks", iconClass: "green icon-unlock", path: "#/", parent: {id: "100"}},
-	{id: "100001006001", name: "基础", iconClass: "green icon-unlock", path: "#feature/scaffold/hooks/scaffold:todo", parent: {id: "100001006", name: "hooks"}},
+	{id: "100001006", name: "hooks", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
+	{id: "100001006001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/hooks/scaffold:todo", parent: {id: "100001006", name: "hooks"}},
 
-	{id: "100001007", name: "validations", iconClass: "green icon-unlock", path: "#/", parent: {id: "100"}},
-	{id: "100001007001", name: "基础", iconClass: "green icon-unlock", path: "#feature/scaffold/validators/scaffold:user", parent: {id: "100001007", name: "validations"}},
+	{id: "100001007", name: "validations", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
+	{id: "100001007001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/validators/scaffold:user", parent: {id: "100001007", name: "validations"}},
 
 	{id: "100001007", name: "其它", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001007001", name: "动态Feature", iconClass: "icon-lock", path: "#/", parent: {id: "100001007"}},
@@ -92,16 +91,17 @@ exports.results = [
 	{id: "300007003", name: "信号边界事件", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 	{id: "300007004", name: "错误边界事件", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 
-	{id: "400", name: "扩展", opened: false, iconClass: "icon-lock", path: "#/"},
+	{id: "400", name: "扩展", iconClass: "icon-lock", path: "#/"},
 	{id: "400001", name: "服务", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
 
-	{id: "400001001", name: "基础", iconClass: "icon-lock", path: "#/", parent: {id: "400001"}},
-	{id: "400001002", name: "文件下载", iconClass: "icon-lock", path: "#/", parent: {id: "400001"}},
-	{id: "400001003", name: "文件上传", iconClass: "icon-lock", path: "#/", parent: {id: "400001"}},
-	{id: "400001004", name: "SQL查询", iconClass: "icon-lock", path: "#/", parent: {id: "400001"}},
-	{id: "400001005", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "400001"}},
+	{id: "400001001", name: "基础", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:basic", parent: {id: "400001", name: "服务"}},
+	{id: "400001002", name: "基础", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:advance", parent: {id: "400001", name: "服务"}},
+	{id: "400001003", name: "文件下载", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:downloadfile", parent: {id: "400001", name: "服务"}},
+	{id: "400001004", name: "文件上传", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:uploadfile", parent: {id: "400001", name: "服务"}},
+	{id: "400001005", name: "SQL查询", iconClass: "icon-lock", path: "#/", parent: {id: "400001", name: "服务"}},
+	{id: "400001006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "400001", name: "服务"}},
 
-	{id: "400002", name: "界面", iconClass: "green icon-key", path: "#/", parent: {id: "400"}},
+	{id: "400002", name: "界面", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
 	{id: "400002001", name: "基础", iconClass: "green icon-key", path: "#feature/extension/ui/scaffold:basic", parent: {id: "400002"}},
 	{id: "400002002", name: "路由", iconClass: "green icon-key", path: "#feature/extension/ui/scaffold:router", parent: {id: "400002"}},
 	{id: "400002003", name: "表单视图", iconClass: "green icon-key", path: "#feature/extension/ui/form", parent: {id: "400002"}},
@@ -124,7 +124,7 @@ exports.results = [
 	{id: "600004", name: "用户", iconClass: "icon-lock", path: "#feature/tenant/scaffold:user", parent: {id: "600"}},
 	{id: "600005", name: "数据租户", iconClass: "icon-lock", path: "#feature/tenant/scaffold:tenant", parent: {id: "600"}},
 
-	{id: "900", name: "漏斗", iconClass: "icon-lock", path: "#", opened: true},
+	{id: "900", name: "漏斗", iconClass: "icon-lock", path: "#"},
 	{id: "900001", name: "漏斗类型", iconClass: "icon-lock", path: "#feature/funnel/scaffold:funnel-type", parent: {id: "900", name: "漏斗"}},
 	{id: "900002", name: "漏斗", iconClass: "icon-lock", path: "#feature/funnel/scaffold:funnel", parent: {id: "900", name: "漏斗"}},
 	{id: "900003", name: "漏斗数据类型", iconClass: "icon-lock", path: "#feature/funnel/scaffold:funnel-data-type", parent: {id: "900", name: "漏斗"}},
