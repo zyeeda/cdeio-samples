@@ -189,3 +189,25 @@ pre, code {
     height: 400px;
     border: none;
 }
+
+/*ztree style begin*/
+/* tree */
+.countryNode_ico_close, .countryNode_ico_open, .countryNode_ico_docu, .provinceNode_ico_close, .provinceNode_ico_open, .provinceNode_ico_docu, .cityNode_ico_close, .cityNode_ico_open, .cityNode_ico_docu, .countyNode_ico_close, .countyNode_ico_open, .countyNode_ico_docu{
+  background-image: url("../images/country_tree_icons.png") !important;
+  margin-right: 2px !important;
+  vertical-align: top;
+}
+.countryNode_ico_close, .countryNode_ico_open, .countryNode_ico_docu {
+  background-position: 0 0px !important;
+}
+.provinceNode_ico_close, .provinceNode_ico_open, .provinceNode_ico_docu {
+  background-position: 0 -16px !important;
+}
+.cityNode_ico_close, .cityNode_ico_open, .cityNode_ico_docu {
+  background-position: 0 -32px !important;
+}
+.countyNode_ico_close, .countyNode_ico_open, .countyNode_ico_docu {
+  background-position: 0 -64px !important;
+}
+
+/*ztree style end*/

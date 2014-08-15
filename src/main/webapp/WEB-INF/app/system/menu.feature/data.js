@@ -20,9 +20,9 @@ exports.results = [
 	{id: "100001002001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002", name: "列表"}},
 	{id: "100001002002", name: "高级配置", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002", name: "列表"}},
 
-	{id: "100001003", name: "树", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
-	{id: "100001003001", name: "基础配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001003", name: "树"}},
-	{id: "100001003002", name: "高级配置", iconClass: "icon-lock", path: "#feature/scaffold/tree/scaffold:tree-advanced", parent: {id: "100001003", name: "树"}},
+	{id: "100001003", name: "树", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
+	{id: "100001003001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/tree/scaffold:basic", parent: {id: "100001003", name: "树"}},
+	{id: "100001003002", name: "高级配置", iconClass: "green icon-key", path: "#feature/scaffold/tree/scaffold:advanced", parent: {id: "100001003", name: "树"}},
 
 	{id: "100001009", name: "字段", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
 	{id: "100001009001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:todo", parent: {id: "100001009", name: "字段"}},
@@ -40,9 +40,9 @@ exports.results = [
 	{id: "100001004002", name: "分组", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:todo", parent: {id: "100001004", name: "表单"}},
 	{id: "100001004003", name: "页签", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:project", parent: {id: "100001004", name: "表单"}},
 
-	{id: "100001005", name: "操作按钮", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
-	{id: "100001005001", name: "基础配置", iconClass: "icon-lock", path: "#feature/scaffold/form/scaffold:tag", parent: {id: "100001005", name: "操作按钮"}},
-	{id: "100001005002", name: "高级配置", iconClass: "icon-lock", path: "#/", parent: {id: "100001005", name: "操作按钮"}},
+	{id: "100001005", name: "操作按钮", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
+	{id: "100001005001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:basic", parent: {id: "100001005", name: "操作按钮"}},
+	{id: "100001005002", name: "高级配置", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:advanced", parent: {id: "100001005", name: "操作按钮"}},
 
 	{id: "100001006", name: "hooks", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
 	{id: "100001006001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/hooks/scaffold:todo", parent: {id: "100001006", name: "hooks"}},
