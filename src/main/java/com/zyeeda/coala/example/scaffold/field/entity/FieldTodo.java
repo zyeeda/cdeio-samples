@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -26,7 +27,7 @@ import com.zyeeda.coala.validation.constraint.NullableSize;
 public class FieldTodo extends DomainEntity {
 
 	/**
-	 * 
+	 * 序列化
 	 */
 	private static final long serialVersionUID = -4809855036314184512L;
 	private String name;
@@ -37,6 +38,7 @@ public class FieldTodo extends DomainEntity {
 	private List<FieldUser> users;
 	private FieldTag tag;
 	private FieldProject project;
+	private List<Attachment> attachments;
 
 	@Column(name = "F_NAME",length=60)
 	@NotNull
@@ -117,4 +119,18 @@ public class FieldTodo extends DomainEntity {
 	public void setProject(FieldProject project) {
 		this.project = project;
 	}
+
+	@OneToMany
+	@JoinTable(name = "ZED_FIELD_TODO_ATTACHMENT",
+	joinColumns = @JoinColumn(name = "F_TODO_ID"),
+	inverseJoinColumns = @JoinColumn(name = "F_ATTACHMENT_ID"))
+	public List<Attachment> getAttachments() {
+		return attachments;
+	}
+
+	public void setAttachments(List<Attachment> attachments) {
+		this.attachments = attachments;
+	}
+
+
 }

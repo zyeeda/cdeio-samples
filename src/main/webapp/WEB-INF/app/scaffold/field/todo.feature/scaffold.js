@@ -17,6 +17,7 @@ exports.labels = {
     startDate: '开始时间',
     endDate: '结束时间',
     attach: '附件',
+    attachments: '多附件',
     users: '执行者',
     tag: '任务类型',
     project: '项目',
@@ -34,15 +35,13 @@ exports.fieldGroups = {
                 {id: '一般', text: '一般'}
             ]
         },
-        {name: 'attach', type: 'file-picker',
-        url: 'invoke/system/upload',
-        acceptFileTypes: "(\\.|\\/)(swf|mp4|avi|wmv|doc|docx|xls|xlsx|ppt|pptx|zip|rar|7z|pdf|txt|jpg|jpeg|png|gif)$"
+        {name: 'attach', type: 'file-picker', url: 'invoke/system/upload',
+            acceptFileTypes: "(\\.|\\/)(swf|mp4|avi|wmv|doc|docx|xls|xlsx|ppt|pptx|zip|rar|7z|pdf|txt|jpg|jpeg|png|gif)$"
+        }, 'tag', 'project',
+        {name: 'attachments', type: 'file-picker', url: 'invoke/system/upload', multiple: true, colspan: 2,
+            acceptFileTypes: "(\\.|\\/)(swf|mp4|avi|wmv|doc|docx|xls|xlsx|ppt|pptx|zip|rar|7z|pdf|txt|jpg|jpeg|png|gif)$"
         },
-        'tag', 'project',
-        {name: 'description',
-         type: 'textarea',
-         colspan: 2
-        }
+        {name: 'description', type: 'textarea', colspan: 2}
     ],
     inLineUserGrid: [{
         label: '任务分配',

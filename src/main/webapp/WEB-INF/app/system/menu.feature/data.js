@@ -47,8 +47,8 @@ exports.results = [
 	{id: "100001006", name: "hooks", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
 	{id: "100001006001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/hooks/scaffold:todo", parent: {id: "100001006", name: "hooks"}},
 
-	{id: "100001007", name: "validations", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
-	{id: "100001007001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/validators/scaffold:user", parent: {id: "100001007", name: "validations"}},
+	{id: "100001007", name: "validators", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
+	{id: "100001007001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/validators/scaffold:user", parent: {id: "100001007", name: "validators"}},
 
 	{id: "100001007", name: "其它", iconClass: "icon-lock", path: "#/", parent: {id: "100"}},
 	{id: "100001007001", name: "动态Feature", iconClass: "icon-lock", path: "#/", parent: {id: "100001007"}},

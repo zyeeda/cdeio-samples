@@ -1,6 +1,6 @@
 exports.filters = {
     defaults: {
-        '!fieldUserFilter': ''
+        '!fieldUserFilter': 'todos'
     }
 };
 

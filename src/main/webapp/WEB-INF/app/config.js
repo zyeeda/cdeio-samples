@@ -13,6 +13,8 @@ exports.coala = {
         'com.zyeeda.coala.example.scaffold.field.entity',
         'com.zyeeda.coala.example.scaffold.form.entity',
         'com.zyeeda.coala.example.scaffold.grid.entity',
+        'com.zyeeda.coala.example.scaffold.hooks.entity',
+        'com.zyeeda.coala.example.scaffold.validators.entity',
         'com.zyeeda.coala.example.extension.ui.form.entity',
         'com.zyeeda.coala.example.extension.service.entity',
         'com.zyeeda.coala.example.tenant.entity',
