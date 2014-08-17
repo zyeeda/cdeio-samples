@@ -68,9 +68,6 @@ exports.docs = {
         ]
     },
     'extension/service/basic': {
-        java: 'com/zyeeda/coala/example/extension/service/entity/Person.java'
-    },
-    'extension/service/advance': {
         java: 'com/zyeeda/coala/example/extension/service/entity/Person.java',
         webinf: [
             {name: '自定义router ', path: 'extension/diyrouter.feature/router.js'},

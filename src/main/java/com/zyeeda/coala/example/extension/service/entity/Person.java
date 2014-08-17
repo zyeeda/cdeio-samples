@@ -19,13 +19,13 @@ import com.zyeeda.coala.commons.base.entity.DomainEntity;
 import com.zyeeda.coala.validation.constraint.NullableSize;
 
 /**
- * 扩展->服务->基础(高级)实体.
+ * 扩展->服务->基础 实体.
  * @author shupeipei
  *
  */
 @Entity
 @Table(name = "ZES_PERSON")
-@Scaffold({"/extension/service/basic", "/extension/service/advance"})
+@Scaffold("/extension/service/basic")
 public class Person extends DomainEntity {
 
     private static final long serialVersionUID = 6268558824849242217L;
