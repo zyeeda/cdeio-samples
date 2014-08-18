@@ -1,31 +1,28 @@
-exports.enableFrontendExtension = true;
-
 exports.filters = {
     defaults: {
-        '!basicButtonFilter': ''   
+        '!operateButtonFilter': ''
     }
 };
 
-//form页面标题(新增/编辑***)
-exports.entityLabel = '待办事项';
-
 exports.labels = {
-    name: '事项',
-    completed: '状态'
+    name: '名称',
+    description: '描述'
 };
 
 exports.fieldGroups = {
-    defaults: ['name', {name: 'completed', type: 'dropdown', defaultValue: 'false', source: [{id: false, text: '待办'}, {id: true, text: '已办'}]}]
+    defaults: ['name', 'description']
 };
 
-exports.grid = {
-    columns: ['name', {name: 'completed', renderer: 'modifyCompleted'}]
-};
-
-//设置form页面
-exports.forms = {
-    defaults: {
-        groups: [{name: 'defaults'}],
-        size: 'normal'
-    }
+//设置操作按钮的显示
+exports.operators = {
+    //默认按钮
+    add: {label: '添加', group: '10-add', style: 'btn-success', show: 'always'},
+    show: {label: '查看', group: '20-selected', style: 'btn-grey', show: 'single-selected'},
+    edit: {label: '编辑', group: '20-selected', style: 'btn-primary', show: 'single-selected'},
+    refresh: {label: '刷新', group: '30-refresh', style: 'btn-purple', show: 'always'},
+    del: false,
+    //又一个分组的按钮
+    buttonOne: {label: '按钮一', icon: 'icon-comment-alt', group: '40-other', style: 'btn-yellow', show: 'always', order: 300},
+    buttonTwo: {label: '按钮二', icon: 'icon-comment', group: '40-other', style: 'btn-grey', show: 'single-selected', order: 200},
+    buttonThree: {label: '按钮三', icon: 'icon-comments', group: '40-other', style: 'btn-light', order: 100}
 };

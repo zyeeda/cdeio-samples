@@ -10,15 +10,15 @@ import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
 /**
- * 自动生成——操作按钮——高级配置
+ * 自动生成——操作按钮
  *
  * $Autuor$
  */
 
 @Entity
-@Table(name = "ZED_ADVANCED_BUTTON")
-@Scaffold("/scaffold/button/advanced")
-public class AdvancedButton extends DomainEntity{
+@Table(name = "ZED_OPERATE_BUTTON")
+@Scaffold("/scaffold/button/basic")
+public class OperateButton extends DomainEntity{
 
 	/**
 	 * 序列化
@@ -26,14 +26,14 @@ public class AdvancedButton extends DomainEntity{
 	private static final long serialVersionUID = -9131527242940537619L;
 	
 	/**
-	 * 待办事项
+	 * 名称
 	 */
 	private String name;
 	
 	/**
-	 * 状态(1:未完成；2:进行中；3:已完成)
+	 * 描述
 	 */
-	private String status;
+	private String description;
 
 	@NotBlank
 	@Column(name = "F_NAME")
@@ -46,13 +46,13 @@ public class AdvancedButton extends DomainEntity{
 	}
 
 	@NotBlank
-	@Column(name = "F_STATUS")
-	public String getStatus() {
-		return status;
+	@Column(name = "F_DESCRIPTION")
+	public String getDescription() {
+		return description;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
+	
 }
