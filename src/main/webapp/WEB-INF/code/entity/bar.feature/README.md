@@ -1,106 +1,117 @@
-### Bean Validator
+#Bean Validator
 
-#### ——Hibernate验证注解
+##1. 非空
 
-****
+标记：`@NotNull`
 
-1. ##### 标题：@NotNull
-    
-   ##### 注解：`@NotNull`
+适用类型：所有类型
 
-   ##### 适用类型：所有类型
+描述：验证一个字段的值不能为空或空字符串
 
-   ##### 说明：验证一个字段的值不能为空或空字符串
+```java
+@NotNull
+@Column(name = "F_AGE")
+public Integer getAge() {
+	return age;
+}
+```
 
-		@NotNull
-		@Column(name = "F_AGE")
-		public Integer getAge() {
-			return age;
-		}
+##2. 非空(字符串)
 
-2. ##### 标题：@NotBlank
-    
-   ##### 注解：`@NotBlank`
+标记：`@NotBlank`
 
-   ##### 适用类型：String
+适用类型：String
 
-   ##### 说明：验证一个 String 类型字段的值不能为空或空字符串
+描述：验证一个 String 类型字段的值不能为空或空字符串
 
-		@NotBlank
-		@Column(name = "F_MOBILE")
-		public String getMobile() {
-			return mobile;
-		}
+```java
+@NotBlank
+@Column(name = "F_MOBILE")
+public String getMobile() {
+	return mobile;
+}
+```
 
-3. ##### 标题：@NullableSize
+##3. 电子邮件
 
-   ##### 注解：`@NullableSize`
+标记：`@Email`
 
-   ##### 适用类型：String
+适用类型：String
 
-   ##### 说明：验证一个 String 类型字段的长度是否在 min ~ max 的区间内
+描述：验证一个 String 类型字段的值是否是一个有效的Email地址
 
-		@NotBlank
-		@NullableSize(min = 2, max = 200)
-		@Column(name = "F_ADDRESS")
-		public String getAddress() {
-			return address;
-		}
+```java
+@NotNull
+@Email
+@Column(name = "F_EMAIL")
+public String getEmail() {
+	return email;
+}
+```
 
-4. ##### 标题：@Email
+##4. 范围(字符串)
 
-   ##### 注解：`@Email`
+标记：`@NullableSize`
 
-   ##### 适用类型：String
+适用类型：String
 
-   ##### 说明：验证一个 String 类型字段的值是否是一个有效的Email地址
+描述：验证一个 String 类型字段的长度是否在 min ~ max 的区间内
 
-		@NotNull
-	    @Email
-	    @Column(name = "F_EMAIL")
-		public String getEmail() {
-			return email;
-		}
+```java
+@NotBlank
+@NullableSize(min = 2, max = 200)
+@Column(name = "F_ADDRESS")
+public String getAddress() {
+	return address;
+}
+```
 
-5. ##### 标题: @Range
-   
-   ##### 注解：`@Range`
+##5. 范围(数字)
 
-   ##### 适用类型：Long、Integer、Double、BigDecimal
+标记：`@Range`
 
-   ##### 说明：验证一个数字类型字段的值是否在 min ~ max 的区间内
+适用类型：Long、Integer、Double、BigDecimal
 
-		@NotNull
-		@Range(min = 1, max = 100)
-		@Column(name = "F_AGE")
-		public Integer getAge() {
-			return age;
-		}
+描述：验证一个数字类型字段的值是否在 min ~ max 的区间内
 
-6. ##### 标题：@Min
+```java
+@NotNull
+@Range(min = 1, max = 100)
+@Column(name = "F_AGE")
+public Integer getAge() {
+	return age;
+}
+```
 
-   ##### 注解：`@Min`
+##6. 最小值
 
-   ##### 适用类型：Long、Integer、Double、BigDecimal
+标记：`@Min`
 
-   ##### 说明：验证一个数字类型字段的值必须不小于指定值
+适用类型：Long、Integer、Double、BigDecimal
 
-		@Min(value = 5)
-		@Column(name = "F_QQ")
-		public Integer getQq(){
-			return qq;
-		}
- 
-7. ##### 标题：@Max
-  
-   ##### 注解：`@Max`
+描述：验证一个数字类型字段的值必须不小于指定值
 
-   ##### 适用类型：Long、Integer、Double、BigDecimal
+```java
+@Min(value = 5)
+@Column(name = "F_QQ")
+public Integer getQq(){
+	return qq;
+}
+```
 
-   ##### 说明：验证一个数字类型字段的值必须不大于指定值
+##7. 最大值
 
-		@Max(value = 11)
-		@Column(name = "F_QQ")
-		public Integer getQq(){
-			return qq;
-		}
+标记：`@Max`
+
+适用类型：Long、Integer、Double、BigDecimal
+
+描述：验证一个数字类型字段的值必须不大于指定值
+
+
+```java
+@Max(value = 11)
+@Column(name = "F_QQ")
+public Integer getQq(){
+	return qq;
+}
+```
