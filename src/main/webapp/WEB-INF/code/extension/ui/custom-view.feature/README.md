@@ -1,89 +1,38 @@
-##自定义视图
+#自定义视图
+##目的：如何自定义自己想要的视图
+
+###步骤一:
 **自定义视图路径的写法:例如#feature/extension/ui/form**
-###1.  layout里面定义
-####步骤一:
-在前台新建`feature.js`文件
-```javascript
-define(['jquery', 'underscore'], function($, _) {
-    return {
-        layout: {
-            regions: {main: 'main'}
-        },
-        views: [{
-            name: 'main', region: 'main'
-        }]
-    };
-})
-```
-####步骤二:
-在前台新建`templates.html`文件,在`{{#layout}}{{/layout}}`里面编辑html代码
-####步骤三:
-在前台新建`views`文件夹,在`views`文件夹中新建布局文件，文件名跟`templates.html`文件中`{{#layout}}{{/layout}}`里面定义`id`名一致
 
+###步骤二:
+**前台`feature.js`文件的说明**
 
-###2. view里面定义
-####步骤一:
-```javascript
-define(['jquery', 'underscore'], function($, _) {
-    return {
-        layout: {
-            regions: {
-                customView: 'custom-view',
-            }
-        },
-        views: [{
-            name: 'inline:custom-view',
-            region: 'customView',
-            model: 'extension/ui/router',
-            events: {
-                'click submitBtn': 'submitBtn'
-            },
-            extend: {
-                serializeData: function(_super) {
-                    var deferred = $.Deferred(),
-                        m = this.model,
-                        data = _super.apply(this),
-                        routerResults = [];
+在`feature.js`文件中配置页面的`layout`布局和`views`视图
 
-                    m.fetch().done(function() {
-                        results = m.toJSON().results;
-
-                        $.each(results, function (i, v){
-                            v.index = i + 1;
-                            routerResults.push(v);
-                        });
-                        data.routers = routerResults;
-                        deferred.resolve(data);
-                    });
-                    return deferred.promise();
-                }
-            }
-        }]
-    };
-});
-```
-####详细说明:
-
+`views`视图详细说明：
 1. `model`:  模型，更多详情介绍，请参考`Backbone官网`http://backbonejs.org/
 
-2. `events` :  页面事件,如果没有事件添加属性`avoidLoadingHandlers: true`就可以了
+2. `events` :  页面事件，更多详情介绍，请参考`Backbone官网`http://backbonejs.org/ ，如果没有事件添加属性`avoidLoadingHandlers: true`就可以了
 
-3. `extend`:  处理页面需要的数据的处理
+3. `extend`:  处理页面需要的数据的处理，处理数据需要的帮助类请参考`Underscore官网`http://documentcloud.github.io/underscore/
 
-####步骤二:
-在前台新建`templates.html`文件,在`{{#view "custom-view"}}{{/view}}`里面编辑html代码,其中`custom-view`要和`feature.js`文件中定义的`view`一致
-####步骤三:
-如果有点击事件,新建hanglers文件夹,新建文件跟`views`上的`name`一致,文件中方法名跟如下第三个参数一致
-```javascript
-//feature.js文件中
-events: {
-    'click submitBtn': 'submitBtn'
-}
-```
-####详细说明:
+更多`layout`布局和`views`视图的详情介绍，请参考`MarionetteJS官网`http://marionettejs.com/
 
-1. 第一个参数:  事件类型，例如单击、双击等等
+###步骤三:
+**前台`templates.html`文件的说明**
 
-2. 第一个参数 :  事件id,`templates.html`文件中的事件id一致
+1.开发人员可以根据`feature.js`文件中的配置来决定在`{{#layout}}{{/layout}}`或`{{#view xxx}}{{/view}}`里面编辑html代码
 
-3. 第三个参数:  事件名称
+2.页面需要渲染的数据在`feature.js`文件中`extend`处理
+
+3.页面的模板标记是`handlebarsjs`框架的模板标记，更多模板标记详情请参考`handlebarsjs官网`http://handlebarsjs.com/
+
+###步骤四:
+**页面事件的处理**
+
+所有事件的处理都在`handlers`文件夹中根据视图名称建立相应的文件来处理，
+
+
+
+
+
