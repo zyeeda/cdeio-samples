@@ -1,47 +1,43 @@
-package com.zyeeda.coala.example.scaffold.basic.entity;
+package com.zyeeda.coala.example.scaffold.grid.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
 
 import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "ZED_TAG")
-@Scaffold("/scaffold/basic/tag")
-public class Tag extends DomainEntity {
+@Table(name = "CDE_GRID_TODO")
+@Scaffold("/scaffold/grid/todo")
+public class GridTodo extends DomainEntity {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4148324734250369105L;
-
-	private String name = null;
-
-	private String desc = null;
-
+	private static final long serialVersionUID = 5666868342090908642L;
 	
-	@Column(name = "F_NAME",length = 30)
-	@NotNull
+	private String name;
+	
+	private String desc;
+
+	@Column(name = "F_NAME")
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	@Column(name = "F_DESC",length = 260)
+	@Column(name = "F_DESC")
 	public String getDesc() {
 		return desc;
 	}
-	
+
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
 	
+
 }

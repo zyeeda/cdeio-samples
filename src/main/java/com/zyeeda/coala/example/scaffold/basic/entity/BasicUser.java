@@ -74,7 +74,7 @@ public class BasicUser extends DomainEntity {
 		this.email = email;
 	}
 	
-	@OneToMany(mappedBy = "user")
+	@OneToMany(mappedBy = "basicUser")
 	public List<Todo> getTodos() {
 		return todos;
 	}

@@ -17,8 +17,10 @@ exports.results = [
 	{id: "100001001003", name: "标签", iconClass: "green icon-key", path: "#feature/scaffold/basic/scaffold:tag", parent: {id: "100001001", name: "基础"}},
 
 	{id: "100001002", name: "列表", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
-	{id: "100001002001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002", name: "列表"}},
-	{id: "100001002002", name: "高级配置", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002", name: "列表"}},
+	{id: "100001002001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:todo", parent: {id: "100001002", name: "列表"}},
+	{id: "100001002002", name: "高级配置", iconClass: "green icon-key", path: "#/", parent: {id: "100001002", name: "列表"}},
+	{id: "100001002002001", name: "filter", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002002", name: "高级配置"}},
+	{id: "100001002002002", name: "查询条件", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002002", name: "高级配置"}},
 
 	{id: "100001003", name: "树", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
 	{id: "100001003001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/tree/scaffold:basic", parent: {id: "100001003", name: "树"}},

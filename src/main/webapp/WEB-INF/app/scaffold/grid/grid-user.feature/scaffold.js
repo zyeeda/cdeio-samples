@@ -1,6 +1,6 @@
 exports.filters = {
     defaults: {
-        '!gridUserFilter': ''   
+        '!gridUserFilter': ''
     }
 };
 
@@ -17,8 +17,8 @@ exports.fieldGroups = {
 
 exports.grid = {
     columns: [
-        {name: 'name', filter: 'text', header: '名字' }, 
-        {name:'code', filter: 'number-range'}, 
-        {name: 'birthday', filter: 'date-range', header: '生日'}, 
+        {name: 'name', filter: 'text', header: '名字' },
+        {name:'code', filter: 'number-range'},
+        {name: 'birthday', filter: 'date-range', header: '生日'},
         {name:'email', filter: 'text'}]
 };

@@ -1,7 +1,7 @@
 exports.haveFilter = true;
 exports.filters = {
     defaults: {
-        '!seniorGridUserFilter': ''  
+        '!seniorGridUserFilter': ''
     }
 };
 
@@ -15,8 +15,8 @@ exports.labels = {
 exports.fieldGroups = {
     defaults: ['name', 'code', 'birthday', 'email'],
     filter: [
-        {name: 'name', type:'text'}, 
-        {name: 'code', type: 'text'}, 
+        {name: 'name', type:'text'},
+        {name: 'code', type: 'number-range'},
         {name: 'birthday', type: 'date-range'}]
 };
 

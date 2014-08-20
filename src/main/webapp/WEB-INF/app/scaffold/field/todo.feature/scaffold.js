@@ -15,9 +15,7 @@ exports.labels = {
     description: '描述',
     level: '优先级',
     startDate: '开始时间',
-    endDate: '结束时间',
     attach: '附件',
-    attachments: '多附件',
     users: '执行者',
     tag: '任务类型',
     project: '项目',
@@ -36,11 +34,8 @@ exports.fieldGroups = {
             ]
         },
         {name: 'attach', type: 'file-picker', url: 'invoke/system/upload',
-            acceptFileTypes: "(\\.|\\/)(swf|mp4|avi|wmv|doc|docx|xls|xlsx|ppt|pptx|zip|rar|7z|pdf|txt|jpg|jpeg|png|gif)$"
+            acceptFileTypes: "(\\.|\\/)(doc|xls|ppt|)$"
         }, 'tag', 'project',
-        {name: 'attachments', type: 'file-picker', url: 'invoke/system/upload', multiple: true, colspan: 2,
-            acceptFileTypes: "(\\.|\\/)(swf|mp4|avi|wmv|doc|docx|xls|xlsx|ppt|pptx|zip|rar|7z|pdf|txt|jpg|jpeg|png|gif)$"
-        },
         {name: 'description', type: 'textarea', colspan: 2}
     ],
     inLineUserGrid: [{
@@ -50,7 +45,7 @@ exports.fieldGroups = {
         colspan: 2,
         allowAdd: false,
         multiple: true,
-        crossPage: true,
+        crossPage: false,
         allowPick: true
     }]
 };

@@ -9,8 +9,8 @@ exports.entityLabel = '用户';
 exports.labels = {
     name: '姓名',
     account: '用户名',
-    password: '密码1',
-    password2: '密码2',
+    password: '密码',
+    password2: '确认密码',
     email: '邮箱',
     url: '博客',
     workyear: '工作年限',
