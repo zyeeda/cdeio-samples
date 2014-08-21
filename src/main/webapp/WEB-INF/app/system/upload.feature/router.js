@@ -22,7 +22,7 @@ router.get('/:id', mark('services', 'system/upload').on(function(uploadSvc, requ
         return notFound('附件不存在');
     }
     filepath = join(getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
-    res = response["static"](filepath, attachment.contentType);
+    res = response.static(filepath, attachment.contentType);
     filename = new String(new String(attachment.filename).bytes, 'ISO8859-1');
     res.headers['Content-Disposition'] = 'attachment;filename=' + filename;
     // res.headers['Content-Disposition'] = 'inline;filename=' + filename;
@@ -30,5 +30,5 @@ router.get('/:id', mark('services', 'system/upload').on(function(uploadSvc, requ
 }));
 
 router.get('/down-export-file/:filename', function(request, filename) {
-    return response["static"](join(getOptionInProperties('coala.upload.path'), 'export', URLDecoder.decode(filename, 'utf-8')), 'application/vnd.ms-excel');
+    return response.static(join(getOptionInProperties('coala.upload.path'), 'export', URLDecoder.decode(filename, 'utf-8')), 'application/vnd.ms-excel');
 });

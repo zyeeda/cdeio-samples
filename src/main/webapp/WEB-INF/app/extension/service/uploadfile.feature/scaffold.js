@@ -29,14 +29,14 @@ exports.labels = {
     attachment: '附件'
 };
 
-// 设置form页面布局方式
+// 配置form页面布局方式
 exports.forms = {
 	defaults: {
 		groups: [{name: 'defaults', columns: 2}]
 	}
 };
 
-// form页面显示内容及方式配置
+// 字段分组配置
 exports.fieldGroups = {
     defaults: [
         'name', 'code',
@@ -49,10 +49,7 @@ exports.fieldGroups = {
 exports.grid = {
 	columns: [
 	    'name', 'code'
-    ],
-    filterToolbar: true,
-    fixedHeader: true,
-    numberColumn: true
+    ]
 };
 
 exports.doWithRouter = function(router) {
@@ -69,17 +66,20 @@ exports.doWithRouter = function(router) {
             return notFound('附件不存在');
         }
 
-        /**
-            join 方法：将传入的参数拼接成路径，并自动处理多余或缺少的分隔符
-            附件绝对路径 = 存储路径前缀 + 相对存储路径
-            coala.getOptionInProperties 能拿到的配置位于 src/main/resources/settings/coala.properties
+        /*
+         * join 方法：将传入的参数拼接成路径，并自动处理多余或缺少的分隔符
+         * 附件绝对路径 = 存储路径前缀 + 相对存储路径
+         * coala.getOptionInProperties 能拿到的配置位于 src/main/resources/settings/coala.properties
          */
         filepath = join(coala.getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
 
         // 此处使用的是 ringo/jsgi/response 的 api
         res = respons.static(filepath, attachment.contentType);
 
+        // 处理文件名乱码问题
         filename = new String(new String(attachment.filename).bytes, 'ISO8859-1');
+
+        // 按上传时的文件名输出文件
         res.headers['Content-Disposition'] = 'attachment;filename=' + filename;
 
         // 使用以下方式时如果下载的是浏览器能打开的文件时会自动在浏览器中打开

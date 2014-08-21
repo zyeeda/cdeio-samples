@@ -10,7 +10,7 @@ var String = java.lang.String;
 
 exports.enableFrontendExtension = true;
 
-//过滤器
+// 过滤器
 exports.filters = {
     defaults: {
         '!dataFileFilter': '',
@@ -18,10 +18,10 @@ exports.filters = {
     }
 };
 
-//form页面标题(新增/编辑***)
+// form页面标题(新增/编辑***)
 exports.entityLabel = '资料文件';
 
-//实体每个属性与字段对应显示标签(列表与form页面使用)
+// 实体每个属性与字段对应显示标签(列表与form页面使用)
 exports.labels = {
 	name: '文件名称',
 	code: '文件编号',
@@ -29,14 +29,14 @@ exports.labels = {
     attachment: '附件'
 };
 
-//设置form页面一行显示2列
+// 配置form页面布局方式
 exports.forms = {
 	defaults: {
 		groups: [{name: 'defaults', columns: 2}]
 	}
 };
 
-//form页面显示内容及方式配置
+// 字段分组配置
 exports.fieldGroups = {
     defaults: [
     	'name', 'code',
@@ -45,14 +45,11 @@ exports.fieldGroups = {
     ]
 };
 
-//列表显示字段
+// 列表相关功能配置
 exports.grid = {
 	columns: [
 	    'name', 'code'
-    ],
-    filterToolbar: true,
-    fixedHeader: true,
-    numberColumn: true
+    ]
 };
 
 exports.operators = {
