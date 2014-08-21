@@ -1,26 +1,24 @@
-var {mark}          = require('coala/mark');
-
-var {Person} = com.zyeeda.coala.example.extension.service.entity;
+var {mark}  = require('coala/mark');
+var manager = require('coala/manager');
 
 exports.createManager = function(){
-    return {
-        getManager: mark('managers', Person).on(function (personMgr, id) {
-            var sql,
-                query, person;
+    var personMgr,
+        sql,
+        query, person;
 
-            sql = 'from Person p where p.id = :id';
+    sql = 'from Person p where p.id = :id';
 
-            personMgr.mixin({
-                getPersonById: function(em){
-                    query = em.createQuery(sql);
-                    query.setParameter('id', id);
+    personMgr = manager.createManager();
+    personMgr.mixin({
+        getPersonById: function(em, id){
+            query = em.createQuery(sql);
+            query.setParameter('id', id);
 
-                    person = query.getSingleResult();
+            person = query.getSingleResult();
 
-                    return person;
-                }
-            });
-            return personMgr;
-        })
-    };
+            return person;
+        }
+    });
+
+    return personMgr;
 };

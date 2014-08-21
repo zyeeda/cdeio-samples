@@ -39,9 +39,9 @@ exports.forms = {
 // form页面显示内容及方式配置
 exports.fieldGroups = {
     defaults: [
-    	'name', 'code',
+        'name', 'code',
         {name: 'summary', type: 'textarea'},
-        {name: 'attachment', type: 'file-picker', url: 'invoke/scaffold/extension/service/uploadfile/upload', acceptFileTypes: "(\\.|\\/)(swf|mp4|avi|wmv|doc|docx|xls|xlsx|ppt|pptx|zip|rar|7z|pdf|txt|jpg|jpeg|png|gif)$"}
+        {name: 'attachment', type: 'file-picker', url: 'invoke/scaffold/extension/service/uploadfile/upload', acceptFileTypes: "(\\.|\\/)(doc|xls|ppt|txt)$"}
     ]
 };
 
@@ -77,7 +77,7 @@ exports.doWithRouter = function(router) {
         filepath = join(coala.getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
 
         // 此处使用的是 ringo/jsgi/response 的 api
-        res = response["static"](filepath, attachment.contentType);
+        res = respons.static(filepath, attachment.contentType);
 
         filename = new String(new String(attachment.filename).bytes, 'ISO8859-1');
         res.headers['Content-Disposition'] = 'attachment;filename=' + filename;

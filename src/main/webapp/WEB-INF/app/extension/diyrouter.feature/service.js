@@ -1,16 +1,13 @@
 var {mark}                    = require('coala/mark');
 var {createValidationContext} = require('coala/validation/validation-context');
 
-var {Person} = com.zyeeda.coala.example.extension.service.entity;
-
 exports.createService = function() {
     return {
         changePassword: mark('managers', 'extension/diyrouter').mark('tx').on(function (manager, data, id) {
-            var person, personMgr,
+            var person,
                 context;
 
-            personMgr = manager.getManager(id);
-            person = personMgr.getPersonById();
+            person = manager.getPersonById(id);
             context = createValidationContext();
 
             if (data.oldPassword !== person.password) {
@@ -22,7 +19,7 @@ exports.createService = function() {
             }
 
             person.password = data.newPassword;
-            return personMgr.merge(person);
+            return manager.merge(person);
         })
     };
 };

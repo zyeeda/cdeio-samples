@@ -94,14 +94,13 @@ exports.results = [
 	{id: "300007004", name: "错误边界事件", iconClass: "icon-lock", path: "#/", parent: {id: "300007"}},
 
 	{id: "400", name: "扩展", iconClass: "icon-lock", path: "#/"},
-	{id: "400001", name: "服务", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
+	{id: "400001", name: "后台", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
 
-	{id: "400001001", name: "基础", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:basic", parent: {id: "400001", name: "服务"}},
-	{id: "400001002", name: "基础", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:advance", parent: {id: "400001", name: "服务"}},
-	{id: "400001003", name: "文件下载", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:downloadfile", parent: {id: "400001", name: "服务"}},
-	{id: "400001004", name: "文件上传", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:uploadfile", parent: {id: "400001", name: "服务"}},
-	{id: "400001005", name: "SQL查询", iconClass: "icon-lock", path: "#/", parent: {id: "400001", name: "服务"}},
-	{id: "400001006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "400001", name: "服务"}},
+	{id: "400001001", name: "基础", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:basic", parent: {id: "400001", name: "后台"}},
+	{id: "400001003", name: "文件下载", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:downloadfile", parent: {id: "400001", name: "后台"}},
+	{id: "400001004", name: "文件上传", iconClass: "green icon-key", path: "#feature/extension/service/scaffold:uploadfile", parent: {id: "400001", name: "后台"}},
+	{id: "400001005", name: "SQL查询", iconClass: "icon-lock", path: "#/", parent: {id: "400001", name: "后台"}},
+	{id: "400001006", name: "全文检索", iconClass: "icon-lock", path: "#/", parent: {id: "400001", name: "后台"}},
 
 	{id: "400002", name: "界面", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
 	{id: "400002001", name: "基础", iconClass: "green icon-key", path: "#feature/extension/ui/scaffold:basic", parent: {id: "400002"}},

@@ -71,8 +71,8 @@ exports.docs = {
         java: 'com/zyeeda/coala/example/extension/service/entity/Person.java',
         webinf: [
             {name: '自定义router ', path: 'extension/diyrouter.feature/router.js'},
-            {name: '相关其它service', path: 'extension/diyrouter.feature/service.js'},
-            {name: '相关其它manager', path: 'extension/diyrouter.feature/manager.js'},
+            {name: '自定义service', path: 'extension/diyrouter.feature/service.js'},
+            {name: '自定义manager', path: 'extension/diyrouter.feature/manager.js'},
         ]
     },
     'extension/service/downloadfile': {

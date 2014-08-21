@@ -13,7 +13,7 @@ define([
                 selected = grid.getSelected();
                 view = me.feature.views['form:changePassword'];
 
-                /**
+                /*
                  * 清空表单数据
                  * 也可用 view.setFormData({});
                  */
@@ -36,9 +36,9 @@ define([
                                     success: function(result) {
                                         app.success('密码修改成功');
 
-                                        /**
-                                            在返回数据中包含 violations (未验证通过) 时保持窗口不被关闭
-                                            在返回数据中不包含 violations (未验证通过) 时窗口自动关闭
+                                        /*
+                                         * 在返回数据中包含 violations (未验证通过) 时保持窗口不被关闭
+                                         * 在返回数据中不包含 violations (未验证通过) 时窗口自动关闭
                                          */
                                         app._modalDialog.modal.modal('hide');
                                     }

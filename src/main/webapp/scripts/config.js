@@ -14,7 +14,7 @@ define({
     ],
 
     urlPrefix: function(app, path) {
-        if ('/about' === path || '/extension/diyrouter' === path) {
+        if ('/about' === path) {
             return 'invoke' + path;
         }
         return 'invoke/scaffold/' + path;
