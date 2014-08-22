@@ -7,12 +7,25 @@ define([
             '': 'showHome',
             'profile': 'showProfile',
             'feature/*name': 'showMenu',
+            'report/*name': 'showReport',
             'code/*name': 'showCode'
         },
 
 		showMenu: function(name) {
             this._showFeature(name);
 		},
+
+        showReport: function(name){
+            var reportParamsFeature;
+
+            reportParamsFeature = app.loadFeature('commons/report-params', {container: '<div></div>', ignoreExists: true});
+
+            reportParamsFeature.done(function (reportfeature) {
+                app.startFeature('coala:report', {report: name});
+            });
+
+            this._activateMenu(location.hash);
+        },
 
         showHome: function() {
             me = this;

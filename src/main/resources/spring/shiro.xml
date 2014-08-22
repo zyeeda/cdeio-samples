@@ -42,6 +42,7 @@
                 <entry key="check" value-ref="checkFilter" />
                 <entry key="index" value-ref="indexFilter" />
                 <entry key="open" value-ref="openEntityManagerFilter" />
+                <entry key="proxy" value-ref="proxyFilter" />
             </util:map>
         </property>
         <property name="filterChainDefinitions">
@@ -59,6 +60,18 @@
 
                 / = check, index
                 /invoke/** = check, open
+
+                <!-- report url need proxy -->
+                /frameset/** = proxy
+                /run/** = proxy
+                /preview/** = proxy
+                /download/** = proxy
+                /parameter/** = proxy
+                /document/** = proxy
+                /output/** = proxy
+                /extract/** = proxy
+
+                /webcontent/birt/** = proxy
             </value>
         </property>
     </bean>
@@ -73,7 +86,7 @@
         <constructor-arg ref="ldapTemplate" />
     </bean>
     -->
-    
+
     <!--
     <bean id="realm" class="com.zyeeda.sso.openid.provider.realm.JpaRealm"
         p:credentialsMatcher-ref="passwordMatcher" />
@@ -83,7 +96,7 @@
      | User mock realm for test only.
      | When username and password match, the authentication succeeds.
      -->
-    
+
     <bean id="realm" class="com.zyeeda.sso.openid.provider.realm.MockRealm"
         p:credentialsMatcher-ref="passwordMatcher" />
 
@@ -130,4 +143,6 @@
 
     <bean id="openEntityManagerFilter" class="org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter" />
 
+    <bean id="proxyFilter" class="com.zyeeda.proxy.filter.ProxyFilter"
+        p:proxyUrl="${coala.birt.proxy.url}" p:reverseCookie="${coala.birt.reverse.cookie}" />
 </beans>

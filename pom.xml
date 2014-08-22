@@ -29,6 +29,7 @@ $License$
         <coala.framework.version>2.0.0-SNAPSHOT</coala.framework.version>
         <jetty.config>${project.build.outputDirectory}/META-INF/jetty</jetty.config>
         <argLine>-Dfile.encoding=UTF-8</argLine>
+        <coala.version>2.0.0-SNAPSHOT</coala.version>
     </properties>
 
     <!--
@@ -56,6 +57,12 @@ $License$
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-search</artifactId>
             <version>4.1.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zyeeda</groupId>
+            <artifactId>zyeeda-coala-proxy</artifactId>
+            <version>${coala.version}</version>
         </dependency>
     </dependencies>
 
