@@ -43,14 +43,14 @@ public class CallBack extends DomainEntity{
 	private Router router;
 	
 	/**
-	 * 关联基础
-	 */
-	private List<UiBasic> uiBasics = new ArrayList<UiBasic>();
-	
-	/**
 	 * 明细类别
 	 */
 	private String detailType;
+	
+	/**
+	 * 关联line-grid
+	 */
+	private List<CallBackInlineGrid> inlineGrid = new ArrayList<CallBackInlineGrid>();
 	
 	@Column(name = "F_NAME", length = 100)
 	public String getName() {
@@ -80,15 +80,6 @@ public class CallBack extends DomainEntity{
 		this.router = router;
 	}
 	
-	@OneToMany(mappedBy = "callBack")
-	public List<UiBasic> getUiBasics() {
-		return uiBasics;
-	}
-
-	public void setUiBasics(List<UiBasic> uiBasics) {
-		this.uiBasics = uiBasics;
-	}
-	
 	@Column(name = "F_DETAIL_TYPE", length = 100)
 	public String getDetailType() {
 		return detailType;
@@ -96,5 +87,14 @@ public class CallBack extends DomainEntity{
 
 	public void setDetailType(String detailType) {
 		this.detailType = detailType;
+	}
+	
+	@OneToMany(mappedBy="callBack")
+	public List<CallBackInlineGrid> getInlineGrid() {
+		return inlineGrid;
+	}
+
+	public void setInlineGrid(List<CallBackInlineGrid> inlineGrid) {
+		this.inlineGrid = inlineGrid;
 	}
 }

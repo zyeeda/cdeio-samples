@@ -6,7 +6,7 @@ exports.filters = {
     defaults: {
         '!callBackFilter': [''],
         '!routerFilter': [''],
-        '!uiBasicFilter': ['callBack']
+        '!callBackInlineGirdFilter': ['callBack']
     },
     list: {
         'callBackFilter': ['id', 'name', 'type', 'detailType']
@@ -73,7 +73,7 @@ exports.fieldGroups = {
     inlineUiBasicGrid: [{
         label: '基础明细',
         type: 'inline-grid',
-        name: 'uiBasics',
+        name: 'inlineGrid',
         colspan: 2,
         allowAdd: true,
         allowEdit: true,

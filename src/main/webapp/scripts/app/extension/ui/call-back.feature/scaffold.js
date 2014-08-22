@@ -1,8 +1,7 @@
 define([
     'jquery',
-    'coala/core/loader-plugin-manager',
     'coala/core/util'
-], function ($, LoaderManager, util) {
+], function ($, util) {
     return {
         //在添加、编辑页面时，点击确定按钮之后调的方法
         afterCloseDialog: function(dialogType, v, data) {

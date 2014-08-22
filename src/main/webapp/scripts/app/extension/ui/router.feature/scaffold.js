@@ -1,7 +1,6 @@
 define([
-    'jquery',
-    'coala/core/loader-plugin-manager'
-], function ($, LoaderManager) {
+    'jquery'
+], function ($) {
     return {
         //打开增加、编辑、查看页面后调的方法
         afterShowDialog: function(dialogType, view, data){

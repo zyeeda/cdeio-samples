@@ -105,7 +105,7 @@ exports.results = [
 	{id: "400002", name: "界面", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
 	{id: "400002001", name: "基础", iconClass: "green icon-key", path: "#feature/extension/ui/scaffold:basic", parent: {id: "400002"}},
 	{id: "400002002", name: "路由", iconClass: "green icon-key", path: "#feature/extension/ui/scaffold:router", parent: {id: "400002"}},
-	{id: "400002003", name: "表单视图", iconClass: "green icon-key", path: "#feature/extension/ui/form", parent: {id: "400002"}},
+	/*{id: "400002003", name: "表单视图", iconClass: "green icon-key", path: "#feature/extension/ui/form", parent: {id: "400002"}},*/
 	{id: "400002004", name: "自定义表单视图", iconClass: "green icon-key", path: "#feature/extension/ui/scaffold:custom-form", parent: {id: "400002"}},
 	{id: "400002005", name: "自定义视图", iconClass: "green icon-key", path: "#feature/extension/ui/custom-view", parent: {id: "400002"}},
 	{id: "400002006", name: "回调", iconClass: "green icon-key", path: "#feature/extension/ui/scaffold:call-back", parent: {id: "400002"}},
