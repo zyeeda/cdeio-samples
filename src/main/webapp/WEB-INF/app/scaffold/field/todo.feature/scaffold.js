@@ -19,9 +19,6 @@ exports.labels = {
     users: '执行者',
     tag: '任务类型',
     project: '项目',
-    'tag.name': '任务类型',
-    'users.name': '执行者',
-    'project.name': '项目名称'
 };
 
 exports.fieldGroups = {
@@ -58,7 +55,7 @@ exports.forms = {
     defaults: {
         groups: [
             {name: 'defaults', columns: 2},
-            {name: 'inLineUserGrid', columns:2}           
+            {name: 'inLineUserGrid', columns:2}
         ]
     }
 };

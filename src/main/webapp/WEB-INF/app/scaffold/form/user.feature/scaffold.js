@@ -12,7 +12,7 @@ exports.labels = {
 };
 
 exports.fieldGroups = {
-    defaults: ['name', 
+    defaults: ['name',
        {name: 'sex',
         type: 'dropdown',
         defaultValue: '',
@@ -31,16 +31,5 @@ exports.grid = {
 exports.forms = {
     defaults: {
         groups: [{name: 'defaults', columns: 2}]
-    }
-};
-
-exports.picker = {
-    grid: {
-        columns: [
-            {name: 'name', header: '名称'}, 
-            {name: 'sex', header: '性别'}, 
-            {name: 'birthday', header: '生日'},
-            {name: 'email', header: '邮箱'}
-        ]
     }
 };

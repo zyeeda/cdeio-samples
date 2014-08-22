@@ -20,14 +20,13 @@ exports.labels = {
 
 exports.fieldGroups = {
     defaults: [
-        {name: 'name', required: true, validations: {rules: {required: true}}}, 
-        {name: 'account',required: true, validations: {rules: {required: true, rangelength: [6, 40]}, 
-            messages: {required: '不能为空', rangelength: '个数必须在6和60之间'}}}, 
-        {name: 'password', type: 'password', required: true, validations: {rules: {required: true, rangelength:[6, 20]}, messages: {required: '不能为空', rangelength:'个数必须在6和60之间'}}},
-        {name: 'password2', type: 'password', required: true, validations: {rules: {required: true, equalTo: 'password'}, messages: {required: '不能为空', equalTo: '不匹配'}}},
+        {name: 'name', required: true, validations: {rules: {required: true}}},
+        {name: 'account',required: true, validations: {rules: {required: true, rangelength: [6, 40]}}},
+        {name: 'password', type: 'password', required: true, validations: {rules: {required: true, rangelength:[6, 20]}}},
+        {name: 'password2', type: 'password', required: true, validations: {rules: {required: true, equalTo: 'password'}}},
         {name: 'email', validations: {rules: {email: true}}},
         {name: 'url', validations: {rules: {url: true}}},
-        {name:'workyear', validations: {rules: {digits: false, range: [0, 60]}}}, 
+        {name:'workyear', validations: {rules: {digits: true, range: [0, 60]}}},
         {name: 'salary', validations: {rules: {number: true, min: 2000}}},
         {name: 'creditcard', validations: {rules: {creditcard: true}}}]
 };
