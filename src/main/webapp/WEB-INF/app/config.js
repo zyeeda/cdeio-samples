@@ -26,7 +26,8 @@ exports.coala = {
         'com.zyeeda.coala.example.entity.generate.bpm.listener',
         'com.zyeeda.coala.example.entity.generate.bpm.subprocess',
         'com.zyeeda.coala.example.entity.generate.bpm.multiple',
-        'com.zyeeda.coala.example.extension.ui.form.entity'
+        'com.zyeeda.coala.example.extension.ui.form.entity',
+        'com.zyeeda.coala.example.extension.tree.entity'
     ],
 
     orms: [

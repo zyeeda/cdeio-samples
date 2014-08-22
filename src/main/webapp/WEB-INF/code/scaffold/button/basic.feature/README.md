@@ -1,29 +1,49 @@
-##操作按钮(基础配置)
+#操作按钮
 
-###设置操作按钮属性
+此处主要介绍如何修改操作按钮的属性以及添加自定义按钮。
 
-	//设置操作按钮
-	exports.operators = {
-	    //默认按钮
-	    add: {label: '添加', icon: 'icon-plus', group: '10-add', style: 'btn-success', show: 'always', order: 100},
-	    show: {label: '查看', icon: 'icon-eye-open', group: '20-selected', style: 'btn-grey', show: 'single-selected', order: 100},
-	    edit: {label: '编辑', icon: 'icon-edit', group: '20-selected', style: 'btn-primary', show: 'single-selected', order: 200},
-	    del: {label: '删除', icon: 'icon-minus', group: '20-selected', style: 'btn-danger', order: 300},
-	    refresh: {label: '刷新', icon: 'icon-refresh', group: '30-refresh', style: 'btn-purple', show: 'always', order: 100}
-	};
+##属性
 
-####详细说明:
+系统在页面上会默认配置一些常用的增删改查的操作按钮来满足业务需要，我们也可以通过修改默认操作按钮的属性，实现个性化的业务需要。
 
-#####提示：增删改查以及刷新按钮如没有特殊需求，推荐使用默认设置，不需写在`exports.operators`中。
+样例代码：
+```javascript
+exports.operators = {
+    //默认按钮(添加)
+    add: {label: '添加', icon: 'icon-plus', group: '10-add', style: 'btn-success', show: 'always', order: 100},
+    show: {label: '查看', icon: 'icon-eye-open', group: '20-selected', style: 'btn-grey', show: 'single-selected', order: 100},
+};
+```
+操作按钮的属性配置在`exports.operators`中，以添加按钮为例，`label`属性是按钮在页面上显示的名称；`icon`属性是按钮的图标样式；`group`属性是按钮的分组信息，`10-add`：前面的数字一样，即是同一分组，后面是分组的名称；`style`属性是按钮显示的样式；`show`属性是按钮的显示方式，比如`always`：一直显示，`single-selected`：点击选中列表数据时显示；`order`属性是按钮在分组中的排序，根据值的大小从左到右进行排序。
 
-1. `label`:  按钮上显示的文本;
+##自定义按钮
 
-2. `icon` :  按钮的背景图标，背景图标样式参考http://fontawesome.io/3.2.1/icons/;
+有时根据不同的业务的需求，我们需要添加自定义的按钮。
 
-3. `style`:  按钮的样式，按钮样式参考http://www.bootcss.com/;
+###1. 在后台定义按钮
+```javascript
+//与前台交互属性配置
+exports.enableFrontendExtension = true;
 
-4. `group`:  按钮的分组;
+exports.operators = {
+    //自定义按钮
+    buttonOne: {label: '按钮一', icon: 'icon-comment-alt', group: '40-other', style: 'btn-yellow', show: 'always', order: 300}
+};
+```
 
-5. `order`:  按钮在所属分组中的前后排序;
+###2. 在前台编写按钮事件
 
-6. `show` :  按钮显示方式(1. `always`:总是显示；2. `selected`: 选中列表数据时显示；3. `unselected`: 列表数据没有被选中时显示).
+```javascript
+define([
+    'jquery'
+], function ($) {
+    return {
+        handlers: {
+            buttonOne: function () {
+                ......
+            }
+        }
+    };
+});
+```
+**注：按钮事件的方法名和按钮的名字是一致的**

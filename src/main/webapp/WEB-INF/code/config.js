@@ -85,5 +85,11 @@ exports.docs = {
         webinf: [
             {name: '树的数据源', path: 'test/trees.feature/scaffold.js'}
         ]
+    },
+    'scaffold/tree/basic': {
+        java: 'com/zyeeda/coala/example/scaffold/tree/entity/BasicTree.java'
+    },
+    'scaffold/button/basic': {
+        java: 'com/zyeeda/coala/example/scaffold/button/entity/OperateButton.java'
     }
 };

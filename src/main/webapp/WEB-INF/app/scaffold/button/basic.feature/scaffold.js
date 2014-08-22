@@ -16,10 +16,10 @@ exports.fieldGroups = {
 //设置操作按钮的显示
 exports.operators = {
     //默认按钮
-    add: {label: '添加', group: '10-add', style: 'btn-success', show: 'always'},
-    show: {label: '查看', group: '20-selected', style: 'btn-grey', show: 'single-selected'},
-    edit: {label: '编辑', group: '20-selected', style: 'btn-primary', show: 'single-selected'},
-    refresh: {label: '刷新', group: '30-refresh', style: 'btn-purple', show: 'always'},
+    add: {label: '添加', show: 'always'},
+    show: {label: '查看', show: 'single-selected'},
+    edit: {label: '编辑', show: 'single-selected'},
+    refresh: {label: '刷新', show: 'always'},
     del: false,
     //又一个分组的按钮
     buttonOne: {label: '按钮一', icon: 'icon-comment-alt', group: '40-other', style: 'btn-yellow', show: 'always', order: 300},
