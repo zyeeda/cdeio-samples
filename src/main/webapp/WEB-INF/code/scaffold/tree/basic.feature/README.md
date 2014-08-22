@@ -1,54 +1,39 @@
-##树(基础配置)
----------------------------------------
+#树
 
-####1. 设置页面显示为树
+此处主要介绍如何让页面以树的形式进行展示，以及如何对树进行简单的配置。
 
-	//显示类型为树
-	exports.style = 'tree';
+##1. 实体
 
-####2. 配置树的基本属性
+树的实体类需要实现`TreeNode<T>`接口。
 
-	//树配置
-	exports.tree = {
-	    isAsync: true,
-	    root: '中国',
-	    rootNodeSetting: {iconSkin: 'countryNode', nocheck: true},
-	    edit: {
-	        drag: {
-	            autoExpandTrigger: true
-	        },
-	        showRemoveBtn: false,
-	        showRenameBtn: false
-	    },
-	    view: {
-	        selectedMulti: false,
-	        showLine: true
-	    },
-	    callback: {
-	        'onDrop': 'cityMoved'
-	    },
-	    events: {
-	        'scaffold/tree/advanced#tree:onClick': 'cityClicked'
-	    },
-	    defaultOrder: 'name-asc'
-	};
+样例代码：
 
-#####说明：
+```java
+public class BasicTree implements TreeNode<BasicTree> {
+    ...
+}
+```
+##2. 页面展示类型 `exports.style`
 
-#####1. `isAsync` : 是否异步加载树的数据;
+系统页面默认以列表的形式进行展示，如果需要以树的形式进行展示，我们需要将`exports.style`的值设置为`tree`。
 
-#####2. `root` : 根节点的名称;
+样例代码：
 
-#####3. `autoExpandTrigger` : 拖拽时父节点自动展开是否触发 onExpand 事件回调函数;
+```javascript
+//显示类型为树
+exports.style = 'tree';
+```
 
-#####4. `showRemoveBtn` : 是否显示删除按钮;
+##3. 树的基础扩展属性`exports.tree`
 
-#####5. `showRenameBtn` : 是否显示编辑名称按钮;
+在树的基础扩展属性中，我们可以配置一个根节点，设定名称后，一个简单的树就实现了。
 
-#####6. `selectedMulti` : 是否允许同时选中多个节点;
+样例代码：
 
-#####7. `showLine` : 是否显示节点之间的连线;
-
-想了解更多，请参考[zTree的官方API文档](http://www.ztree.me/v3/api.php)
-
-
+```javascript
+//树配置
+exports.tree = {
+    root: '中国'
+};
+```
+**注：根节点是不会存入数据库而只用于页面展示的虚拟节点，更多详细的配置，请参考API文档。**
