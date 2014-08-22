@@ -19,7 +19,7 @@ define([
                     display: 'none'
                 });
 
-                // iframe 加载完成 1 秒后删除，因 dom 操作有延迟，故此处留 1 秒
+                // iframe 加载完成 1 秒后删除，因 dom 操作有延迟
                 $ifrm.attr('onload', function(){
                     setTimeout(function(){
                         $ifrm.remove();

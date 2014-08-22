@@ -1,6 +1,6 @@
 ##扩展后台(文件下载)
 
-业务系统通常会有下载文件的需求，用纯 java 代码有大部分人知道这种功能怎么做，但是基于这个系统，可能会感觉有点无从下手，本文主要讲解如何在系统中下载一个文件。** 以下介绍的方法仅供参考。 **
+业务系统通常会有下载文件的需求，用 httpServlet 很多人知道这种功能怎么做，但是基于这个系统，可能会感觉有点无从下手，本文主要讲解如何在系统中实现下载文件的功能。** 以下介绍的方法仅供参考。 **
 
 由于系统中使用的 response 不是 httpServlet 对象，而是 `ringojs/jsgi/response`，故处理下载文件请求的 router 中需要借助 ringojs 的 api。先确定文件绝对位置，然后调用 `response.static(filepath, content_type)` 加载文件内容，最后将整个 response 在 router 中返回，这样便可以在前台某个位置发起下载文件的请求，但系统中的请求用的是 ajax，并不会输出文件，而会将文件内容返回在响应中，所以需要借助 iframe 的 src 属性来发送下载文件的请求达到输出文件的效果。
 
@@ -18,7 +18,7 @@ $ifrm.css({
     display: 'none'
 });
 
-// iframe 加载完成 1 秒后删除，因 dom 操作有延迟，故此处留 1 秒
+// iframe 加载完成 1 秒后删除，因 dom 操作有延迟
 $ifrm.attr('onload', function(){
     setTimeout(function(){
         $ifrm.remove();
@@ -41,12 +41,12 @@ var {join}     = require('coala/util/paths');
 var String     = java.lang.String;
 
 router.get('/download/', function(request){
-    var res, filename, filedirectory;
+    var res, filename, folder;
 
     filename = '测试下载.txt';
-    filedirectory = 'D:/test/doload';
+    folder = 'D:/test/download';
 
-    res = response.static(join(filedirectory, filename), 'text/plain');
+    res = response.static(join(folder, filename), 'text/plain');
 
     // 处理文件名乱码问题
     filename = new String(new String(filename).bytes, 'ISO8859-1');
@@ -58,6 +58,6 @@ router.get('/download/', function(request){
 };
 ```
 
-上述代码实现了按原文件名下载 `D:/test/doload/测试下载.txt` 文件的过程。`join` 为系统提供的工具，根据系统所在的不同 os 环境将参数接拼成一个文件路径，并自动处理各参数前台多余或缺少的文件分隔符。
+上述代码实现了按原文件名下载 `D:/test/download/测试下载.txt` 文件的过程。`join` 为系统提供的工具方法，根据系统所在的不同 os 环境将参数接拼成一个文件路径，并自动处理各参数前台多余或缺少的文件分隔符。
 
 ** 注: 各文件类型对应的 content_type 请参照 http://baike.baidu.com/view/1547292.htm?fr=aladdin **
