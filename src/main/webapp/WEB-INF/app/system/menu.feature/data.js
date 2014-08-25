@@ -112,14 +112,14 @@ exports.results = [
 	{id: "400002007", name: "viewport", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
 	{id: "400002008", name: "多级菜单", iconClass: "icon-lock", path: "#/", parent: {id: "400002"}},
 
-	{id: "400003", name: "树", iconClass: "icon-lock", path: "#/", parent: {id: "400"}},
-	{id: "400003001", name: "图标", iconClass: "icon-lock", path: "#feature/extension/tree/scaffold:icon", parent: {id: "400003"}},
-	{id: "400003002", name: "事件", iconClass: "icon-lock", path: "#feature/extension/tree/scaffold:event", parent: {id: "400003"}},
+	{id: "400003", name: "树", iconClass: "green icon-key", path: "#/", parent: {id: "400"}},
+	{id: "400003001", name: "图标", iconClass: "green icon-key", path: "#feature/extension/tree/scaffold:icon", parent: {id: "400003"}},
+	{id: "400003002", name: "事件", iconClass: "green icon-key", path: "#feature/extension/tree/scaffold:event", parent: {id: "400003"}},
 
-	{id: "500", name: "报表", iconClass: "green icon-key", path: "#/"},
-	{id: "500001", name: "基础", iconClass: "green icon-key", path: "#report/demo/basic/birt-basic", parent: {id: "500"}},
-	{id: "500002", name: "参数", iconClass: "green icon-key", path: "#report/demo/basic/birt-params", parent: {id: "500"}},
-	{id: "500003", name: "自定义参数", iconClass: "icon-lock", path: "#report/demo/basic/birt-custom-params", parent: {id: "500"}},
+	{id: "500", name: "报表", iconClass: "icon-lock", path: "#/"},
+	{id: "500001", name: "基础", iconClass: "green icon-key", path: "#report/examples/birt-basic", parent: {id: "500"}},
+	{id: "500002", name: "参数", iconClass: "green icon-key", path: "#report/examples/birt-params", parent: {id: "500"}},
+	{id: "500003", name: "自定义参数", iconClass: "green icon-key", path: "#report/examples/birt-custom-params", parent: {id: "500"}},
 	{id: "500004", name: "复杂", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
 
 	{id: "600", name: "数据权限", iconClass: "icon-lock", path: "#", opened: false},

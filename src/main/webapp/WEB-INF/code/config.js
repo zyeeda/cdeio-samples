@@ -130,5 +130,11 @@ exports.docs = {
     },
     'scaffold/button/basic': {
         java: 'com/zyeeda/coala/example/scaffold/button/entity/OperateButton.java'
+    },
+    'extension/tree/icon': {
+        java: 'com/zyeeda/coala/example/extension/tree/entity/AdvancedTree.java'
+    },
+    'extension/tree/event': {
+        java: 'com/zyeeda/coala/example/extension/tree/entity/AdvancedTree.java'
     }
 };
