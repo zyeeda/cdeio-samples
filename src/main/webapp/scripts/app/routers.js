@@ -21,7 +21,11 @@ define([
             reportParamsFeature = app.loadFeature('commons/report-params', {container: '<div></div>', ignoreExists: true});
 
             reportParamsFeature.done(function (reportfeature) {
-                app.startFeature('coala:report', {report: name});
+                if (name === 'demo/basic/birt-custom-params') {
+                    app.startFeature('coala:report', {report: name, paramsView: reportfeature.views.params, params: {'country': ''}});
+                } else {
+                    app.startFeature('coala:report', {report: name, params: {'country': ''}});
+                }
             });
 
             this._activateMenu(location.hash);
