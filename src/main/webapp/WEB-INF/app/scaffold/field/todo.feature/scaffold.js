@@ -31,7 +31,7 @@ exports.fieldGroups = {
             ]
         },
         {name: 'attach', type: 'file-picker', url: 'invoke/system/upload',
-            acceptFileTypes: "(\\.|\\/)(doc|xls|ppt|)$"
+            acceptFileTypes: "(\\.|\\/)(doc|xls|ppt)$"
         }, 'tag', 'project',
         {name: 'description', type: 'textarea', colspan: 2}
     ],

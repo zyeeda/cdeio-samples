@@ -86,6 +86,45 @@ exports.docs = {
             {name: '树的数据源', path: 'test/trees.feature/scaffold.js'}
         ]
     },
+    'scaffold/basic/basic-todo': {
+        java: 'com/zyeeda/coala/example/scaffold/basic/entity/BasicTodo.java'
+    },
+    'scaffold/basic/todo': {
+        java: 'com/zyeeda/coala/example/scaffold/basic/entity/Todo.java'
+    },
+    'scaffold/basic/tag': {
+        java: 'com/zyeeda/coala/example/scaffold/basic/entity/Tag.java'
+    },
+    'scaffold/grid/todo': {
+        java: 'com/zyeeda/coala/example/scaffold/grid/entity/GridTodo.java'
+    },
+    'scaffold/grid/grid-user': {
+        java: 'com/zyeeda/coala/example/scaffold/grid/entity/GridUser.java'
+    },
+    'scaffold/grid/user': {
+        java: 'com/zyeeda/coala/example/scaffold/grid/entity/seniorGridUser.java'
+    },
+    'scaffold/field/todo': {
+        java: 'com/zyeeda/coala/example/scaffold/field/entity/FieldTodo.java'
+    },
+    'scaffold/field/account': {
+        java: 'com/zyeeda/coala/example/scaffold/field/entity/FieldAccount.java'
+    },
+    'scaffold/form/project': {
+        java: 'com/zyeeda/coala/example/scaffold/form/entity/FormProject.java'
+    },
+    'scaffold/form/todo': {
+        java: 'com/zyeeda/coala/example/scaffold/form/entity/FormTodo.java'
+    },
+    'scaffold/form/user': {
+        java: 'com/zyeeda/coala/example/scaffold/form/entity/FormUser.java'
+    },
+    'scaffold/hooks/todo': {
+        java: 'com/zyeeda/coala/example/scaffold/hooks/entity/HooksTodo.java'
+    },
+    'scaffold/validators/user': {
+        java: 'com/zyeeda/coala/example/scaffold/validators/entity/ValidatorsUser.java'
+    },
     'scaffold/tree/basic': {
         java: 'com/zyeeda/coala/example/scaffold/tree/entity/BasicTree.java'
     },
