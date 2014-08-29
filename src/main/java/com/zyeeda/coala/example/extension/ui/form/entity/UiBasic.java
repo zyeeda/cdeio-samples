@@ -30,7 +30,7 @@ public class UiBasic extends DomainEntity{
      * 描述.
      */
     private String description;
-    
+
     @Column(name = "F_NAME", length = 100)
 	public String getName() {
 		return name;
@@ -39,7 +39,7 @@ public class UiBasic extends DomainEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Column(name = "F_DESC", length = 2000)
 	public String getDescription() {
 		return description;

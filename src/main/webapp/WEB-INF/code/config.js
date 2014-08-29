@@ -86,8 +86,17 @@ exports.docs = {
             {name: '树的数据源', path: 'test/trees.feature/scaffold.js'}
         ]
     },
+    'extension/ui/basic': {
+        java: 'com/zyeeda/coala/example/extension/ui/form/entity/UiBasic.java'
+    },
+    'extension/ui/custom-form': {
+        java: 'com/zyeeda/coala/example/extension/ui/form/entity/CustomForm.java'
+    },
     'scaffold/basic/basic-todo': {
         java: 'com/zyeeda/coala/example/scaffold/basic/entity/BasicTodo.java'
+    },
+    'extension/ui/call-back': {
+        java: 'com/zyeeda/coala/example/extension/ui/form/entity/Callback.java'
     },
     'scaffold/basic/todo': {
         java: 'com/zyeeda/coala/example/scaffold/basic/entity/Todo.java'
