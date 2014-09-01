@@ -1,7 +1,5 @@
 package com.zyeeda.coala.example.extension.service.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,10 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.annotations.GenericGenerator;
-
-import org.hibernate.validator.constraints.NotBlank;
 
 import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
@@ -24,7 +18,7 @@ import com.zyeeda.coala.validation.constraint.NullableSize;
  *
  */
 @Entity
-@Table(name = "ZES_PERSON")
+@Table(name = "CDE_SERVICE_PERSON")
 @Scaffold("/extension/service/basic")
 public class Person extends DomainEntity {
 

@@ -77,9 +77,8 @@ exports.doWithRouter = function(router) {
 
     // get id 用于通过指定 id 查询所对应的记录
     router.get('/:id', mark('services', 'extension/service/basic').on(function (basicSvc, request, id) {
-        var person, data;
+        var person;
 
-        data = request.params;
         person = basicSvc.getById(id);
 
         return json(person, exports.filters.defaults);

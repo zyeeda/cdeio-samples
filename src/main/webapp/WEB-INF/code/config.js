@@ -75,6 +75,9 @@ exports.docs = {
             {name: '自定义manager', path: 'extension/diyrouter.feature/manager.js'},
         ]
     },
+    'extension/service/sqlquery': {
+        java: 'com/zyeeda/coala/example/extension/service/entity/Task.java'
+    },
     'extension/service/downloadfile': {
         java: 'com/zyeeda/coala/example/extension/service/entity/DataFile.java'
     },

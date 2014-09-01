@@ -1,13 +1,10 @@
 package com.zyeeda.coala.example.extension.service.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -22,7 +19,7 @@ import com.zyeeda.coala.validation.constraint.NullableSize;
  *
  */
 @Entity
-@Table(name = "ZES_DATAFILE")
+@Table(name = "CDE_SERVICE_DATAFILE")
 @Scaffold({"/extension/service/downloadfile", "/extension/service/uploadfile"})
 public class DataFile extends DomainEntity {
 
