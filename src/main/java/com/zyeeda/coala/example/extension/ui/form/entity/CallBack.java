@@ -18,7 +18,7 @@ import com.zyeeda.coala.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "ES_UI_CALL_BACK")
+@Table(name = "CDE_UI_CALL_BACK")
 @Scaffold("/extension/ui/call-back")
 public class CallBack extends DomainEntity{
 
@@ -26,32 +26,32 @@ public class CallBack extends DomainEntity{
 	 * 序列化
 	 */
 	private static final long serialVersionUID = -7799525486370549204L;
-	
+
 	/**
 	 * 名称
 	 */
 	private String name;
-	
+
 	/**
 	 * 类型(1:小型;2:中型;3:大型)
 	 */
-	private String type; 
-	
+	private String type;
+
 	/**
 	 * 关联路由
 	 */
 	private Router router;
-	
+
 	/**
 	 * 明细类别
 	 */
 	private String detailType;
-	
+
 	/**
 	 * 关联line-grid
 	 */
 	private List<CallBackInlineGrid> inlineGrid = new ArrayList<CallBackInlineGrid>();
-	
+
 	@Column(name = "F_NAME", length = 100)
 	public String getName() {
 		return name;
@@ -60,7 +60,7 @@ public class CallBack extends DomainEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Column(name = "F_TYPE", length = 100)
 	public String getType() {
 		return type;
@@ -69,7 +69,7 @@ public class CallBack extends DomainEntity{
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+
 	@ManyToOne
 	@JoinColumn(name = "F_ROUTER_ID")
 	public Router getRouter() {
@@ -79,7 +79,7 @@ public class CallBack extends DomainEntity{
 	public void setRouter(Router router) {
 		this.router = router;
 	}
-	
+
 	@Column(name = "F_DETAIL_TYPE", length = 100)
 	public String getDetailType() {
 		return detailType;
@@ -88,7 +88,7 @@ public class CallBack extends DomainEntity{
 	public void setDetailType(String detailType) {
 		this.detailType = detailType;
 	}
-	
+
 	@OneToMany(mappedBy="callBack")
 	public List<CallBackInlineGrid> getInlineGrid() {
 		return inlineGrid;
