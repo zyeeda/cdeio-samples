@@ -19,10 +19,6 @@ exports.fieldGroups = {
     ]
 };
 
-exports.grid = {
-    columns: ['name', 'description']
-};
-
 exports.doWithRouter = function(router) {
     // get id 用于通过指定 id 查询所对应的记录
     router.get('/:id', mark('services', 'extension/service/sqlquery').on(function (sqlQuerySvc, request, id) {
