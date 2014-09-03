@@ -1,34 +1,34 @@
-# 列表高级配置（查询条件）
+## 列表高级配置(查询条件）
 
-此处主要介绍如何实现条件查询功能。
+很多业务系统会有条件查询或高级查询的功能需求，此文讲的是如何高级查询功能的配置。
 
-##说明：
+### 1. 打开条件查询开关
 
-###1.打开条件查询开关
-
-```js
+```javascript
 exports.haveFilter = true;
-
 ```
-此处设置为ture，表示页面上将有条件查询功能，如果设置false表示无条件查询功能，系统默认不设置为false。
 
-###2.配置字段过滤分组
+在 scaffold 文件中加入以上配置，表示页面上将有条件查询功能，如果设置 false 表示无条件查询功能，系统默认值为 false。
 
-```js
+###2. 配置查询表单分组
+
+```javascript
 exports.fieldGroups = {
     ...
     filter: [
         {name: 'name', type:'text'},
         {name: 'code', type: 'number-range'},
-        {name: 'birthday', type: 'date-range'}]
+        {name: 'sex', type: 'dropdown', source: [{id: '男', text: '男'}, {id: '女', text: '女'}]},
+        {name: 'birthday', type: 'date-range'}
+    ]
 };
-
 ```
-此处的filter为过滤字段组组名，可任取。各字段可通过`type`配置过滤类型。
 
-###3.定义表单过滤分组
+此处的 filter 为过滤字段组组名，可任取。各字段可通过 `type` 配置过滤条件类型。
 
-```js
+###3. 配置查询表单
+
+```javascript
 exports.forms = {
     ...
     filter: {
@@ -37,6 +37,6 @@ exports.forms = {
         }]
     }
 };
-
 ```
-此处定义filter表单字段组，name所对应的字段组为字段分组exports.fieldGroup中定义的字段组。columns: 4表示该字段组显示为4列。
+
+以上代码配置了查询表单显示方式。name 对应 exports.fieldGroup 中定义的条件查询表单分组名称。columns: 4 表示该字段组显示为 4 列。
