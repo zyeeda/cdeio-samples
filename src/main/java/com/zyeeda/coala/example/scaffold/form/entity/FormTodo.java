@@ -18,7 +18,7 @@ import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "ZED_FORM_TODO")
+@Table(name = "CDE_FORM_TODO")
 @Scaffold("/scaffold/form/todo")
 public class FormTodo extends DomainEntity {
 	

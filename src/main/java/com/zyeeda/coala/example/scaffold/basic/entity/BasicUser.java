@@ -17,7 +17,7 @@ import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "ZED_USER")
+@Table(name = "CDE_USER")
 @Scaffold("/scaffold/basic/user")
 public class BasicUser extends DomainEntity {
 
