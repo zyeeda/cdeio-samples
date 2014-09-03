@@ -1,8 +1,8 @@
-# 列表配置
+##自动生成列表
 
-此处主要介绍页面列表的基础配置。
+列表在业务系统中是大部分菜单首先展示的区域，系统也提供了对列表的配置功能。
 
-```js
+```javascript
 exports.grid = {
     columns: [
         {name: 'name', header: '名字'},
@@ -10,10 +10,11 @@ exports.grid = {
     ]
 };
 ```
-在`exports.grid`的`columns`中可以配置列表需要展现的字段信息。需要展现的字段可以在此处一一配置。
+
+在 scaffold 中 exports grid，在 grid 的 `columns` 中配置需要在列表显示的字段信息。
 
 说明：
 
 1.`name` 为实体中的字段名称。
 
-2.`header` 为该字段对应的标题也就是列表的表头。可以不配置，但需要在标签配置即exports.labels中设置。
+2.`header` 为该字段对应的标题也就是列表的表头。可以不配置，但需要在标签配置即 `exports.labels` 中设置。
