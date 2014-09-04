@@ -1,10 +1,10 @@
-#扩展界面（回调）
+##扩展界面（回调）
 
 当开发人员要给表单默认值、点击picker做些处理、字段渲染、级联操作等等一序列的功能需求处理，为此系统提供常见的回调方法来方便开发人员处理功能需求
 
 回调方法主要分为几大类：列表页面grid、表单中picker、表单中inline-grid、表单字段值变化、表单字段渲染等等回调方法
 
-##1.列表页面grid回调方法
+###1.列表页面grid回调方法
 此处提供在点击添加、删除、编辑、查看按钮前后做些需求功能的处理的回调方法
 ```javascript
 /*
@@ -32,7 +32,7 @@ beforeDel: function (gridView, grid, selected) {
 }
 ```
 
-##2.表单中picker回调方法
+###2.表单中picker回调方法
 要想在点击picker前后做些需求功能的处理，首先要在picker所在模块的后台scaffold.js文件中配置picker属性及定义相应功能需求的回调方法
 ```javascript
 /*
@@ -73,7 +73,7 @@ beforeShowRouterPicker: function (view) {
 }
 ```
 
-##3.表单中inline-grid回调方法
+###3.表单中inline-grid回调方法
 要想在点击表单中inline-grid按钮前后做些需求功能的处理，系统提供丰富的API
 ```javascript
 //在inline-grid中,点击按钮之前调的方法
@@ -101,7 +101,7 @@ afterInlineGridRemove: function(grid, view){
     ...
 }
 ```
-##4.表单字段值变化的回调方法
+###4.表单字段值变化的回调方法
 此处主要为表单字段值改变时及字段之间的级联操作提供回调方法
 ```javascript
 exports.fieldGroups = {
@@ -127,7 +127,7 @@ disableChange: function(view, selector) {
 }
 ```
 
-##5.表单字段渲染的回调方法
+###5.表单字段渲染的回调方法
 表单字段渲染主要分为三大类：列表、inline-grid、picker字段渲染
 ###5.1.列表字段渲染
 首先，在当前模块后台scaffold.js中，为需要渲染的字段配置renderer属性
@@ -153,7 +153,7 @@ renderers: {
     }
 }
 ```
-###5.2.inline-grid字段渲染
+####5.2.inline-grid字段渲染
 首先，在inline-grid所在的模块后台scaffold.js中，为需要渲染的字段配置renderer属性
 ```javascript
 //inline-grid所在模块后台scaffold.js中配置
@@ -178,7 +178,7 @@ renderers: {
 }
 ```
 
-###5.3.picker字段渲染
+####5.3.picker字段渲染
 首先，在picker所在的模块后台scaffold.js中，为需要渲染的字段配置renderer属性
 ```javascript
 exports.picker = {

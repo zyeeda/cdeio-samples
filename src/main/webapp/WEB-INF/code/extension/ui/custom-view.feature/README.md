@@ -1,9 +1,9 @@
-#扩展界面（自定义视图）
+##扩展界面（自定义视图）
 一般视图的展示是列表，但开发人员可能会根据项目的功能需求想要定义自定义视图，为此系统为开发人员提供了自定义视图的功能。
 
-##1.**自定义视图路径的写法:例如#feature/extension/ui/form**
+###1.自定义视图路径的写法:例如#feature/extension/ui/form
 
-##2.**前台feature文件的说明**
+###2.前台feature文件的说明
 
 在此文件中主要配置页面的布局（layout）和视图（views）
 
@@ -22,7 +22,7 @@ views视图详细说明：
 
 更多`layout`布局和`views`视图的详情介绍，请参考`MarionetteJS官网`http://marionettejs.com/ 文档
 
-##3.**前台templates文件的说明**
+###3.前台templates文件的说明
 
 1.开发人员可以根据`feature.js`文件中的配置来决定在`{{#layout}}{{/layout}}`或`{{#view xxx}}{{/view}}`里面编辑html代码
 
@@ -30,7 +30,7 @@ views视图详细说明：
 
 3.页面的模板标记是`handlebarsjs`框架的模板标记，更多模板标记详情请参考`handlebarsjs官网`http://handlebarsjs.com/
 
-##4.**页面事件的处理**
+###4.页面事件的处理
 
 所有事件的处理都在`handlers`文件夹中根据视图名称建立相应的文件来处理，
 
