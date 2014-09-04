@@ -26,7 +26,7 @@
 
 `order`：按钮在分组中的排序，根据值的大小从左到右进行排序
 
-** 注：icon 配置请参照 fontawesome 官网：http://fontawesome.io/3.2.1/icons，style 配置请参照 bootstrap 官网：http://v2.bootcss.com/base-css.html**
+** 注：1. icon 配置请参照 fontawesome 官网：http://fontawesome.io/3.2.1/icons ； 2.style 配置请参照 bootstrap 官网：http://v2.bootcss.com/base-css.html**
 
 ###2. 自定义按钮
 
