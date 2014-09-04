@@ -1,21 +1,20 @@
-# 表单页签
+##自动生成表单(页签)
 
-此处主要介绍表单的页签配置。
+很多业务系统的表单都会有页签，也就是俗称的 tab 页的需求，可以在表单中分类展示，不同 tab 页中根据业务需要显示不同的界面与数据。
 
-```js
+```javascript
 exports.forms = {
     defaults: {
         groups: [
-            {name: 'defaults', columns: 2},
-            {name: 'tabs', columns: 2}
+            {name: 'program', columns: 2},
+            {name: 'feasibilityCost', columns: 2}
         ],
         tabs: [
-            {title: '项目信息', groups: ['defaults']},
-            {title: '费用明细', groups: ['tabs']}
-        ],
-        size: 'large'
+            {title: '项目信息', groups: ['program']},
+            {title: '费用明细', groups: ['feasibilityCost']}
+        ]
     }
 };
 ```
-如果表单需要页签时，则需配置`tabs`；title的值为页面标题，groups对应的是字段组。
 
+如果表单需要页签 (tab 页) 时，则只需要在原有配置中加入 `tabs`；title的值为页签标题，groups为当前 tab 页中表单布局要使用的字段分组。注意整个表单中要使用的字段分组必须先配置在与 `tabs` 平级的 `groups` 中。
