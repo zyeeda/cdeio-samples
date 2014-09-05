@@ -117,10 +117,10 @@ exports.results = [
 	{id: "400003002", name: "事件", iconClass: "green icon-key", path: "#feature/extension/tree/scaffold:event", parent: {id: "400003"}},
 
 	{id: "500", name: "报表", iconClass: "icon-lock", path: "#/"},
-	{id: "500001", name: "基础", iconClass: "green icon-key", path: "#report/birt-examples/basic", parent: {id: "500"}},
-	{id: "500002", name: "参数", iconClass: "green icon-key", path: "#report/birt-examples/params", parent: {id: "500"}},
-	{id: "500003", name: "自定义参数", iconClass: "green icon-key", path: "#report/birt-examples/custom-params", parent: {id: "500"}},
-	{id: "500004", name: "复杂", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
+	{id: "500001", name: "基础", iconClass: "green icon-key", path: "#report/birt-examples/basic", parent: {id: "500", name: "报表"}},
+	{id: "500002", name: "参数", iconClass: "green icon-key", path: "#report/birt-examples/params", parent: {id: "500", name: "报表"}},
+	{id: "500003", name: "自定义参数", iconClass: "green icon-key", path: "#report/birt-examples/custom-params", parent: {id: "500", name: "报表"}},
+	{id: "500004", name: "复杂", iconClass: "icon-lock", path: "#/", parent: {id: "500", name: "报表"}},
 
 	{id: "600", name: "数据权限", iconClass: "icon-lock", path: "#", opened: false},
 	{id: "600001", name: "文件", iconClass: "icon-lock", path: "#feature/tenant/scaffold:document", parent: {id: "600"}},

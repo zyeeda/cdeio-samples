@@ -13,6 +13,10 @@ define({
         'profile/account-menu'
     ],
 
+    reportParams: {
+        'birt-examples/custom-params': {paramViewName: 'params', defaultParams: {country: ''}}
+    },
+
     urlPrefix: function(app, path) {
         if ('/about' === path) {
             return 'invoke' + path;
