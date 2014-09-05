@@ -26,6 +26,7 @@ define([
                 } else {
                     app.startFeature('coala:report', {report: name, params: {'country': ''}});
                 }
+                app.viewport.inRegionViews.breadcrumbs.$('view-source').show();
             });
 
             this._activateMenu(location.hash);

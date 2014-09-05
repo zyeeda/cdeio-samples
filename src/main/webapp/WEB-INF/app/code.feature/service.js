@@ -74,7 +74,7 @@ exports.createService = function() {
                     var scaffoldscript = fs.read(scaffoldScriptPath, {charset: 'utf8'});
                     results.push({id: 'scaffoldscript', name: '界面生成', lang: 'js', code: scaffoldscript, isLeaf: true, path: 'scripts/app' + '/' + feature + '.feature/scaffold.js'});
                 }
-            }else {
+            }else if (feature.indexOf('birt-examples') === -1) {
                 var frontend = {id: 'frontend', name: '前台代码', children: []};
                 var featurePath = scriptsPath + '/' + feature + '.feature/feature.js';
                 if (fs.exists(featurePath)) {

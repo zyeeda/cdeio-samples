@@ -11,6 +11,13 @@ define(['jquery', 'backbone'], function($, Backbone) {
                     var example = this.$('view-example');
                     source.hide();
                     example.show();
+                } else if (url.indexOf('#report/') === 0) {
+                    url = url.replace('#report/', '');
+                    Backbone.history.navigate('/#code/' + url);
+                    var source = this.$('view-source');
+                    var example = this.$('view-example');
+                    source.hide();
+                    example.show();
                 }
             }
         },
