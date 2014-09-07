@@ -14,7 +14,8 @@ define({
     ],
 
     reportParams: {
-        'birt-examples/custom-params': {paramViewName: 'params', defaultParams: {country: ''}}
+        'birt-examples/custom-params': {paramViewName: 'params', defaultParams: {country: ''}},
+        'birt-examples/params': {defaultParams: {country: ''}}
     },
 
     urlPrefix: function(app, path) {

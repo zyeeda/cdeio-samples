@@ -22,8 +22,6 @@ define([
             reportParamsFeature = app.loadFeature('commons/report-params', {container: '<div></div>', ignoreExists: true});
 
             reportParamsFeature.done(function (reportfeature) {
-                parameters.country = '';
-
                 if(config.reportParams[name] && config.reportParams[name].paramViewName){
                     parameters.paramsView = reportfeature.views[config.reportParams[name].paramViewName];
                 }

@@ -35,8 +35,7 @@ define({
                     {id: 'Switzerland', text: 'Switzerland'},
                     {id: 'UK', text: 'UK'},
                     {id: 'USA', text: 'USA'}
-                    ]
-
+                ]
             }
         ]
     },
