@@ -17,7 +17,7 @@ import com.zyeeda.coala.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "ES_UI_ROUTER")
+@Table(name = "CDE_UI_ROUTER")
 @Scaffold("/extension/ui/router")
 public class Router extends DomainEntity{
 
@@ -25,17 +25,17 @@ public class Router extends DomainEntity{
 	 * 序列化
 	 */
 	private static final long serialVersionUID = 3469770779336376736L;
-	
+
 	/**
      * 名称.
      */
     private String name;
-    
+
     /**
 	 *申请时间
 	 */
 	private Date applyTime;
-	
+
 	/**
 	 *申请人
 	 */
@@ -45,7 +45,7 @@ public class Router extends DomainEntity{
      * 描述.
      */
     private String description;
-    
+
     @Column(name = "F_NAME", length = 100)
 	public String getName() {
 		return name;
@@ -54,7 +54,7 @@ public class Router extends DomainEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Column(name = "F_DESC", length = 2000)
 	public String getDescription() {
 		return description;
@@ -63,7 +63,7 @@ public class Router extends DomainEntity{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "F_APPLY_TIME")
 	public Date getApplyTime() {
@@ -73,7 +73,7 @@ public class Router extends DomainEntity{
 	public void setApplyTime(Date applyTime) {
 		this.applyTime = applyTime;
 	}
-	
+
 	@Column(name = "F_APPLICANT", length = 100)
 	public String getApplicant() {
 		return applicant;
@@ -81,5 +81,5 @@ public class Router extends DomainEntity{
 
 	public void setApplicant(String applicant) {
 		this.applicant = applicant;
-	} 
+	}
 }

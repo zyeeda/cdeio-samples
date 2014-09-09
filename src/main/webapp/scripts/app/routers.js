@@ -1,7 +1,8 @@
 define([
     'underscore',
-    'backbone'
-], function (_, Backbone) {
+    'backbone',
+    'config'
+], function (_, Backbone, config) {
     return {
         routes: {
             '': 'showHome',
@@ -16,16 +17,22 @@ define([
 		},
 
         showReport: function(name){
-            var reportParamsFeature;
+            var reportParamsFeature, parameters = {report: name};
 
             reportParamsFeature = app.loadFeature('commons/report-params', {container: '<div></div>', ignoreExists: true});
 
             reportParamsFeature.done(function (reportfeature) {
-                if (name === 'demo/basic/birt-custom-params') {
-                    app.startFeature('coala:report', {report: name, paramsView: reportfeature.views.params, params: {'country': ''}});
-                } else {
-                    app.startFeature('coala:report', {report: name, params: {'country': ''}});
+                if(config.reportParams && config.reportParams[name] && config.reportParams[name].paramViewName){
+                    parameters.paramsView = reportfeature.views[config.reportParams[name].paramViewName];
                 }
+
+                if(config.reportParams && config.reportParams[name] && config.reportParams[name].defaultParams){
+                    parameters.params = config.reportParams[name].defaultParams;
+                }
+
+                app.startFeature('coala:report', parameters);
+
+                app.viewport.inRegionViews.breadcrumbs.$('view-source').show();
             });
 
             this._activateMenu(location.hash);

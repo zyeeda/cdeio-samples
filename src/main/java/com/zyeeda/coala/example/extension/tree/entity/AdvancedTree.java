@@ -25,7 +25,7 @@ import com.zyeeda.coala.validation.constraint.NullableSize;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "ZED_EXTENSION_ADVANCED_TREE")
+@Table(name = "CDE_EXTENSION_ADVANCED_TREE")
 @Scaffold({"/extension/tree/event", "/extension/tree/icon"})
 public class AdvancedTree extends TreeNodeRevisionDomainEntity implements TreeNode<AdvancedTree> {
 

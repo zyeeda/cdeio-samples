@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 @Entity
-@Table(name = "ZED_FIELD_ACCOUNT")
+@Table(name = "CDE_FIELD_ACCOUNT")
 @Scaffold("/scaffold/field/account")
 public class FieldAccount extends DomainEntity {
 

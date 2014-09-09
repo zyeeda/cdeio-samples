@@ -16,7 +16,7 @@ import com.zyeeda.coala.commons.base.data.TreeNode;
 import com.zyeeda.coala.commons.base.entity.TreeNodeRevisionDomainEntity;
 
 @Entity
-@Table(name = "ZED_FIELD_TAG")
+@Table(name = "CDE_FIELD_TAG")
 @Scaffold("/scaffold/field/tag")
 public class FieldTag extends TreeNodeRevisionDomainEntity implements TreeNode<FieldTag> {
 

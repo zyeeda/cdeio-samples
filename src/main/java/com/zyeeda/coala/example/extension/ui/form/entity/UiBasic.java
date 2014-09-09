@@ -13,7 +13,7 @@ import com.zyeeda.coala.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "ES_UI_BASIC")
+@Table(name = "CDE_UI_BASIC")
 @Scaffold("/extension/ui/basic")
 public class UiBasic extends DomainEntity{
 	 /**

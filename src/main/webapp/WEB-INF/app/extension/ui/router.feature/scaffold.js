@@ -1,14 +1,6 @@
-var {SecurityUtils}     = org.apache.shiro;
-
-var {mark}              = require('coala/mark');
-var {json}              = require('coala/response');
-
-var {Date}             = java.util;
-var {SimpleDateFormat} = java.text;
-
 exports.entityLabel = '路由';
 
-exports.enableFrontendExtension = true;
+exports.enableFrontendExtension = false;
 
 exports.filters = {
     defaults: {
@@ -29,25 +21,15 @@ exports.fieldGroups = {
 
 exports.picker = {
     grid: {
-        columns: ['name', 'applicant', 'applyTime', 'description']
+        columns: [
+            {name: 'name', header: '名称'},
+            {name: 'applicant', header: '申请人'},
+            {name: 'applyTime', header: '申请时间'},
+            {name: 'description', header: '描述'}
+        ]
     },
     callback: 'routerPickerCallback',
     beforePickerConfirm: 'beforeRouterPickerConfirm',
     afterPickerConfirm: 'afterRouterPickerConfirm',
     beforeShowPicker: 'beforeShowRouterPicker'
-};
-
-exports.doWithRouter = function(router) {
-    //取当前用户和时间
-    router.get('/get-current-user-and-date', mark('services', 'extension/ui/router').on(function (routerSvc) {
-        var subject = SecurityUtils.getSubject(),
-            user = subject.getPrincipal(),
-            date = new Date(),
-            sd= new SimpleDateFormat("yyyy-MM-dd"),
-            result = {};
-
-            result.applicant = user.accountName;
-            result.applyTime = sd.format(date);
-        return json(result);
-    }));
 };

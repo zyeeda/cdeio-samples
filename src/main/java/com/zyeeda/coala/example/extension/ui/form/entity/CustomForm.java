@@ -17,7 +17,7 @@ import com.zyeeda.coala.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "ES_UI_CUSTOM_FORM")
+@Table(name = "CDE_UI_CUSTOM_FORM")
 @Scaffold("/extension/ui/custom-form")
 public class CustomForm extends DomainEntity{
 
@@ -25,17 +25,17 @@ public class CustomForm extends DomainEntity{
 	 * 序列化
 	 */
 	private static final long serialVersionUID = -273906429887612959L;
-	
+
 	/**
      * 名称.
      */
     private String name;
-    
+
     /**
 	 *申请时间
 	 */
 	private Date applyTime;
-	
+
 	/**
 	 *申请人
 	 */
@@ -45,28 +45,28 @@ public class CustomForm extends DomainEntity{
      * 描述.
      */
     private String description;
-    
+
     /**
      * 主表（外观）
      */
     private Boolean mainAppearance;
-    
+
     /**
      * 主表（备注）
      */
     private String mainRemark;
-    
+
     /**
      * 副表（外观）
      */
     private Boolean auxAppearance;
-    
+
     /**
      * 副表（备注）
      */
     private String auxRemark;
-    
-    
+
+
     @Column(name = "F_NAME", length = 100)
 	public String getName() {
 		return name;
@@ -75,7 +75,7 @@ public class CustomForm extends DomainEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Column(name = "F_DESC", length = 2000)
 	public String getDescription() {
 		return description;
@@ -84,7 +84,7 @@ public class CustomForm extends DomainEntity{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	@Temporal(TemporalType.DATE)
 	@Column(name = "F_APPLY_TIME")
 	public Date getApplyTime() {
@@ -94,7 +94,7 @@ public class CustomForm extends DomainEntity{
 	public void setApplyTime(Date applyTime) {
 		this.applyTime = applyTime;
 	}
-	
+
 	@Column(name = "F_APPLICANT", length = 100)
 	public String getApplicant() {
 		return applicant;
@@ -103,7 +103,7 @@ public class CustomForm extends DomainEntity{
 	public void setApplicant(String applicant) {
 		this.applicant = applicant;
 	}
-	
+
 	@Column(name = "F_MAIN_APPEARANCE", length = 100)
 	public Boolean getMainAppearance() {
 		return mainAppearance;
@@ -112,7 +112,7 @@ public class CustomForm extends DomainEntity{
 	public void setMainAppearance(Boolean mainAppearance) {
 		this.mainAppearance = mainAppearance;
 	}
-	
+
 	@Column(name = "F_AUX_APPEARANCE", length = 100)
 	public Boolean getAuxAppearance() {
 		return auxAppearance;
@@ -121,7 +121,7 @@ public class CustomForm extends DomainEntity{
 	public void setAuxAppearance(Boolean auxAppearance) {
 		this.auxAppearance = auxAppearance;
 	}
-	
+
 	@Column(name = "F_MAIN_REMARK", length = 100)
 	public String getMainRemark() {
 		return mainRemark;
@@ -130,7 +130,7 @@ public class CustomForm extends DomainEntity{
 	public void setMainRemark(String mainRemark) {
 		this.mainRemark = mainRemark;
 	}
-	
+
 	@Column(name = "F_AUX_REMARK", length = 100)
 	public String getAuxRemark() {
 		return auxRemark;

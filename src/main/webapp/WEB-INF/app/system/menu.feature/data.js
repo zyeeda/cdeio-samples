@@ -19,8 +19,8 @@ exports.results = [
 	{id: "100001002", name: "列表", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
 	{id: "100001002001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:todo", parent: {id: "100001002", name: "列表"}},
 	{id: "100001002002", name: "高级配置", iconClass: "green icon-key", path: "#/", parent: {id: "100001002", name: "列表"}},
-	{id: "100001002002001", name: "filter", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002002", name: "高级配置"}},
-	{id: "100001002002002", name: "查询条件", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002002", name: "高级配置"}},
+	{id: "100001002002001", name: "filter", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002002", name: "高级配置", parent: {name: "列表"}}},
+	{id: "100001002002002", name: "查询条件", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002002", name: "高级配置", parent: {name: "列表"}}},
 
 	{id: "100001003", name: "树", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
 	{id: "100001003001", name: "基础配置", iconClass: "green icon-key", path: "#feature/scaffold/tree/scaffold:basic", parent: {id: "100001003", name: "树"}},
@@ -42,8 +42,8 @@ exports.results = [
 	{id: "100001004002", name: "分组", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:todo", parent: {id: "100001004", name: "表单"}},
 	{id: "100001004003", name: "页签", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:project", parent: {id: "100001004", name: "表单"}},
 
-	{id: "100001005", name: "操作按钮", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:basic", parent: {id: "100"}},
-	{id: "100001005001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:basic", parent: {id: "100001005", name: "操作按钮"}},
+	{id: "100001005", name: "操作按钮", iconClass: "green icon-key", parent: {id: "100", name: "自动生成"}},
+	{id: "100001005001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:basic", parent: {id: "100001005", name: "操作按钮", parent: {id: "100", name: "自动生成"}}},
 	/*{id: "100001005002", name: "高级配置", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:advanced", parent: {id: "100001005", name: "操作按钮"}},*/
 
 	{id: "100001006", name: "hooks", iconClass: "green icon-key", path: "#/", parent: {id: "100"}},
@@ -117,10 +117,10 @@ exports.results = [
 	{id: "400003002", name: "事件", iconClass: "green icon-key", path: "#feature/extension/tree/scaffold:event", parent: {id: "400003"}},
 
 	{id: "500", name: "报表", iconClass: "icon-lock", path: "#/"},
-	{id: "500001", name: "基础", iconClass: "green icon-key", path: "#report/examples/birt-basic", parent: {id: "500"}},
-	{id: "500002", name: "参数", iconClass: "green icon-key", path: "#report/examples/birt-params", parent: {id: "500"}},
-	{id: "500003", name: "自定义参数", iconClass: "green icon-key", path: "#report/examples/birt-custom-params", parent: {id: "500"}},
-	{id: "500004", name: "复杂", iconClass: "icon-lock", path: "#/", parent: {id: "500"}},
+	{id: "500001", name: "基础", iconClass: "green icon-key", path: "#report/birt-examples/basic", parent: {id: "500", name: "报表"}},
+	{id: "500002", name: "参数", iconClass: "green icon-key", path: "#report/birt-examples/params", parent: {id: "500", name: "报表"}},
+	{id: "500003", name: "自定义参数", iconClass: "green icon-key", path: "#report/birt-examples/custom-params", parent: {id: "500", name: "报表"}},
+	{id: "500004", name: "复杂", iconClass: "icon-lock", path: "#/", parent: {id: "500", name: "报表"}},
 
 	{id: "600", name: "数据权限", iconClass: "icon-lock", path: "#", opened: false},
 	{id: "600001", name: "文件", iconClass: "icon-lock", path: "#feature/tenant/scaffold:document", parent: {id: "600"}},

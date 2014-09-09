@@ -57,6 +57,7 @@ define(['jquery', 'underscore'], function($, _) {
                                     v.hasAnswerClass = '';
                                 }
                             }
+
                             //按钮排版要求
                             groupList.push(v);
                             if(i === length - 1){
@@ -70,6 +71,7 @@ define(['jquery', 'underscore'], function($, _) {
                                     areaList = [];
                                 }
                             }
+
                             //为当前选中的数据增加字段标识
                             if(v.id === currentId){
                                 v.currId = currentId;
@@ -115,7 +117,7 @@ define(['jquery', 'underscore'], function($, _) {
                         data.submitAnswerBtnClass = submitAnswerBtnClass;
                         deferred.resolve(data);
 
-                        if(m.toJSON().results.length === 0){
+                        if(results.length === 0){
                              //没有可以操作的题目提示
                             $.gritter.add({
                                 title: '提示',

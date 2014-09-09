@@ -14,7 +14,7 @@ import com.zyeeda.coala.commons.base.data.TreeNode;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "ZDA_TEST_TREE")
+@Table(name = "CDE_TEST_TREE")
 @Scaffold("test/trees")
 public class Tree extends DomainEntity implements TreeNode<Tree> {
 

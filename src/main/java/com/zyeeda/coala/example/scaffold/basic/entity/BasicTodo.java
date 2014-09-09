@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 @Entity
-@Table(name = "ZED_BASIC_TODO")
+@Table(name = "CDE_BASIC_TODO")
 @Scaffold("/scaffold/basic/basic-todo")
 public class BasicTodo extends DomainEntity {
 	

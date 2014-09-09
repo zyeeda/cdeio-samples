@@ -26,7 +26,7 @@ exports.fieldGroups = {
         {name: 'password2', type: 'password', required: true, validations: {rules: {required: true, equalTo: 'password'}}},
         {name: 'email', validations: {rules: {email: true}}},
         {name: 'url', validations: {rules: {url: true}}},
-        {name:'workyear', validations: {rules: {digits: true, range: [0, 60]}}},
+        {name: 'workyear', validations: {rules: {digits: false, range: [0, 60]}}},
         {name: 'salary', validations: {rules: {number: true, min: 2000}}},
         {name: 'creditcard', validations: {rules: {creditcard: true}}}]
 };

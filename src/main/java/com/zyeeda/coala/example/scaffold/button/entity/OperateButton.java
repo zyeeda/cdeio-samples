@@ -16,7 +16,7 @@ import com.zyeeda.coala.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "ZED_OPERATE_BUTTON")
+@Table(name = "CDE_SCAFFOLD_OPERATE_BUTTON")
 @Scaffold("/scaffold/button/basic")
 public class OperateButton extends DomainEntity{
 

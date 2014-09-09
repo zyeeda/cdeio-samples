@@ -25,7 +25,7 @@ import com.zyeeda.coala.validation.constraint.NullableSize;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "ZED_BASIC_TREE")
+@Table(name = "CDE_SCAFFOLD_BASIC_TREE")
 @Scaffold("/scaffold/tree/basic")
 public class BasicTree extends TreeNodeRevisionDomainEntity implements TreeNode<BasicTree> {
 	

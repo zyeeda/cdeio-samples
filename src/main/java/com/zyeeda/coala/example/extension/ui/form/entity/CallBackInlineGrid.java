@@ -15,13 +15,13 @@ import com.zyeeda.coala.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "ES_UI_INLINE_GRID")
+@Table(name = "CDE_UI_INLINE_GRID")
 @Scaffold("/extension/ui/inline-grid")
 public class CallBackInlineGrid extends DomainEntity{
 	 /**
 	 * 序列化
 	 */
-	
+
 	private static final long serialVersionUID = -1519440311896039320L;
 
 	/**
@@ -33,17 +33,17 @@ public class CallBackInlineGrid extends DomainEntity{
      * 描述.
      */
     private String description;
-    
+
     /**
      * 状态
      */
     private String status;
-    
+
     /**
      * 关联回调
      */
     private CallBack callBack;
-    
+
     @Column(name = "F_NAME", length = 100)
 	public String getName() {
 		return name;
@@ -52,7 +52,7 @@ public class CallBackInlineGrid extends DomainEntity{
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Column(name = "F_DESC", length = 2000)
 	public String getDescription() {
 		return description;
@@ -61,7 +61,7 @@ public class CallBackInlineGrid extends DomainEntity{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	@Column(name = "F_STATUS", length = 100)
 	public String getStatus() {
 		return status;
