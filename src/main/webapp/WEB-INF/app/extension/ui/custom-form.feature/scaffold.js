@@ -1,6 +1,6 @@
 exports.entityLabel = '自定义表单';
 
-exports.enableFrontendExtension = false;
+exports.enableFrontendExtension = true;
 
 exports.filters = {
     defaults: {
@@ -85,5 +85,10 @@ exports.forms = {
             {name: 'add', columns: 2}
         ]
     }
+};
+
+//定义自定义表单按钮
+exports.operators = {
+    customForm: { label: '自定义表单', icon: 'icon-leaf', group: '30-tips', order: 10, show: 'always', style: 'btn btn-grey' }
 };
 
