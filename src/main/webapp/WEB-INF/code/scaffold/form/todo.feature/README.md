@@ -1,6 +1,10 @@
 # 表单分组
 
-此处主要介绍表单的分组配置。
+本章主要介绍表单的分组配置。
+
+## 1 字段分组
+
+在`forms`中配置`groups`可以实现对表单字段进行分组展示，示例代码如下：
 
 ```js
 exports.forms = {
@@ -13,8 +17,17 @@ exports.forms = {
     }
 };
 ```
-如果在表单中需要呈现字段组分组效果，则需在`exports.forms`中配置字段组时，加上`label`配置，定义好字段组标题。
-如果字段组为`inline-grid`则在配置字段时，则在label中配置好字段组标题即可。如下所示：
+
+`name`：`fieldGroups`中配置的分组名称（代码详见本章自动生成中scaffold.js）；
+
+`label`：分组的标题；
+
+`columns`：组件跨多少列。
+
+## 2 嵌套列表
+
+如果需要在表单中嵌套列表，则需要在`fieldGroups`中配置type为`inline-grid`的分组，代码如下：
+
 ```js
 exports.fieldGroups = {
     ...
@@ -26,3 +39,5 @@ exports.fieldGroups = {
     }]
 };
 ```
+
+`inline-grid`的详细配置在`自动生成 -> 字段 -> 基础`中已经介绍，所以此处就不过多描述。

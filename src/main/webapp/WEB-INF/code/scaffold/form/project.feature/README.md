@@ -1,6 +1,10 @@
 # 表单页签
 
-此处主要介绍表单的页签配置。
+本章主要介绍表单的页签（即多tab页）配置。
+
+表单页面需要对内容分类填写或展示时，可能需要用到tab页效果。
+
+通过在`forms`中配置`tabs`属性可以实现tab页效果，示例代码如下：
 
 ```js
 exports.forms = {
@@ -17,5 +21,8 @@ exports.forms = {
     }
 };
 ```
-如果表单需要页签时，则需配置`tabs`；title的值为页面标题，groups对应的是字段组。
+`title`：tab页的名称；
+
+`groups`：`defaults`属性`groups`（即跟tabs同层的那个groups）的name属性的值。
+
 

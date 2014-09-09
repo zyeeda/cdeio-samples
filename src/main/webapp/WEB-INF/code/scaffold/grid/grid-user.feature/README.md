@@ -1,6 +1,6 @@
 # 列表高级配置（filter）
 
-此处主要介绍页面列表的高级配置（filter）
+本章主要介绍页面列表的高级配置（filter）
 
 ```js
 exports.grid = {
@@ -12,13 +12,14 @@ exports.grid = {
     ]
 };
 ```
-列表字段可以在`filter`中配置过滤查询条件。
+通过配置`filter`，可以在列表上方生成高级检索组件。
 
 说明：
 
 1.`text`：文本模糊查询。
 
-2.`number-range`：数字大小区间过滤查询。
+2.`number-range`：数字区间过滤查询。
 
-3.`date-range`：日期大小区间过滤查询。
+3.`date-range`：日期区间过滤查询。
 
+`filter`的值类型详见API文档。
