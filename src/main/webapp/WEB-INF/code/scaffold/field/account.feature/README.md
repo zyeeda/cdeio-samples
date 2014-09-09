@@ -1,6 +1,9 @@
 # 字段(验证规则)
 
-此处主要是介绍表单中各字段的验证规则配置。用于验证数据输入的有效性。
+本章主要介绍如何配置表单中字段的验证规则。
+
+示例代码如下：
+
 ```js
 exports.fieldGroups = {
     defaults: [
@@ -16,7 +19,14 @@ exports.fieldGroups = {
     ]
 };
 ```
-表单验证是在`exports.fieldGroups`中定义字段时，定义好验证规则。字段定义中配置属性`required: true`，表示在字段对应的标签后加*标记。如果需添加验证规则则需在`validations`属性中配置`rules`。各rules详细说明如下所示：
+字段配置中属性`required: true`，表示在字段对应的标签后加`*`标记。
+
+字段的验证规则通过在`fieldGroups`的字段配置中定义`validations`来实现。
+
+`validations`中则配置`rules`属性来添加具体的规则。
+
+rules配置详解如下所示：
+
 1. `required: true` 表示必填。
 
 2. `rangelength: [6, 40]` 表示验证字符串的长度位数在6至40之间。

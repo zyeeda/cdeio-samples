@@ -1,8 +1,14 @@
-##扩展后台(文件下载)
+#扩展后台(文件下载)
 
-业务系统通常会有下载文件的需求，用 httpServlet 很多人知道这种功能怎么做，但是基于这个系统，可能会感觉有点无从下手，本文主要讲解如何在系统中实现下载文件的功能。** 以下介绍的方法仅供参考。 **
+本章主要介绍如何实现文件下载功能。
 
-由于系统中使用的 response 不是 httpServlet 对象，而是 `ringojs/jsgi/response`，故处理下载文件请求的 router 中需要借助 ringojs 的 api。先确定文件绝对位置，然后调用 `response.static(filepath, content_type)` 加载文件内容，最后将整个 response 在 router 中返回，这样便可以在前台某个位置发起下载文件的请求，但系统中的请求用的是 ajax，并不会输出文件，而会将文件内容返回在响应中，所以需要借助 iframe 的 src 属性来发送下载文件的请求达到输出文件的效果。
+** 以下介绍的方法仅供参考。 **
+
+由于系统中使用的 response 不是 httpServlet 对象，而是 `ringojs/jsgi/response`，故处理下载文件请求的 router 中需要借助 ringojs 的 api。
+
+先确定文件绝对路径，然后调用 `response.static(filepath, content_type)` 加载文件内容，最后将整个 response 在 router 中返回，这样便可以在前台某个位置发起下载文件的请求。
+
+但系统中的请求用的是 ajax，并不会输出文件，而会将文件内容返回在响应中，所以需要借助 iframe 的 src 属性来发送下载文件的请求，达到输出文件的效果。
 
 ** 注: 关于 `ringojs` 的用法请参照官方网站 http://ringojs.org/api/master/ **
 
