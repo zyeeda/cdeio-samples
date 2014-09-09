@@ -22,11 +22,11 @@ define([
             reportParamsFeature = app.loadFeature('commons/report-params', {container: '<div></div>', ignoreExists: true});
 
             reportParamsFeature.done(function (reportfeature) {
-                if(config.reportParams[name] && config.reportParams[name].paramViewName){
+                if(config.reportParams && config.reportParams[name] && config.reportParams[name].paramViewName){
                     parameters.paramsView = reportfeature.views[config.reportParams[name].paramViewName];
                 }
 
-                if(config.reportParams[name] && config.reportParams[name].defaultParams){
+                if(config.reportParams && config.reportParams[name] && config.reportParams[name].defaultParams){
                     parameters.params = config.reportParams[name].defaultParams;
                 }
 
