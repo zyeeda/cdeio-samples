@@ -8,7 +8,7 @@ import com.zyeeda.coala.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "ZED_VALIDATORS_USER")
+@Table(name = "CDE_VALIDATORS_USER")
 @Scaffold("/scaffold/validators/user")
 public class ValidatorsUser extends DomainEntity {
 

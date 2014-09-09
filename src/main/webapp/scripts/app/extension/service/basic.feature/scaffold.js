@@ -2,6 +2,9 @@ define([
     'jquery'
 ], function($) {
 	return {
+        afterList: function(view){
+            console.log('into afterList, view = ', view);
+        },
         handlers: {
             changePassword: function() {
                 var me,

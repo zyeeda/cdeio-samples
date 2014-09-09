@@ -17,7 +17,7 @@ import com.zyeeda.coala.commons.base.entity.DomainEntity;
 
 
 @Entity
-@Table(name = "ZED_TODO")
+@Table(name = "CDE_TODO")
 @Scaffold("/scaffold/basic/todo")
 public class Todo extends DomainEntity implements TreeNode<Todo> {
 

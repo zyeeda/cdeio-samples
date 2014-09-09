@@ -1,6 +1,6 @@
-#Bean Validator
+##Bean Validator
 
-##1. 非空
+###1. 非空
 
 标记：`@NotNull`
 
@@ -16,7 +16,7 @@ public Integer getAge() {
 }
 ```
 
-##2. 非空(字符串)
+###2. 非空(字符串)
 
 标记：`@NotBlank`
 
@@ -32,7 +32,7 @@ public String getMobile() {
 }
 ```
 
-##3. 电子邮件
+###3. 电子邮件
 
 标记：`@Email`
 
@@ -49,7 +49,7 @@ public String getEmail() {
 }
 ```
 
-##4. 范围(字符串)
+###4. 范围(字符串)
 
 标记：`@NullableSize`
 
@@ -66,7 +66,7 @@ public String getAddress() {
 }
 ```
 
-##5. 范围(数字)
+###5. 范围(数字)
 
 标记：`@Range`
 
@@ -83,7 +83,7 @@ public Integer getAge() {
 }
 ```
 
-##6. 最小值
+###6. 最小值
 
 标记：`@Min`
 
@@ -99,7 +99,7 @@ public Integer getQq(){
 }
 ```
 
-##7. 最大值
+###7. 最大值
 
 标记：`@Max`
 
