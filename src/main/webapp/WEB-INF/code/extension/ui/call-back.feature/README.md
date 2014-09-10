@@ -1,10 +1,13 @@
-##扩展界面（回调）
+#扩展界面（回调）
 
-当开发人员要给表单默认值、点击picker做些处理、字段渲染、级联操作等等一序列的功能需求处理，为此系统提供常见的回调方法来方便开发人员处理功能需求
+本章主要介绍如何给操作添加回调方法。
+
+回调方法主要用于一些操作的响应，例如表单填充默认值、点击picker、字段渲染、级联操作等等。
 
 回调方法主要分为几大类：列表页面grid、表单中picker、表单中inline-grid、表单字段值变化、表单字段渲染等等回调方法
 
-###1.列表页面grid回调方法
+##1.列表页面grid回调方法
+
 此处提供在点击添加、删除、编辑、查看按钮前后做些需求功能的处理的回调方法
 ```javascript
 /*
@@ -32,7 +35,8 @@ beforeDel: function (gridView, grid, selected) {
 }
 ```
 
-###2.表单中picker回调方法
+##2.表单中picker回调方法
+
 要想在点击picker前后做些需求功能的处理，首先要在picker所在模块的后台scaffold.js文件中配置picker属性及定义相应功能需求的回调方法
 ```javascript
 /*
@@ -52,6 +56,7 @@ exports.picker = {
 }
 ```
 然后，根据模块当前的功能需求在当前模块前台scaffold.js文件中handlers属性中定义相应的回调方法
+
 ```javascript
 //点击编辑页面后调的方法
 routerPickerCallback: function(view, data) {
@@ -73,8 +78,10 @@ beforeShowRouterPicker: function (view) {
 }
 ```
 
-###3.表单中inline-grid回调方法
+##3.表单中inline-grid回调方法
+
 要想在点击表单中inline-grid按钮前后做些需求功能的处理，系统提供丰富的API
+
 ```javascript
 //在inline-grid中,点击按钮之前调的方法
 beforeShowInlineGridDialog: function(dialogType, view) {
@@ -101,8 +108,11 @@ afterInlineGridRemove: function(grid, view){
     ...
 }
 ```
-###4.表单字段值变化的回调方法
+
+##4.表单字段值变化的回调方法
+
 此处主要为表单字段值改变时及字段之间的级联操作提供回调方法
+
 ```javascript
 exports.fieldGroups = {
     defaults: [
@@ -112,14 +122,18 @@ exports.fieldGroups = {
     ]
 }
 ```
+
 如果表单字段配置`statusChanger: true`属性,会调用如下方法
+
 ```javascript
 //表单字段改变时调的方法
 formStatusChanged: function(data, el){
     ...
 }
 ```
+
 如果表单字段配置`change: 'disableChange'`属性,会调用如下方法
+
 ```javascript
 //表单字段的级联操作
 disableChange: function(view, selector) {
@@ -127,10 +141,14 @@ disableChange: function(view, selector) {
 }
 ```
 
-###5.表单字段渲染的回调方法
+##5.表单字段渲染的回调方法
+
 表单字段渲染主要分为三大类：列表、inline-grid、picker字段渲染
+
 ###5.1.列表字段渲染
+
 首先，在当前模块后台scaffold.js中，为需要渲染的字段配置renderer属性
+
 ```javascript
 //当前模块后台scaffold.js中配置
 exports.grid = {
@@ -139,31 +157,9 @@ exports.grid = {
     ]
 }
 ```
+
 然后，在当前模块前台scaffold.js中配置renderers属性及渲染处理
-```javascript
-//当前模块前台scaffold.js中配置
-renderers: {
-    modifyType: function(data) {
-       var modifyTypeMap = {
-            '1': '小型',
-            '2': '中型',
-            '3': '大型'
-        };
-        return modifyTypeMap[data];
-    }
-}
-```
-####5.2.inline-grid字段渲染
-首先，在inline-grid所在的模块后台scaffold.js中，为需要渲染的字段配置renderer属性
-```javascript
-//inline-grid所在模块后台scaffold.js中配置
-exports['inline-grid'] = {
-    columns: [
-        {name: 'type', defaultContent: '小型', renderer: 'modifyType'}
-    ]
-}
-```
-然后，在当前模块前台scaffold.js中配置renderers属性及渲染处理
+
 ```javascript
 //当前模块前台scaffold.js中配置
 renderers: {
@@ -178,8 +174,39 @@ renderers: {
 }
 ```
 
-####5.3.picker字段渲染
+###5.2.inline-grid字段渲染
+
+首先，在inline-grid所在的模块后台scaffold.js中，为需要渲染的字段配置renderer属性
+
+```javascript
+//inline-grid所在模块后台scaffold.js中配置
+exports['inline-grid'] = {
+    columns: [
+        {name: 'type', defaultContent: '小型', renderer: 'modifyType'}
+    ]
+}
+```
+
+然后，在当前模块前台scaffold.js中配置renderers属性及渲染处理
+
+```javascript
+//当前模块前台scaffold.js中配置
+renderers: {
+    modifyType: function(data) {
+       var modifyTypeMap = {
+            '1': '小型',
+            '2': '中型',
+            '3': '大型'
+        };
+        return modifyTypeMap[data];
+    }
+}
+```
+
+###5.3.picker字段渲染
+
 首先，在picker所在的模块后台scaffold.js中，为需要渲染的字段配置renderer属性
+
 ```javascript
 exports.picker = {
     grid: {
@@ -189,7 +216,9 @@ exports.picker = {
     }
 }
 ```
+
 然后，在当前模块前台scaffold.js中配置inlineGridPickerRenderers属性及渲染处理
+
 ```javascript
 inlineGridPickerRenderers: {
     modifyType: function(data) {

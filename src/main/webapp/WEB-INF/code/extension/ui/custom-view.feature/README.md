@@ -1,4 +1,7 @@
-##扩展界面（自定义视图）
+#扩展界面（自定义视图）
+
+本章主要介绍如何自定义视图。
+
 一般视图的展示是列表，但开发人员可能会根据项目的功能需求想要定义自定义视图，为此系统为开发人员提供了自定义视图的功能。
 
 ###1.自定义视图路径的写法:例如#feature/extension/ui/form
@@ -12,6 +15,7 @@ layout布局详细说明：
 1. `regions`: 区域，区域提供一致的方法来管理，展示和销毁应用程序和布局的视图，可以在视图创建嵌套的区域
 
 views视图详细说明：
+
 1. `model`:  模型，更多详情介绍，请参考`Backbone官网`http://backbonejs.org/
 
 2. `events` :  页面事件，更多详情介绍，请参考`Backbone官网`http://backbonejs.org/ ，如果没有事件添加属性`avoidLoadingHandlers: true`就可以了

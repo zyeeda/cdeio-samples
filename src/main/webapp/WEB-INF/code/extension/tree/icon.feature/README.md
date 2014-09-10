@@ -1,5 +1,7 @@
 #扩展树的图标
 
+本章主要介绍如何给树状结构加图标。
+
 ##1. 配置树的基本属性
 
 首先在`exports.tree`中，为根节点设置好`iconSkin`。
@@ -16,7 +18,7 @@ exports.tree = {
     defaultOrder: 'name-asc'
 };
 ```
-##2. 覆写`list`方法
+##2. 重写`list`方法
 
 在列表加载tree数据时，为每一级节点设置好`iconSkin`属性，以便在页面上展示不同的图标。
 

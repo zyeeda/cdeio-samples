@@ -1,43 +1,43 @@
-##自动生成表单(分组)
+# 表单分组
 
-业务系统中通常会有需要在表单中能看到明确的多个分组，让表单界面带给用户一目了然的感觉，或者是为了在多个表单中要使用到某一块同样的界面布局，实现代码复用，就可以在 form 中配置多个分组。
+本章主要介绍表单的分组配置。
 
-###1. 无标签分组
+## 1 字段分组
 
-```javascript
-exports.forms = {
-    add: {
-        groups: [
-            {name: 'addBasic', columns: 2},
-            {name: 'simple'}
-        ],
-        size: 'large'
-    },
-    edit: {
-        groups: [
-            {name: 'editBasic', columns: 2},
-            {name: 'simple'}
-        ],
-        size: 'large'
-    },
-    ...
-};
-```
+在`forms`中配置`groups`可以实现对表单字段进行分组展示，示例代码如下：
 
-以上代码将新增与编辑表单分开定义，两个表单中都包含了一个名为 `simple` 的分组。
-
-###2. 有标签分组
-
-为了让界面上的分组显示更清晰，一眼就能分辨出哪些数据是属于哪一个组的，我们可以在分组中加上 `label` 配置，系统会自动在表单中为各分组加上美观而统一的样式。
-
-```javascript
+```js
 exports.forms = {
     defaults: {
         groups: [
-            {name: 'basic', label: '基础信息', columns: 2},
-            {name: 'simple', label: '附加信息'}
-        ],
-        size: 'large'
+           {name: 'defaults', label: '任务信息'},
+           {name: 'attach', label: '附加信息', columns: 2},
+           {name: 'inLineUserGrid', columns: 2}
+        ]
     }
 };
 ```
+
+`name`：`fieldGroups`中配置的分组名称（代码详见本章自动生成中scaffold.js）；
+
+`label`：分组的标题；
+
+`columns`：组件跨多少列。
+
+## 2 嵌套列表
+
+如果需要在表单中嵌套列表，则需要在`fieldGroups`中配置type为`inline-grid`的分组，代码如下：
+
+```js
+exports.fieldGroups = {
+    ...
+    inLineUserGrid: [{
+        label: '任务分配',
+        type: 'inline-grid',
+        name: 'users',
+        ...
+    }]
+};
+```
+
+`inline-grid`的详细配置在`自动生成 -> 字段 -> 基础`中已经介绍，所以此处就不过多描述。
