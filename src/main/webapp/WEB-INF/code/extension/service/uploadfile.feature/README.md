@@ -1,10 +1,20 @@
-##扩展后台(文件上传)
+#扩展后台(文件上传)
 
-上传文件的功能业务系统都会用到，但在我们这个系统中实现方式比较特殊，本文主要讲解如何在系统中实现上传文件的功能。** 以下介绍的方法仅供参考。 **
+本章主要介绍如何基于平台实现文件上传功能。
 
-由于系统中使用的是 `ringo/jsgi` 的 httpServlet 对象，所以处理上传文件请求的功能需要借助 `ringo/util/http` 工具。上传文件的请求 `request` 对象中包含了文件流，首先用 `parseFileUpload (request, params, encoding, streamFactory)` 来上传文件，传入 request 对象，然后在此方法内部调用 ringojs 的文件处理工具 `fs` 创建好需要保存的文件目录并生成空文件，然后打开该文件并使用二进制的方式写入文件内容，当然在此文件内部还可以根据业务需要做一些类似保存附件实体等操作。
+** 以下介绍的方法仅供参考。 **
+
+由于系统中使用的是 `ringo/jsgi` 的 httpServlet 对象，所以处理上传文件请求的功能需要借助 `ringo/util/http` 工具。
+
+上传文件的请求 `request` 对象中包含了文件流，首先用 `parseFileUpload (request, params, encoding, streamFactory)` 来上传文件，传入 request 对象；
+
+然后在此方法内部调用 ringojs 的文件处理工具 `fs` 创建好需要保存的文件目录并生成空文件；
+
+最后打开该文件并使用二进制的方式写入文件内容，当然在此文件内部还可以根据业务需要做一些类似保存附件实体等操作。
 
 ** 注: 关于 `ringojs` 的用法请参照官方网站 http://ringojs.org/api/master/ **
+
+示例代码如下：
 
 ```javascript
 var {mark}                           = require('coala/mark');

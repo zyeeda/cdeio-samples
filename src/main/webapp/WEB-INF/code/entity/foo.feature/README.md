@@ -1,11 +1,17 @@
+
+
 ## JPA
 
-### 功能说明
-示例展示 JPA注解 在平台中的应用，各种类型字段如何映射，及一对多、多对一、多对多关系如何映射。
+###1. 实体基类继承
+实体应继承自 DomainEntity 类，或是 DomainEntity 的子类，因为DomainEntity中已经定义了id属性。关于更多详细基类介绍，请查询 API。
 
-### 使用说明
-平台使用 Hibernate 作为持久层组件， Hibernate 是一个出色的持久层框架并且支持 JPA 规范。有关 JPA 规范和 Hibernate 相关信息请参考其官方文档。
+###2. JPA注解
+平台基于JPA开发规范，因此支持所有JPA注解，推荐把注解放在方法而非属性上。
+JAP注解的详细配置说明请参照`http://docs.jboss.org/hibernate/jpa/2.1/api/`。
 
-- JPA 规范文档地址：https://jcp.org/en/jsr/detail?id=338
-- Hibernate 文档地址：http://hibernate.org/orm/documentation
+
+【注意】对于只做展示而不需要存储到数据库的字段，应该在其上加@Transient注解。
+
+
+
  

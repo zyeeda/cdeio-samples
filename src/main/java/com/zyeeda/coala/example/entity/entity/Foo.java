@@ -35,21 +35,21 @@ public class Foo extends DomainEntity {
      */
     private static final long serialVersionUID = 8868322496940062099L;
 
-    private String name = null;
+    private String name;
     
-    private Integer status = null;
+    private Integer status;
     
-    private Boolean diabled = null;
+    private Boolean diabled;
     
-    private Date createTime = null;
+    private Date createTime;
     
-    private String email = null;
+    private String email;
     
-    private String description = null;
+    private String description;
     
-    private Attachment attachment = null;
+    private Attachment attachment;
 
-    private Set<Bar> bars = null;
+    private Set<Bar> bars;
 
     @Column(name = "F_NAME", length = 20)
     @NotNull

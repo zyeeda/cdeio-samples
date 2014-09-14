@@ -1,17 +1,22 @@
-## Scaffold
+##Scaffold注解
 
-### 功能说明
-展示 Scaffold 标记的作用，通过在实体上打 Scaffold 标记，实体就能自动生成 CRUD 功能。
+关于Scaffold注解的用法，请参考下例：
 
-### 使用说明
+```javascript
+/**
+* Test类.
+* @author chenhaifeng
+*
+*/
+@Entity
+@Table(name = "CDE_TEST")
+@Scaffold("/entity/test")
+public class Test extends DomainEntity {
+......
+}
+```
 
-    @Scaffold("/entity/test")
-- Scaffold 标记确定此实体是需要自动生成的
-- 参数路径  约定了它自动生成配置文件的路径：WEB-INF/app/`entity/test`.feature/scaffold.js，其中：
-    - exports.filters 是跟生成json数据有关
-    - exports.labels 是显示名称
-    - exports.fieldGroups 规定了列表字段和表单字段
-    - 更详细介绍请查看示例[自动生成/最简配置](#code/scaffold/basic/scaffold:basic-todo)
+@Scaffold标记表示自动生成实体的CURD功能，其参数为对应的scaffold.js文件的路径。<br />
+例如本例中@Scaffold("/entity/test")表示实体“ Test ”对应的scaffold.js的路径为“ WEB-INF/app/entity/test.feature/scaffold.js ”。<br />
+“ WEB-INF/app/entity/test.feature/scaffold.js ”中，“ WEB-INF/app/ ”为固定路径，“ entity/test.feature/ ”为@Scaffold注解的配置值（即"/entity/test"）加“.feature ”,“ scaffold.js ”为固定文件名称。
 
->注意
- @Scaffold支持同时挂载多个路径，比如 @Scaffold("/entity/test", "demos/test")
