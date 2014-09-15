@@ -13,18 +13,19 @@ define(["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/pretti
         $md.parent().after('<div class="marked">' + markup + '</div>');
         $md.parent().remove();
         $('.marked pre code').addClass('prettyprint linenums');
+        $('.marked pre').addClass('pre');
         $('pre code').each(function(i, e) {
           var $a, $el;
           $el = $(e);
           $a = $('<a>');
-          $a.addClass('copy-btn btn btn-minier btn-light');
+          $a.addClass('copy-btn btn btn-minier');
           $a.attr('data-clipboard-text', $el.text());
           $a.append('<i class=\"icon-code\">Copy</i>');
           return $el.parent().before($a);
         });
         client = new ZeroClipboard($('.copy-btn'));
         client.on('aftercopy', function() {
-          return app.info('已复制');
+          return app.info('复制成功');
         });
         return prettyPrint();
       },

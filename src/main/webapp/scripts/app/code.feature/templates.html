@@ -38,14 +38,14 @@
         {{#each sources}}
         <div id="{{id}}" class="tab-pane {{#isLeaf}}{{#active}}active{{/active}}{{/isLeaf}}">
             {{#unless noCode}}
-            <div>》 {{path}}</div>
+            <span class="code-path">| {{path}}</span>
             {{/unless}}
-            <pre><code class="lang-{{lang}} {{#unless noCode}}prettyprint linenums{{/unless}}">{{code}}</code></pre>
+            <pre class="pre"><code class="lang-{{lang}} {{#unless noCode}}prettyprint linenums{{/unless}}">{{code}}</code></pre>
         </div>
         {{#each children}}
             <div id="{{id}}" class="tab-pane {{#active}}active{{/active}}">
-                <div>》 {{path}}</div>
-                <pre><code class="lang-{{lang}} prettyprint linenums">{{code}}</code></pre>
+                <span class="code-path">| {{path}}</span>
+                <pre class="pre"><code class="lang-{{lang}} prettyprint linenums">{{code}}</code></pre>
             </div>
         {{/each}}
         {{/each}}

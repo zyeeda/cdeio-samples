@@ -13,20 +13,19 @@ define ["jquery", "vendors/ZeroClipboard", "vendors/marked.min", "vendors/pretti
             $md.parent().after('<div class="marked">' + markup + '</div>')
             $md.parent().remove()
             $('.marked pre code').addClass('prettyprint linenums')
+            $('.marked pre').addClass('pre')
 
             #增加复制代码功能
             $('pre code').each (i, e) ->
                 $el = $(e)
                 $a = $('<a>')
-                $a.addClass('copy-btn btn btn-minier btn-light')
+                $a.addClass('copy-btn btn btn-minier')
                 $a.attr('data-clipboard-text', $el.text())
                 $a.append('<i class=\"icon-code\">Copy</i>')
                 $el.parent().before($a)
             client = new ZeroClipboard($('.copy-btn'))
             client.on 'aftercopy', ->
-                app.info('已复制')
-
-
+                app.info('复制成功')
 
             #代码高亮
             prettyPrint()
