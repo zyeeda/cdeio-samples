@@ -13,6 +13,12 @@ exports.createService = function() {
             var config = require(codePath + '/config.js');
             var results = [];
 
+            var mdPath = codePath + '/' + feature + '.feature/README.md'
+            if(fs.exists(mdPath)) {
+                var md = fs.read(mdPath, {charset: 'utf8'});
+                results.push({id: 'markdown', name: '说明', lang: 'markdown', code: md, isLeaf: true, noCode: true, active: true});
+            }
+
             if(config.docs[feature] && config.docs[feature].java) {
                 var javaPath = path + '/WEB-INF/classes/java/' + config.docs[feature].java;
                 if(fs.exists(javaPath)) {
@@ -137,19 +143,15 @@ exports.createService = function() {
                     results.push(others);
                 }
             }
-            var mdPath = codePath + '/' + feature + '.feature/README.md'
-            if(fs.exists(mdPath)) {
-                var md = fs.read(mdPath, {charset: 'utf8'});
-                results.push({id: 'markdown', name: '说明', lang: 'markdown', code: md, isLeaf: true, noCode: true});
-            }
 
-            // 正式用
-            if(results.length > 0) {
-                results[0].active = true;
-                if(results[0] && !results[0].isLeaf && results[0].children[0]) {
-                    results[0].children[0].active = true;
-                }
-            }
+            // // 正式用
+            // if(results.length > 0) {
+            //     results[0].active = true;
+            //     if(results[0] && !results[0].isLeaf && results[0].children[0]) {
+            //         results[0].children[0].active = true;
+            //     }
+            // }
+
             return {results: results};
         }
     };
