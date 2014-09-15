@@ -1,12 +1,11 @@
 {{#layout}}
-<div class="widget-box" id="widget-box"></div>
+<div class="code" id="widget-box"></div>
 {{/layout}}
 
 {{#view "widget-box"}}
-<div class="widget-header" id="widget-header">
-    <h5 class="smaller">代码</h5>
-    <div class="widget-toolbar no-border">
-        <ul class="nav nav-tabs">
+<div id="widget-header">
+    <div>
+        <ul class="nav nav-pills">
             {{#each sources}}
             {{#if isLeaf}}
             <li class="{{#active}}active{{/active}}">
@@ -18,7 +17,6 @@
                     {{name}}
                     <b class="caret"></b>
                 </a>
-
                 <ul class="dropdown-menu dropdown-info">
                     {{#each children}}
                     <li>
@@ -33,18 +31,18 @@
     </div>
 </div>
 
-<div class="widget-body" id="widget-body">
+<div id="widget-body" >
     <div class="tab-content">
         {{#each sources}}
         <div id="{{id}}" class="tab-pane {{#isLeaf}}{{#active}}active{{/active}}{{/isLeaf}}">
             {{#unless noCode}}
-            <span class="code-path">| {{path}}</span>
+            <span class="code-path">file path : | {{path}}</span>
             {{/unless}}
             <pre class="pre"><code class="lang-{{lang}} {{#unless noCode}}prettyprint linenums{{/unless}}">{{code}}</code></pre>
         </div>
         {{#each children}}
             <div id="{{id}}" class="tab-pane {{#active}}active{{/active}}">
-                <span class="code-path">| {{path}}</span>
+                <span class="code-path">file path : | {{path}}</span>
                 <pre class="pre"><code class="lang-{{lang}} prettyprint linenums">{{code}}</code></pre>
             </div>
         {{/each}}

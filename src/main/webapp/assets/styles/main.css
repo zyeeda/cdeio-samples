@@ -176,6 +176,29 @@
 
 pre, code {
     tab-size: 4;
+    border-radius: 0px;
+}
+
+.code .tab-content {
+    border: 0;
+}
+
+.code .nav {
+    margin-bottom: 0px;
+    padding-top: 12px;
+    margin-left: 12px;
+}
+
+.nav-pills > li > a {
+    -webkit-border-radius: 0; 
+    -moz-border-radius: 0;
+    border-radius: 0; 
+}
+
+.marked {
+    background: #F5F5F5;
+    padding: 9.5px;
+    margin: 0 0 10px;
 }
 
 .copy-btn {

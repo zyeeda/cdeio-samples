@@ -140,16 +140,16 @@ exports.createService = function() {
             var mdPath = codePath + '/' + feature + '.feature/README.md'
             if(fs.exists(mdPath)) {
                 var md = fs.read(mdPath, {charset: 'utf8'});
-                results.push({id: 'markdown', name: '说明', lang: 'markdown', code: md, isLeaf: true, noCode: true, active: true});
+                results.push({id: 'markdown', name: '说明', lang: 'markdown', code: md, isLeaf: true, noCode: true});
             }
 
             // 正式用
-            // if(results.length > 0) {
-            //     results[0].active = true;
-            //     if(results[0] && !results[0].isLeaf && results[0].children[0]) {
-            //         results[0].children[0].active = true;
-            //     }
-            // }
+            if(results.length > 0) {
+                results[0].active = true;
+                if(results[0] && !results[0].isLeaf && results[0].children[0]) {
+                    results[0].children[0].active = true;
+                }
+            }
             return {results: results};
         }
     };
