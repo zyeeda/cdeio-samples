@@ -245,6 +245,11 @@
     margin-right: 10px;
 }
 
+.code .tab-content {
+    max-width: 80em;
+}
+
+
 .context-login-iframe {
     width: 100%;
     height: 400px;
