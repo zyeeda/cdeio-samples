@@ -1,6 +1,13 @@
 ##Scaffold注解
 
-关于Scaffold注解的用法，请参考下例：
+本例主要演示 @Scaffold 的用法。
+
+@Scaffold 主要有三个作用：
+第一，映射 scaffold.js 自动生成 CRUD 功能;
+第二，生成后台请求路径；
+第三，生成前端路由地址。
+
+示例代码如下：
 
 ```javascript
 /**
@@ -16,7 +23,7 @@ public class Test extends DomainEntity {
 }
 ```
 
-@Scaffold标记表示自动生成实体的CURD功能，其参数为对应的scaffold.js文件的路径。<br />
-例如本例中@Scaffold("/entity/test")表示实体“ Test ”对应的scaffold.js的路径为“ WEB-INF/app/entity/test.feature/scaffold.js ”。<br />
-“ WEB-INF/app/entity/test.feature/scaffold.js ”中，“ WEB-INF/app/ ”为固定路径，“ entity/test.feature/ ”为@Scaffold注解的配置值（即"/entity/test"）加“.feature ”,“ scaffold.js ”为固定文件名称。
+通过本例 @Scaffold("/entity/test") 配置，实体 Test 会映射 “ WEB-INF/app/entity/test.feature/scaffold.js ”自动生成CRUD功能；</br>生成后台请求路径，本例中访问 https://localhost:7000/coala-examples/invoke/scaffold/entity/test 会返回 Test 实体的 Json 格式列表数据；</br>
+自动生成路由地址，本例中访问 https://localhost:7000/coala-examples/#feature/entity/scaffold:test 可以查看到实体 Test 的功能页面。
+
 
