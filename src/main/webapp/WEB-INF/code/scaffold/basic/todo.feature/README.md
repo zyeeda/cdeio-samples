@@ -17,33 +17,16 @@ exports.filters = {
         '!todoFilter': ['children', 'parent(1)'],
         '!basicUserFilter': 'todos'
     },
-    get: {
-        ...
+     get: {
+        '!todoFilter': ['children', 'parent(1)'],
+        '!basicUserFilter': 'todos'
     }
 };
 ```
+此例中配置了三个规则，分别是 defaults 、list 和 get。
+这三个规则的名称均为平台预定义，分别对应了默认序列化、列表序列化和查看序列化的规则。
 
-示例代码中配置了三种序列化过滤规则，分别为 defaults、list 和 get ，每种过滤规则中又分别配置了对于实体 Todo 和  BasicUser 的具体过滤字段和层级。
+规则中 parent(1) 表示 parent 这个字段所引用的实体只取一级，就算 parent 之上仍然还有父节点数据也会被忽略掉。
 
-###规则名称
-由于平台提供了基础功能的自动生成服务，所以预定义了一些过滤规则的名称，分别对应不同的自动生成功能所需的 Json 序列化。
-defaults、list 和 get 就属于预定义的规则名称，在实现自动化功能的时候需要覆盖这些规则名称来配置具体的过滤规则。</br>
-**defaults** ：预定义规则 defaults 用来作为默认配置，如果不单独配置其它规则平台会使用此规则配置的过滤规则来完成序列化（例如示例代码中如果不配置list，则需要调用list规则来完成Json序列化的地方就会默认的使用 defaults 规则）。反之，则不会使用 defaults 规则。</br>
-**list** ：预定义规则 list 是用来定义自动生成的列表功能 Json 序列化规则的。</br>
-**get** ：预定义规则 get 是用来定义自动生成的查询功能 Json 序列化规则的。
+示例代码中配置的最终结果是 Json序列化时，默认的序列化 Json 中不包含实体 Todo 实体的 children 字段和 BasicUser 实体的 name 字段，但是包含 Todo 实体的 parent 且只包含一层;列表的序列化 Json 中不包含实体 Todo 实体的 children 字段和 BasicUser 实体的 todos 字段，但是包含 Todo 实体的 parent 且只包含一层；查看的序列化 Json 中不包含实体 Todo 实体的 children 字段和 BasicUser 实体的 todos 字段，但是包含 Todo 实体的 parent 且只包含一层。
 
-###过滤规则
-过滤规则分为两种，包含和不包含，分别表示序列化包含实体的哪些字段或者不包含哪些字段。
-规则的格式为键值对，`键`的格式为需要序列化的实体类小写名称加上“ Filter ”组成的字符串（此为固定格式），`值`的格式为实体中的字段名称。
-包含规则只需在值中列出包含哪些字段即可；不包含规则需要在键名称前加`!`，并且在值中列出不包含的字段。
-例如 defaults 中的  'basicUserFilter': 'name' ，表示过滤实体 BasicUser，序列化的实体中只包含字段 name ；list 中的 '!basicUserFilter': 'todos' 则表示过滤实体 BasicUser，序列化的实体中不包含字段 todos 。
-
-如果同一个规则中需要配置多个实体的序列化过滤规则，用逗号隔开就可以了（见示例）。
-
-###过滤层级
-过滤规则的`值`中还可以配置关联引用的层级，因为对于循环引用的实体来说可能会出现无限递归的情况。
-配置过滤层级的方法是在值的对应字段后面加`(n)`,其中 n 表示序列化时过滤的层级。
-例如示例中 list 下的 '!todoFilter': ['children', 'parent(1)'] ，parent(1) 表示parent这个字段所引用的实体只取一级，就算parent之上仍然还有父节点数据也会被忽略掉。
-
-
-**如需了解更多的平台默认配置规则名称，请参考API文档。**
