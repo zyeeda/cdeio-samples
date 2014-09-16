@@ -206,10 +206,13 @@
 .marked {
     padding: 0px;
     margin: 0 20px;
+    line-height: 2em;
+    word-spacing: 0.1em;
 }
 
 .marked p {
     font-size: 15px;
+    vertical-align: bottom;
 }
 
 .marked .pre  {
