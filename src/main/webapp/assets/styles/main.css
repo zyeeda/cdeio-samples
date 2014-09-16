@@ -237,6 +237,10 @@
     font-size: 10px;
 }
 
+.widget-hr {
+    margin: 10px 0 0 0;
+}
+
 .marked .copy-btn {
     margin-right: 10px;
 }

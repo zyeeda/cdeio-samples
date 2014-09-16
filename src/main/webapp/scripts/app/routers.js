@@ -75,6 +75,7 @@ define([
                 app.startFeature(featurePath, { ignoreExists: true });
                 this._activateMenu(location.hash);
                 app.viewport.inRegionViews.breadcrumbs.$('view-source').show();
+                window.scrollTo(0, 0);
             }, this);
 
             // if (app.viewport.module.baseName !== 'coala-features') {
