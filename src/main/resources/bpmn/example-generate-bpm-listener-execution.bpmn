@@ -5,7 +5,7 @@
     <startEvent id="start_event">
       <extensionElements>
 		<!-- 流程启动监听,流程在启动后执行此监听 -->
-        <activiti:executionListener class="com.zyeeda.coala.example.listener.generate.bpm.listener.execution.ProcessExecutionListener" event="end">
+        <activiti:executionListener class="com.zyeeda.cdeio.example.listener.generate.bpm.listener.execution.ProcessExecutionListener" event="end">
           <activiti:field name="message" stringValue="流程已经启动" />
         </activiti:executionListener>
       </extensionElements>
@@ -15,7 +15,7 @@
     <endEvent id="end_event">
       <extensionElements>
       	<!-- 流程结束监听,流程在执行结束操作前执行此监听 -->
-        <activiti:executionListener class="com.zyeeda.coala.example.listener.generate.bpm.listener.execution.ProcessExecutionListener" event="start">
+        <activiti:executionListener class="com.zyeeda.cdeio.example.listener.generate.bpm.listener.execution.ProcessExecutionListener" event="start">
           <activiti:field name="message" stringValue="流程即将结束" />
         </activiti:executionListener>
       </extensionElements>
@@ -24,7 +24,7 @@
     <sequenceFlow id="flow5" sourceRef="user_task_01" targetRef="user_task_02">
       <extensionElements>
       	<!-- 流程流转监听,流程选择某个路径进行流转时执行此监听 -->
-        <activiti:executionListener class="com.zyeeda.coala.example.listener.generate.bpm.listener.execution.ProcessExecutionListener" >
+        <activiti:executionListener class="com.zyeeda.cdeio.example.listener.generate.bpm.listener.execution.ProcessExecutionListener" >
           <activiti:field name="message" stringValue="连接 '入职初审' 和  '入职复审' 节点的  transition 已被选中并执行" />
         </activiti:executionListener>
       </extensionElements>     

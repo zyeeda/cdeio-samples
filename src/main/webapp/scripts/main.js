@@ -3,12 +3,12 @@ if (window !== top) {
 } else {
     define([
         'jquery',
-        'coala/coala',
+        'cdeio/cdeio',
         'application',
-    ], function($, coala) {
+    ], function($, cdeio) {
 
         $(function() {
-            var app = window.app = coala.startApplication('application');
+            var app = window.app = cdeio.startApplication('application');
         });
 
     });

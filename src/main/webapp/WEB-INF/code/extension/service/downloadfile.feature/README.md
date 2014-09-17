@@ -42,7 +42,7 @@ $(document.body).append($ifrm);
 
 ```javascript
 var response   = require('ringo/jsgi/response');
-var {join}     = require('coala/util/paths');
+var {join}     = require('cdeio/util/paths');
 
 var String     = java.lang.String;
 

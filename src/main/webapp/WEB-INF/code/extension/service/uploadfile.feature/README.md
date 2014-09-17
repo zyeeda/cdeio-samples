@@ -17,15 +17,15 @@
 示例代码如下：
 
 ```javascript
-var {mark}                           = require('coala/mark');
+var {mark}                           = require('cdeio/mark');
 var fs                               = require('fs');
-var {join}                           = require('coala/util/paths');
-var coala                            = require('coala/config');
+var {join}                           = require('cdeio/util/paths');
+var cdeio                            = require('cdeio/config');
 var {parseFileUpload, BufferFactory} = require('ringo/utils/http');
 
 var UUID = java.util.UUID;
 
-var CONFIG_KEY = 'coala.upload.path';
+var CONFIG_KEY = 'cdeio.upload.path';
 
 exports.createService = function() {
     return {
@@ -34,8 +34,8 @@ exports.createService = function() {
 
             path = 'images';
 
-            // 此配置位于 src/main/resources/settings/coala.properties
-            prefix = coala.getOptionInProperties(CONFIG_KEY);
+            // 此配置位于 src/main/resources/settings/cdeio.properties
+            prefix = cdeio.getOptionInProperties(CONFIG_KEY);
             params = {};
             fileName = UUID.randomUUID().toString();
             now = new Date();

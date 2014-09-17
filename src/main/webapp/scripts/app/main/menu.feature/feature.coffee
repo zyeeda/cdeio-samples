@@ -1,4 +1,4 @@
-define ['underscore', 'coala/vendors/jquery/jquery.slimscroll.min'], (_) ->
+define ['underscore', 'cdeio/vendors/jquery/jquery.slimscroll.min'], (_) ->
     layout:
         regions:
             top: 'sidebar-shortcuts'

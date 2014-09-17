@@ -1,6 +1,6 @@
 define([
     'jquery',
-    'coala/core/util'
+    'cdeio/core/util'
 ], function ($, util) {
     return {
         //在添加、编辑页面时，点击确定按钮之后调的方法

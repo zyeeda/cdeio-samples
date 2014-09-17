@@ -1,10 +1,10 @@
-var {mark} 		    = require('coala/mark');
-var {createManager} = require('coala/manager');
+var {mark} 		    = require('cdeio/mark');
+var {createManager} = require('cdeio/manager');
 
 var {ArrayList}     = java.util;
 
-var {EntityMetaResolver} = com.zyeeda.coala.web.scaffold;
-var {AdvancedTree} 		 = com.zyeeda.coala.example.extension.tree.entity;
+var {EntityMetaResolver} = com.zyeeda.cdeio.web.scaffold;
+var {AdvancedTree} 		 = com.zyeeda.cdeio.example.extension.tree.entity;
 
 exports.createService = function () {
 	return {

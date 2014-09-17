@@ -43,9 +43,9 @@
 ####2.1 系统内置 manager
 
 ```javascript
-var {mark}   = require('coala/mark');
+var {mark}   = require('cdeio/mark');
 
-var {Task} = com.zyeeda.coala.example.extension.service.entity;
+var {Task} = com.zyeeda.cdeio.example.extension.service.entity;
 
 exports.createService = function() {
     return {
@@ -66,7 +66,7 @@ exports.createService = function() {
 ####2.2 自定义 manager
 
 ```javascript
-var {mark}   = require('coala/mark');
+var {mark}   = require('cdeio/mark');
 
 exports.createService = function() {
     return {

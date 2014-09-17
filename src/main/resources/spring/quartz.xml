@@ -12,7 +12,7 @@
 
     <context:component-scan base-package="com.zyeeda.drivebox.quartz.jobs" />
 
-    <bean id="demoJobDetail" class="com.zyeeda.coala.scheduler.BeanInvokingJobDetailFactoryBean"
+    <bean id="demoJobDetail" class="com.zyeeda.cdeio.scheduler.BeanInvokingJobDetailFactoryBean"
         p:targetBean="demoJob" p:targetMethod="execute"/>
 
     <bean id="demoJobTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerFactoryBean"

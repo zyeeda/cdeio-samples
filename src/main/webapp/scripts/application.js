@@ -1,12 +1,12 @@
 define([
     'jquery',
     'underscore',
-    'coala/coala',
-    'coala/applications/default',
-    'coala/core/config',
-    'coala/vendors/ace-elements',
-    'coala/vendors/ace'
-], function($, _, coala, createDefault, config) {
+    'cdeio/cdeio',
+    'cdeio/applications/default',
+    'cdeio/core/config',
+    'cdeio/vendors/ace-elements',
+    'cdeio/vendors/ace'
+], function($, _, cdeio, createDefault, config) {
 
     return function(options) {
         $.ajaxSetup({

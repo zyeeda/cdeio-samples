@@ -1,5 +1,5 @@
-var {mark}                    = require('coala/mark');
-var {createValidationContext} = require('coala/validation/validation-context');
+var {mark}                    = require('cdeio/mark');
+var {createValidationContext} = require('cdeio/validation/validation-context');
 
 exports.createService = function() {
     return {

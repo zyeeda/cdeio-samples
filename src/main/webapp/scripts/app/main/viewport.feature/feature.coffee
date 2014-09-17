@@ -49,7 +49,7 @@ define
 
         onStop: (_super) ->
             mainModule = app.findModule('main')
-            # coalaFeatures = app['coala-features']
+            # cdeioFeatures = app['cdeio-features']
             app.menuFeature.stop()
 
             mainModule.findFeature('header').stop()

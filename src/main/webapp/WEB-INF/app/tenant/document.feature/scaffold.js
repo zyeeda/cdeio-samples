@@ -1,9 +1,9 @@
-var mark = require('coala/mark').mark;
-var json = require('coala/response').json;
-var objects = require('coala/util/objects');
-var coala = require('coala/config').coala;
+var mark = require('cdeio/mark').mark;
+var json = require('cdeio/response').json;
+var objects = require('cdeio/util/objects');
+var cdeio = require('cdeio/config').cdeio;
 
-var {Document, Folder, Project} = com.zyeeda.coala.example.tenant.entity;
+var {Document, Folder, Project} = com.zyeeda.cdeio.example.tenant.entity;
 
 exports.filters = {
     defaults: {
@@ -53,14 +53,14 @@ exports.doWithRouter = function(router) {
         var result = {};
         var config = {};
         objects.extend(config, request.params);
-        var paginationInfo = coala.extractPaginationInfo(request.params);
+        var paginationInfo = cdeio.extractPaginationInfo(request.params);
         objects.extend(config, paginationInfo);
         var count = mgr.findDocsByFunnel(queryParams).size()
         var pageSize = paginationInfo.maxResults;
         result.recordCount = count;
         result.pageCount = Math.ceil(count / pageSize);
         result.results = mgr.findDocsByFunnel(queryParams, paginationInfo);
-        var o = coala.generateListResult(result.results, config.currentPage, config.maxResults, result.recordCount, result.pageCount);
+        var o = cdeio.generateListResult(result.results, config.currentPage, config.maxResults, result.recordCount, result.pageCount);
 
         return json(o, exports.filters.defaults);
     }));

@@ -83,7 +83,7 @@ mark service 是利用 service 文件路径来寻找 service 文件的。
 在service文件中必须要有 `createService` 方法以供文件可以被 `mark` 到，示例代码如下：
 
 ```javascript
-var {mark}   = require('coala/mark');
+var {mark}   = require('cdeio/mark');
 
 exports.createService = function() {
     return {
@@ -102,9 +102,9 @@ exports.createService = function() {
 在 service 文件处理业务的时候可能会涉及到数据操作，系统中关于数据访问及操作的功能在 `manager.js` 文件中，示例代码如下：
 
 ```javascript
-var {mark}   = require('coala/mark');
+var {mark}   = require('cdeio/mark');
 
-var {Person} = com.zyeeda.coala.example.extension.service.entity;
+var {Person} = com.zyeeda.cdeio.example.extension.service.entity;
 
 exports.createService = function() {
     return {
@@ -126,7 +126,7 @@ mark后的manager会默认包含如 `find(id)`、`removeById(id)` 等常用数�
 如果系统提供的 manager 无法满足业务场景的需要时，还可以自定义 `manager.js` 文件来访问及操作数据库，示例代码如下：
 
 ```javascript
-var {mark}   = require('coala/mark');
+var {mark}   = require('cdeio/mark');
 
 exports.createService = function() {
     return {
@@ -148,8 +148,8 @@ exports.createService = function() {
 自定义manager时要求 `manager.js` 文件中必须有 `createManager` 方法，示例代码如下：
 
 ```javascript
-var {mark}  = require('coala/mark');
-var manager = require('coala/manager');
+var {mark}  = require('cdeio/mark');
+var manager = require('cdeio/manager');
 
 exports.createManager = function(){
     var personMgr,

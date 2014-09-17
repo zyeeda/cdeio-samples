@@ -10,8 +10,8 @@
         }
     </style>
 
-    <script src="../scripts/coala/vendors/jquery/jquery.js"></script>
-    <script src="../scripts/coala/vendors/chromeframe/CFInstall.min.js"></script>
+    <script src="../scripts/cdeio/vendors/jquery/jquery.js"></script>
+    <script src="../scripts/cdeio/vendors/chromeframe/CFInstall.min.js"></script>
 
     <script>
         // The conditional ensures that this code will only execute in IE,

@@ -5,10 +5,10 @@ define({
     loadSettings: true,
 
     whitelist: [
-        'coala/viewport',
-        'coala/account-menu',
-        'coala/header',
-        'coala/menu',
+        'cdeio/viewport',
+        'cdeio/account-menu',
+        'cdeio/header',
+        'cdeio/menu',
         'profile/viewport',
         'profile/account-menu'
     ],

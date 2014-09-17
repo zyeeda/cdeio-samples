@@ -6,17 +6,17 @@
     <userTask id="user_task_01" name="入职初审" activiti:candidateUsers="luffy">
 	  <extensionElements>
 	  	<!-- 任务在创建时执行此监听 -->
-	    <activiti:taskListener event="create" class="com.zyeeda.coala.example.listener.generate.bpm.listener.task.TaskCreateListener" />
+	    <activiti:taskListener event="create" class="com.zyeeda.cdeio.example.listener.generate.bpm.listener.task.TaskCreateListener" />
 	    <!-- 任务在创建时执行此监听，此监听会自动认领任务 -->
-      	<activiti:taskListener event="create" class="com.zyeeda.coala.example.listener.generate.bpm.listener.task.TaskAutoClaimListener" />
+      	<activiti:taskListener event="create" class="com.zyeeda.cdeio.example.listener.generate.bpm.listener.task.TaskAutoClaimListener" />
 	  </extensionElements>
     </userTask>
     <userTask id="user_task_02" name="入职复审" activiti:candidateGroups="d-1002">
       <extensionElements>
       	<!-- 任务在被认领时执行此监听 -->
-        <activiti:taskListener event="assignment" class="com.zyeeda.coala.example.listener.generate.bpm.listener.task.TaskAssignmentListener" />
+        <activiti:taskListener event="assignment" class="com.zyeeda.cdeio.example.listener.generate.bpm.listener.task.TaskAssignmentListener" />
         <!-- 任务在完成时执行此监听 -->
-	    <activiti:taskListener event="complete" class="com.zyeeda.coala.example.listener.generate.bpm.listener.task.TaskCompleteListener" />
+	    <activiti:taskListener event="complete" class="com.zyeeda.cdeio.example.listener.generate.bpm.listener.task.TaskCompleteListener" />
       </extensionElements>
     </userTask>
     <endEvent id="end_event"></endEvent>

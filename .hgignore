@@ -28,13 +28,13 @@ bin
 
 WEB-INF/classes
 WEB-INF/lib
-WEB-INF/app/coala
-WEB-INF/app/coala-modules
+WEB-INF/app/cdeio
+WEB-INF/app/cdeio-modules
 
 src/main/javascript
 src/main/webapp/scripts/main-dist.js
 src/main/webapp/scripts/libs.bak
-src/main/webapp/scripts/coala
+src/main/webapp/scripts/cdeio
 test-output
 
 src/main/webapp/WEB-INF/files

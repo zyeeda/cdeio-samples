@@ -19,17 +19,17 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
     <!--
      | Change the following artifactId, version, name and url tags according to the project.
     -->
-    <artifactId>zyeeda-coala-examples</artifactId>
+    <artifactId>zyeeda-cdeio-examples</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Zyeeda :: Projects :: Coala :: Examples</name>
-    <url>http://www.zyeeda.com/projects/zyeeda/zyeeda-coala-examples</url>
+    <name>Zyeeda :: Projects :: cdeio :: Examples</name>
+    <url>http://www.zyeeda.com/projects/zyeeda/zyeeda-cdeio-examples</url>
     <packaging>war</packaging>
 
     <properties>
-        <coala.framework.version>2.0.0-SNAPSHOT</coala.framework.version>
+        <cdeio.framework.version>2.0.0-SNAPSHOT</cdeio.framework.version>
         <jetty.config>${project.build.outputDirectory}/META-INF/jetty</jetty.config>
         <argLine>-Dfile.encoding=UTF-8</argLine>
-        <coala.version>2.0.0-SNAPSHOT</coala.version>
+        <cdeio.version>2.0.0-SNAPSHOT</cdeio.version>
     </properties>
 
     <!--
@@ -39,18 +39,18 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
     <dependencies>
         <dependency>
             <groupId>com.zyeeda</groupId>
-            <artifactId>zyeeda-coala-core</artifactId>
-            <version>${coala.framework.version}</version>
+            <artifactId>zyeeda-cdeio-core</artifactId>
+            <version>${cdeio.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zyeeda</groupId>
-            <artifactId>zyeeda-coala-bpm</artifactId>
-            <version>${coala.framework.version}</version>
+            <artifactId>zyeeda-cdeio-bpm</artifactId>
+            <version>${cdeio.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zyeeda</groupId>
             <artifactId>zyeeda-sso-openid</artifactId>
-            <version>${coala.framework.version}</version>
+            <version>${cdeio.framework.version}</version>
         </dependency>
 
         <dependency>
@@ -61,8 +61,8 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
 
         <dependency>
             <groupId>com.zyeeda</groupId>
-            <artifactId>zyeeda-coala-proxy</artifactId>
-            <version>${coala.version}</version>
+            <artifactId>zyeeda-cdeio-proxy</artifactId>
+            <version>${cdeio.version}</version>
         </dependency>
     </dependencies>
 
@@ -124,7 +124,7 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
                         <!--
                          | Specify the correct context path.
                         -->
-                        <contextPath>/coala-examples</contextPath>
+                        <contextPath>/cdeio-examples</contextPath>
                     </webApp>
                 </configuration>
             </plugin>
@@ -139,9 +139,9 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
         <!--
          | Change the SCM repository according to the project.
         -->
-        <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-coala-examples</connection>
+        <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-cdeio-examples</connection>
         <developerConnection>scm:hg:${basedir}/../${project.artifactId}</developerConnection>
-        <url>http://bitbucket.org/zyeeda/zyeeda-coala-examples</url>
+        <url>http://bitbucket.org/zyeeda/zyeeda-cdeio-examples</url>
         <tag>HEAD</tag>
     </scm>
 </project>
