@@ -1,12 +1,16 @@
-# 表单页签
+本例主要介绍表单的页签（即多tab页）配置。
 
-本章主要介绍表单的页签（即多tab页）配置。
+表单页面需要对内容分类填写或展示时，可能需要用到 tab 页效果，平台提供了简单便捷的配置方法来实现表单页面的分页签展示效果。
+通过在 forms 中配置的 `tabs` 来实现分页，分页信息引用 fieldGroups 中的分组来确定 Tab 页中显示的字段。
 
-表单页面需要对内容分类填写或展示时，可能需要用到tab页效果。
-
-通过在`forms`中配置`tabs`属性可以实现tab页效果，示例代码如下：
+示例代码如下：
 
 ```js
+exports.fieldGroups = {
+    defaults: ['name', 'startDate', 'desc', 'people'],
+    tabs: [{name: 'cost', validations: {rules: {number: true}}}, 'intro']
+};
+
 exports.forms = {
     defaults: {
         groups: [
@@ -21,8 +25,6 @@ exports.forms = {
     }
 };
 ```
-`title`：tab页的名称；
 
-`groups`：`defaults`属性`groups`（即跟tabs同层的那个groups）的name属性的值。
 
 
