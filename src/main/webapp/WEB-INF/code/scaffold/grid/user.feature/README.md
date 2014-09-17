@@ -1,36 +1,18 @@
-# 列表高级配置（查询条件）
+本例主要介绍如何在列表页面添加查询表单。
 
-本章主要介绍如何实现条件查询功能。
-
-##说明：
-
-###1.打开条件查询开关
-
+通过配置 haveFilter、fieldGroups 和 forms，可以在列表页面实现可收缩查询表单，具体的界面效果请查看本例的样例效果。
+示例代码如下：
 ```js
 exports.haveFilter = true;
 
-```
-此处设置为ture，表示页面上将有条件查询功能，如果设置false则无条件查询功能，系统默认设置为true。
-
-###2.配置字段过滤分组
-
-```js
 exports.fieldGroups = {
-    ...
     filter: [
         {name: 'name', type:'text'},
         {name: 'code', type: 'number-range'},
         {name: 'birthday', type: 'date-range'}]
 };
 
-```
-此处的`filter`为分组名称，属性`type`用来配置字段对应的过滤组件类型。
-
-###3.配置过滤分组表单
-
-```js
 exports.forms = {
-    ...
     filter: {
         groups: [{
             name: 'filter', columns: 4
@@ -39,6 +21,6 @@ exports.forms = {
 };
 
 ```
-此处的`filter`用来配置上例（fieldGroups）中的过滤组件表单.
-
-`name`属性的值为上例中的分组名称;columns的值为过滤组件表单的显示列数。
+示例代码中，设置 `haveFilter = true` 表示开启条件查询功能；
+fieldGroups 配置了名称为 `filter` 的字段分组（此名称为预定义的固定名称），该分组中有三个字段，分别为 name 、code 和 birthday（即改查询表单中有三个查询字段）；
+forms 配置了分组中包含一个名称为 `filter` 的字段分组，该字段分组一行分为 4 列展示。
