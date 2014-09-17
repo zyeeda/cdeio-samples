@@ -1,7 +1,7 @@
-var {mark}                    = require('coala/mark');
-var {createValidationContext} = require('coala/validation/validation-context');
+var {mark}                    = require('cdeio/mark');
+var {createValidationContext} = require('cdeio/validation/validation-context');
 
-var {Person} = com.zyeeda.coala.example.extension.service.entity;
+var {Person} = com.zyeeda.cdeio.example.extension.service.entity;
 
 exports.createService = function() {
 	return {

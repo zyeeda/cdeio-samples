@@ -232,6 +232,6 @@ inlineGridPickerRenderers: {
 }
 ```
 
-###更多回调方法详情，请看系统coala-ui
+###更多回调方法详情，请看系统cdeio-ui
 
 

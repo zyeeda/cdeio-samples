@@ -1,8 +1,8 @@
 var logger          = require('ringo/logging').getLogger(module.id);
 var _               = require('underscore');
-var {json}          = require('coala/response');
-var {mark}          = require('coala/mark');
-var {createRouter}  = require('coala/router');
+var {json}          = require('cdeio/response');
+var {mark}          = require('cdeio/mark');
+var {createRouter}  = require('cdeio/router');
 
 var {JSONArray}     = org.json;
 var {JSONObject}    = org.json;

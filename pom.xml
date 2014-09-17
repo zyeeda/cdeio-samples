@@ -133,7 +133,7 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
         <!--
          | Change the SCM repository according to the project.
         -->
-        <connection>scm:hg:http://bitbucket.org/zyeeda/cdeio-examples</connection>
+        <connection>scm:hg:http://bitbucket.org/zyeeda/cdeio-samples</connection>
         <developerConnection>scm:hg:${basedir}/../${project.artifactId}</developerConnection>
         <url>http://bitbucket.org/zyeeda/cdeio-samples</url>
         <tag>HEAD</tag>

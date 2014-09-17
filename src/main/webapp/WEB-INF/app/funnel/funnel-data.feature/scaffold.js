@@ -1,6 +1,6 @@
-var mark = require('coala/mark').mark;
-var json = require('coala/response').json;
-var {FunnelData, FunnelDataType} = com.zyeeda.coala.commons.funnel.entity;
+var mark = require('cdeio/mark').mark;
+var json = require('cdeio/response').json;
+var {FunnelData, FunnelDataType} = com.zyeeda.cdeio.commons.funnel.entity;
 
 exports.enableFrontendExtension = true;
 

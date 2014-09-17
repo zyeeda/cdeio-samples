@@ -30,7 +30,7 @@ define([
                     parameters.params = config.reportParams[name].defaultParams;
                 }
 
-                app.startFeature('coala:report', parameters);
+                app.startFeature('cdeio:report', parameters);
 
                 app.viewport.inRegionViews.breadcrumbs.$('view-source').show();
             });
@@ -78,7 +78,7 @@ define([
                 window.scrollTo(0, 0);
             }, this);
 
-            // if (app.viewport.module.baseName !== 'coala-features') {
+            // if (app.viewport.module.baseName !== 'cdeio-features') {
             //     this.showHome().done(show);
             //     return;
             // }

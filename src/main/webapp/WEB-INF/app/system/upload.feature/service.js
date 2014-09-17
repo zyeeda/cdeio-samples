@@ -1,7 +1,7 @@
-var {mark}          = require('coala/mark');
-var {createService} = require('coala/service');
+var {mark}          = require('cdeio/mark');
+var {createService} = require('cdeio/service');
 
-var {Attachment}    = com.zyeeda.coala.commons.resource.entity;
+var {Attachment}    = com.zyeeda.cdeio.commons.resource.entity;
 
 exports.createService = function() {
     var service = {

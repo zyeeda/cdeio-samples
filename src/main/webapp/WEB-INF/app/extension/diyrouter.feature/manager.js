@@ -1,5 +1,5 @@
-var {mark}  = require('coala/mark');
-var manager = require('coala/manager');
+var {mark}  = require('cdeio/mark');
+var manager = require('cdeio/manager');
 
 exports.createManager = function(){
     var personMgr,

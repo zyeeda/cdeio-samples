@@ -1,6 +1,6 @@
-var {mark} = require('coala/mark');
+var {mark} = require('cdeio/mark');
 
-var {Task} = com.zyeeda.coala.example.extension.service.entity;
+var {Task} = com.zyeeda.cdeio.example.extension.service.entity;
 
 exports.createService = function() {
 	return {

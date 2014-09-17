@@ -1,4 +1,4 @@
-var {mark}          = require('coala/mark');
+var {mark}          = require('cdeio/mark');
 var _               = require('underscore');
 var {createService} = require('extension/tree/icon.feature/service');
 

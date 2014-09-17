@@ -1,10 +1,10 @@
 var response   = require('ringo/jsgi/response');
-var {notFound} = require('coala/response');
-var {join}     = require('coala/util/paths');
-var {mark}     = require('coala/mark');
-var coala      = require('coala/config');
+var {notFound} = require('cdeio/response');
+var {join}     = require('cdeio/util/paths');
+var {mark}     = require('cdeio/mark');
+var cdeio      = require('cdeio/config');
 
-var CONFIG_UPLOAD_PATH = 'coala.upload.path';
+var CONFIG_UPLOAD_PATH = 'cdeio.upload.path';
 
 var String = java.lang.String;
 
@@ -69,9 +69,9 @@ exports.doWithRouter = function(router) {
         /*
          * join 方法：将传入的参数拼接成路径，并自动处理多余或缺少的分隔符
          *  附件绝对路径 = 存储路径前缀 + 相对存储路径
-         *  coala.getOptionInProperties 能拿到的配置位于 src/main/resources/settings/coala.properties
+         *  cdeio.getOptionInProperties 能拿到的配置位于 src/main/resources/settings/cdeio.properties
          */
-        filepath = join(coala.getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
+        filepath = join(cdeio.getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
 
         // 此处使用的是 ringo/jsgi/response 的 api
         res = response.static(filepath, attachment.contentType);

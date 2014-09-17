@@ -1,8 +1,8 @@
 define([
     'jquery',
     'underscore',
-    'coala/core/util',
-    'coala/components/picker-base'
+    'cdeio/core/util',
+    'cdeio/components/picker-base'
 ], function($, _, util, Picker) {
     return {
         handlers: {

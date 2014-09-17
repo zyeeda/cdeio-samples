@@ -1,4 +1,4 @@
-var {json} = require('coala/response');
+var {json} = require('cdeio/response');
 var data = require('system/menu.feature/data');
 
 exports.doWithRouter = function(router) {

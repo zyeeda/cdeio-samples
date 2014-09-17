@@ -1,7 +1,7 @@
 var logger          = require('ringo/logging').getLogger(module.id);
-var {json, html}    = require('coala/response');
-var {mark}          = require('coala/mark');
-var {createRouter}  = require('coala/router');
+var {json, html}    = require('cdeio/response');
+var {mark}          = require('cdeio/mark');
+var {createRouter}  = require('cdeio/router');
 
 var router = exports.router = createRouter();
 

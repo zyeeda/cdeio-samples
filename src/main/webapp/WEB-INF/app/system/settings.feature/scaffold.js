@@ -1,7 +1,7 @@
-var config = require('coala/config');
-var {createService} = require('coala/service');
-var {json} = require('coala/response');
-var {SettingItem} = com.zyeeda.coala.commons.resource.entity;
+var config = require('cdeio/config');
+var {createService} = require('cdeio/service');
+var {json} = require('cdeio/response');
+var {SettingItem} = com.zyeeda.cdeio.commons.resource.entity;
 var {SecurityUtils} = org.apache.shiro;
 var logger = require('ringo/logging').getLogger(module.id);
 
@@ -72,7 +72,7 @@ exports.doWithRouter = function(router) {
             result[item.name] = item.value;
         }
 
-        if (config.coala.disableAuthz !== true) {
+        if (config.cdeio.disableAuthz !== true) {
             result.session = getSession();
         }
         return json(result);

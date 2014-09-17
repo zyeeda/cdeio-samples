@@ -1,10 +1,10 @@
-var mark = require('coala/mark').mark;
-var json = require('coala/response').json;
+var mark = require('cdeio/mark').mark;
+var json = require('cdeio/response').json;
 
-var createService = require('coala/scaffold/service').createService;
-var createManager = require('coala/manager').createManager;
-var {Funnel, FunnelType, FunnelData} = com.zyeeda.coala.commons.funnel.entity;
-var {Account} = com.zyeeda.coala.commons.organization.entity;
+var createService = require('cdeio/scaffold/service').createService;
+var createManager = require('cdeio/manager').createManager;
+var {Funnel, FunnelType, FunnelData} = com.zyeeda.cdeio.commons.funnel.entity;
+var {Account} = com.zyeeda.cdeio.commons.organization.entity;
 
 exports.enableFrontendExtension = true;
 
