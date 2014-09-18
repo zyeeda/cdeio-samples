@@ -1,3 +1,5 @@
+// 使用 http://127.0.0.1:8000/cdeio-samples/invoke/scaffold/system/menu/import 地址导入菜单
+
 exports.results = [
 	{id: "700", name: "欢迎", iconClass: "icon-home", path: "#"},
 
