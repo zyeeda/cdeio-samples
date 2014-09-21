@@ -10,8 +10,6 @@
     <persistence-unit name="default" transaction-type="JTA">
 
         <mapping-file>META-INF/mappings/document.orm.xml</mapping-file>
-        <mapping-file>META-INF/mappings/basic-tree.orm.xml</mapping-file>
-        <mapping-file>META-INF/mappings/advanced-tree.orm.xml</mapping-file>
         <mapping-file>META-INF/mappings/extension/service/task.orm.xml</mapping-file>
 
         <class>com.zyeeda.cdeio.commons.organization.entity.Account</class>
