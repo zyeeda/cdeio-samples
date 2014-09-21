@@ -16,7 +16,7 @@
 
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 
-    <bean id="openIdProvider" class="com.zyeeda.sso.openid.provider.support.DefaultOpenIdProvider"
+    <bean id="openIdProvider" class="com.zyeeda.cdeio.sso.openid.provider.support.DefaultOpenIdProvider"
         p:name="${cdeio.application.name}"
         p:serverProtocol="${cdeio.server.protocol:https}"
         p:serverAddress="${cdeio.server.address}"
@@ -82,13 +82,13 @@
 
     <!--
      | Ldap realm configuration.
-    <bean id="realm" class="com.zyeeda.sso.openid.provider.realm.LdapRealm">
+    <bean id="realm" class="com.zyeeda.cdeio.sso.openid.provider.realm.LdapRealm">
         <constructor-arg ref="ldapTemplate" />
     </bean>
     -->
 
     <!--
-    <bean id="realm" class="com.zyeeda.sso.openid.provider.realm.JpaRealm"
+    <bean id="realm" class="com.zyeeda.cdeio.sso.openid.provider.realm.JpaRealm"
         p:credentialsMatcher-ref="passwordMatcher" />
     -->
 
@@ -97,48 +97,48 @@
      | When username and password match, the authentication succeeds.
      -->
 
-    <bean id="realm" class="com.zyeeda.sso.openid.provider.realm.MockRealm"
+    <bean id="realm" class="com.zyeeda.cdeio.sso.openid.provider.realm.MockRealm"
         p:credentialsMatcher-ref="passwordMatcher" />
 
     <bean id="passwordMatcher" class="org.apache.shiro.authc.credential.PasswordMatcher"
         p:passwordService-ref="passwordService" />
 
-    <bean id="passwordService" class="com.zyeeda.sso.openid.provider.support.BCryptPasswordService" />
+    <bean id="passwordService" class="com.zyeeda.cdeio.sso.openid.provider.support.BCryptPasswordService" />
 
     <!--
      | Declare all filters.
     -->
-    <bean id="antiRobotFilter" class="com.zyeeda.sso.openid.provider.web.security.AntiRobotFilter"
+    <bean id="antiRobotFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.security.AntiRobotFilter"
         p:failureKeyAttribute="signInFailure"
         p:cache-ref="signInTokenCache" />
 
-    <bean id="authenticationFilter" class="com.zyeeda.sso.openid.provider.web.OpenIdProviderAuthenticationFilter"
+    <bean id="authenticationFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.OpenIdProviderAuthenticationFilter"
         p:failureKeyAttribute="signInFailure"
         p:openIdProvider-ref="openIdProvider"
         p:cache-ref="signInTokenCache" />
 
-    <bean id="signInFilter" class="com.zyeeda.sso.openid.provider.web.SignInFilter"
+    <bean id="signInFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.SignInFilter"
         p:configuration-ref="freemarkerConfiguration" />
 
-    <bean id="endpointFilter" class="com.zyeeda.sso.openid.provider.web.OpenIdProviderEndpointFilter"
+    <bean id="endpointFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.OpenIdProviderEndpointFilter"
         p:openIdProvider-ref="openIdProvider" />
 
-    <bean id="signOutFilter" class="com.zyeeda.sso.openid.provider.web.SignOutFilter"
+    <bean id="signOutFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.SignOutFilter"
         p:configuration-ref="freemarkerConfiguration"
         p:openIdProvider-ref="openIdProvider" />
 
-    <bean id="checkFilter" class="com.zyeeda.sso.openid.provider.web.CheckAuthenticationFilter"
+    <bean id="checkFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.CheckAuthenticationFilter"
         p:openIdProvider-ref="openIdProvider" />
 
-    <bean id="xrdsFilter" class="com.zyeeda.sso.openid.provider.web.XrdsFilter"
+    <bean id="xrdsFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.XrdsFilter"
         p:configuration-ref="freemarkerConfiguration"
         p:openIdProvider-ref="openIdProvider" />
 
-    <bean id="userFilter" class="com.zyeeda.sso.openid.provider.web.UserFilter"
+    <bean id="userFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.UserFilter"
         p:configuration-ref="freemarkerConfiguration"
         p:openIdProvider-ref="openIdProvider" />
 
-    <bean id="indexFilter" class="com.zyeeda.sso.openid.provider.web.IndexFilter"
+    <bean id="indexFilter" class="com.zyeeda.cdeio.sso.openid.provider.web.IndexFilter"
         p:configuration-ref="freemarkerConfiguration" />
 
     <bean id="openEntityManagerFilter" class="org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter" />
