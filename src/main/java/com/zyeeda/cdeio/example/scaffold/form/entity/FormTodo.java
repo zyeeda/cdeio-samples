@@ -18,12 +18,12 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_FORM_TODO")
+@Table(name = "CDEIO_FORM_TODO")
 @Scaffold("/scaffold/form/todo")
 public class FormTodo extends DomainEntity {
-	
+
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -6010668419308271982L;
 	private String name;
@@ -42,7 +42,7 @@ public class FormTodo extends DomainEntity {
 		this.name = name;
 	}
 
-	
+
 	@Column(name ="F_DESCRIPTION",length=350)
 	public String getDescription() {
 		return description;
@@ -61,8 +61,8 @@ public class FormTodo extends DomainEntity {
 		this.status = status;
 	}
 
-	
-	
+
+
 	@Column(name = "F_START_TIME")
 	@Temporal(TemporalType.DATE)
 	public Date getStartDate() {
@@ -85,9 +85,9 @@ public class FormTodo extends DomainEntity {
 		this.users = users;
 	}
 
-	
-	
 
-	
+
+
+
 
 }

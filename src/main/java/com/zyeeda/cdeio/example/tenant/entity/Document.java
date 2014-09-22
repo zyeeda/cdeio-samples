@@ -13,7 +13,7 @@ import com.zyeeda.cdeio.commons.resource.entity.Attachment;
 import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @Entity
-@Table(name = "CDE_DOCUMENT")
+@Table(name = "CDEIO_DOCUMENT")
 @Scaffold("/tenant/document")
 public class Document extends DomainEntity {
 
@@ -22,15 +22,15 @@ public class Document extends DomainEntity {
     private String name = null;
 
     private String description = null;
-    
+
     private String type = null;
-    
+
     private Double size = null;
-    
+
     private Attachment attachment = null;
-    
+
     private Folder folder = null;
-    
+
     private Project project;
 
     @Column(name = "F_NAME", length = 20)
@@ -43,7 +43,7 @@ public class Document extends DomainEntity {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     @Column(name = "F_DESC", length = 2000)
     public String getDescription() {
         return description;
@@ -52,7 +52,7 @@ public class Document extends DomainEntity {
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     @Column(name = "F_TYPE", length = 10)
     public String getType() {
         return type;

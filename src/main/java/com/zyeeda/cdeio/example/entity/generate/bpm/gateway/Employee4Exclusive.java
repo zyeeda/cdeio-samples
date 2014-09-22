@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDE_GENERATE_BPM_GATEWAY_EXCLUSIVE")
+@Table(name = "CDEIO_GENERATE_BPM_GATEWAY_EXCLUSIVE")
 @Scaffold("/generate/bpm/gateway/exclusive")
 public class Employee4Exclusive extends BpmDomainEntity {
 
@@ -60,7 +60,7 @@ public class Employee4Exclusive extends BpmDomainEntity {
     public void setName(String name) {
         this.name = name;
     }
-    
+
 	public Integer getWorkingLife() {
 		return workingLife;
 	}
@@ -68,7 +68,7 @@ public class Employee4Exclusive extends BpmDomainEntity {
 	public void setWorkingLife(Integer workingLife) {
 		this.workingLife = workingLife;
 	}
-	
+
     public String getDescription() {
         return description;
     }

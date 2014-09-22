@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDE_GENERATE_BPM_MULTIPLE_SUBPROCESS")
+@Table(name = "CDEIO_GENERATE_BPM_MULTIPLE_SUBPROCESS")
 @Scaffold("/generate/bpm/multiple/subprocess")
 public class Plan4Subprocess extends BpmDomainEntity {
 
@@ -18,7 +18,7 @@ public class Plan4Subprocess extends BpmDomainEntity {
     private Integer cycle = null;
     private String  planner = null;
 	private String  description = null;
-	
+
 	public String getName() {
 		return name;
 	}
@@ -49,5 +49,5 @@ public class Plan4Subprocess extends BpmDomainEntity {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 }

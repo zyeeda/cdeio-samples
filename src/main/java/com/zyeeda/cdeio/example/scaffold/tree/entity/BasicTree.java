@@ -25,20 +25,20 @@ import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "CDE_SCAFFOLD_BASIC_TREE")
+@Table(name = "CDEIO_SCAFFOLD_BASIC_TREE")
 @Scaffold("/scaffold/tree/basic")
 public class BasicTree extends TreeNodeRevisionDomainEntity implements TreeNode<BasicTree> {
-	
+
 	/**
 	 *名称
 	 */
 	private String name;
-	
+
 	/**
 	 *父级
 	 */
 	private BasicTree parent;
-	
+
 	/**
 	 *子类
 	 */

@@ -13,7 +13,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "CDE_UI_BASIC")
+@Table(name = "CDEIO_UI_BASIC")
 @Scaffold("/extension/ui/basic")
 public class UiBasic extends DomainEntity{
 	 /**

@@ -8,11 +8,11 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_USER")
+@Table(name = "CDEIO_USER")
 @Scaffold("/tenant/user")
 public class User extends DomainEntity {
     /**
-     * 
+     *
      */
     private static final long serialVersionUID = 6061369726942245652L;
 
@@ -20,15 +20,15 @@ public class User extends DomainEntity {
      * 名称.
      */
     private String name;
-    
+
     private String sex;
-    
+
     private Integer age;
-    
+
     private String email;
-    
+
     private String phone;
-    
+
     private String passwd;
 
     @Column(name = "F_NAME", length = 100)
@@ -39,7 +39,7 @@ public class User extends DomainEntity {
     public void setName(final String name) {
         this.name = name;
     }
-    
+
     @Column(name = "F_SEX", length = 1)
     public String getSex() {
         return sex;
@@ -84,5 +84,5 @@ public class User extends DomainEntity {
     public void setPasswd(String passwd) {
         this.passwd = passwd;
     }
-    
+
 }

@@ -24,7 +24,7 @@ exports.grid = {
     columns: [
         {name: 'name', filter: 'text'},
         {name: 'code', filter: 'number-range'},
-        {name: 'sex', filter: 'select', source: [{id: '男', label: '男'}, {id: '女', label: '女'}]},
+        {name: 'sex', filter: 'select', source: [{value: '男', label: '男'}, {value: '女', label: '女'}]},
         {name: 'birthday', filter: 'date-range'},
         {name: 'email', filter: 'text'}
     ]

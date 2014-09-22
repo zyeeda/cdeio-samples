@@ -8,17 +8,17 @@ import javax.validation.constraints.NotNull;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 @Entity
-@Table(name = "CDE_BASIC_TODO")
+@Table(name = "CDEIO_BASIC_TODO")
 @Scaffold("/scaffold/basic/basic-todo")
 public class BasicTodo extends DomainEntity {
-	
+
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -7657500001696748426L;
 	private String name ;
 	private String description ;
-	
+
 	@Column(name = "F_NAME",length=60)
 	@NotNull
 	public String getName() {

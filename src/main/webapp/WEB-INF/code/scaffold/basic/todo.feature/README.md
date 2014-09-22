@@ -17,7 +17,7 @@ exports.filters = {
         '!todoFilter': ['children', 'parent(1)'],
         '!basicUserFilter': 'todos'
     },
-     get: {
+    get: {
         '!todoFilter': ['children', 'parent(1)'],
         '!basicUserFilter': 'todos'
     }

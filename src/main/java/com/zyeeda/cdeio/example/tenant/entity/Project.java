@@ -11,12 +11,12 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_PROJECT")
+@Table(name = "CDEIO_PROJECT")
 @Scaffold("/tenant/project")
 public class Project extends DomainEntity {
-    
+
     /**
-     * 
+     *
      */
     private static final long serialVersionUID = -2663145697591360845L;
 
@@ -29,7 +29,7 @@ public class Project extends DomainEntity {
      * 描述.
      */
     private String description;
-    
+
     private List<Document> documents = null;
 
     @Column(name = "F_NAME", length = 100)

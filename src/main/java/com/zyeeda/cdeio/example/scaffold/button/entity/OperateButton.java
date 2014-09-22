@@ -16,7 +16,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "CDE_SCAFFOLD_OPERATE_BUTTON")
+@Table(name = "CDEIO_SCAFFOLD_OPERATE_BUTTON")
 @Scaffold("/scaffold/button/basic")
 public class OperateButton extends DomainEntity{
 
@@ -24,12 +24,12 @@ public class OperateButton extends DomainEntity{
 	 * 序列化
 	 */
 	private static final long serialVersionUID = -9131527242940537619L;
-	
+
 	/**
 	 * 名称
 	 */
 	private String name;
-	
+
 	/**
 	 * 描述
 	 */
@@ -54,5 +54,5 @@ public class OperateButton extends DomainEntity{
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 }

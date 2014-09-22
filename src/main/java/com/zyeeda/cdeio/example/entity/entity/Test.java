@@ -13,7 +13,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  *
  */
 @Entity
-@Table(name = "CDE_TEST")
+@Table(name = "CDEIO_TEST")
 @Scaffold("/entity/test")
 public class Test extends DomainEntity {
 

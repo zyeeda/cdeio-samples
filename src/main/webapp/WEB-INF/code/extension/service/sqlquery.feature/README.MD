@@ -1,16 +1,14 @@
-#扩展后台(SQL 查询)
+# 扩展后台(SQL 查询)
 
-本章主要介绍如何基于平台自定义数据库查询。
+本例主要介绍如何基于 Cdeio 自定义数据库查询。
 
-在平台中，更新数据可以在有事务管理的 sevice 方法内部对持久态的实体对象属性进行编辑，在 hibernate sessions 缓存被清空时会自动保存数据；
+ Cdeio 可以在有事务管理的 sevice 方法内部对持久态的实体对象属性进行编辑，在 hibernate sessions 缓存被清空时会自动保存数据；
 
-删除与新增方法由于比较简单，平台的 manager 已经提供；
+基本的删除与新增方法 Cdeio 提供的公共 manager 已经提供，与新增和删除不同查询在不同的业务中通常会有各种需求，本例主要演示如何按照不同的业务需求查询语句。
 
-查询数据功能在不同的业务中通常会有各种需求，本文主要讲如何按照不同的业务需求查询语句。
+###1. 编写 和配置 orm 文件
 
-###1. 编写 和配置orm 文件
-
-首先需要在 orm 文件中编写 `hql` 语句，如文件名称为 `myfile.orm.xml`，存放路径为 `WEB-INF/classes/META-INF/mappings/extension/service/task.orm.xml`，则需要在
+首先需要在 orm 文件中编写 hql 语句，以 task.orm.xml为例，存放路径为 main/resources/META-INF/mappings/extension/service/task.orm.xml，定义内容如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -28,19 +26,19 @@
 </entity-mappings>
 ```
 
-在编写 orm 文件之后需要将文件路径配置到 `persistence.xml` 文件中。
+在编写完 orm 文件之后需要将文件路径配置到 persistence.xml 文件中。
 
 ```xml
-...
+    ...
     <persistence-unit name="default" transaction-type="JTA">
         <mapping-file>META-INF/mappings/extension/service/task.orm.xml</mapping-file>
     </persistence-unit>
-...
+    ...
 ```
 
-###2. 如何使用manager 调用
+###2. 使用 manager
 
-####2.1 系统内置 manager
+#### 2.1 系统内置 manager
 
 ```javascript
 var {mark}   = require('cdeio/mark');

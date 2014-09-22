@@ -25,7 +25,7 @@ import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "CDE_EXTENSION_ADVANCED_TREE")
+@Table(name = "CDEIO_EXTENSION_ADVANCED_TREE")
 @Scaffold({"/extension/tree/event", "/extension/tree/icon"})
 public class AdvancedTree extends TreeNodeRevisionDomainEntity implements TreeNode<AdvancedTree> {
 

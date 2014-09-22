@@ -17,12 +17,12 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 
 @Entity
-@Table(name = "CDE_TODO")
+@Table(name = "CDEIO_TODO")
 @Scaffold("/scaffold/basic/todo")
 public class Todo extends DomainEntity implements TreeNode<Todo> {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 7355937947747365327L;
 	private String name ;
@@ -31,7 +31,7 @@ public class Todo extends DomainEntity implements TreeNode<Todo> {
 	private BasicUser basicUser ;
 	private Todo parent ;
 	private List<Todo> children = new ArrayList<Todo>() ;
-	
+
 
 
 	@Column(name = "F_NAME",length=60)
@@ -44,7 +44,7 @@ public class Todo extends DomainEntity implements TreeNode<Todo> {
 		this.name = name;
 	}
 
-	
+
 	@Column(name ="F_DESCRIPTION",length=350)
 	public String getDescription() {
 		return description;
@@ -83,6 +83,6 @@ public class Todo extends DomainEntity implements TreeNode<Todo> {
 		this.basicUser = basicUser;
 	}
 
-	
+
 
 }

@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDE_GENERATE_BPM_TASK_REJECT")
+@Table(name = "CDEIO_GENERATE_BPM_TASK_REJECT")
 @Scaffold("/generate/bpm/task/reject")
 
 public class Employee4Reject extends BpmDomainEntity {

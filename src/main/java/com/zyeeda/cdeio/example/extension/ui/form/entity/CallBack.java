@@ -18,7 +18,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "CDE_UI_CALL_BACK")
+@Table(name = "CDEIO_UI_CALL_BACK")
 @Scaffold("/extension/ui/call-back")
 public class CallBack extends DomainEntity{
 

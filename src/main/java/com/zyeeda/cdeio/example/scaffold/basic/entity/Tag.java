@@ -11,12 +11,12 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_TAG")
+@Table(name = "CDEIO_TAG")
 @Scaffold("/scaffold/basic/tag")
 public class Tag extends DomainEntity {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -4148324734250369105L;
 
@@ -24,13 +24,13 @@ public class Tag extends DomainEntity {
 
 	private String desc = null;
 
-	
+
 	@Column(name = "F_NAME",length = 30)
 	@NotNull
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -39,9 +39,9 @@ public class Tag extends DomainEntity {
 	public String getDesc() {
 		return desc;
 	}
-	
+
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	
+
 }

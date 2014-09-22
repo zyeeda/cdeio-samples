@@ -17,7 +17,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "CDE_UI_CUSTOM_FORM")
+@Table(name = "CDEIO_UI_CUSTOM_FORM")
 @Scaffold("/extension/ui/custom-form")
 public class CustomForm extends DomainEntity{
 

@@ -22,12 +22,12 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_FORM_USER")
+@Table(name = "CDEIO_FORM_USER")
 @Scaffold("/scaffold/form/user")
 public class FormUser extends DomainEntity {
-	
+
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 6318193272637340676L;
 	private String name;
@@ -35,7 +35,7 @@ public class FormUser extends DomainEntity {
 	private Date birthday;
 	private String email;
 	private List<FormTodo> todos;
-	
+
 	@Column(name = "F_NAME",length = 80)
 	@NotNull
 	public String getName() {
@@ -53,8 +53,8 @@ public class FormUser extends DomainEntity {
 	public void setSex(String code) {
 		this.sex = code;
 	}
-	
-	
+
+
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "F_BIRTHDAY")
 	public Date getBirthday() {
@@ -63,8 +63,8 @@ public class FormUser extends DomainEntity {
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
-	
-	
+
+
 	@Column(name = "F_EMAIL")
 	@Email
 	public String getEmail() {
@@ -73,7 +73,7 @@ public class FormUser extends DomainEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	@ManyToMany
 	@JoinTable(name = "ZED_FORM_TODO_USER",
 	joinColumns=@JoinColumn(name = "F_TODO_ID"),
@@ -84,9 +84,9 @@ public class FormUser extends DomainEntity {
 	public void setTodos(List<FormTodo> todos) {
 		this.todos = todos;
 	}
-	
-	
-	
-	
+
+
+
+
 
 }

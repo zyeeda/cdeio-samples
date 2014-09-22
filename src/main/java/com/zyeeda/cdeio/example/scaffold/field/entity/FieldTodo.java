@@ -22,7 +22,7 @@ import com.zyeeda.cdeio.commons.resource.entity.Attachment;
 import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @Entity
-@Table(name = "CDE_FIELD_TODO")
+@Table(name = "CDEIO_FIELD_TODO")
 @Scaffold("/scaffold/field/todo")
 public class FieldTodo extends DomainEntity {
 
@@ -49,7 +49,7 @@ public class FieldTodo extends DomainEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@NullableSize(max = 1333)
 	@Column(name ="F_DESCRIPTION",length=4000)
 	public String getDescription() {
@@ -77,7 +77,7 @@ public class FieldTodo extends DomainEntity {
 	public void setTag(FieldTag tag) {
 		this.tag = tag;
 	}
-	
+
 	@Column(name = "F_START_TIME")
 	@Temporal(TemporalType.DATE)
 	public Date getStartDate() {

@@ -12,7 +12,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_FIELD_PROJECT")
+@Table(name = "CDEIO_FIELD_PROJECT")
 @Scaffold("/scaffold/field/project")
 public class FieldProject extends DomainEntity {
 

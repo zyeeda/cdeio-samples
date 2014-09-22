@@ -30,4 +30,4 @@ exports.fieldGroups = {
 `salary` 字段的值必须为数字，且不能小于2000；
 `creditcard` 字段的必须为有效的信用卡号。
 
-<span class="badge badge-warning">注</span>&nbsp;：{name: 'name', `required: true`, validations: {rules: {required: true}}} 中红色部分表示字段标题后带`*`标示。更多字段验证规则详见API文档。
+<span class="badge badge-warning">注</span>&nbsp;：{name: 'name', `required: true`, validations: {rules: {required: true}}} 中红色部分表示字段标题后带`*`标示。更多字段验证规则详见 Cdeio API 文档或 jQuery Validation Plugin 的<a href="http://jqueryvalidation.org/reference/" target="_blank">&nbsp;官方文档&nbsp;</a>。

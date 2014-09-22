@@ -17,7 +17,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "CDE_UI_ROUTER")
+@Table(name = "CDEIO_UI_ROUTER")
 @Scaffold("/extension/ui/router")
 public class Router extends DomainEntity{
 
@@ -30,16 +30,6 @@ public class Router extends DomainEntity{
      * 名称.
      */
     private String name;
-
-    /**
-	 *申请时间
-	 */
-	private Date applyTime;
-
-	/**
-	 *申请人
-	 */
-	private String applicant;
 
     /**
      * 描述.
@@ -64,22 +54,4 @@ public class Router extends DomainEntity{
 		this.description = description;
 	}
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "F_APPLY_TIME")
-	public Date getApplyTime() {
-		return applyTime;
-	}
-
-	public void setApplyTime(Date applyTime) {
-		this.applyTime = applyTime;
-	}
-
-	@Column(name = "F_APPLICANT", length = 100)
-	public String getApplicant() {
-		return applicant;
-	}
-
-	public void setApplicant(String applicant) {
-		this.applicant = applicant;
-	}
 }

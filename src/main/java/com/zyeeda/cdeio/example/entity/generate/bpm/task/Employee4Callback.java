@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDE_GENERATE_BPM_TASK_CALLBACK")
+@Table(name = "CDEIO_GENERATE_BPM_TASK_CALLBACK")
 @Scaffold("/generate/bpm/task/callback")
 
 public class Employee4Callback extends BpmDomainEntity {

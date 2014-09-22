@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_DATA_TENANT")
+@Table(name = "CDEIO_DATA_TENANT")
 public class DataTenant extends DomainEntity {
 
     private static final long serialVersionUID = -2322334909170543063L;
@@ -17,7 +17,7 @@ public class DataTenant extends DomainEntity {
     private String dataId;
 
     private Tenant tenant;
-    
+
     private String dataType;
 
     @Column(name = "F_DATA_ID", length = 40)
@@ -47,6 +47,6 @@ public class DataTenant extends DomainEntity {
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
-    
-    
+
+
 }
