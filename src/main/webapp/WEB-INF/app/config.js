@@ -7,7 +7,6 @@ exports.cdeio = {
     entityPackages : [
         // 'com.zyeeda.cdeio.commons.authc.entity',
         'com.zyeeda.cdeio.commons.resource.entity',
-        'com.zyeeda.cdeio.commons.funnel.entity',
         'com.zyeeda.cdeio.example.entity.entity',
         'com.zyeeda.cdeio.example.scaffold.basic.entity',
         'com.zyeeda.cdeio.example.scaffold.field.entity',
@@ -19,7 +18,6 @@ exports.cdeio = {
         'com.zyeeda.cdeio.example.scaffold.button.entity',
         'com.zyeeda.cdeio.example.extension.ui.form.entity',
         'com.zyeeda.cdeio.example.extension.service.entity',
-        'com.zyeeda.cdeio.example.tenant.entity',
         'com.zyeeda.cdeio.example.entity.generate',
         'com.zyeeda.cdeio.example.entity.generate.bpm.task',
         'com.zyeeda.cdeio.example.entity.generate.bpm.gateway',

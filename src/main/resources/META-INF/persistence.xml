@@ -18,10 +18,6 @@
         <class>com.zyeeda.cdeio.commons.resource.entity.SettingItem</class>
         <class>com.zyeeda.cdeio.commons.authc.entity.Permission</class>
         <class>com.zyeeda.cdeio.commons.authc.entity.Role</class>
-        <class>com.zyeeda.cdeio.commons.funnel.entity.Funnel</class>
-        <class>com.zyeeda.cdeio.commons.funnel.entity.FunnelType</class>
-        <class>com.zyeeda.cdeio.commons.funnel.entity.FunnelData</class>
-        <class>com.zyeeda.cdeio.commons.funnel.entity.FunnelDataType</class>
         <class>com.zyeeda.cdeio.commons.resource.entity.Attachment</class>
         <class>com.zyeeda.cdeio.bpm.entity.TaskEntity</class>
         <class>com.zyeeda.cdeio.bpm.entity.IdentityLinkEntity</class>
