@@ -5,7 +5,7 @@ define([
 ], function (_, Backbone, config) {
     return {
         routes: {
-            'home': 'showHome',
+            '': 'showHome',
             'profile': 'showProfile',
             'feature/*name': 'showMenu',
             'report/*name': 'showReport',
