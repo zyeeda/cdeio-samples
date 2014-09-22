@@ -1,23 +1,14 @@
-#扩展界面（自定义表单视图）
+本例主要介绍如何配置自定义表单。
 
-本章主要介绍如何自定义表单视图。
+自定义表单视图功能主要是为了满足个性化定制的需求，为开发人员提供了默认表单视图以外的另一种选择。实现自定义表单功能包括两部分工作，首先是定义表单的模板文件，然后是在后端 scaffold.js 中配置自定义表单。
 
-自定义表单视图功能主要是为了满足个性化定制的需求，为开发人员提供了默认表单视图以外的另一种选择。
+### 定义表单模板文件
+模板文件文件主要由 HTML 标签和 `Handlebarsjs` 的标记语言组件，用来配置界面布局和数据填充格式。关于模板文件的代码示例请参见本例 `前端模板` ，在此就不一一描述了。
 
-自定义表单视图包含两部分：
+<span class="badge badge-warning">注</span>&nbsp; ：关于 `Handlebarsjs` 标记详情请参考_http://handlebarsjs.com_
 
-首先是配置scaffold；
-
-然后是配置模板。
-
-##1.在后台scaffold配置说明
-
-给需要自定义的分组中所有字段配置`hideLabel: true`属性；
-
-给需要自定义页面配置`custom: true`(是否自定义，默认值false)和`template: 'xxx'`(表单模板路径)属性。
-
-代码示例如下：
-
+### 配置自定义表单
+需要在自定义表单中展示的字段，在配置 `fieldGroups` 时要将字段中的 `hideLabel` 设置为 true。同时，在 `forms` 中将 `template` 设置为模板的路径即可。代码示例如下：
 ```javascript
 exports.fieldGroups = {
     add: [
@@ -41,7 +32,6 @@ exports.fieldGroups = {
         {name: 'auxRemark', hideLabel: true}
     ]
 };
-
 exports.forms = {
     add: {
         size: 'large',
@@ -53,16 +43,10 @@ exports.forms = {
     }
 };
 ```
+示例代码中 fieldGroups 中配置 `hideLabel: true` 表示该字段将会在自定义表单中展现；forms 配置了 `add` 表单对应的展示模板为 `extension/ui/custom-form.feature/views/add.html`。
 
-##2.在前台配置说明
+<span class="badge badge-warning">注</span>&nbsp; ：平台中大量用到了 `bootstrap` 框架的样式，更多样式详情请参考_http://www.bootcss.com/_ 
 
-根据后台scaffold文件中的`template`路径地址，在前台新建相应的文件
-
-**表单模板补充说明**
-
-1. 表单样式:  一部分来自bootstrap框架,更多样式详情请参考`bootstrap官网`http://www.bootcss.com/ ,另一部分来自系统自定义,也可以自己定义样式
-
-2. `{{}}` :  handlebarsjs框架的模板标记,更多模板标记详情请参考`handlebarsjs官网`http://handlebarsjs.com/
 
 
 

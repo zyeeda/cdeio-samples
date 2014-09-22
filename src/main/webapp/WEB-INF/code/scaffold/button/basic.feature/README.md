@@ -1,70 +1,32 @@
-#操作按钮
+本例主要介绍如何修改默认按钮的属性以及添加自定义按钮。
 
-本章主要介绍如何修改默认按钮的属性以及添加自定义按钮。
+平台的功按钮分为两种，一种是系统预定义按钮，一种是用户自定义按钮。
+平台预定义按钮都是一些常用的功能按钮，例如添加、查看、编辑、删除等，平台的自动构建功能会初始化这些按钮到相应的功能页面；
+自定义按钮则需要开发者自己定义按钮样式，并添加对应的按钮事件。
 
-##修改默认按钮属性
-
-平台默认定义的按钮有add、show、edit、refresh和del，分别是添加、查看、编辑、刷新和删除。
-
-通过修改默认操作按钮的属性，可以实现个性化的业务需求。
-
-如果需要重新定义或者覆盖这几个按钮，在`operators`中定义同名的按钮即可，示例代码如下：
+##预定义按钮
+通常情况下，预定义按钮是不需要开发者做任何配置，但是可以通过覆盖预定义按钮来实现一些个性化需求。代码示例如下：
 
 ```javascript
 exports.operators = {
-    add: {label: '添加', icon: 'icon-plus', group: '10-add', style: 'btn-success', show: 'always', order: 100},
-    show: {label: '查看', icon: 'icon-eye-open', group: '20-selected', style: 'btn-grey', show: 'single-selected', order: 100},
+    add: {label: '添加', icon: 'icon-plus', group: '10-add', style: 'btn-success', show: 'always', order: 100}
 };
 ```
-
-上面的代码覆盖了add和show两个按钮，通过修改add和show中的属性值可以到达定制按钮的目的。
-
-按钮的参数说明如下：
-
-`label`：按钮在页面上显示的名称；
-
-`icon`：按钮的图标样式；
-
-`group`：`-`前为分组的排序值，后为分组名称；
-
-`style`：按钮显示的样式；
-
-`show`：按钮的显示方式，默认值是`single-selected`，`always`表示一直显示，`single-selected`表示点击选中列表数据时显示；
-
-`order`：按钮在分组中的排序，根据值的大小从左到右进行排序。
+示例代码覆盖了预定义添加按钮 `add` ，定义了按钮的标题为 “ 添加 ” ，按钮图标为 “ icon-plus ” ，按钮分组为 “ 10-add ”，样式为 “ btn-success ”，显示方式为 “ always ”（总是显示），排序值为 100。
 
 ##自定义按钮
+添加自定义按钮类似于覆盖预定义按钮，只不过按钮的名称不在预定义按钮范围中。
 
-平台还提供了添加自定义按钮的功能，通过简单的配置就可以实现。
-
-添加自定义按钮需要在后台对按钮进行定义，同时也需要在前台编写按钮对应的响应事件。
-
-###1. 在后台定义按钮
-
+示例代码如下：
 ```javascript
-//与前台交互属性配置
-exports.enableFrontendExtension = true;
-
 exports.operators = {
-    //自定义按钮
     buttonOne: {label: '按钮一', icon: 'icon-comment-alt', group: '40-other', style: 'btn-yellow', show: 'always', order: 300}
 };
 ```
+示例代码定义了按钮 buttonOne，按钮的标题为 “ 按钮一 ” ，按钮图标为 “ icon-comment-alt ” ，按钮分组为 “ 40-other ”，样式为 “ btn-yellow ”，显示方式为 “ always ”（总是显示），排序值为 300。
 
-###2. 在前台编写按钮事件
 
-```javascript
-define([
-    'jquery'
-], function ($) {
-    return {
-        handlers: {
-            buttonOne: function () {
-                ......
-            }
-        }
-    };
-});
-```
+<span class="badge badge-warning">注</span>&nbsp;：此时自定义按钮 buttonOne 并无响应事件，如需了解如何添加按钮对应的响应事件，请参考`扩展 -> 前端界面 -> 基础` 。
 
-**注：按钮事件的方法名和按钮的名字是一致的**
+
+

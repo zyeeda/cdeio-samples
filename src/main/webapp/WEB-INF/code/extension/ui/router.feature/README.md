@@ -1,47 +1,28 @@
-#扩展界面（路由）
+ 本例主要介绍如何在公共的路由文件中定义路由地址。
 
- web 应用程序通常需要为应用的重要位置提供可链接、可收藏、可分享的 URLs。为此提供路由，页面加载期间，会初始化已创建的路由。
-
-路由的全局配置文件在前台`app/routers.js`中
-##1.routers.js文件的详细说明：
-
-可以通过 `routes` 定义路由动作键值对，当匹配了 URL 片段便执行定义的动作。
+ web应用程序通常需要为应用的重要位置提供可链接、可收藏、可分享的 URLs。为此，平台提供公共的路由配置文件 `src/main/webapp/scripts/app/routers.js`。示例代码如下：
 ```javascript
 define([
     'underscore',
-    'backbone'
-], function (_, Backbone) {
+    'backbone',
+    'config'
+], function (_, Backbone, config) {
     return {
         routes: {
-            "help":                 "help",    // #help
-            "search/:query":        "search",  // #search/kiwis
-            "search/:query/p:page": "search"   // #search/kiwis/p7
+            'home': 'showHome'
         },
-        help: function() {
-            ...
-        },
-        search: function(query, page) {
-            ...
+        showHome: function() {
+            me = this;
+            return app.startFeature('main/viewport', { container: $(document.body), ignoreExists: true }).done(function () {
+                me._activateMenu('#');
+                app.startFeature('main/home', {container: $(document).body, ignoreExists: true});
+            });
         }
     };
 });
 ```
-`routes`详细说明:
+示例中首先配置了一个名称为 `home` 的路由地址（以本项目为例其访问路径为 `https://localhost:7000/coala-examples/#home`），访问 `home` 这个路由地址会调用 `showHome` 方法来处理。紧接着 `showHome` 方法就被定义了，这个方法中调用 `startFeature` 来展示系统的首页。所以，访问  `home` 时会自动跳转到首页。
 
-routes 将带参数的 URLs 映射到路由实例的方法上，这与视图的事件键值对非常类似。 路由可以包含参数，:param，它在斜线之间匹配 URL 组件。 路由也支持通配符，*splat，可以匹配多个 URL 组件。
+<span class="badge badge-warning">注</span>&nbsp; ：关于 `Backbone` 更多详情介绍，请参考_http://backbonejs.org/_
 
-举个例子，路由 "search/:query/p:page" 能匹配 #search/obama/p2 , 这里传入了 "obama" 和 "2" 到路由对应的动作中去了。 "file/*path 路由可以匹配 #file/nested/folder/file.txt，这时传入动作的参数为 "nested/folder/file.txt"。
 
-当访问者点击浏览器后退按钮，或者输入 URL ，如果匹配一个路由，此时会触发一个基于动作名称的 事件， 其它对象可以监听这个路由并接收到通知。 下面的示例中，用户访问 #help/uploading 将从路由中触发 route:help 事件。
-```javascript
-routes: {
-  "help/:page":         "help",
-  "download/*path":     "download",
-  "folder/:name":       "openFolder",
-  "folder/:name-:mode": "openFolder"
-},
-help: function(page) {
-    ...
-}
-```
-更多详情介绍，请参考 Backbone <a href="http://backbonejs.org/#Router" target="_blank">&nbsp;官方网站&nbsp;</a>。

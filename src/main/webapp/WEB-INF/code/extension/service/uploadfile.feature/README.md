@@ -1,92 +1,56 @@
-#扩展后台(文件上传)
+本例主要介绍如何基于平台实现文件上传功能。
 
-本章主要介绍如何基于平台实现文件上传功能。
+平台的文件上传功能通过配置 `file-picker` 获取到文件的本地路径，然后调用 `ringo/util/http` 中 `parseFileUpload` 方法根据本地路径读取文件，并将文件上传到服务器文件存储目录。所以要实现此功能需要在后端 scaffold.js 中定义上传组件和文件上传路由地址，在自定义 service.js 中调用 `parseFileUpload` 将文件上传到服务器目录。
 
-** 以下介绍的方法仅供参考。 **
-
-由于系统中使用的是 `ringo/jsgi` 的 httpServlet 对象，所以处理上传文件请求的功能需要借助 `ringo/util/http` 工具。
-
-上传文件的请求 `request` 对象中包含了文件流，首先用 `parseFileUpload (request, params, encoding, streamFactory)` 来上传文件，传入 request 对象；
-
-然后在此方法内部调用 ringojs 的文件处理工具 `fs` 创建好需要保存的文件目录并生成空文件；
-
-最后打开该文件并使用二进制的方式写入文件内容，当然在此文件内部还可以根据业务需要做一些类似保存附件实体等操作。
-
-** 注: 关于 `ringojs` 的用法请参照官方网站 http://ringojs.org/api/master/ **
-
-示例代码如下：
-
+后端 scaffold.js 文件代码示例：
 ```javascript
-var {mark}                           = require('cdeio/mark');
-var fs                               = require('fs');
-var {join}                           = require('cdeio/util/paths');
-var cdeio                            = require('cdeio/config');
-var {parseFileUpload, BufferFactory} = require('ringo/utils/http');
+exports.fieldGroups = {
+    defaults: [
+        'name', 'code',
+        {name: 'summary', type: 'textarea'},
+        {name: 'attachment', type: 'file-picker', url: 'invoke/scaffold/extension/service/uploadfile/upload', acceptFileTypes: "(\\.|\\/)(doc|xls|ppt|txt)$"}
+    ]
+};
 
-var UUID = java.util.UUID;
+exports.doWithRouter = function(router) {
+    router.post('/upload', mark('services', 'extension/service/uploadfile').on(function (uploadfileSvc, request) {
+        return uploadfileSvc.uploadfile(request);
+    }));
+};
+```
+示例首先在 `fieldGroups` 中定义了字段 `attachment` 的表单组件为文件选择器，文件上传路由地址为 `invoke/scaffold/extension/service/uploadfile/upload` ,并且只能选择格式为 .doc 、.xls 、.ppt 、.txt 的文件；然后在 `doWithRouter` 中定义了 `/upload` 方法，该方法的路由地址为 字段 `attachment`的上传路由地址，并且在此路由中调用自定义service中 `uploadfile`（这个方法将在 service.js 中定义） 进行文件上传。
 
-var CONFIG_KEY = 'cdeio.upload.path';
-
+自定义 service.js 文件代码示例：
+```javascript
 exports.createService = function() {
     return {
         uploadfile: mark('managers', Attachment).mark('tx').on(function (attachmentMgr, request) {
             var path, prefix, a, attachment, file, fileName, filePath, folder, fullPath, now, params, storeFile;
-
             path = 'images';
-
-            // 此配置位于 src/main/resources/settings/cdeio.properties
-            prefix = cdeio.getOptionInProperties(CONFIG_KEY);
+            prefix = coala.getOptionInProperties(CONFIG_KEY);
             params = {};
             fileName = UUID.randomUUID().toString();
             now = new Date();
             folder = join(path, now.getFullYear(), (now.getMonth() + 1) + '-' + now.getDate());
             filePath = join(folder, fileName);
             fullPath = join(prefix, filePath);
-
             parseFileUpload(request, params, null, function (data, enc) {
                 if (!data.filename) {
                     return BufferFactory(data, enc);
                 }
-
-                // 新建存放附件缺少的目录
                 fs.makeTree(join(prefix, folder));
-
-                // 生成空文件
                 fs.touch(fullPath);
-
                 data.path = filePath;
-
                 return fs.open(fullPath, {
                     write: true,
                     binary: true
                 });
             });
-
-            if (!params.files) {
-                throw new Error('Request is not a file upload request');
-            }
-
-            // 保存附件实体
-            storeFile = function(file) {
-                var a;
-                a = new Attachment();
-                a.contentType = file.contentType;
-                a.path = file.path;
-                a.filename = file.filename;
-                return attachmentMgr.save(a);
-            };
-
-            if (params.files.length === 1) {
-                file = params.files[0];
-                attachment = storeFile(file);
-                return {
-                    id: attachment.id,
-                    name: attachment.filename
-                };
-            }
-
             return {};
         })
     };
 };
 ```
+示例中定义了 service uploadfile 方法，在此方法中首先根据时间等规则生成文件上传到服务器的路径和名称 `fullPath`，然后调用 RingojS 的 `parseFileUpload` 生成 `fullPath` 指向的空文件，并将上传文件以 `BufferFactory` 的形式写入这个空文件中。
+
+<span class="badge badge-warning">注</span>&nbsp;： 关于 `RingoJs` 的用法请参照官方网站 _http://ringojs.org/api/master/_

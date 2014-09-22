@@ -1,32 +1,15 @@
-#扩展界面（基础）
+本例主要介绍如何给按钮添加响应事件。
 
-本章介绍如何扩展界面，主要是对界面按钮的扩展。
+在 `动态脚手架 -> 操作按钮` 中介绍过如何添加按钮，那么接下来本例将介绍如何给自定义按钮添加前端响应事件。
 
-对界面按钮的扩展主要包含两部分工作：
-
-首先在后台定义按钮；
-
-然后在前台编写按钮响应事件。
-
-###1. 在后台定义按钮
-
-配置与前台交互的属性enableFrontendExtension，按钮的详细配置请参考自动生成中的操作按钮
-
+在后端 scaffold.js 文件中定义按钮：
 ```javascript
-//与前台交互属性配置
 exports.enableFrontendExtension = true;
-
-//定义回收站按钮
-//trash是按钮事件的方法名
 exports.operators = {
     trash: { label: '回收站', icon: 'icon-trash', group: '30-tips', order: 10, show: 'always', style: 'btn btn-grey' }
 };
 ```
-
-###2. 在前台编写按钮事件
-
-事件的处理统一在handlers里面定义及处理，按钮事件的方法名要和按钮定义的方法名一致
-
+在前端 scaffold.js 文件中配置按钮的响应事件：
 ```javascript
 define([], function () {
     return {
@@ -38,6 +21,11 @@ define([], function () {
     };
 })
 ```
+后端  scaffold.js 文件中定义了名为 `trash` 的按钮，前端 scaffold.js 文件中定义了按钮 `trash` 对应的响应时间，该事件在暗流点击的时候会弹一个内容为 “ 这是个回收站按钮 ” 的提示框。
+
+<span class="badge badge-warning">注</span>&nbsp; ：后端 scaffold.js 文件中 `enableFrontendExtension = true` 启用前台交互扩展，这样就可以给按钮添加事件了。
+
+
 
 
 

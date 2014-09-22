@@ -1,13 +1,10 @@
-#扩展树的图标
+本例主要介绍如何给树的节点加自定义图标。
 
-本章主要介绍如何给树状结构加图标。
+平台提供了给树的节点配置图标的功能，针对不同的节点可以添加不同的图标。具体的添加步骤如下：
 
-##1. 配置树的基本属性
-
-首先在`exports.tree`中，为根节点设置好`iconSkin`。
-
-样例代码：
+### 1.在后端 scaffold.js 文件中定义树
 ```javascript
+exports.enableFrontendExtension = true;
 exports.tree = {
     isAsync: true,
     root: '中国',
@@ -18,11 +15,9 @@ exports.tree = {
     defaultOrder: 'name-asc'
 };
 ```
-##2. 重写`list`方法
+示例是在后端 scaffold.js 文件中定义一个树，该树的根节点叫 “ 中国 ” 的树。`enableFrontendExtension = true` 表示该树允许来自前端的扩展。
 
-在列表加载tree数据时，为每一级节点设置好`iconSkin`属性，以便在页面上展示不同的图标。
-
-样例代码：
+### 2.自定义 service.js 并重写 list 方法
 ```javascript
 exports.createService = function () {
     return {
@@ -40,12 +35,9 @@ exports.createService = function () {
     };
 };
 ```
+示例是在自定 service.js 文件中重写了 list 方法，并且根据 list 中数据的 `type` 类型给 `iconSkin` 设置不同的自定义图标。
 
-##3. CSS样式
-
-根据节点的`iconSkin`属性值，通过CSS样式为tree的每一级节点设置不同的`className`的样式，达到展示个性化图标的目的。
-
-样例代码：
+### 3.公共 css 文件中引入树形结构样式
 ```css
 .countryNode_ico_close, .countryNode_ico_open, .countryNode_ico_docu, .provinceNode_ico_close, .provinceNode_ico_open, .provinceNode_ico_docu, .cityNode_ico_close, .cityNode_ico_open, .cityNode_ico_docu, .countyNode_ico_close, .countyNode_ico_open, .countyNode_ico_docu{
   background-image: url("../images/country_tree_icons.png") !important;
@@ -65,3 +57,4 @@ exports.createService = function () {
   background-position: 0 -64px !important;
 }
 ```
+在公共 css 样式文件中引入以上样式。
