@@ -99,7 +99,7 @@ public class FieldTodo extends DomainEntity {
 	}
 
 	@ManyToMany
-	@JoinTable(name = "ZED_FIELD_TODO_USER",
+	@JoinTable(name = "ZDA_FIELD_TODO_USER",
 	joinColumns=@JoinColumn(name = "F_TODO_ID"),
 	inverseJoinColumns = @JoinColumn(name = "F_USER_ID"))
 	public List<FieldUser> getUsers() {
@@ -121,7 +121,7 @@ public class FieldTodo extends DomainEntity {
 	}
 
 	@OneToMany
-	@JoinTable(name = "ZED_FIELD_TODO_ATTACHMENT",
+	@JoinTable(name = "ZDA_FIELD_TODO_ATTACHMENT",
 	joinColumns = @JoinColumn(name = "F_TODO_ID"),
 	inverseJoinColumns = @JoinColumn(name = "F_ATTACHMENT_ID"))
 	public List<Attachment> getAttachments() {
