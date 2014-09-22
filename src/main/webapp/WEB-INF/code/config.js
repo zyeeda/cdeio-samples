@@ -93,7 +93,11 @@ exports.docs = {
         java: 'com/zyeeda/cdeio/example/extension/ui/form/entity/UiBasic.java'
     },
     'extension/ui/custom-form': {
-        java: 'com/zyeeda/cdeio/example/extension/ui/form/entity/CustomForm.java'
+        java: 'com/zyeeda/cdeio/example/extension/ui/form/entity/CustomForm.java',
+        scripts: [
+            {name: '自定义新增表单模板', path: 'extension/ui/custom-form.feature/views/add.html'},
+            {name: '自定义查看表单模板', path: 'extension/ui/custom-form.feature/views/show.html'}
+        ]
     },
     'scaffold/basic/basic-todo': {
         java: 'com/zyeeda/cdeio/example/scaffold/basic/entity/BasicTodo.java'

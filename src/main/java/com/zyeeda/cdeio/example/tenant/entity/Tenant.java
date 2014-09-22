@@ -8,12 +8,12 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_TENANT")
+@Table(name = "CDEIO_TENANT")
 @Scaffold("/tenant/tenant")
 public class Tenant extends DomainEntity {
 
     private static final long serialVersionUID = -5800560027265954089L;
-    
+
     private String dataId;
 
     private String type;

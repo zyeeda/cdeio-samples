@@ -26,7 +26,7 @@ import com.zyeeda.cdeio.validation.group.Create;
  * @author chenhaifeng
  */
 @Entity
-@Table(name = "CDE_FOO")
+@Table(name = "CDEIO_FOO")
 @Scaffold("/entity/foo")
 public class Foo extends DomainEntity {
 
@@ -36,17 +36,17 @@ public class Foo extends DomainEntity {
     private static final long serialVersionUID = 8868322496940062099L;
 
     private String name;
-    
+
     private Integer status;
-    
+
     private Boolean diabled;
-    
+
     private Date createTime;
-    
+
     private String email;
-    
+
     private String description;
-    
+
     private Attachment attachment;
 
     private Set<Bar> bars;

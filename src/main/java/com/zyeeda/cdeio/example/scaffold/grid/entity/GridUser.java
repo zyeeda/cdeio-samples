@@ -13,7 +13,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_GRID_USER")
+@Table(name = "CDEIO_GRID_USER")
 @Scaffold("/scaffold/grid/grid-user")
 public class GridUser extends DomainEntity {
 

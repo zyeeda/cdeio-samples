@@ -8,17 +8,17 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_GRID_TODO")
+@Table(name = "CDEIO_GRID_TODO")
 @Scaffold("/scaffold/grid/todo")
 public class GridTodo extends DomainEntity {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 5666868342090908642L;
-	
+
 	private String name;
-	
+
 	private String desc;
 
 	@Column(name = "F_NAME")
@@ -38,6 +38,6 @@ public class GridTodo extends DomainEntity {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	
+
 
 }

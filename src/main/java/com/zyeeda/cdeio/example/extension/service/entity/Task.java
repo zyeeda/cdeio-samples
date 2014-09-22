@@ -13,7 +13,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  *
  */
 @Entity
-@Table(name = "CDE_SERVICE_TASK")
+@Table(name = "CDEIO_SERVICE_TASK")
 @Scaffold("/extension/service/sqlquery")
 public class Task extends DomainEntity {
 

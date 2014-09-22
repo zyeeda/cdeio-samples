@@ -16,25 +16,25 @@ import com.zyeeda.cdeio.commons.base.data.TreeNode;
 import com.zyeeda.cdeio.commons.base.entity.TreeNodeRevisionDomainEntity;
 
 @Entity
-@Table(name = "CDE_FIELD_TAG")
+@Table(name = "CDEIO_FIELD_TAG")
 @Scaffold("/scaffold/field/tag")
 public class FieldTag extends TreeNodeRevisionDomainEntity implements TreeNode<FieldTag> {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 8687653459817887084L;
 
 	private String name = null;
 
 	private String desc = null;
-	
+
 	private FieldTag parent = null;
-	
+
 	private List<FieldTag> children = null;
-	
+
 	private List<FieldTodo> todos = null;
-	
+
 	@Column(name = "F_NAME",length = 30)
 	@NotNull
 	public String getName() {
@@ -51,7 +51,7 @@ public class FieldTag extends TreeNodeRevisionDomainEntity implements TreeNode<F
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	
+
 	@OneToMany(mappedBy = "tag")
 	public List<FieldTodo> getTodos() {
 		return todos;
@@ -74,6 +74,6 @@ public class FieldTag extends TreeNodeRevisionDomainEntity implements TreeNode<F
 	public void setChildren(List<FieldTag> children) {
 		this.children = children;
 	}
-	
+
 
 }

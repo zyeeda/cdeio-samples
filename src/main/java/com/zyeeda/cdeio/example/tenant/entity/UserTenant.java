@@ -8,13 +8,13 @@ import javax.persistence.Table;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDE_USER_TENANT")
+@Table(name = "CDEIO_USER_TENANT")
 public class UserTenant extends DomainEntity {
 
     private static final long serialVersionUID = 6529963201766540930L;
 
     private User user;
-    
+
     private Tenant tenant;
 
     @ManyToOne
@@ -35,5 +35,5 @@ public class UserTenant extends DomainEntity {
 
     public void setTenant(Tenant tenant) {
         this.tenant = tenant;
-    } 
+    }
 }

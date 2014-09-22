@@ -21,10 +21,10 @@ exports.fieldGroups = {
 
 exports.doWithRouter = function(router) {
     // get id 用于通过指定 id 查询所对应的记录
-    router.get('/:id', mark('services', 'extension/service/sqlquery').on(function (sqlQuerySvc, request, id) {
+    router.get('/:id', mark('services', 'extension/service/sqlquery').on(function (service, request, id) {
         var task;
 
-        task = sqlQuerySvc.getById(id);
+        task = service.getById(id);
 
         return json(task, exports.filters.defaults);
     }));

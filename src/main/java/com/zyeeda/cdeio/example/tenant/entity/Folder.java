@@ -15,10 +15,10 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 
 @Entity
-@Table(name = "CDE_FOLDER")
+@Table(name = "CDEIO_FOLDER")
 @Scaffold("/tenant/folder")
 public class Folder extends DomainEntity implements TreeNode<Folder> {
-    
+
     private static final long serialVersionUID = -3046047658797396616L;
 
     /**
@@ -30,13 +30,13 @@ public class Folder extends DomainEntity implements TreeNode<Folder> {
      * 描述.
      */
     private String description;
-    
+
     private Folder parent = null;
-    
+
     private Boolean open = true;
-   
+
     private List<Folder> children = null;
-    
+
     private List<Document> documents = null;
 
     @Column(name = "F_NAME", length = 100)
@@ -56,7 +56,7 @@ public class Folder extends DomainEntity implements TreeNode<Folder> {
     public void setDescription(final String description) {
         this.description = description;
     }
-    
+
     @Column(name="F_OPEN")
     public Boolean getOpen() {
         return open;
@@ -65,7 +65,7 @@ public class Folder extends DomainEntity implements TreeNode<Folder> {
     public void setOpen(Boolean open) {
         this.open = open;
     }
-    
+
     @Override
     @ManyToOne
     @JoinColumn(name = "F_PARENT")
@@ -88,7 +88,7 @@ public class Folder extends DomainEntity implements TreeNode<Folder> {
     public void setChildren(List<Folder> children) {
         this.children = children;
     }
-    
+
     @OneToMany(mappedBy = "folder")
     public List<Document> getDocuments() {
         return documents;
@@ -98,5 +98,5 @@ public class Folder extends DomainEntity implements TreeNode<Folder> {
         this.documents = documents;
     }
 
-    
+
 }

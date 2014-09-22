@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDE_GENERATE_BPM_LISTENER_EXECUTION")
+@Table(name = "CDEIO_GENERATE_BPM_LISTENER_EXECUTION")
 @Scaffold("/generate/bpm/listener/execution")
 public class Employee4Execution extends BpmDomainEntity {
 
@@ -59,7 +59,7 @@ public class Employee4Execution extends BpmDomainEntity {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public String getDescription() {
         return description;
     }

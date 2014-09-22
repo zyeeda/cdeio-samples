@@ -15,12 +15,12 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @Entity
-@Table(name = "CDE_FORM_PROJECT")
+@Table(name = "CDEIO_FORM_PROJECT")
 @Scaffold("/scaffold/form/project")
 public class FormProject extends DomainEntity {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 3957069632448116353L;
 	private String name;
@@ -29,8 +29,8 @@ public class FormProject extends DomainEntity {
 	private String people;
 	private String intro;
 	private BigDecimal cost;
-	
-	
+
+
 	@Column(name = "F_NAME")
 	@NotNull
 	public String getName() {
@@ -39,7 +39,7 @@ public class FormProject extends DomainEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Column(name = "F_DESC")
 	public String getDesc() {
 		return desc;
@@ -47,7 +47,7 @@ public class FormProject extends DomainEntity {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	
+
 	@Column(name = "F_START_DATE")
 	@Temporal(TemporalType.DATE)
 	public Date getStartDate() {
@@ -56,7 +56,7 @@ public class FormProject extends DomainEntity {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-	
+
 	@Column(name = "F_PEOPLE")
 	public String getPeople() {
 		return people;
@@ -64,7 +64,7 @@ public class FormProject extends DomainEntity {
 	public void setPeople(String people) {
 		this.people = people;
 	}
-	
+
 	@NullableSize(max = 166)
 	@Column(name = "F_COST", precision = 23, scale = 2)
 	public BigDecimal getCost() {
@@ -73,7 +73,7 @@ public class FormProject extends DomainEntity {
 	public void setCost(BigDecimal cost) {
 		this.cost = cost;
 	}
-	
+
 	@Column(name = "F_INTRO")
 	public String getIntro() {
 		return intro;

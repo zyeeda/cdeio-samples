@@ -7,15 +7,15 @@ import javax.persistence.Table;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 @Entity
-@Table(name = "CDE_FIELD_ACCOUNT")
+@Table(name = "CDEIO_FIELD_ACCOUNT")
 @Scaffold("/scaffold/field/account")
 public class FieldAccount extends DomainEntity {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = -6276106475805187627L;
-	
+
 	private String name;
 	private String account;
 	private String password;
@@ -25,7 +25,7 @@ public class FieldAccount extends DomainEntity {
 	private Double salary;
 	private String email;
 	private String url;
-	
+
 	@Column(name = "F_NAME", length=100)
 	public String getName() {
 		return name;
@@ -33,7 +33,7 @@ public class FieldAccount extends DomainEntity {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Column(name = "F_ACCOUNT")
 	public String getAccount() {
 		return account;
@@ -41,7 +41,7 @@ public class FieldAccount extends DomainEntity {
 	public void setAccount(String account) {
 		this.account = account;
 	}
-	
+
 	@Column(name = "F_PASSWORD")
 	public String getPassword() {
 		return password;
@@ -49,8 +49,8 @@ public class FieldAccount extends DomainEntity {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
+
+
 	@Column(name = "F_YEAR")
 	public Integer getWorkyear() {
 		return workyear;
@@ -58,7 +58,7 @@ public class FieldAccount extends DomainEntity {
 	public void setWorkyear(Integer workyear) {
 		this.workyear = workyear;
 	}
-	
+
 	@Column(name = "F_CREDITCARD")
 	public String getCreditcard() {
 		return creditcard;
@@ -66,7 +66,7 @@ public class FieldAccount extends DomainEntity {
 	public void setCreditcard(String creditcard) {
 		this.creditcard = creditcard;
 	}
-	
+
 	@Column(name = "F_SALARY")
 	public Double getSalary() {
 		return salary;
@@ -74,7 +74,7 @@ public class FieldAccount extends DomainEntity {
 	public void setSalary(Double salary) {
 		this.salary = salary;
 	}
-	
+
 	@Column(name = "F_PASSWORD2")
 	public String getPassword2() {
 		return password2;
@@ -82,7 +82,7 @@ public class FieldAccount extends DomainEntity {
 	public void setPassword2(String password2) {
 		this.password2 = password2;
 	}
-	
+
 	@Column(name = "F_EMAIL")
 	public String getEmail() {
 		return email;
@@ -90,13 +90,13 @@ public class FieldAccount extends DomainEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	@Column(name = "F_URL")
 	public String getUrl() {
 		return url;
 	}
 	public void setUrl(String url) {
 		this.url = url;
-	}	
+	}
 
 }

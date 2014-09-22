@@ -1,7 +1,6 @@
 #扩展界面（路由）
 
-
- web应用程序通常需要为应用的重要位置提供可链接，可收藏，可分享的 URLs。为此提供路由，页面加载期间，会初始化已创建的路由。
+ web 应用程序通常需要为应用的重要位置提供可链接、可收藏、可分享的 URLs。为此提供路由，页面加载期间，会初始化已创建的路由。
 
 路由的全局配置文件在前台`app/routers.js`中
 ##1.routers.js文件的详细说明：
@@ -29,7 +28,7 @@ define([
 ```
 `routes`详细说明:
 
-routes 将带参数的 URLs 映射到路由实例的方法上，这与 视图 的 事件键值对 非常类似。 路由可以包含参数，:param，它在斜线之间匹配 URL 组件。 路由也支持通配符，*splat，可以匹配多个 URL 组件。
+routes 将带参数的 URLs 映射到路由实例的方法上，这与视图的事件键值对非常类似。 路由可以包含参数，:param，它在斜线之间匹配 URL 组件。 路由也支持通配符，*splat，可以匹配多个 URL 组件。
 
 举个例子，路由 "search/:query/p:page" 能匹配 #search/obama/p2 , 这里传入了 "obama" 和 "2" 到路由对应的动作中去了。 "file/*path 路由可以匹配 #file/nested/folder/file.txt，这时传入动作的参数为 "nested/folder/file.txt"。
 
@@ -45,5 +44,4 @@ help: function(page) {
     ...
 }
 ```
-更多详情介绍，请参考`Backbone官网`http://backbonejs.org/
-
+更多详情介绍，请参考 Backbone <a href="http://backbonejs.org/#Router" target="_blank">&nbsp;官方网站&nbsp;</a>。
