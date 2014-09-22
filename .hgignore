@@ -16,7 +16,6 @@ syntax: glob
 *.tlog
 *.h2.db
 *.flv
-*.swf
 *.mp4
 
 .DS_Store
