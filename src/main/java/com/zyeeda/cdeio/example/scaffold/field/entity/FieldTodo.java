@@ -22,7 +22,7 @@ import com.zyeeda.cdeio.commons.resource.entity.Attachment;
 import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @Entity
-@Table(name = "CDEIO_FIELD_TODO")
+@Table(name = "SA_FIELD_TODO")
 @Scaffold("/scaffold/field/todo")
 public class FieldTodo extends DomainEntity {
 

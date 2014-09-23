@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDEIO_GENERATE_BPM_SUBPROCESS_EMBEDDED")
+@Table(name = "SA_GENERATE_BPM_SUBPROCESS_EMBEDDED")
 @Scaffold("/generate/bpm/subprocess/embedded")
 public class Employee4Embedded extends BpmDomainEntity {
 

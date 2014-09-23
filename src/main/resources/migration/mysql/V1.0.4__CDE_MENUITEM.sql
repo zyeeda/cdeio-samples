@@ -20,13 +20,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table ZDA_MENUITEM
+# Dump of table CDE_MENUITEM
 # ------------------------------------------------------------
 
-LOCK TABLES `ZDA_MENUITEM` WRITE;
-/*!40000 ALTER TABLE `ZDA_MENUITEM` DISABLE KEYS */;
+LOCK TABLES `CDE_MENUITEM` WRITE;
+/*!40000 ALTER TABLE `CDE_MENUITEM` DISABLE KEYS */;
 
-INSERT INTO `ZDA_MENUITEM` (`F_ID`, `F_DESC`, `F_ICON`, `F_NAME`, `F_OPENED`, `F_OPTION`, `F_PATH`, `F_RANK`, `F_PARENT_ID`)
+INSERT INTO `CDE_MENUITEM` (`F_ID`, `F_DESC`, `F_ICON`, `F_NAME`, `F_OPENED`, `F_OPTION`, `F_PATH`, `F_RANK`, `F_PARENT_ID`)
 VALUES
 	('100','动态脚手架','icon-key','动态脚手架',0,NULL,'#',25,NULL),
 	('100001001','基础','undefined','基础',0,NULL,'#',30,'100'),
@@ -90,7 +90,7 @@ VALUES
 	('800003','Scaffold 注解','undefined','Scaffold 注解',0,NULL,'#feature/entity/scaffold:test',10,'800'),
 	('800004','Bean Validation','undefined','Bean Validation',0,NULL,'#feature/entity/scaffold:bar',20,'800');
 
-/*!40000 ALTER TABLE `ZDA_MENUITEM` ENABLE KEYS */;
+/*!40000 ALTER TABLE `CDE_MENUITEM` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

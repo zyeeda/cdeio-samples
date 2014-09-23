@@ -8,7 +8,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDEIO_GRID_TODO")
+@Table(name = "SA_GRID_TODO")
 @Scaffold("/scaffold/grid/todo")
 public class GridTodo extends DomainEntity {
 

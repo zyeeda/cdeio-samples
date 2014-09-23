@@ -20,7 +20,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @Entity
-@Table(name = "CDEIO_BAR")
+@Table(name = "SA_BAR")
 @Scaffold("/entity/bar")
 public class Bar extends DomainEntity implements TreeNode<Bar> {
 

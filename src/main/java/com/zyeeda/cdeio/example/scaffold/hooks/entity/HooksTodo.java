@@ -8,7 +8,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDEIO_HOOKS_TODO")
+@Table(name = "SA_HOOKS_TODO")
 @Scaffold("/scaffold/hooks/todo")
 public class HooksTodo extends DomainEntity {
 

@@ -15,7 +15,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "CDEIO_UI_INLINE_GRID")
+@Table(name = "SA_UI_INLINE_GRID")
 @Scaffold("/extension/ui/inline-grid")
 public class CallBackInlineGrid extends DomainEntity{
 	 /**

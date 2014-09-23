@@ -22,7 +22,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDEIO_FORM_USER")
+@Table(name = "SA_FORM_USER")
 @Scaffold("/scaffold/form/user")
 public class FormUser extends DomainEntity {
 

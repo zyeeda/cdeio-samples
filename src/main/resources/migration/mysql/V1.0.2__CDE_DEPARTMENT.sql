@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.6.20)
 # Database: cdeio-samples
-# Generation Time: 2014-09-22 13:56:57 +0000
+# Generation Time: 2014-09-22 13:58:06 +0000
 # ************************************************************
 
 
@@ -20,26 +20,21 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table ZDA_ACCOUNT
+# Dump of table CDE_DEPARTMENT
 # ------------------------------------------------------------
 
-LOCK TABLES `ZDA_ACCOUNT` WRITE;
-/*!40000 ALTER TABLE `ZDA_ACCOUNT` DISABLE KEYS */;
+LOCK TABLES `CDE_DEPARTMENT` WRITE;
+/*!40000 ALTER TABLE `CDE_DEPARTMENT` DISABLE KEYS */;
 
-INSERT INTO `ZDA_ACCOUNT` (`F_ID`, `F_ACCOUNT_NAME`, `F_DELETED`, `F_DISABLED`, `F_EMAIL`, `F_MOBILE`, `F_PASSWORD`, `F_REALNAME`, `F_TELEPHONE`, `F_DEPARTMENT_ID`)
+INSERT INTO `CDE_DEPARTMENT` (`F_ID`, `F_CODE`, `F_DELETED`, `F_NAME`, `F_PATH`, `F_RANK`, `F_PARENT_ID`)
 VALUES
-	('brook','brook',0,0,NULL,NULL,'brook','brook',NULL,'d-1009'),
-	('chopper','chopper',0,0,NULL,NULL,'chopper','chopper',NULL,'d-1004'),
-	('franky','franky',0,0,NULL,NULL,'franky','franky',NULL,'d-1004'),
-	('luffy','luffy',0,0,NULL,NULL,'luffy','luffy',NULL,'d-1001'),
-	('nami','nami',0,0,NULL,NULL,'nami','nami',NULL,'d-1003'),
-	('robin','robin',0,0,NULL,NULL,'robin','robin',NULL,'d-1003'),
-	('sanji','sanji',0,0,NULL,NULL,'sanji','sanji',NULL,'d-1004'),
-	('tom','tom',0,0,NULL,NULL,'tom','tom',NULL,'d-1001'),
-	('usopp','usopp',0,0,NULL,NULL,'usopp','usopp',NULL,'d-1009'),
-	('zoro','zoro',0,0,NULL,NULL,'zoro','zoro',NULL,'d-1002');
+	('d-1001',NULL,0,'研发部',NULL,NULL,NULL),
+	('d-1002',NULL,0,'人资部',NULL,NULL,NULL),
+	('d-1003',NULL,0,'综合部',NULL,NULL,NULL),
+	('d-1004',NULL,0,'财务部',NULL,NULL,NULL),
+	('d-1009',NULL,0,'领导',NULL,NULL,NULL);
 
-/*!40000 ALTER TABLE `ZDA_ACCOUNT` ENABLE KEYS */;
+/*!40000 ALTER TABLE `CDE_DEPARTMENT` ENABLE KEYS */;
 UNLOCK TABLES;
 
 

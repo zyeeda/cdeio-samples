@@ -15,7 +15,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @Entity
-@Table(name = "CDEIO_FORM_PROJECT")
+@Table(name = "SA_FORM_PROJECT")
 @Scaffold("/scaffold/form/project")
 public class FormProject extends DomainEntity {
 
