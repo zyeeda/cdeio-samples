@@ -74,7 +74,7 @@ public class FormTodo extends DomainEntity {
 	}
 
 	@ManyToMany
-	@JoinTable(name = "ZED_FORM_TODO_USER",
+	@JoinTable(name = "ZDA_FORM_TODO_USER",
 	joinColumns=@JoinColumn(name = "F_TODO_ID"),
 	inverseJoinColumns = @JoinColumn(name = "F_USER_ID"))
 	public List<FormUser> getUsers() {

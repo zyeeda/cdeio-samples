@@ -74,7 +74,7 @@ public class FieldUser extends DomainEntity {
 	}
 
 	@ManyToMany
-	@JoinTable(name = "ZED_FIELD_TODO_USER",
+	@JoinTable(name = "ZDA_FIELD_TODO_USER",
 	joinColumns=@JoinColumn(name = "F_USER_ID"),
 	inverseJoinColumns = @JoinColumn(name = "F_TODO_ID"))
 	public List<FieldTodo> getTodos() {

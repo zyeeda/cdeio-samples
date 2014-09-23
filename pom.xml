@@ -28,6 +28,7 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
         <jetty.config>${project.build.outputDirectory}/META-INF/jetty</jetty.config>
         <argLine>-Dfile.encoding=UTF-8</argLine>
         <cdeio.version>2.0.0-SNAPSHOT</cdeio.version>
+        <mysql.version>mysql</mysql.version>
     </properties>
 
     <dependencies>
@@ -125,6 +126,18 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
             <plugin>
                 <groupId>com.cj.jshintmojo</groupId>
                 <artifactId>jshint-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/cdeio-samples</url>
+                    <user>cdeio</user>
+                    <password>cdeio</password>
+                    <locations>
+                        <location>classpath:migration/${mysql.version}</location>
+                    </locations>
+                </configuration>
             </plugin>
         </plugins>
         <pluginManagement>
