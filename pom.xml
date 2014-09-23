@@ -28,7 +28,14 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
         <jetty.config>${project.build.outputDirectory}/META-INF/jetty</jetty.config>
         <argLine>-Dfile.encoding=UTF-8</argLine>
         <cdeio.version>2.0.0-SNAPSHOT</cdeio.version>
-        <mysql.version>mysql</mysql.version>
+
+        <!-- MySQL Server Config -->
+        <mysql.server.version>mysql56</mysql.server.version>
+        <mysql.server.host>localhost</mysql.server.host>
+        <mysql.server.port>3306</mysql.server.port>
+        <mysql.server.database>cdeio-samples</mysql.server.database>
+        <mysql.server.user>cdeio</mysql.server.user>
+        <mysql.server.password>cdeio</mysql.server.password>
     </properties>
 
     <dependencies>
@@ -131,11 +138,12 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <configuration>
-                    <url>jdbc:mysql://localhost:3306/cdeio-samples</url>
-                    <user>cdeio</user>
-                    <password>cdeio</password>
+                    <url>jdbc:mysql://${mysql.server.host}:${mysql.server.port}/${mysql.server.database}</url>
+                    <user>${mysql.server.user}</user>
+                    <password>${mysql.server.password}</password>
                     <locations>
-                        <location>classpath:migration/${mysql.version}</location>
+                        <location>classpath:migration/${mysql.server.version}</location>
+                        <location>classpath:migration/mysql</location>
                     </locations>
                 </configuration>
             </plugin>
