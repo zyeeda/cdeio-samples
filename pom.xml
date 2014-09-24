@@ -138,13 +138,14 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <configuration>
-                    <url>jdbc:mysql://${mysql.server.host}:${mysql.server.port}/${mysql.server.database}</url>
+                    <url>jdbc:mysql://${mysql.server.host}:${mysql.server.port}/${mysql.server.database}?pinGlobalTxToPhysicalConnection=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8</url>
                     <user>${mysql.server.user}</user>
                     <password>${mysql.server.password}</password>
                     <locations>
                         <location>classpath:migration/${mysql.server.version}</location>
                         <location>classpath:migration/mysql</location>
                     </locations>
+                    <encoding>UTF-8</encoding>  
                 </configuration>
             </plugin>
         </plugins>
