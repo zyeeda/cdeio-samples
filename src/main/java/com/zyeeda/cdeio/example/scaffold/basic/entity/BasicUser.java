@@ -17,7 +17,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDEIO_USER")
+@Table(name = "SA_USER")
 @Scaffold("/scaffold/basic/user")
 public class BasicUser extends DomainEntity {
 

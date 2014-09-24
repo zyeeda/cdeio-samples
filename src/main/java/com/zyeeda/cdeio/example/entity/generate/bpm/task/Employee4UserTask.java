@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDEIO_GENERATE_BPM_TASK_USERTASK")
+@Table(name = "SA_GENERATE_BPM_TASK_USERTASK")
 @Scaffold("/generate/bpm/task/userTask")
 
 // 继承 BpmDomainEntity 的实体，流程引擎将自动为其维护发起人(submitter)和流程状态(status)信息。

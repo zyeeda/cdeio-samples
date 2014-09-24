@@ -21,7 +21,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDEIO_FIELD_USER")
+@Table(name = "SA_FIELD_USER")
 @Scaffold("/scaffold/field/user")
 public class FieldUser extends DomainEntity {
 

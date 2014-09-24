@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 @Entity
-@Table(name = "CDEIO_FIELD_ACCOUNT")
+@Table(name = "SA_FIELD_ACCOUNT")
 @Scaffold("/scaffold/field/account")
 public class FieldAccount extends DomainEntity {
 

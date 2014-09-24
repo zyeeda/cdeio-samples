@@ -16,7 +16,7 @@ import com.zyeeda.cdeio.validation.constraint.NullableSize;
  *
  */
 @Entity
-@Table(name = "CDEIO_SERVICE_PERSON")
+@Table(name = "SA_SERVICE_PERSON")
 @Scaffold("/extension/service/basic")
 public class Person extends DomainEntity {
 

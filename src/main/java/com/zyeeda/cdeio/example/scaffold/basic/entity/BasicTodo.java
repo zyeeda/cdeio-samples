@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 @Entity
-@Table(name = "CDEIO_BASIC_TODO")
+@Table(name = "SA_BASIC_TODO")
 @Scaffold("/scaffold/basic/basic-todo")
 public class BasicTodo extends DomainEntity {
 

@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDEIO_GENERATE_BPM_GATEWAY_PARALLEL")
+@Table(name = "SA_GENERATE_BPM_GATEWAY_PARALLEL")
 @Scaffold("/generate/bpm/gateway/parallel")
 public class Employee4Parallel extends BpmDomainEntity {
 

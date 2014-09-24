@@ -17,7 +17,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 
 @Entity
-@Table(name = "CDEIO_TODO")
+@Table(name = "SA_TODO")
 @Scaffold("/scaffold/basic/todo")
 public class Todo extends DomainEntity implements TreeNode<Todo> {
 

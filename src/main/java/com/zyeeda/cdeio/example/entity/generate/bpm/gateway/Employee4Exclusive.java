@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDEIO_GENERATE_BPM_GATEWAY_EXCLUSIVE")
+@Table(name = "SA_GENERATE_BPM_GATEWAY_EXCLUSIVE")
 @Scaffold("/generate/bpm/gateway/exclusive")
 public class Employee4Exclusive extends BpmDomainEntity {
 

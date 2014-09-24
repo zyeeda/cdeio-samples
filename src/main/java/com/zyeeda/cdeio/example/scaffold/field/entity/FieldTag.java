@@ -16,7 +16,7 @@ import com.zyeeda.cdeio.commons.base.data.TreeNode;
 import com.zyeeda.cdeio.commons.base.entity.TreeNodeRevisionDomainEntity;
 
 @Entity
-@Table(name = "CDEIO_FIELD_TAG")
+@Table(name = "SA_FIELD_TAG")
 @Scaffold("/scaffold/field/tag")
 public class FieldTag extends TreeNodeRevisionDomainEntity implements TreeNode<FieldTag> {
 

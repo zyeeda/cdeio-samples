@@ -7,7 +7,7 @@ import com.zyeeda.cdeio.bpm.entity.BpmDomainEntity;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 
 @Entity
-@Table(name = "CDEIO_GENERATE_BPM_MULTIPLE_USERTASK")
+@Table(name = "SA_GENERATE_BPM_MULTIPLE_USERTASK")
 @Scaffold("/generate/bpm/multiple/userTask")
 public class Plan4UserTask extends BpmDomainEntity {
 

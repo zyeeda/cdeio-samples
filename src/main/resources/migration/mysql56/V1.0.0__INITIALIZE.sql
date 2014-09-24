@@ -608,13 +608,13 @@ CREATE TABLE `ACT_RU_VARIABLE` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_BAR`
+-- Table structure for table `SA_BAR`
 --
 
-DROP TABLE IF EXISTS `CDEIO_BAR`;
+DROP TABLE IF EXISTS `SA_BAR`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_BAR` (
+CREATE TABLE `SA_BAR` (
   `F_ID` varchar(255) NOT NULL,
   `F_ADDRESS` varchar(255) DEFAULT NULL,
   `F_AGE` int(11) DEFAULT NULL,
@@ -626,19 +626,19 @@ CREATE TABLE `CDEIO_BAR` (
   PRIMARY KEY (`F_ID`),
   KEY `FK_9bav0c3xcamqvd50h7ho2s1gd` (`F_FOO`),
   KEY `FK_4tvl7399jh6nif2m46ycxbfas` (`F_PARENT`),
-  CONSTRAINT `FK_4tvl7399jh6nif2m46ycxbfas` FOREIGN KEY (`F_PARENT`) REFERENCES `CDEIO_BAR` (`F_ID`),
-  CONSTRAINT `FK_9bav0c3xcamqvd50h7ho2s1gd` FOREIGN KEY (`F_FOO`) REFERENCES `CDEIO_FOO` (`F_ID`)
+  CONSTRAINT `FK_4tvl7399jh6nif2m46ycxbfas` FOREIGN KEY (`F_PARENT`) REFERENCES `SA_BAR` (`F_ID`),
+  CONSTRAINT `FK_9bav0c3xcamqvd50h7ho2s1gd` FOREIGN KEY (`F_FOO`) REFERENCES `SA_FOO` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_BASIC_TODO`
+-- Table structure for table `SA_BASIC_TODO`
 --
 
-DROP TABLE IF EXISTS `CDEIO_BASIC_TODO`;
+DROP TABLE IF EXISTS `SA_BASIC_TODO`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_BASIC_TODO` (
+CREATE TABLE `SA_BASIC_TODO` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESCRIPTION` varchar(350) DEFAULT NULL,
   `F_NAME` varchar(60) DEFAULT NULL,
@@ -647,31 +647,31 @@ CREATE TABLE `CDEIO_BASIC_TODO` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_DATA_TENANT`
+-- Table structure for table `SA_DATA_TENANT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_DATA_TENANT`;
+DROP TABLE IF EXISTS `SA_DATA_TENANT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_DATA_TENANT` (
+CREATE TABLE `SA_DATA_TENANT` (
   `F_ID` varchar(255) NOT NULL,
   `F_DATA_ID` varchar(40) DEFAULT NULL,
   `F_DATA_TYPE` varchar(100) DEFAULT NULL,
   `TENANT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_p1rxg5e90i9i5amo8i1b6e7tj` (`TENANT_ID`),
-  CONSTRAINT `FK_p1rxg5e90i9i5amo8i1b6e7tj` FOREIGN KEY (`TENANT_ID`) REFERENCES `CDEIO_TENANT` (`F_ID`)
+  CONSTRAINT `FK_p1rxg5e90i9i5amo8i1b6e7tj` FOREIGN KEY (`TENANT_ID`) REFERENCES `SA_TENANT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_DOCUMENT`
+-- Table structure for table `SA_DOCUMENT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_DOCUMENT`;
+DROP TABLE IF EXISTS `SA_DOCUMENT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_DOCUMENT` (
+CREATE TABLE `SA_DOCUMENT` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(20) DEFAULT NULL,
@@ -684,20 +684,20 @@ CREATE TABLE `CDEIO_DOCUMENT` (
   KEY `FK_me5htpuls24rohy7mc6dmifcv` (`ATTACHMENT_ID`),
   KEY `FK_dh8yp1bmdkdumflwvjrfvd6q0` (`F_FOLDER`),
   KEY `FK_b4bjr3gmvkmp8f288gh8a3s3n` (`F_PROJECT`),
-  CONSTRAINT `FK_b4bjr3gmvkmp8f288gh8a3s3n` FOREIGN KEY (`F_PROJECT`) REFERENCES `CDEIO_PROJECT` (`F_ID`),
-  CONSTRAINT `FK_dh8yp1bmdkdumflwvjrfvd6q0` FOREIGN KEY (`F_FOLDER`) REFERENCES `CDEIO_FOLDER` (`F_ID`),
-  CONSTRAINT `FK_me5htpuls24rohy7mc6dmifcv` FOREIGN KEY (`ATTACHMENT_ID`) REFERENCES `ZDA_ATTACHMENT` (`F_ID`)
+  CONSTRAINT `FK_b4bjr3gmvkmp8f288gh8a3s3n` FOREIGN KEY (`F_PROJECT`) REFERENCES `SA_PROJECT` (`F_ID`),
+  CONSTRAINT `FK_dh8yp1bmdkdumflwvjrfvd6q0` FOREIGN KEY (`F_FOLDER`) REFERENCES `SA_FOLDER` (`F_ID`),
+  CONSTRAINT `FK_me5htpuls24rohy7mc6dmifcv` FOREIGN KEY (`ATTACHMENT_ID`) REFERENCES `CDE_ATTACHMENT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_EXTENSION_ADVANCED_TREE`
+-- Table structure for table `SA_EXTENSION_ADVANCED_TREE`
 --
 
-DROP TABLE IF EXISTS `CDEIO_EXTENSION_ADVANCED_TREE`;
+DROP TABLE IF EXISTS `SA_EXTENSION_ADVANCED_TREE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_EXTENSION_ADVANCED_TREE` (
+CREATE TABLE `SA_EXTENSION_ADVANCED_TREE` (
   `F_ID` varchar(255) NOT NULL,
   `F_CREATED_TIME` datetime DEFAULT NULL,
   `F_CREATOR` varchar(50) DEFAULT NULL,
@@ -710,18 +710,18 @@ CREATE TABLE `CDEIO_EXTENSION_ADVANCED_TREE` (
   `F_PARENT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_i0fskiu5mnwc3eak6bgso39se` (`F_PARENT_ID`),
-  CONSTRAINT `FK_i0fskiu5mnwc3eak6bgso39se` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `CDEIO_EXTENSION_ADVANCED_TREE` (`F_ID`)
+  CONSTRAINT `FK_i0fskiu5mnwc3eak6bgso39se` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `SA_EXTENSION_ADVANCED_TREE` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FIELD_ACCOUNT`
+-- Table structure for table `SA_FIELD_ACCOUNT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FIELD_ACCOUNT`;
+DROP TABLE IF EXISTS `SA_FIELD_ACCOUNT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FIELD_ACCOUNT` (
+CREATE TABLE `SA_FIELD_ACCOUNT` (
   `F_ID` varchar(255) NOT NULL,
   `F_ACCOUNT` varchar(255) DEFAULT NULL,
   `F_CREDITCARD` varchar(255) DEFAULT NULL,
@@ -737,13 +737,13 @@ CREATE TABLE `CDEIO_FIELD_ACCOUNT` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FIELD_PROJECT`
+-- Table structure for table `SA_FIELD_PROJECT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FIELD_PROJECT`;
+DROP TABLE IF EXISTS `SA_FIELD_PROJECT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FIELD_PROJECT` (
+CREATE TABLE `SA_FIELD_PROJECT` (
   `F_ID` varchar(255) NOT NULL,
   `F_NAME` varchar(80) DEFAULT NULL,
   PRIMARY KEY (`F_ID`)
@@ -751,13 +751,13 @@ CREATE TABLE `CDEIO_FIELD_PROJECT` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FIELD_TAG`
+-- Table structure for table `SA_FIELD_TAG`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FIELD_TAG`;
+DROP TABLE IF EXISTS `SA_FIELD_TAG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FIELD_TAG` (
+CREATE TABLE `SA_FIELD_TAG` (
   `F_ID` varchar(255) NOT NULL,
   `F_CREATED_TIME` datetime DEFAULT NULL,
   `F_CREATOR` varchar(50) DEFAULT NULL,
@@ -770,18 +770,18 @@ CREATE TABLE `CDEIO_FIELD_TAG` (
   `F_PARENT` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_kvh221rsrayqde0cyeldky7d9` (`F_PARENT`),
-  CONSTRAINT `FK_kvh221rsrayqde0cyeldky7d9` FOREIGN KEY (`F_PARENT`) REFERENCES `CDEIO_FIELD_TAG` (`F_ID`)
+  CONSTRAINT `FK_kvh221rsrayqde0cyeldky7d9` FOREIGN KEY (`F_PARENT`) REFERENCES `SA_FIELD_TAG` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FIELD_TODO`
+-- Table structure for table `SA_FIELD_TODO`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FIELD_TODO`;
+DROP TABLE IF EXISTS `SA_FIELD_TODO`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FIELD_TODO` (
+CREATE TABLE `SA_FIELD_TODO` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESCRIPTION` varchar(4000) DEFAULT NULL,
   `F_LEVEL` varchar(255) DEFAULT NULL,
@@ -794,20 +794,20 @@ CREATE TABLE `CDEIO_FIELD_TODO` (
   KEY `FK_fwu70vd9ggvn6iykhallmab7r` (`F_ATTCHMENT_ID`),
   KEY `FK_qrsg8b7tyk4f5op8u37knpivd` (`F_PROJECT`),
   KEY `FK_8aclducx3k5f0idth8t51mjof` (`F_Tag`),
-  CONSTRAINT `FK_8aclducx3k5f0idth8t51mjof` FOREIGN KEY (`F_Tag`) REFERENCES `CDEIO_FIELD_TAG` (`F_ID`),
-  CONSTRAINT `FK_fwu70vd9ggvn6iykhallmab7r` FOREIGN KEY (`F_ATTCHMENT_ID`) REFERENCES `ZDA_ATTACHMENT` (`F_ID`),
-  CONSTRAINT `FK_qrsg8b7tyk4f5op8u37knpivd` FOREIGN KEY (`F_PROJECT`) REFERENCES `CDEIO_FIELD_PROJECT` (`F_ID`)
+  CONSTRAINT `FK_8aclducx3k5f0idth8t51mjof` FOREIGN KEY (`F_Tag`) REFERENCES `SA_FIELD_TAG` (`F_ID`),
+  CONSTRAINT `FK_fwu70vd9ggvn6iykhallmab7r` FOREIGN KEY (`F_ATTCHMENT_ID`) REFERENCES `CDE_ATTACHMENT` (`F_ID`),
+  CONSTRAINT `FK_qrsg8b7tyk4f5op8u37knpivd` FOREIGN KEY (`F_PROJECT`) REFERENCES `SA_FIELD_PROJECT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FIELD_USER`
+-- Table structure for table `SA_FIELD_USER`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FIELD_USER`;
+DROP TABLE IF EXISTS `SA_FIELD_USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FIELD_USER` (
+CREATE TABLE `SA_FIELD_USER` (
   `F_ID` varchar(255) NOT NULL,
   `F_BIRTHDAY` datetime DEFAULT NULL,
   `F_CODE` varchar(500) DEFAULT NULL,
@@ -818,13 +818,13 @@ CREATE TABLE `CDEIO_FIELD_USER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FOLDER`
+-- Table structure for table `SA_FOLDER`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FOLDER`;
+DROP TABLE IF EXISTS `SA_FOLDER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FOLDER` (
+CREATE TABLE `SA_FOLDER` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -832,18 +832,18 @@ CREATE TABLE `CDEIO_FOLDER` (
   `F_PARENT` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_58khpvhu3maxrs70f9xwo4vs4` (`F_PARENT`),
-  CONSTRAINT `FK_58khpvhu3maxrs70f9xwo4vs4` FOREIGN KEY (`F_PARENT`) REFERENCES `CDEIO_FOLDER` (`F_ID`)
+  CONSTRAINT `FK_58khpvhu3maxrs70f9xwo4vs4` FOREIGN KEY (`F_PARENT`) REFERENCES `SA_FOLDER` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FOO`
+-- Table structure for table `SA_FOO`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FOO`;
+DROP TABLE IF EXISTS `SA_FOO`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FOO` (
+CREATE TABLE `SA_FOO` (
   `F_ID` varchar(255) NOT NULL,
   `F_CREATE_TIME` datetime DEFAULT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
@@ -854,18 +854,18 @@ CREATE TABLE `CDEIO_FOO` (
   `ATTACHMENT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_ai0k2jutduhg4y2bqfb1d3og7` (`ATTACHMENT_ID`),
-  CONSTRAINT `FK_ai0k2jutduhg4y2bqfb1d3og7` FOREIGN KEY (`ATTACHMENT_ID`) REFERENCES `ZDA_ATTACHMENT` (`F_ID`)
+  CONSTRAINT `FK_ai0k2jutduhg4y2bqfb1d3og7` FOREIGN KEY (`ATTACHMENT_ID`) REFERENCES `CDE_ATTACHMENT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FORM_PROJECT`
+-- Table structure for table `SA_FORM_PROJECT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FORM_PROJECT`;
+DROP TABLE IF EXISTS `SA_FORM_PROJECT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FORM_PROJECT` (
+CREATE TABLE `SA_FORM_PROJECT` (
   `F_ID` varchar(255) NOT NULL,
   `F_COST` decimal(23,2) DEFAULT NULL,
   `F_DESC` varchar(255) DEFAULT NULL,
@@ -878,13 +878,13 @@ CREATE TABLE `CDEIO_FORM_PROJECT` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FORM_TODO`
+-- Table structure for table `SA_FORM_TODO`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FORM_TODO`;
+DROP TABLE IF EXISTS `SA_FORM_TODO`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FORM_TODO` (
+CREATE TABLE `SA_FORM_TODO` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESCRIPTION` varchar(350) DEFAULT NULL,
   `F_NAME` varchar(60) DEFAULT NULL,
@@ -895,13 +895,13 @@ CREATE TABLE `CDEIO_FORM_TODO` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_FORM_USER`
+-- Table structure for table `SA_FORM_USER`
 --
 
-DROP TABLE IF EXISTS `CDEIO_FORM_USER`;
+DROP TABLE IF EXISTS `SA_FORM_USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_FORM_USER` (
+CREATE TABLE `SA_FORM_USER` (
   `F_ID` varchar(255) NOT NULL,
   `F_BIRTHDAY` datetime DEFAULT NULL,
   `F_EMAIL` varchar(255) DEFAULT NULL,
@@ -912,13 +912,13 @@ CREATE TABLE `CDEIO_FORM_USER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_GATEWAY_EXCLUSIVE`
+-- Table structure for table `SA_GENERATE_BPM_GATEWAY_EXCLUSIVE`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_GATEWAY_EXCLUSIVE`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_GATEWAY_EXCLUSIVE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_GATEWAY_EXCLUSIVE` (
+CREATE TABLE `SA_GENERATE_BPM_GATEWAY_EXCLUSIVE` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -936,13 +936,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_GATEWAY_EXCLUSIVE` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_GATEWAY_PARALLEL`
+-- Table structure for table `SA_GENERATE_BPM_GATEWAY_PARALLEL`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_GATEWAY_PARALLEL`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_GATEWAY_PARALLEL`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_GATEWAY_PARALLEL` (
+CREATE TABLE `SA_GENERATE_BPM_GATEWAY_PARALLEL` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -959,13 +959,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_GATEWAY_PARALLEL` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_LISTENER_EXECUTION`
+-- Table structure for table `SA_GENERATE_BPM_LISTENER_EXECUTION`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_LISTENER_EXECUTION`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_LISTENER_EXECUTION`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_LISTENER_EXECUTION` (
+CREATE TABLE `SA_GENERATE_BPM_LISTENER_EXECUTION` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -982,13 +982,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_LISTENER_EXECUTION` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_LISTENER_TASK`
+-- Table structure for table `SA_GENERATE_BPM_LISTENER_TASK`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_LISTENER_TASK`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_LISTENER_TASK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_LISTENER_TASK` (
+CREATE TABLE `SA_GENERATE_BPM_LISTENER_TASK` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -1005,13 +1005,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_LISTENER_TASK` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_MULTIPLE_SUBPROCESS`
+-- Table structure for table `SA_GENERATE_BPM_MULTIPLE_SUBPROCESS`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_MULTIPLE_SUBPROCESS`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_MULTIPLE_SUBPROCESS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_MULTIPLE_SUBPROCESS` (
+CREATE TABLE `SA_GENERATE_BPM_MULTIPLE_SUBPROCESS` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -1027,13 +1027,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_MULTIPLE_SUBPROCESS` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_MULTIPLE_USERTASK`
+-- Table structure for table `SA_GENERATE_BPM_MULTIPLE_USERTASK`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_MULTIPLE_USERTASK`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_MULTIPLE_USERTASK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_MULTIPLE_USERTASK` (
+CREATE TABLE `SA_GENERATE_BPM_MULTIPLE_USERTASK` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -1049,13 +1049,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_MULTIPLE_USERTASK` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_SUBPROCESS_EMBEDDED`
+-- Table structure for table `SA_GENERATE_BPM_SUBPROCESS_EMBEDDED`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_SUBPROCESS_EMBEDDED`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_SUBPROCESS_EMBEDDED`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_SUBPROCESS_EMBEDDED` (
+CREATE TABLE `SA_GENERATE_BPM_SUBPROCESS_EMBEDDED` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -1073,13 +1073,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_SUBPROCESS_EMBEDDED` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_TASK_CALLBACK`
+-- Table structure for table `SA_GENERATE_BPM_TASK_CALLBACK`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_TASK_CALLBACK`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_TASK_CALLBACK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_TASK_CALLBACK` (
+CREATE TABLE `SA_GENERATE_BPM_TASK_CALLBACK` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -1096,13 +1096,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_TASK_CALLBACK` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_TASK_REJECT`
+-- Table structure for table `SA_GENERATE_BPM_TASK_REJECT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_TASK_REJECT`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_TASK_REJECT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_TASK_REJECT` (
+CREATE TABLE `SA_GENERATE_BPM_TASK_REJECT` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -1119,13 +1119,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_TASK_REJECT` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GENERATE_BPM_TASK_USERTASK`
+-- Table structure for table `SA_GENERATE_BPM_TASK_USERTASK`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GENERATE_BPM_TASK_USERTASK`;
+DROP TABLE IF EXISTS `SA_GENERATE_BPM_TASK_USERTASK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GENERATE_BPM_TASK_USERTASK` (
+CREATE TABLE `SA_GENERATE_BPM_TASK_USERTASK` (
   `F_ID` varchar(255) NOT NULL,
   `PROCESS_DEFINITION_ID` varchar(255) DEFAULT NULL,
   `PROCESS_INSTANCE_ID` varchar(255) DEFAULT NULL,
@@ -1142,13 +1142,13 @@ CREATE TABLE `CDEIO_GENERATE_BPM_TASK_USERTASK` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GRID_TODO`
+-- Table structure for table `SA_GRID_TODO`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GRID_TODO`;
+DROP TABLE IF EXISTS `SA_GRID_TODO`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GRID_TODO` (
+CREATE TABLE `SA_GRID_TODO` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(255) DEFAULT NULL,
   `F_NAME` varchar(255) DEFAULT NULL,
@@ -1157,13 +1157,13 @@ CREATE TABLE `CDEIO_GRID_TODO` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_GRID_USER`
+-- Table structure for table `SA_GRID_USER`
 --
 
-DROP TABLE IF EXISTS `CDEIO_GRID_USER`;
+DROP TABLE IF EXISTS `SA_GRID_USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_GRID_USER` (
+CREATE TABLE `SA_GRID_USER` (
   `F_ID` varchar(255) NOT NULL,
   `F_BIRTHDAY` datetime DEFAULT NULL,
   `F_CODE` varchar(500) DEFAULT NULL,
@@ -1175,13 +1175,13 @@ CREATE TABLE `CDEIO_GRID_USER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_HOOKS_TODO`
+-- Table structure for table `SA_HOOKS_TODO`
 --
 
-DROP TABLE IF EXISTS `CDEIO_HOOKS_TODO`;
+DROP TABLE IF EXISTS `SA_HOOKS_TODO`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_HOOKS_TODO` (
+CREATE TABLE `SA_HOOKS_TODO` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(255) DEFAULT NULL,
   `F_NAME` varchar(255) DEFAULT NULL,
@@ -1190,13 +1190,13 @@ CREATE TABLE `CDEIO_HOOKS_TODO` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_PROJECT`
+-- Table structure for table `SA_PROJECT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_PROJECT`;
+DROP TABLE IF EXISTS `SA_PROJECT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_PROJECT` (
+CREATE TABLE `SA_PROJECT` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1205,13 +1205,13 @@ CREATE TABLE `CDEIO_PROJECT` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_SCAFFOLD_BASIC_TREE`
+-- Table structure for table `SA_SCAFFOLD_BASIC_TREE`
 --
 
-DROP TABLE IF EXISTS `CDEIO_SCAFFOLD_BASIC_TREE`;
+DROP TABLE IF EXISTS `SA_SCAFFOLD_BASIC_TREE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_SCAFFOLD_BASIC_TREE` (
+CREATE TABLE `SA_SCAFFOLD_BASIC_TREE` (
   `F_ID` varchar(255) NOT NULL,
   `F_CREATED_TIME` datetime DEFAULT NULL,
   `F_CREATOR` varchar(50) DEFAULT NULL,
@@ -1223,18 +1223,18 @@ CREATE TABLE `CDEIO_SCAFFOLD_BASIC_TREE` (
   `F_PARENT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_njhe3cgmdqf2o9xehdm6rod87` (`F_PARENT_ID`),
-  CONSTRAINT `FK_njhe3cgmdqf2o9xehdm6rod87` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `CDEIO_SCAFFOLD_BASIC_TREE` (`F_ID`)
+  CONSTRAINT `FK_njhe3cgmdqf2o9xehdm6rod87` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `SA_SCAFFOLD_BASIC_TREE` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_SCAFFOLD_OPERATE_BUTTON`
+-- Table structure for table `SA_SCAFFOLD_OPERATE_BUTTON`
 --
 
-DROP TABLE IF EXISTS `CDEIO_SCAFFOLD_OPERATE_BUTTON`;
+DROP TABLE IF EXISTS `SA_SCAFFOLD_OPERATE_BUTTON`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_SCAFFOLD_OPERATE_BUTTON` (
+CREATE TABLE `SA_SCAFFOLD_OPERATE_BUTTON` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESCRIPTION` varchar(255) DEFAULT NULL,
   `F_NAME` varchar(255) DEFAULT NULL,
@@ -1243,13 +1243,13 @@ CREATE TABLE `CDEIO_SCAFFOLD_OPERATE_BUTTON` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_SENIORGRID_USER`
+-- Table structure for table `SA_SENIORGRID_USER`
 --
 
-DROP TABLE IF EXISTS `CDEIO_SENIORGRID_USER`;
+DROP TABLE IF EXISTS `SA_SENIORGRID_USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_SENIORGRID_USER` (
+CREATE TABLE `SA_SENIORGRID_USER` (
   `F_ID` varchar(255) NOT NULL,
   `F_BIRTHDAY` datetime DEFAULT NULL,
   `F_CODE` int(11) DEFAULT NULL,
@@ -1261,13 +1261,13 @@ CREATE TABLE `CDEIO_SENIORGRID_USER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_SERVICE_DATAFILE`
+-- Table structure for table `SA_SERVICE_DATAFILE`
 --
 
-DROP TABLE IF EXISTS `CDEIO_SERVICE_DATAFILE`;
+DROP TABLE IF EXISTS `SA_SERVICE_DATAFILE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_SERVICE_DATAFILE` (
+CREATE TABLE `SA_SERVICE_DATAFILE` (
   `F_ID` varchar(255) NOT NULL,
   `F_CODE` varchar(500) DEFAULT NULL,
   `F_NAME` varchar(500) DEFAULT NULL,
@@ -1275,18 +1275,18 @@ CREATE TABLE `CDEIO_SERVICE_DATAFILE` (
   `F_ATTACHMENT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_gq4dkpbcpwrjfshm9jjl7vyj7` (`F_ATTACHMENT_ID`),
-  CONSTRAINT `FK_gq4dkpbcpwrjfshm9jjl7vyj7` FOREIGN KEY (`F_ATTACHMENT_ID`) REFERENCES `ZDA_ATTACHMENT` (`F_ID`)
+  CONSTRAINT `FK_gq4dkpbcpwrjfshm9jjl7vyj7` FOREIGN KEY (`F_ATTACHMENT_ID`) REFERENCES `CDE_ATTACHMENT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_SERVICE_PERSON`
+-- Table structure for table `SA_SERVICE_PERSON`
 --
 
-DROP TABLE IF EXISTS `CDEIO_SERVICE_PERSON`;
+DROP TABLE IF EXISTS `SA_SERVICE_PERSON`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_SERVICE_PERSON` (
+CREATE TABLE `SA_SERVICE_PERSON` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1296,13 +1296,13 @@ CREATE TABLE `CDEIO_SERVICE_PERSON` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_SERVICE_TASK`
+-- Table structure for table `SA_SERVICE_TASK`
 --
 
-DROP TABLE IF EXISTS `CDEIO_SERVICE_TASK`;
+DROP TABLE IF EXISTS `SA_SERVICE_TASK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_SERVICE_TASK` (
+CREATE TABLE `SA_SERVICE_TASK` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1311,13 +1311,13 @@ CREATE TABLE `CDEIO_SERVICE_TASK` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_TAG`
+-- Table structure for table `SA_TAG`
 --
 
-DROP TABLE IF EXISTS `CDEIO_TAG`;
+DROP TABLE IF EXISTS `SA_TAG`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_TAG` (
+CREATE TABLE `SA_TAG` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(260) DEFAULT NULL,
   `F_NAME` varchar(30) DEFAULT NULL,
@@ -1326,13 +1326,13 @@ CREATE TABLE `CDEIO_TAG` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_TENANT`
+-- Table structure for table `SA_TENANT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_TENANT`;
+DROP TABLE IF EXISTS `SA_TENANT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_TENANT` (
+CREATE TABLE `SA_TENANT` (
   `F_ID` varchar(255) NOT NULL,
   `F_DATA_ID` varchar(40) DEFAULT NULL,
   `F_TYPE` varchar(30) DEFAULT NULL,
@@ -1341,13 +1341,13 @@ CREATE TABLE `CDEIO_TENANT` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_TEST`
+-- Table structure for table `SA_TEST`
 --
 
-DROP TABLE IF EXISTS `CDEIO_TEST`;
+DROP TABLE IF EXISTS `SA_TEST`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_TEST` (
+CREATE TABLE `SA_TEST` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1356,30 +1356,30 @@ CREATE TABLE `CDEIO_TEST` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_TEST_TREE`
+-- Table structure for table `SA_TEST_TREE`
 --
 
-DROP TABLE IF EXISTS `CDEIO_TEST_TREE`;
+DROP TABLE IF EXISTS `SA_TEST_TREE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_TEST_TREE` (
+CREATE TABLE `SA_TEST_TREE` (
   `F_ID` varchar(255) NOT NULL,
   `F_NAME` varchar(200) DEFAULT NULL,
   `F_PARENT` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_9yfqufakdy4ydxh02t220adtf` (`F_PARENT`),
-  CONSTRAINT `FK_9yfqufakdy4ydxh02t220adtf` FOREIGN KEY (`F_PARENT`) REFERENCES `CDEIO_TEST_TREE` (`F_ID`)
+  CONSTRAINT `FK_9yfqufakdy4ydxh02t220adtf` FOREIGN KEY (`F_PARENT`) REFERENCES `SA_TEST_TREE` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_TODO`
+-- Table structure for table `SA_TODO`
 --
 
-DROP TABLE IF EXISTS `CDEIO_TODO`;
+DROP TABLE IF EXISTS `SA_TODO`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_TODO` (
+CREATE TABLE `SA_TODO` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESCRIPTION` varchar(350) DEFAULT NULL,
   `F_NAME` varchar(60) DEFAULT NULL,
@@ -1388,19 +1388,19 @@ CREATE TABLE `CDEIO_TODO` (
   PRIMARY KEY (`F_ID`),
   KEY `FK_k87hgih6kebcbk9dbtq8otesh` (`F_BASICUSER`),
   KEY `FK_csptys2epy927qpv4mtadd44b` (`F_PARENT_ID`),
-  CONSTRAINT `FK_csptys2epy927qpv4mtadd44b` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `CDEIO_TODO` (`F_ID`),
-  CONSTRAINT `FK_k87hgih6kebcbk9dbtq8otesh` FOREIGN KEY (`F_BASICUSER`) REFERENCES `CDEIO_USER` (`F_ID`)
+  CONSTRAINT `FK_csptys2epy927qpv4mtadd44b` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `SA_TODO` (`F_ID`),
+  CONSTRAINT `FK_k87hgih6kebcbk9dbtq8otesh` FOREIGN KEY (`F_BASICUSER`) REFERENCES `SA_USER` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_UI_BASIC`
+-- Table structure for table `SA_UI_BASIC`
 --
 
-DROP TABLE IF EXISTS `CDEIO_UI_BASIC`;
+DROP TABLE IF EXISTS `SA_UI_BASIC`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_UI_BASIC` (
+CREATE TABLE `SA_UI_BASIC` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1409,13 +1409,13 @@ CREATE TABLE `CDEIO_UI_BASIC` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_UI_CALL_BACK`
+-- Table structure for table `SA_UI_CALL_BACK`
 --
 
-DROP TABLE IF EXISTS `CDEIO_UI_CALL_BACK`;
+DROP TABLE IF EXISTS `SA_UI_CALL_BACK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_UI_CALL_BACK` (
+CREATE TABLE `SA_UI_CALL_BACK` (
   `F_ID` varchar(255) NOT NULL,
   `F_DETAIL_TYPE` varchar(100) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1423,18 +1423,18 @@ CREATE TABLE `CDEIO_UI_CALL_BACK` (
   `F_ROUTER_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_1wpcjvpntcmfqbrkq8qmhophb` (`F_ROUTER_ID`),
-  CONSTRAINT `FK_1wpcjvpntcmfqbrkq8qmhophb` FOREIGN KEY (`F_ROUTER_ID`) REFERENCES `CDEIO_UI_ROUTER` (`F_ID`)
+  CONSTRAINT `FK_1wpcjvpntcmfqbrkq8qmhophb` FOREIGN KEY (`F_ROUTER_ID`) REFERENCES `SA_UI_ROUTER` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_UI_CUSTOM_FORM`
+-- Table structure for table `SA_UI_CUSTOM_FORM`
 --
 
-DROP TABLE IF EXISTS `CDEIO_UI_CUSTOM_FORM`;
+DROP TABLE IF EXISTS `SA_UI_CUSTOM_FORM`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_UI_CUSTOM_FORM` (
+CREATE TABLE `SA_UI_CUSTOM_FORM` (
   `F_ID` varchar(255) NOT NULL,
   `F_APPLICANT` varchar(100) DEFAULT NULL,
   `F_APPLY_TIME` date DEFAULT NULL,
@@ -1449,13 +1449,13 @@ CREATE TABLE `CDEIO_UI_CUSTOM_FORM` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_UI_INLINE_GRID`
+-- Table structure for table `SA_UI_INLINE_GRID`
 --
 
-DROP TABLE IF EXISTS `CDEIO_UI_INLINE_GRID`;
+DROP TABLE IF EXISTS `SA_UI_INLINE_GRID`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_UI_INLINE_GRID` (
+CREATE TABLE `SA_UI_INLINE_GRID` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1463,18 +1463,18 @@ CREATE TABLE `CDEIO_UI_INLINE_GRID` (
   `F_CALL_BACK_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_ifcbyf403t05adg21gddoa6xy` (`F_CALL_BACK_ID`),
-  CONSTRAINT `FK_ifcbyf403t05adg21gddoa6xy` FOREIGN KEY (`F_CALL_BACK_ID`) REFERENCES `CDEIO_UI_CALL_BACK` (`F_ID`)
+  CONSTRAINT `FK_ifcbyf403t05adg21gddoa6xy` FOREIGN KEY (`F_CALL_BACK_ID`) REFERENCES `SA_UI_CALL_BACK` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_UI_ROUTER`
+-- Table structure for table `SA_UI_ROUTER`
 --
 
-DROP TABLE IF EXISTS `CDEIO_UI_ROUTER`;
+DROP TABLE IF EXISTS `SA_UI_ROUTER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_UI_ROUTER` (
+CREATE TABLE `SA_UI_ROUTER` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1483,13 +1483,13 @@ CREATE TABLE `CDEIO_UI_ROUTER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_USER`
+-- Table structure for table `SA_USER`
 --
 
-DROP TABLE IF EXISTS `CDEIO_USER`;
+DROP TABLE IF EXISTS `SA_USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_USER` (
+CREATE TABLE `SA_USER` (
   `F_ID` varchar(255) NOT NULL,
   `F_BIRTHDAY` datetime DEFAULT NULL,
   `F_CODE` varchar(500) DEFAULT NULL,
@@ -1504,32 +1504,32 @@ CREATE TABLE `CDEIO_USER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_USER_TENANT`
+-- Table structure for table `SA_USER_TENANT`
 --
 
-DROP TABLE IF EXISTS `CDEIO_USER_TENANT`;
+DROP TABLE IF EXISTS `SA_USER_TENANT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_USER_TENANT` (
+CREATE TABLE `SA_USER_TENANT` (
   `F_ID` varchar(255) NOT NULL,
   `TENANT_ID` varchar(255) DEFAULT NULL,
   `USER_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_7n14pk555upilpkfiejna57jl` (`TENANT_ID`),
   KEY `FK_ah0ivsaxwpfsodohc65blqaxf` (`USER_ID`),
-  CONSTRAINT `FK_7n14pk555upilpkfiejna57jl` FOREIGN KEY (`TENANT_ID`) REFERENCES `CDEIO_TENANT` (`F_ID`),
-  CONSTRAINT `FK_ah0ivsaxwpfsodohc65blqaxf` FOREIGN KEY (`USER_ID`) REFERENCES `CDEIO_USER` (`F_ID`)
+  CONSTRAINT `FK_7n14pk555upilpkfiejna57jl` FOREIGN KEY (`TENANT_ID`) REFERENCES `SA_TENANT` (`F_ID`),
+  CONSTRAINT `FK_ah0ivsaxwpfsodohc65blqaxf` FOREIGN KEY (`USER_ID`) REFERENCES `SA_USER` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `CDEIO_VALIDATORS_USER`
+-- Table structure for table `SA_VALIDATORS_USER`
 --
 
-DROP TABLE IF EXISTS `CDEIO_VALIDATORS_USER`;
+DROP TABLE IF EXISTS `SA_VALIDATORS_USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CDEIO_VALIDATORS_USER` (
+CREATE TABLE `SA_VALIDATORS_USER` (
   `F_ID` varchar(255) NOT NULL,
   `F_NAME` varchar(255) DEFAULT NULL,
   `F_STATUS` varchar(255) DEFAULT NULL,
@@ -1755,13 +1755,13 @@ CREATE TABLE `QRTZ_TRIGGERS` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_ACCOUNT`
+-- Table structure for table `CDE_ACCOUNT`
 --
 
-DROP TABLE IF EXISTS `ZDA_ACCOUNT`;
+DROP TABLE IF EXISTS `CDE_ACCOUNT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_ACCOUNT` (
+CREATE TABLE `CDE_ACCOUNT` (
   `F_ID` varchar(255) NOT NULL,
   `F_ACCOUNT_NAME` varchar(30) DEFAULT NULL,
   `F_DELETED` tinyint(1) DEFAULT NULL,
@@ -1774,18 +1774,18 @@ CREATE TABLE `ZDA_ACCOUNT` (
   `F_DEPARTMENT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_9ry2m4qbnae3pda1hsj17byrc` (`F_DEPARTMENT_ID`),
-  CONSTRAINT `FK_9ry2m4qbnae3pda1hsj17byrc` FOREIGN KEY (`F_DEPARTMENT_ID`) REFERENCES `ZDA_DEPARTMENT` (`F_ID`)
+  CONSTRAINT `FK_9ry2m4qbnae3pda1hsj17byrc` FOREIGN KEY (`F_DEPARTMENT_ID`) REFERENCES `CDE_DEPARTMENT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_ATTACHMENT`
+-- Table structure for table `CDE_ATTACHMENT`
 --
 
-DROP TABLE IF EXISTS `ZDA_ATTACHMENT`;
+DROP TABLE IF EXISTS `CDE_ATTACHMENT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_ATTACHMENT` (
+CREATE TABLE `CDE_ATTACHMENT` (
   `F_ID` varchar(255) NOT NULL,
   `F_CONTENT_TYPE` varchar(255) DEFAULT NULL,
   `F_CREATE_TIME` datetime DEFAULT NULL,
@@ -1797,13 +1797,13 @@ CREATE TABLE `ZDA_ATTACHMENT` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_DEPARTMENT`
+-- Table structure for table `CDE_DEPARTMENT`
 --
 
-DROP TABLE IF EXISTS `ZDA_DEPARTMENT`;
+DROP TABLE IF EXISTS `CDE_DEPARTMENT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_DEPARTMENT` (
+CREATE TABLE `CDE_DEPARTMENT` (
   `F_ID` varchar(255) NOT NULL,
   `F_CODE` varchar(3000) DEFAULT NULL,
   `F_DELETED` tinyint(1) DEFAULT NULL,
@@ -1813,70 +1813,70 @@ CREATE TABLE `ZDA_DEPARTMENT` (
   `F_PARENT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_bu37q6kbfl2j6fuxury44u479` (`F_PARENT_ID`),
-  CONSTRAINT `FK_bu37q6kbfl2j6fuxury44u479` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `ZDA_DEPARTMENT` (`F_ID`)
+  CONSTRAINT `FK_bu37q6kbfl2j6fuxury44u479` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `CDE_DEPARTMENT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_FIELD_TODO_ATTACHMENT`
+-- Table structure for table `SA_FIELD_TODO_ATTACHMENT`
 --
 
-DROP TABLE IF EXISTS `ZDA_FIELD_TODO_ATTACHMENT`;
+DROP TABLE IF EXISTS `SA_FIELD_TODO_ATTACHMENT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_FIELD_TODO_ATTACHMENT` (
+CREATE TABLE `SA_FIELD_TODO_ATTACHMENT` (
   `F_TODO_ID` varchar(255) NOT NULL,
   `F_ATTACHMENT_ID` varchar(255) NOT NULL,
   UNIQUE KEY `UK_o1gvoxjl3o468fgj3ae0msoh2` (`F_ATTACHMENT_ID`),
   KEY `FK_o1gvoxjl3o468fgj3ae0msoh2` (`F_ATTACHMENT_ID`),
   KEY `FK_hnp9t1mvb8ndddotcc5m5pyd3` (`F_TODO_ID`),
-  CONSTRAINT `FK_hnp9t1mvb8ndddotcc5m5pyd3` FOREIGN KEY (`F_TODO_ID`) REFERENCES `CDEIO_FIELD_TODO` (`F_ID`),
-  CONSTRAINT `FK_o1gvoxjl3o468fgj3ae0msoh2` FOREIGN KEY (`F_ATTACHMENT_ID`) REFERENCES `ZDA_ATTACHMENT` (`F_ID`)
+  CONSTRAINT `FK_hnp9t1mvb8ndddotcc5m5pyd3` FOREIGN KEY (`F_TODO_ID`) REFERENCES `SA_FIELD_TODO` (`F_ID`),
+  CONSTRAINT `FK_o1gvoxjl3o468fgj3ae0msoh2` FOREIGN KEY (`F_ATTACHMENT_ID`) REFERENCES `CDE_ATTACHMENT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_FIELD_TODO_USER`
+-- Table structure for table `SA_FIELD_TODO_USER`
 --
 
-DROP TABLE IF EXISTS `ZDA_FIELD_TODO_USER`;
+DROP TABLE IF EXISTS `SA_FIELD_TODO_USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_FIELD_TODO_USER` (
+CREATE TABLE `SA_FIELD_TODO_USER` (
   `F_TODO_ID` varchar(255) NOT NULL,
   `F_USER_ID` varchar(255) NOT NULL,
   KEY `FK_aa40rnh8j3pqoqx370sgcnqee` (`F_USER_ID`),
   KEY `FK_e12la1f338oyc8xhdgne9w2bu` (`F_TODO_ID`),
-  CONSTRAINT `FK_aa40rnh8j3pqoqx370sgcnqee` FOREIGN KEY (`F_USER_ID`) REFERENCES `CDEIO_FIELD_USER` (`F_ID`),
-  CONSTRAINT `FK_e12la1f338oyc8xhdgne9w2bu` FOREIGN KEY (`F_TODO_ID`) REFERENCES `CDEIO_FIELD_TODO` (`F_ID`)
+  CONSTRAINT `FK_aa40rnh8j3pqoqx370sgcnqee` FOREIGN KEY (`F_USER_ID`) REFERENCES `SA_FIELD_USER` (`F_ID`),
+  CONSTRAINT `FK_e12la1f338oyc8xhdgne9w2bu` FOREIGN KEY (`F_TODO_ID`) REFERENCES `SA_FIELD_TODO` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_FORM_TODO_USER`
+-- Table structure for table `SA_FORM_TODO_USER`
 --
 
-DROP TABLE IF EXISTS `ZDA_FORM_TODO_USER`;
+DROP TABLE IF EXISTS `SA_FORM_TODO_USER`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_FORM_TODO_USER` (
+CREATE TABLE `SA_FORM_TODO_USER` (
   `F_TODO_ID` varchar(255) NOT NULL,
   `F_USER_ID` varchar(255) NOT NULL,
   KEY `FK_80xnx3dnop92hsxpw22sbi1k5` (`F_USER_ID`),
   KEY `FK_gv6ncva4iq9o037uu29rue2v6` (`F_TODO_ID`),
-  CONSTRAINT `FK_80xnx3dnop92hsxpw22sbi1k5` FOREIGN KEY (`F_USER_ID`) REFERENCES `CDEIO_FORM_TODO` (`F_ID`),
-  CONSTRAINT `FK_gv6ncva4iq9o037uu29rue2v6` FOREIGN KEY (`F_TODO_ID`) REFERENCES `CDEIO_FORM_USER` (`F_ID`)
+  CONSTRAINT `FK_80xnx3dnop92hsxpw22sbi1k5` FOREIGN KEY (`F_USER_ID`) REFERENCES `SA_FORM_TODO` (`F_ID`),
+  CONSTRAINT `FK_gv6ncva4iq9o037uu29rue2v6` FOREIGN KEY (`F_TODO_ID`) REFERENCES `SA_FORM_USER` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_MENUITEM`
+-- Table structure for table `CDE_MENUITEM`
 --
 
-DROP TABLE IF EXISTS `ZDA_MENUITEM`;
+DROP TABLE IF EXISTS `CDE_MENUITEM`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_MENUITEM` (
+CREATE TABLE `CDE_MENUITEM` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_ICON` varchar(100) DEFAULT NULL,
@@ -1888,18 +1888,18 @@ CREATE TABLE `ZDA_MENUITEM` (
   `F_PARENT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_2rtc2uly8yio82ifrbek1gwaf` (`F_PARENT_ID`),
-  CONSTRAINT `FK_2rtc2uly8yio82ifrbek1gwaf` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `ZDA_MENUITEM` (`F_ID`)
+  CONSTRAINT `FK_2rtc2uly8yio82ifrbek1gwaf` FOREIGN KEY (`F_PARENT_ID`) REFERENCES `CDE_MENUITEM` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_PERMISSION`
+-- Table structure for table `CDE_PERMISSION`
 --
 
-DROP TABLE IF EXISTS `ZDA_PERMISSION`;
+DROP TABLE IF EXISTS `CDE_PERMISSION`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_PERMISSION` (
+CREATE TABLE `CDE_PERMISSION` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(100) DEFAULT NULL,
@@ -1910,13 +1910,13 @@ CREATE TABLE `ZDA_PERMISSION` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_ROLE`
+-- Table structure for table `CDE_ROLE`
 --
 
-DROP TABLE IF EXISTS `ZDA_ROLE`;
+DROP TABLE IF EXISTS `CDE_ROLE`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_ROLE` (
+CREATE TABLE `CDE_ROLE` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_SCAFFOLD` tinyint(1) DEFAULT NULL,
@@ -1924,54 +1924,54 @@ CREATE TABLE `ZDA_ROLE` (
   `F_DEPARTMENT_ID` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`F_ID`),
   KEY `FK_f6kbmi33qah2xgjo27s15e8hl` (`F_DEPARTMENT_ID`),
-  CONSTRAINT `FK_f6kbmi33qah2xgjo27s15e8hl` FOREIGN KEY (`F_DEPARTMENT_ID`) REFERENCES `ZDA_DEPARTMENT` (`F_ID`)
+  CONSTRAINT `FK_f6kbmi33qah2xgjo27s15e8hl` FOREIGN KEY (`F_DEPARTMENT_ID`) REFERENCES `CDE_DEPARTMENT` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_ROLE_ACCOUNT`
+-- Table structure for table `CDE_ROLE_ACCOUNT`
 --
 
-DROP TABLE IF EXISTS `ZDA_ROLE_ACCOUNT`;
+DROP TABLE IF EXISTS `CDE_ROLE_ACCOUNT`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_ROLE_ACCOUNT` (
+CREATE TABLE `CDE_ROLE_ACCOUNT` (
   `F_ACCOUNT_ID` varchar(255) NOT NULL,
   `F_ROLE_ID` varchar(255) NOT NULL,
   PRIMARY KEY (`F_ACCOUNT_ID`,`F_ROLE_ID`),
   KEY `FK_oqy4a1nuqic9qq44nmtem5pj1` (`F_ROLE_ID`),
   KEY `FK_k79cnwc1bidiygsb3hrabgilr` (`F_ACCOUNT_ID`),
-  CONSTRAINT `FK_k79cnwc1bidiygsb3hrabgilr` FOREIGN KEY (`F_ACCOUNT_ID`) REFERENCES `ZDA_ACCOUNT` (`F_ID`),
-  CONSTRAINT `FK_oqy4a1nuqic9qq44nmtem5pj1` FOREIGN KEY (`F_ROLE_ID`) REFERENCES `ZDA_ROLE` (`F_ID`)
+  CONSTRAINT `FK_k79cnwc1bidiygsb3hrabgilr` FOREIGN KEY (`F_ACCOUNT_ID`) REFERENCES `CDE_ACCOUNT` (`F_ID`),
+  CONSTRAINT `FK_oqy4a1nuqic9qq44nmtem5pj1` FOREIGN KEY (`F_ROLE_ID`) REFERENCES `CDE_ROLE` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_ROLE_PERMISSION`
+-- Table structure for table `CDE_ROLE_PERMISSION`
 --
 
-DROP TABLE IF EXISTS `ZDA_ROLE_PERMISSION`;
+DROP TABLE IF EXISTS `CDE_ROLE_PERMISSION`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_ROLE_PERMISSION` (
+CREATE TABLE `CDE_ROLE_PERMISSION` (
   `F_ROLE_ID` varchar(255) NOT NULL,
   `F_PERMISSION_ID` varchar(255) NOT NULL,
   PRIMARY KEY (`F_ROLE_ID`,`F_PERMISSION_ID`),
   KEY `FK_hwutwg79f1o8mutmbg1d7f8u9` (`F_PERMISSION_ID`),
   KEY `FK_aq8khw8l2ox2gu3shqi8gebqy` (`F_ROLE_ID`),
-  CONSTRAINT `FK_aq8khw8l2ox2gu3shqi8gebqy` FOREIGN KEY (`F_ROLE_ID`) REFERENCES `ZDA_ROLE` (`F_ID`),
-  CONSTRAINT `FK_hwutwg79f1o8mutmbg1d7f8u9` FOREIGN KEY (`F_PERMISSION_ID`) REFERENCES `ZDA_PERMISSION` (`F_ID`)
+  CONSTRAINT `FK_aq8khw8l2ox2gu3shqi8gebqy` FOREIGN KEY (`F_ROLE_ID`) REFERENCES `CDE_ROLE` (`F_ID`),
+  CONSTRAINT `FK_hwutwg79f1o8mutmbg1d7f8u9` FOREIGN KEY (`F_PERMISSION_ID`) REFERENCES `CDE_PERMISSION` (`F_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `ZDA_SETTINGITEM`
+-- Table structure for table `CDE_SETTINGITEM`
 --
 
-DROP TABLE IF EXISTS `ZDA_SETTINGITEM`;
+DROP TABLE IF EXISTS `CDE_SETTINGITEM`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `ZDA_SETTINGITEM` (
+CREATE TABLE `CDE_SETTINGITEM` (
   `F_ID` varchar(255) NOT NULL,
   `F_DESC` varchar(2000) DEFAULT NULL,
   `F_NAME` varchar(200) DEFAULT NULL,

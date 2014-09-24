@@ -16,7 +16,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "CDEIO_SCAFFOLD_OPERATE_BUTTON")
+@Table(name = "SA_SCAFFOLD_OPERATE_BUTTON")
 @Scaffold("/scaffold/button/basic")
 public class OperateButton extends DomainEntity{
 

@@ -17,7 +17,7 @@ import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
  */
 
 @Entity
-@Table(name = "CDEIO_UI_ROUTER")
+@Table(name = "SA_UI_ROUTER")
 @Scaffold("/extension/ui/router")
 public class Router extends DomainEntity{
 

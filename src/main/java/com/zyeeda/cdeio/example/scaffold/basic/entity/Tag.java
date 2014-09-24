@@ -11,7 +11,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDEIO_TAG")
+@Table(name = "SA_TAG")
 @Scaffold("/scaffold/basic/tag")
 public class Tag extends DomainEntity {
 

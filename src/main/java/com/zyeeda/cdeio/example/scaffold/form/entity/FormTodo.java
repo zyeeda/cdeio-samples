@@ -18,7 +18,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 @Entity
-@Table(name = "CDEIO_FORM_TODO")
+@Table(name = "SA_FORM_TODO")
 @Scaffold("/scaffold/form/todo")
 public class FormTodo extends DomainEntity {
 

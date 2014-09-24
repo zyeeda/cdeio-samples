@@ -26,7 +26,7 @@ import com.zyeeda.cdeio.validation.group.Create;
  * @author chenhaifeng
  */
 @Entity
-@Table(name = "CDEIO_FOO")
+@Table(name = "SA_FOO")
 @Scaffold("/entity/foo")
 public class Foo extends DomainEntity {
 

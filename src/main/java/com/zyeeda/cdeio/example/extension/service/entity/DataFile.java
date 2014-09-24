@@ -19,7 +19,7 @@ import com.zyeeda.cdeio.validation.constraint.NullableSize;
  *
  */
 @Entity
-@Table(name = "CDEIO_SERVICE_DATAFILE")
+@Table(name = "SA_SERVICE_DATAFILE")
 @Scaffold({"/extension/service/downloadfile", "/extension/service/uploadfile"})
 public class DataFile extends DomainEntity {
 
