@@ -39,7 +39,7 @@ exports.createService = function() {
                 var scaffoldPath = webinfPath + '/' + feature + '.feature/scaffold.js';
                 if (fs.exists(scaffoldPath)) {
                     var scaffoldjs = fs.read(scaffoldPath, {charset: 'utf8'});
-                    backendSource = {id: 'scaffoldjs', name: '自动生成', lang: 'js', code: scaffoldjs, isLeaf: true, path: 'WEB-INF/app' + '/' + feature + '.feature/scaffold.js'};
+                    backendSource = {id: 'scaffoldjs', name: '动态脚手架', lang: 'js', code: scaffoldjs, isLeaf: true, path: 'WEB-INF/app' + '/' + feature + '.feature/scaffold.js'};
                 }
             } else {
                 var routerPath = webinfPath + '/' + feature + '.feature/router.js';

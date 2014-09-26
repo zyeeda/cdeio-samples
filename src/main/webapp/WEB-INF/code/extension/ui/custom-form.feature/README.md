@@ -45,7 +45,7 @@ exports.forms = {
 ```
 示例代码中 fieldGroups 中配置 `hideLabel: true` 表示该字段将会在自定义表单中展现；forms 配置了 `add` 表单对应的展示模板为 `extension/ui/custom-form.feature/views/add.html`。
 
-<span class="badge badge-warning">注</span>&nbsp; ：平台中大量用到了 `bootstrap` 框架的样式，更多样式详情请参考_http://www.bootcss.com/_ 
+<span class="badge badge-warning">注</span>&nbsp; ： Cdeio 中大量用到了 `bootstrap` 框架的样式，更多样式详情请参考_http://www.bootcss.com/_
 
 
 

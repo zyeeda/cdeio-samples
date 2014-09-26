@@ -1,15 +1,15 @@
 本例主要介绍如何实现文件下载功能。
 
-平台的下载功能是通过调用 `ringojs/jsgi/response` 将文件写出到前端自定义的 iframe 中实现的。
+ Cdeio 的下载功能是通过调用 `ringojs/jsgi/response` 将文件写出到前端自定义的 iframe 中实现的。
 
 后端 scaffold.js 文件示例代码：
 ```javascript
 var response   = require('ringo/jsgi/response');
-var {notFound} = require('coala/response');
-var {join}     = require('coala/util/paths');
-var {mark}     = require('coala/mark');
-var coala      = require('coala/config');
-var CONFIG_UPLOAD_PATH = 'coala.upload.path';
+var {notFound} = require('cdeio/response');
+var {join}     = require('cdeio/util/paths');
+var {mark}     = require('cdeio/mark');
+var cdeio      = require('cdeio/config');
+var CONFIG_UPLOAD_PATH = 'cdeio.upload.path';
 var String = java.lang.String;
 exports.enableFrontendExtension = true;
 
@@ -24,7 +24,7 @@ exports.doWithRouter = function(router) {
         if (!attachment) {
             return notFound('附件不存在');
         }
-        filepath = join(coala.getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
+        filepath = join(cdeio.getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
         res = response.static(filepath, attachment.contentType);
         filename = new String(new String(attachment.filename).bytes, 'ISO8859-1');
         res.headers['Content-Disposition'] = 'attachment;filename=' + filename;

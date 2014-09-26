@@ -18,7 +18,7 @@ import com.zyeeda.cdeio.commons.base.entity.TreeNodeRevisionDomainEntity;
 import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 /**
- * 自动生成——树——基础配置
+ * 动态脚手架——树——基础配置
  *
  * $Autuor$
  */

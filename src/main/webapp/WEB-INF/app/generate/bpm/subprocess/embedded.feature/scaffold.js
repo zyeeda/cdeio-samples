@@ -37,7 +37,7 @@ exports.forms = {
         ],
         tabs: [
         	// task-info-group 为内置任务信息组，可以直接使用
-        	// 同时平台还内置了'流程信息'和'历史信息'两个标签
+        	// 同时 Cdeio 还内置了'流程信息'和'历史信息'两个标签
         	// 流程信息标签用来显示流程的基本信息和流程图，历史信息标签用来显示流程的审核记录信息
             {title: '基本信息', groups: ['base-info-group', 'task-info-group']}
         ]

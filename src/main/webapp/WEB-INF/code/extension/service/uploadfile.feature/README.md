@@ -1,6 +1,6 @@
-本例主要介绍如何基于平台实现文件上传功能。
+本例主要介绍如何基于 Cdeio 实现文件上传功能。
 
-平台的文件上传功能通过配置 `file-picker` 获取到文件的本地路径，然后调用 `ringo/util/http` 中 `parseFileUpload` 方法根据本地路径读取文件，并将文件上传到服务器文件存储目录。所以要实现此功能需要在后端 scaffold.js 中定义上传组件和文件上传路由地址，在自定义 service.js 中调用 `parseFileUpload` 将文件上传到服务器目录。
+ Cdeio 的文件上传功能通过配置 `file-picker` 获取到文件的本地路径，然后调用 `ringo/util/http` 中 `parseFileUpload` 方法根据本地路径读取文件，并将文件上传到服务器文件存储目录。所以要实现此功能需要在后端 scaffold.js 中定义上传组件和文件上传路由地址，在自定义 service.js 中调用 `parseFileUpload` 将文件上传到服务器目录。
 
 后端 scaffold.js 文件代码示例：
 ```javascript
@@ -27,7 +27,7 @@ exports.createService = function() {
         uploadfile: mark('managers', Attachment).mark('tx').on(function (attachmentMgr, request) {
             var path, prefix, a, attachment, file, fileName, filePath, folder, fullPath, now, params, storeFile;
             path = 'images';
-            prefix = coala.getOptionInProperties(CONFIG_KEY);
+            prefix = cdeio.getOptionInProperties(CONFIG_KEY);
             params = {};
             fileName = UUID.randomUUID().toString();
             now = new Date();

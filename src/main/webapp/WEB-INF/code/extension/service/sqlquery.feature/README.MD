@@ -1,6 +1,6 @@
-本例主要介绍如何基于平台自定义数据库查询。
+本例主要介绍如何基于 Cdeio 自定义数据库查询。
 
-平台提供了基于 Hibernate 的 orm 配置自定义数据库操作方法的功能，通过 manager 调用 orm 配置文件中定义的 `named-query` 方法的名称实现。具体的代码实现包括三部分，首先是定义 orm 文件，然后是在 persisiten.xml 文件中配置 orm 文件，最后是在 service 中调用 named-query。
+ Cdeio 提供了基于 Hibernate 的 orm 配置自定义数据库操作方法的功能，通过 manager 调用 orm 配置文件中定义的 `named-query` 方法的名称实现。具体的代码实现包括三部分，首先是定义 orm 文件，然后是在 persisiten.xml 文件中配置 orm 文件，最后是在 service 中调用 named-query。
 
 ### 定义 orm 文件
 在 `META-INF/mappings/extension/service/` 下新建 `task.orm.xml` ,内容以下：
@@ -27,7 +27,7 @@
     </persistence-unit>
 ...
 ```
-通过将 `task.orm.xml` 配置到 `persistent.xml` 中，平台在启动的时候会自动加载 `task.orm.xml` 中定义的 named-query 方法。
+通过将 `task.orm.xml` 配置到 `persistent.xml` 中， Cdeio 在启动的时候会自动加载 `task.orm.xml` 中定义的 named-query 方法。
 
 ### 调用 named-query 方法
 最后，在自定义 service.js 中调用 named-query 方法的示例代码如下：

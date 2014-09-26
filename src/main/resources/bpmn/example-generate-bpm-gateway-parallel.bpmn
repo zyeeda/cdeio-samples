@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
-  <process id="example-generate-bpm-gateway-parallel" name="样例-自动生成-网关-并行网关-员工入职审批流程" isExecutable="true">
+  <process id="example-generate-bpm-gateway-parallel" name="样例-动态脚手架-网关-并行网关-员工入职审批流程" isExecutable="true">
     <documentation>员工入职审批流程，用于演示并行分支业务</documentation>
     <startEvent id="start_event"></startEvent>
     <userTask id="user_task_01" name="人资部入职审核" activiti:candidateGroups="d-1001">

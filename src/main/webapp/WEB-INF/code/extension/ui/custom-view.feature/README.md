@@ -1,10 +1,10 @@
 本例主要介绍如何自定义视图。
 
-对于大多数系统来说，列表足以满足常规的数据展示需求。但列表并不一定适合所有业务，为此平台提供了自定义视图的功能。自定义视图需要在前端定义功能文件、页面模板文件和事件处理文件，在本例中分别对应 feature.js 、templates.html 和 custom-view.js 。
+对于大多数系统来说，列表足以满足常规的数据展示需求。但列表并不一定适合所有业务，为此 Cdeio 提供了自定义视图的功能。自定义视图需要在前端定义功能文件、页面模板文件和事件处理文件，在本例中分别对应 feature.js 、templates.html 和 custom-view.js 。
 
 
 ### 定义模板文件（templates.html）
-`templates.html` 为系统预定义文件名称，名称不可更改。此文件主要用来配置 `layout` 和 `view` , `layout` 用来配置布局容器，`view` 用来定义页面显示结构和数据填充格式。 
+`templates.html` 为系统预定义文件名称，名称不可更改。此文件主要用来配置 `layout` 和 `view` , `layout` 用来配置布局容器，`view` 用来定义页面显示结构和数据填充格式。
 ```html
 {{#layout}}
     <div id="custom-view" name="customView"></div>

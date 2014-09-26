@@ -15,6 +15,6 @@ exports.fieldGroups = {
     defaults: ['parent', 'name']
 };
 
-exports.tree = {
-    root: '中国'
-};
+// exports.tree = {
+//     root: '中国'
+// };

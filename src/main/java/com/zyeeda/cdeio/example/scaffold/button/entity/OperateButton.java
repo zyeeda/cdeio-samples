@@ -10,7 +10,7 @@ import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 
 /**
- * 自动生成——操作按钮
+ * 动态脚手架——操作按钮
  *
  * $Autuor$
  */

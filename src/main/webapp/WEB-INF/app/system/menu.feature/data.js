@@ -13,22 +13,22 @@ exports.results = [
 
 	{id: "100", name: "动态脚手架", iconClass: "icon-key"},
 
-	{id: "100001001", name: "基础", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "自动生成"}},
+	{id: "100001001", name: "基础", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "动态脚手架"}},
 	{id: "100001001001", name: "最简配置", iconClass: "green icon-key", path: "#feature/scaffold/basic/scaffold:basic-todo", parent: {id: "100001001", name: "基础"}},
 	{id: "100001001002", name: "Json 序列化", iconClass: "green icon-key", path: "#feature/scaffold/basic/scaffold:todo", parent: {id: "100001001", name: "基础"}},
 	{id: "100001001003", name: "标签", iconClass: "green icon-bookmark", path: "#feature/scaffold/basic/scaffold:tag", parent: {id: "100001001", name: "基础"}},
 
-	{id: "100001002", name: "列表", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "自动生成"}},
+	{id: "100001002", name: "列表", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "动态脚手架"}},
 	{id: "100001002001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:todo", parent: {id: "100001002", name: "列表"}},
 	//{id: "100001002002", name: "高级配置", iconClass: "green icon-key", path: "#/", parent: {id: "100001002", name: "列表"}},
-	{id: "100001002002001", name: "过滤器", iconClass: "green icon-filter", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002", name: "列表"}},
+	{id: "100001002002001", name: "过滤器", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:grid-user", parent: {id: "100001002", name: "列表"}},
 	{id: "100001002002002", name: "查询条件", iconClass: "green icon-key", path: "#feature/scaffold/grid/scaffold:user", parent: {id: "100001002", name: "列表"}},
 
-	{id: "100001003", name: "树", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "自动生成"}},
+	{id: "100001003", name: "树", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "动态脚手架"}},
 	{id: "100001003001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/tree/scaffold:basic", parent: {id: "100001003", name: "树"}},
     //{id: "100001003002", name: "高级", iconClass: "green icon-key", path: "#feature/scaffold/tree/scaffold:advanced", parent: {id: "100001003", name: "树"}},
 
-	{id: "100001009", name: "字段", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "自动生成"}},
+	{id: "100001009", name: "字段", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "动态脚手架"}},
 	{id: "100001009001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:todo", parent: {id: "100001009", name: "字段"}},
 	/*{id: "100001009003", name: "下拉列表", iconClass: "green icon-key", path: "#/", parent: {id: "100001009", name: "字段"}},
 	{id: "100001009004", name: "日期选择器", iconClass: "green icon-key", path: "#/", parent: {id: "100001009", name: "字段"}},
@@ -39,26 +39,26 @@ exports.results = [
 	{id: "100001009008", name: "验证规则", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:account", parent: {id: "100001009", name: "字段"}},
 
 
-	{id: "100001004", name: "表单", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "自动生成"}},
+	{id: "100001004", name: "表单", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "动态脚手架"}},
 	{id: "100001004001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:user", parent: {id: "100001004", name: "表单"}},
 	{id: "100001004002", name: "分组", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:todo", parent: {id: "100001004", name: "表单"}},
 	{id: "100001004003", name: "页签", iconClass: "green icon-key", path: "#feature/scaffold/form/scaffold:project", parent: {id: "100001004", name: "表单"}},
 
-	{id: "100001005", name: "操作按钮", /*iconClass: "green icon-key",*/ path: "#feature/scaffold/button/scaffold:basic", parent: {id: "100", name: "自动生成"}},
-	//{id: "100001005001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:basic", parent: {id: "100001005", name: "操作按钮", parent: {id: "100", name: "自动生成"}}},
+	{id: "100001005", name: "操作按钮", /*iconClass: "green icon-key",*/ path: "#feature/scaffold/button/scaffold:basic", parent: {id: "100", name: "动态脚手架"}},
+	//{id: "100001005001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:basic", parent: {id: "100001005", name: "操作按钮", parent: {id: "100", name: "动态脚手架"}}},
 	/*{id: "100001005002", name: "高级配置", iconClass: "green icon-key", path: "#feature/scaffold/button/scaffold:advanced", parent: {id: "100001005", name: "操作按钮"}},*/
 
-	{id: "100001006", name: "hooks", /*iconClass: "green icon-key",*/ path: "#feature/scaffold/hooks/scaffold:todo", parent: {id: "100", name: "自动生成"}},
+	{id: "100001006", name: "hooks", /*iconClass: "green icon-key",*/ path: "#feature/scaffold/hooks/scaffold:todo", parent: {id: "100", name: "动态脚手架"}},
 	//{id: "100001006001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/hooks/scaffold:todo", parent: {id: "100001006", name: "hooks"}},
 
-	{id: "100001007", name: "自定义验证规则", /*iconClass: "green icon-key",*/ path: "#feature/scaffold/validators/scaffold:user", parent: {id: "100", name: "自动生成"}},
+	{id: "100001007", name: "自定义验证规则", /*iconClass: "green icon-key",*/ path: "#feature/scaffold/validators/scaffold:user", parent: {id: "100", name: "动态脚手架"}},
 	//{id: "100001007001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/validators/scaffold:user", parent: {id: "100001007", name: "validators"}},
 
-	//{id: "100001007", name: "其它", iconClass: "icon-lock", path: "#/", parent: {id: "100", name: "自动生成"}},
+	//{id: "100001007", name: "其它", iconClass: "icon-lock", path: "#/", parent: {id: "100", name: "动态脚手架"}},
 	//{id: "100001007001", name: "动态Feature", iconClass: "icon-lock", path: "#/", parent: {id: "100001007"}},
 
 
-	{id: "100001008", name: "工作流", /*iconClass: "green icon-key",*/ path: "#/", parent: {id: "100", name: "自动生成"}},
+	{id: "100001008", name: "工作流", /*iconClass: "green icon-key",*/ path: "#/", parent: {id: "100", name: "动态脚手架"}},
 	{id: "300001", name: "任务", iconClass: "green icon-key", path: "#/", parent: {id: "100001008", name: "工作流"}},
 	{id: "300001001", name: "人工任务", iconClass: "green icon-key", path: "#feature/generate/bpm/task/scaffold:userTask", parent: {id: "300001", name: "任务"}},
 	{id: "300001002", name: "召回", iconClass: "green icon-key", path: "#feature/generate/bpm/task/scaffold:callback", parent: {id: "300001", name: "任务"}},
@@ -150,7 +150,7 @@ exports.results = [
 	Jackson
 	全文检索
 
-自动生成
+动态脚手架
 	基础
 		最简配置
 		JSON序列化

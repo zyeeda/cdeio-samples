@@ -1,6 +1,6 @@
-本例主要介绍如何基于平台代码结构来扩展自动生成的功能。
+本例主要介绍如何基于 Cdeio 代码结构来扩动态脚手架的功能。
 
-平台提供了自定义 router 、 service 和 manager 的方法，开发者可以通过自定义来实现更强大和复杂的业务功能。
+ Cdeio 提供了自定义 router 、 service 和 manager 的方法，开发者可以通过自定义来实现更强大和复杂的业务功能。
 
 ###自定义 router
 
@@ -25,7 +25,7 @@ exports.doWithRouter = function(router) {
 数据从 request 中获取，并调用 service `extension/service/basic` 来保存到数据库，然后数据会被序列化成 Json 格式后返回。
 
 ####2. 单独定义 router 文件
-平台也提供了单独定义 `router.js` 文件的方法来扩展 router，示例代码如下：
+ Cdeio 也提供了单独定义 `router.js` 文件的方法来扩展 router，示例代码如下：
 ```javascript
 router.put('/password/:id', mark('services', 'extension/diyrouter').on(function (svc, request, id) {
     var data,
