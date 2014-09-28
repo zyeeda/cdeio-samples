@@ -16,14 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `cdeio-samples`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `cdeio-samples` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `cdeio-samples`;
-
---
 -- Table structure for table `ACT_GE_BYTEARRAY`
 --
 
