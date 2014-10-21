@@ -1,4 +1,5 @@
 var response   = require('ringo/jsgi/response');
+var {json} = require('cdeio/response');
 var {notFound} = require('cdeio/response');
 var {join}     = require('cdeio/util/paths');
 var {mark}     = require('cdeio/mark');
@@ -54,12 +55,11 @@ exports.grid = {
 
 exports.doWithRouter = function(router) {
     router.post('/upload', mark('services', 'extension/service/uploadfile').on(function (uploadfileSvc, request) {
-        return uploadfileSvc.uploadfile(request);
+        return json(uploadfileSvc.uploadfile(request));
     }));
 
     router.get('/upload/:id', mark('services', 'extension/service/uploadfile').on(function (uploadfileSvc, request, id) {
-        var attachment, filepath,
-            res, filename;
+        var attachment, filepath, res, filename;
 
         attachment = uploadfileSvc.getAttachmentById(id);
         if (!attachment) {
@@ -74,7 +74,7 @@ exports.doWithRouter = function(router) {
         filepath = join(cdeio.getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
 
         // 此处使用的是 ringo/jsgi/response 的 api
-        res = respons.static(filepath, attachment.contentType);
+        res = response.static(filepath, attachment.contentType);
 
         // 处理文件名乱码问题
         filename = new String(new String(attachment.filename).bytes, 'ISO8859-1');
