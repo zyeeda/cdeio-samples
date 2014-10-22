@@ -27,22 +27,32 @@ exports.labels = {
 	name: '文件名称',
 	code: '文件编号',
 	summary: '文件摘要',
-    attachment: '附件'
+    attachment: '附件',
+    files: '多附件'
 };
 
 // 配置form页面布局方式
 exports.forms = {
 	defaults: {
-		groups: [{name: 'defaults', columns: 2}]
+		groups: [
+            {name: 'defaults', columns: 2},
+            {name: 'summary'},
+            {name: 'attachment'}
+        ]
 	}
 };
 
 // 字段分组配置
 exports.fieldGroups = {
     defaults: [
-        'name', 'code',
-        {name: 'summary', type: 'textarea'},
-        {name: 'attachment', type: 'file-picker', url: 'invoke/scaffold/extension/service/uploadfile/upload', acceptFileTypes: "(\\.|\\/)(doc|xls|ppt|txt)$"}
+        'name', 'code'        
+    ],
+    summary: [
+        {name: 'summary', type: 'textarea'}
+    ],
+    attachment: [
+        {name: 'attachment', type: 'file-picker', url: 'invoke/scaffold/extension/service/uploadfile/upload', acceptFileTypes: "(\\.|\\/)(doc|xls|ppt|txt)$"},
+        {name: 'files', type: 'file-picker', preview: 'left', multiple: true, url: 'invoke/scaffold/extension/service/uploadfile/upload/files', acceptFileTypes: "(\\.|\\/)(gif|png|jpg|jepg|bmp)$"}
     ]
 };
 
@@ -86,4 +96,13 @@ exports.doWithRouter = function(router) {
         // res.headers['Content-Disposition'] = 'inline;filename=' + filename;
         return res;
     }));
+
+    var upload = require('cdeio/util/upload');
+    upload.mountTo(router, 'upload/files', 'images', function(file, params){
+        // console.dir(file);
+        // console.log('--------', file, '------', params);
+    }, function(attachment, file){
+        // console.dir(file);
+        // console.log('========', file, '=========', attachment.id);
+    });
 };
