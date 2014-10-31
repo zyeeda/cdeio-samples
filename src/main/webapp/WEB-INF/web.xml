@@ -65,7 +65,7 @@
         </init-param>
         <init-param>
             <param-name>module-path</param-name>
-            <param-value>cdeio-modules, WEB-INF/app</param-value>
+            <param-value>WEB-INF/app</param-value>
         </init-param>
         <init-param>
             <param-name>debug</param-name>
