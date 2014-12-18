@@ -1,0 +1,13 @@
+{
+  "name": "mod",
+  "homepage": "https://github.com/fex-team/mod",
+  "_release": "6a11bb1af8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6a11bb1af8e3104dc81a314e8858967efd9d80ad"
+  },
+  "_source": "https://github.com/fex-team/mod.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/fex-team/mod.git"
+}

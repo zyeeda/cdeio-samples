@@ -1,15 +1,44 @@
+## fis & 插件安装
 
-运行 zyeeda-cdeio-samples
------------------------
+npm install -g fis
 
-  *  配置 mysql
-      默认的数据库是mysql的cdeio-examples库, 用户名密码都是root
-      可以在`src/main/webapp/WEB-INF/jetty-env.xml`文件中修数据库设置
-  *  运行 cdeio-samples
-      将 colorvest 的 cdeio 文件夹链接到 scripts 目录下
-      将 cdeio-samples\src\main\java 文件夹链接到 cdeio-samples\src\main\webapp\WEB-INF\classes 目录下
-      将 cdeio-samples\src\main\resources\bpmn 文件夹链接到 cdeio-samples\src\main\webapp\WEB-INF\classes 目录下
-      `mvn jetty:run`
-  *  访问
-  	  https://localhost:7000/cdeio-samples
+npm install -g fis-parser-coffee-react 
 
+npm install -g fis-parser-coffee-script
+
+npm install -g fis-parser-sass
+
+npm install -g fis-parser-less
+
+npm install -g fis-parser-react
+
+npm install -g fis-parser-marked
+
+npm install -g fis-postprocessor-require-async
+
+npm install -g fis-postprocessor-jswrapper
+
+npm install -g fis-postpackager-autoload
+
+npm install -g fis-postpackager-simple
+
+
+## bower & 库安装
+
+npm install -g bower
+
+cd colorvest
+
+bower install
+
+
+## 编译 & 运行
+
+cd colorvest
+
+fis release -opm 
+
+fis server start
+
+## 打包 & 发布
+fis release -op --dest local
