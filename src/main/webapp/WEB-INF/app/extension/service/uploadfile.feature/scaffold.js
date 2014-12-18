@@ -1,4 +1,5 @@
 var response   = require('ringo/jsgi/response');
+var {json} = require('cdeio/response');
 var {notFound} = require('cdeio/response');
 var {join}     = require('cdeio/util/paths');
 var {mark}     = require('cdeio/mark');
@@ -26,22 +27,32 @@ exports.labels = {
 	name: '文件名称',
 	code: '文件编号',
 	summary: '文件摘要',
-    attachment: '附件'
+    attachment: '附件',
+    files: '多附件'
 };
 
 // 配置form页面布局方式
 exports.forms = {
 	defaults: {
-		groups: [{name: 'defaults', columns: 2}]
+		groups: [
+            {name: 'defaults', columns: 2},
+            {name: 'summary'},
+            {name: 'attachment'}
+        ]
 	}
 };
 
 // 字段分组配置
 exports.fieldGroups = {
     defaults: [
-        'name', 'code',
-        {name: 'summary', type: 'textarea'},
-        {name: 'attachment', type: 'file-picker', url: 'invoke/scaffold/extension/service/uploadfile/upload', acceptFileTypes: "(\\.|\\/)(doc|xls|ppt|txt)$"}
+        'name', 'code'        
+    ],
+    summary: [
+        {name: 'summary', type: 'textarea'}
+    ],
+    attachment: [
+        {name: 'attachment', type: 'file-picker', url: 'invoke/scaffold/extension/service/uploadfile/upload', acceptFileTypes: "(\\.|\\/)(doc|xls|ppt|txt)$"},
+        {name: 'files', type: 'file-picker', preview: 'left', multiple: true, url: 'invoke/scaffold/extension/service/uploadfile/upload/files', acceptFileTypes: "(\\.|\\/)(gif|png|jpg|jepg|bmp)$"}
     ]
 };
 
@@ -54,12 +65,11 @@ exports.grid = {
 
 exports.doWithRouter = function(router) {
     router.post('/upload', mark('services', 'extension/service/uploadfile').on(function (uploadfileSvc, request) {
-        return uploadfileSvc.uploadfile(request);
+        return json(uploadfileSvc.uploadfile(request));
     }));
 
     router.get('/upload/:id', mark('services', 'extension/service/uploadfile').on(function (uploadfileSvc, request, id) {
-        var attachment, filepath,
-            res, filename;
+        var attachment, filepath, res, filename;
 
         attachment = uploadfileSvc.getAttachmentById(id);
         if (!attachment) {
@@ -74,7 +84,7 @@ exports.doWithRouter = function(router) {
         filepath = join(cdeio.getOptionInProperties(CONFIG_UPLOAD_PATH), attachment.path);
 
         // 此处使用的是 ringo/jsgi/response 的 api
-        res = respons.static(filepath, attachment.contentType);
+        res = response.static(filepath, attachment.contentType);
 
         // 处理文件名乱码问题
         filename = new String(new String(attachment.filename).bytes, 'ISO8859-1');
@@ -86,4 +96,13 @@ exports.doWithRouter = function(router) {
         // res.headers['Content-Disposition'] = 'inline;filename=' + filename;
         return res;
     }));
+
+    var upload = require('cdeio/util/upload');
+    upload.mountTo(router, 'upload/files', 'images', function(file, params){
+        // console.dir(file);
+        // console.log('--------', file, '------', params);
+    }, function(attachment, file){
+        // console.dir(file);
+        // console.log('========', file, '=========', attachment.id);
+    });
 };

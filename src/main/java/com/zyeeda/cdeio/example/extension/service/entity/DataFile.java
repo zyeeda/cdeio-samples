@@ -1,8 +1,12 @@
 package com.zyeeda.cdeio.example.extension.service.entity;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -44,6 +48,9 @@ public class DataFile extends DomainEntity {
      * 附件
      */
     private Attachment attachment;
+    
+    private Set<Attachment> files = null;
+
 
     @Column(name = "F_NAME", length = 500)
     @NotBlank
@@ -83,4 +90,15 @@ public class DataFile extends DomainEntity {
     public void setAttachment (Attachment attachment){
         this.attachment = attachment;
     }
+    
+    @ManyToMany
+    @JoinTable(name = "F_DATA_FILES", joinColumns = @JoinColumn(name = "F_DATA_FILE"), inverseJoinColumns = @JoinColumn(name = "F_FILE"))
+    public Set<Attachment> getFiles() {
+        return files;
+    }
+
+    public void setFiles(Set<Attachment> files) {
+        this.files = files;
+    }
+    
 }

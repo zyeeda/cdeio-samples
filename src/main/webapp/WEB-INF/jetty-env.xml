@@ -30,7 +30,8 @@
         </Arg>
     </Call>
 
-    <New class="org.eclipse.jetty.plus.jndi.Resource">
+    <!-- MySQL -->
+    <!-- <New class="org.eclipse.jetty.plus.jndi.Resource">
         <Arg><Ref refid='wac' /></Arg>
         <Arg>jdbc/defaultDS</Arg>
         <Arg>
@@ -42,6 +43,28 @@
                 <Set name="maxPoolSize">30</Set>
                 <Get name="driverProperties">
                     <Put name="URL">jdbc:mysql://localhost:3306/cdeio-samples?pinGlobalTxToPhysicalConnection=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8</Put>
+                    <Put name="password">cdeio</Put>
+                    <Put name="user">cdeio</Put>
+                </Get>
+                <Call name="init"></Call>
+            </New>
+        </Arg>
+    </New> -->
+
+    <!-- H2 -->
+    <New class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg><Ref refid='wac' /></Arg>
+        <Arg>jdbc/defaultDS</Arg>
+        <Arg>
+            <New class="bitronix.tm.resource.jdbc.PoolingDataSource">
+                <Set name="className">bitronix.tm.resource.jdbc.lrc.LrcXADataSource</Set>
+                <Set name="uniqueName">defaultDS</Set>
+                <Set name="allowLocalTransactions">true</Set>
+                <Set name="minPoolSize">5</Set>
+                <Set name="maxPoolSize">30</Set>
+                <Get name="driverProperties">
+                    <Put name="driverClassName">org.h2.Driver</Put>
+                    <Put name="url">jdbc:h2:~/cdeio-samples</Put>
                     <Put name="password">cdeio</Put>
                     <Put name="user">cdeio</Put>
                 </Get>

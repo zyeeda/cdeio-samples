@@ -1,6 +1,7 @@
 exports.filters = {
     defaults: {
-        '!barFilter': ''
+        '!barFilter': '',
+        '!fooFilter': ['bars']
     }
 };
 
