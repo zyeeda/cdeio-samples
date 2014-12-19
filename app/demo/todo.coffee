@@ -1,27 +1,28 @@
 Colorvest = require 'colorvest'
 Todo = require 'widgets/todo'
 
-hello = ->
-	console.log 'hello colorvest'
+# hello = ->
+# 	console.log 'hello colorvest'
 
 app = window.app = new Colorvest.StackApp
-	regions: [
-		region: 'first', height: 500, content: <Todo />
-	]
+    layout: 'stack'
+    regions: [
+        {region: 'first', height: 500, content: <Todo />}
+    ]
 
-	routes:
-        "help":                 "help"
-        "search/:query":        "search"
-        "search/:query/p:page": "search"
-        "hello":                hello
+# 	routes:
+#         "help":                 "help"
+#         "search/:query":        "search"
+#         "search/:query/p:page": "search"
+#         "hello":                hello
 
-    help: ->
-        console.log 'help'
+#     help: ->
+#         console.log 'help'
 
-    search: (query, page) ->
-        console.log query, page
+#     search: (query, page) ->
+#         console.log query, page
 
-app.route 'test', ->
-	console.log 'hello test'
+# app.route 'test', ->
+# 	console.log 'hello test'
 
 app.start()
