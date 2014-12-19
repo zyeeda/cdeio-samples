@@ -58,22 +58,22 @@ fis.config.merge({
         },
         path: [
             {
-                //比如modules/app/index.coffee 可以直接引用为var app = require('app');
-                reg : /^\/modules\/([^\/]+)\/main\.(coffee)$/i,
+                //比如app/app/index.coffee 可以直接引用为var app = require('app');
+                reg : /^\/app\/([^\/]+)\/main\.(coffee)$/i,
                 isMod : true,
                 id : '$1',
                 release : '/$&'
             },
             {
-                //modules目录下的其他脚本文件
-                reg : /^\/modules\/(.*)\.(coffee)$/i,
+                //app目录下的其他脚本文件
+                reg : /^\/app\/(.*)\.(coffee)$/i,
                 isMod : true,
                 id : '$1',
                 release : '/$&'
             },
             {
                 reg : /^\/widgets\/([^\/]+)\/assets\/main\.(scss)$/i,
-                id : 'widgets/$1.css',
+                id : 'widgets/$1/css',
                 release : 'styles/$1/main.css'
             },
             {
@@ -99,9 +99,9 @@ fis.config.merge({
                 useHash: false
             },
             {
-                id: 'require',
-                reg: 'require.coffee',
-                release: 'require.js'
+                id: 'require-conf',
+                reg: 'require-conf.coffee',
+                release: 'require-conf.js'
             },
             {
                 id: 'main',
