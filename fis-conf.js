@@ -44,7 +44,7 @@ fis.config.merge({
     deploy : {
         local : {
             to : './lib',
-            exclude : /\/lib|styles|modules|widgets|vendor|main.js|require.js|index.html|README.md/
+            exclude : /\/lib|styles|modules|widgets|vendor|README.md/
         }
     },
     roadmap: {
