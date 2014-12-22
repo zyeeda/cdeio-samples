@@ -1,5 +1,5 @@
 ###
-@require widgets/todo.css
+@require widgets/todo/css
 ###
 TodoList = require 'widgets/todo/list'
 
