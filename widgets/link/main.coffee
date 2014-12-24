@@ -6,7 +6,7 @@ Link = React.createClass
 		size: 'default'
 
 	render: ->
-		Component = @props.displayStyle || 'a'
+		Component = (@props.displayStyle if @props.displayStyle is 'button') || 'a'
 		color = 'btn btn-default' if Component is 'button'
 		color = @getColor @props.color if not _.isUndefined @props.color
 		size = @getSize @props.size if not _.isUndefined @props.size

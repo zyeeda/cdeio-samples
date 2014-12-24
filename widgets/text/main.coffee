@@ -35,10 +35,12 @@ Text = React.createClass
         width = 'col-lg-' + width if width?
 
         <div className={joinClasses 'form-group', color, height, width}>
-            <input type="text"
+            <input
+                {...@props} 
+                type="text"
                 ref="input"
                 key="input"
-                readOnly = {'readonly' if @props.readonly is true}
+                readOnly = {'readOnly' if @props.readonly is true}
                 className = {joinClasses 'form-control'}
                 placeholder = {@props.placeholder}
                 />
