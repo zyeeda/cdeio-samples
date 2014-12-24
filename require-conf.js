@@ -11,7 +11,12 @@ exports.paths = [
     {
         id: 'jquery',
         reg: '/bower_components/jquery/dist/jquery.js',
-        release: 'vendor/jquery/jquery.js'
+        release: 'vendor/jquery/jquery.js',
+    },
+    {
+        id: 'underscore',
+        reg: '/bower_components/lodash/dist/lodash.underscore.js',
+        release: 'vendor/underscore/underscore.js',
     },
     {
         id: 'bootstrap',
@@ -22,7 +27,7 @@ exports.paths = [
     {
         id: 'react',
         reg: '/bower_components/react/react.js',
-        release: 'vendor/react/react.js',
+        release: 'vendor/react/react.js'
     },
     // {
     //     id: 'flux',
@@ -33,6 +38,6 @@ exports.paths = [
         id: 'colorvest',
         reg: '/bower_components/colorvest/colorvest.js',
         release: 'vendor/colorvest/colorvest.js',
-        requires: ['jquery', 'bootstrap', 'react']
+        requires: ['jquery', 'underscore', 'bootstrap', 'react', 'main.css'],
     }
 ];

@@ -37,6 +37,11 @@ fis.config.merge({
         },
         path: [
             {
+                reg : /^\/assets\/(.*)\.(scss)$/i,
+                release : '/$&',
+                id: '$1.css'
+            },
+            {
                 reg : /^\/app\/([^\/]+)\/main\.(coffee)$/i,
                 isMod : true,
                 id : '$1',
@@ -74,11 +79,6 @@ fis.config.merge({
                 reg: '/bower_components/mod/mod.js',
                 release: 'dist/mod.js',
                 useHash: false
-            },
-            {
-                id: 'require-conf',
-                reg: 'require-conf.coffee',
-                release: 'require-conf.js'
             }
         ]
     }
