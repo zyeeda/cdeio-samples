@@ -14,7 +14,6 @@ Button = React.createClass
 		<button
 			{...@props}
 			className = {@joinClasses color, size, hidden}
-			onClick = {@props.onClick}
 			>{@props.label}
 		</button>
 

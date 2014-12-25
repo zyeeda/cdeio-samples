@@ -15,7 +15,6 @@ Link = React.createClass
 		<Component
 			{...@props}
 			className = {@joinClasses color, size, hidden}
-			onClick = {@props.onClick}
 			>{@props.text}
 		</Component>
 

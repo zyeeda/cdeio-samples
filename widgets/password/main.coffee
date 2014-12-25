@@ -31,7 +31,6 @@ Password = React.createClass
                 key="input"
                 className={joinClasses 'form-control'}
                 readOnly = {'readonly' if @props.readonly is true}
-                placeholder = {@props.placeholder}
 				/>
 		</div>
 

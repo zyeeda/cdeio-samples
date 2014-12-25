@@ -42,7 +42,6 @@ Text = React.createClass
                 key="input"
                 readOnly = {'readOnly' if @props.readonly is true}
                 className = {joinClasses 'form-control'}
-                placeholder = {@props.placeholder}
                 />
             {@renderHelp()}
         </div>
