@@ -1,4 +1,3 @@
-Colorvest = require 'colorvest'
 Text = require 'widgets/text'
 Button = require 'widgets/button'
 Link = require 'widgets/link'

@@ -7,8 +7,8 @@
         "bootstrap": "latest",
         "react": "latest",
         "flux": "latest",
-        "seajs": "latest",
-        "mod": "https://github.com/fex-team/mod.git"
+        "mod": "https://github.com/fex-team/mod.git",
+        "colorvest": "https://github.com/zyeeda/colorvest.git#develop"
     },
     "devDependencies": {
     }

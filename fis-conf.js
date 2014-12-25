@@ -1,6 +1,5 @@
 fis.config.set('project.exclude', '**/_*.scss');
 fis.config.set('settings.postpackager.simple.autoCombine', true);
-// fis.config.set('settings.postpackager.simple.output', 'dist/colorvest');
 
 fis.config.merge({
     modules: {
@@ -42,7 +41,7 @@ fis.config.merge({
                 id: '$1.css'
             },
             {
-                reg : /^\/app\/([^\/]+)\/main\.(coffee)$/i,
+                reg : /^\/app\/([^\/]+)\/index\.(coffee)$/i,
                 isMod : true,
                 id : '$1',
                 release : '/$&'
@@ -54,16 +53,16 @@ fis.config.merge({
                 release : '/$&'
             },
             {
-                reg : /^\/widgets\/([^\/]+)\/assets\/main\.(scss)$/i,
+                reg : /^\/widgets\/([^\/]+)\/assets\/index\.(scss)$/i,
                 id : 'widgets/$1/css',
-                release : 'styles/$1/main.css'
+                release : 'styles/$1/index.css'
             },
             {
                 reg : /^\/widgets\/([^\/]+)\/assets\/(.*)$/i,
                 release : '/img/$1/$2'
             },
             {
-                reg : /^\/widgets\/([^\/]+)\/main\.(coffee)$/i,
+                reg : /^\/widgets\/([^\/]+)\/index\.(coffee)$/i,
                 isMod : true,
                 id : 'widgets/$1',
                 release : '/$&'
@@ -77,7 +76,7 @@ fis.config.merge({
             {
                 id: 'mod',
                 reg: '/bower_components/mod/mod.js',
-                release: 'dist/mod.js',
+                release: 'vendor/mod/mod.js',
                 useHash: false
             }
         ]
