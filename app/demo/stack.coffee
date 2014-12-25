@@ -1,5 +1,3 @@
-Colorvest = require 'colorvest'
-
 app = window.app = new Colorvest.StackApp
 	regions: [
 			region: 'first', height: 50, content: <div style={height: '100%', background: 'yellow'}>first</div>
