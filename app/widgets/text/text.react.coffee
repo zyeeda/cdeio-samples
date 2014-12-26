@@ -7,22 +7,8 @@ React = require 'react'
 Colorvest = require 'colorvest'
 _ = require 'lodash'
 
-# 高度列表
-heightMapping =
-    large: 'input-lg'
-    default: ''
-    small: 'input-sm'
-    xsmall: 'input-sm'
-
-# 获取高度
-getHeight = (h) ->
-    height = heightMapping[h]
-    height = '' if _.isUndefined h
-    height
-
 Text_ = React.createClass   
     mixins: [Colorvest.utils.widgetHelper]
-    onBlur: (e) ->
     renderHelp: ->
         (
             <span className="help-block" key="help">
@@ -32,7 +18,7 @@ Text_ = React.createClass
     
     render: ->
         color = 'has-'+@props.color if not _.isUndefined @props.color 
-        heightSizing = getHeight @props.heightSizing if not _.isUndefined @props.heightSizing
+        heightSizing = @getHeightSizing @props.heightSizing if not _.isUndefined @props.heightSizing
         columnSizing = @props.columnSizing if not _.isUndefined @props.columnSizing
 
         columnSizing = 'col-lg-' + columnSizing if columnSizing?

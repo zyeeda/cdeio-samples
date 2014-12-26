@@ -1,4 +1,5 @@
 Colorvest = require 'colorvest'
+$ = require 'jquery'
 Text = require '../../widgets/text'
 # Button = require '../../widgets/button'
 # Link = require '../../widgets/link'
@@ -12,7 +13,6 @@ app = window.app = new Colorvest.StackApp
     	{region: 'fourth', height: 100, content: ""}
     	]
 
-
 app.start()
 
 t = new Text 
@@ -22,7 +22,7 @@ t = new Text
 	color: "info" 
 	heightSizing: "small" 
 	columnSizing: "3"
-	el: document.getElementById('first')
+	el: $('#first').get(0)
 
 t.render()
 

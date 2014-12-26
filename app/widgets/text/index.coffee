@@ -15,6 +15,6 @@ class Text extends Colorvest.Widget
     onBlur: (e) ->
     render: ->
         @rc = React.render(<Text_ {...@options} />, @el)
-        console.log 'rc is :', @rc
+        # console.log 'rc is :', @rc
 
 module.exports = Text
