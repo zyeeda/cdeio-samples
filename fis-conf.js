@@ -54,7 +54,7 @@ fis.config.merge({
             // },
             {
                 reg : /^\/widgets\/([^\/]+)\/assets\/index\.(scss)$/i,
-                id : 'widgets/$1/css',
+                id : 'widgets/$1.css',
                 release : 'styles/$1/index.css'
             },
             // {

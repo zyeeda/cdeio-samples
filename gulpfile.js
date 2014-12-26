@@ -42,7 +42,7 @@ gulp.task('scripts', function() {
     }))
     // .pipe(sourcemaps.init())
     .pipe(concat(config.distName + '.js'))
-    .pipe(uglify())
+    // .pipe(uglify())
     // .pipe(gzip())
     // .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.distFolder))
