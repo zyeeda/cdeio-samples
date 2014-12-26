@@ -21,7 +21,7 @@ getHeight = (h) ->
     height
 
 Text_ = React.createClass   
-    mixins: [Colorvest.utils]
+    mixins: [Colorvest.utils.widgetHelper]
     onBlur: (e) ->
     renderHelp: ->
         (
@@ -32,12 +32,12 @@ Text_ = React.createClass
     
     render: ->
         color = 'has-'+@props.color if not _.isUndefined @props.color 
-        height = getHeight @props.heightSizing if not _.isUndefined @props.heightSizing
-        width = @props.widthSizing if not _.isUndefined @props.widthSizing
+        heightSizing = getHeight @props.heightSizing if not _.isUndefined @props.heightSizing
+        columnSizing = @props.columnSizing if not _.isUndefined @props.columnSizing
 
-        width = 'col-lg-' + width if width?
+        columnSizing = 'col-lg-' + columnSizing if columnSizing?
 
-        <div className={@joinClasses 'form-group', color, height, width}>
+        <div className={@joinClasses 'form-group', color, heightSizing, columnSizing}>
             <input type="text"
                 ref="input"
                 key="input"

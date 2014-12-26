@@ -21,7 +21,7 @@ t = new Text
 	placeholder: "text - sample"
 	color: "info" 
 	heightSizing: "small" 
-	widthSizing: "3"
+	columnSizing: "3"
 	el: document.getElementById('first')
 
 t.render()
