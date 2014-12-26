@@ -7,19 +7,6 @@ React = require 'react'
 Colorvest = require 'colorvest'
 _ = require 'lodash'
 
-# # 高度列表
-# heightSizingMapping =
-#     large: 'input-lg'
-#     default: ''
-#     small: 'input-sm'
-#     xsmall: 'input-sm'
-
-# # 获取高度
-# getHeightSizing = (sizing) ->
-#     heightSizing = heightSizingMapping[sizing]
-#     heightSizing = '' if _.isUndefined sizing
-#     heightSizing
-
 Text_ = React.createClass   
     mixins: [Colorvest.utils.widgetHelper]
     renderHelp: ->
