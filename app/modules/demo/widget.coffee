@@ -1,5 +1,5 @@
 Colorvest = require 'colorvest'
-$ = require 'jQuery'
+$ = require 'jquery'
 Text = require '../../widgets/text'
 # Button = require '../../widgets/button'
 # Link = require '../../widgets/link'
