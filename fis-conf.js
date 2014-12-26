@@ -9,18 +9,18 @@ fis.config.merge({
             less : 'less',
             scss: 'sass'
         },
-        postprocessor: {
-            js: "jswrapper, require-async",
-        },
+        // postprocessor: {
+        //     js: "jswrapper, require-async",
+        // },
         postpackager : ['autoload', 'simple']
     },
-    settings: {
-        postprocessor: {
-            jswrapper: {
-                type: 'amd'
-            }
-        }
-    },
+    // settings: {
+    //     postprocessor: {
+    //         jswrapper: {
+    //             type: 'amd'
+    //         }
+    //     }
+    // },
     deploy : {
         local : {
             to : './lib',
@@ -40,43 +40,43 @@ fis.config.merge({
                 release : '/$&',
                 id: '$1.css'
             },
-            {
-                reg : /^\/app\/([^\/]+)\/index\.(coffee)$/i,
-                isMod : true,
-                id : '$1',
-                release : '/$&'
-            },
-            {
-                reg : /^\/app\/(.*)\.(coffee)$/i,
-                isMod : true,
-                id : '$1',
-                release : '/$&'
-            },
+            // {
+            //     reg : /^\/app\/([^\/]+)\/index\.(coffee)$/i,
+            //     isMod : true,
+            //     id : '$1',
+            //     release : '/$&'
+            // },
+            // {
+            //     reg : /^\/app\/(.*)\.(coffee)$/i,
+            //     isMod : true,
+            //     id : '$1',
+            //     release : '/$&'
+            // },
             {
                 reg : /^\/widgets\/([^\/]+)\/assets\/index\.(scss)$/i,
                 id : 'widgets/$1/css',
                 release : 'styles/$1/index.css'
             },
+            // {
+            //     reg : /^\/widgets\/([^\/]+)\/assets\/(.*)$/i,
+            //     release : '/img/$1/$2'
+            // },
+            // {
+            //     reg : /^\/widgets\/([^\/]+)\/index\.(coffee)$/i,
+            //     isMod : true,
+            //     id : 'widgets/$1',
+            //     release : '/$&'
+            // },
+            // {
+            //     reg : /^\/widgets\/(.*)\.(coffee)$/i,
+            //     isMod : true,
+            //     id : 'widgets/$1',
+            //     release : '/$&'
+            // },
             {
-                reg : /^\/widgets\/([^\/]+)\/assets\/(.*)$/i,
-                release : '/img/$1/$2'
-            },
-            {
-                reg : /^\/widgets\/([^\/]+)\/index\.(coffee)$/i,
-                isMod : true,
-                id : 'widgets/$1',
-                release : '/$&'
-            },
-            {
-                reg : /^\/widgets\/(.*)\.(coffee)$/i,
-                isMod : true,
-                id : 'widgets/$1',
-                release : '/$&'
-            },
-            {
-                id: 'mod',
-                reg: '/bower_components/mod/mod.js',
-                release: 'vendor/mod/mod.js',
+                id: 'app',
+                reg: '/dist/app.js',
+                release: 'dist/app.js',
                 useHash: false
             }
         ]
