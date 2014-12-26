@@ -1,5 +1,5 @@
-require './demo/todo'
+require './modules/demo/todo'
 
-# require './demo/widget'
-# require './demo/link'
+# require './modules/demo/widget'
+# require './modules/demo/link'
 

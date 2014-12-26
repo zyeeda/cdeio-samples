@@ -7,10 +7,11 @@ var uglify     = require('gulp-uglify');
 // var gzip       = require('gulp-gzip');
 
 var config = {
-    distFolder: 'dist',
-    srcFolder: ['app/**/*.coffee', 'widgets/**/*.coffee'],
+    distFolder: 'app/dist',
+    srcFolder: ['app/**/*.coffee'],
     distName: 'app',
     scripts: ['app/main.coffee'],
+    styles: ['node_modules/bootstrap/dist/**']
 };
 
 gulp.task('clean', function() {
@@ -35,8 +36,14 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(config.distFolder))
 });
 
+gulp.task('styles', function() {
+    gulp.src(config.styles)
+    .pipe(gulp.dest(config.distFolder))
+});
+
+
 gulp.task('watch', function() {
     gulp.watch(config.srcFolder, ['scripts']);
 });
 
-gulp.task('default', ['clean', 'scripts']);
+gulp.task('default', ['clean', 'scripts', 'styles']);
