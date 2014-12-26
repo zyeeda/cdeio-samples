@@ -11,7 +11,9 @@ Text_ = require './text.react'
 class Text extends Colorvest.Widget
 
     constructor: (@options) ->
+        @options = options
         @el = options.el
+
     onBlur: (e) ->
     render: ->
         @rc = React.render(<Text_ {...@options} />, @el)
