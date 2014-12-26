@@ -1,7 +1,5 @@
-###
-@require widgets/todo/css
-###
-TodoList = require 'widgets/todo/list'
+React = require 'react'
+TodoList = require './list'
 
 Todo = React.createClass
     getInitialState: ->

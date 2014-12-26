@@ -1,5 +1,6 @@
-Todo = require 'widgets/todo'
-
+React = require 'react'
+Todo = require '../../widgets/todo'
+Colorvest = require 'colorvest'
 # hello = ->
 # 	console.log 'hello colorvest'
 

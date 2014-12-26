@@ -13,5 +13,6 @@ fis
 node_modules
 bower_components
 lib
+dist
 
 modules/**/*.js
