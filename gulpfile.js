@@ -1,10 +1,15 @@
 var gulp       = require('gulp');
-var browserify = require('gulp-browserify');
+var gulpBrow   = require('gulp-browserify');
 var concat     = require('gulp-concat');
 var clean      = require('gulp-clean');
 var uglify     = require('gulp-uglify');
+
 // var sourcemaps = require('gulp-sourcemaps');
 // var gzip       = require('gulp-gzip');
+// var browserify = require('browserify');
+// var source = require('vinyl-source-stream');
+// var coffeex    = require('gulp-coffee-react');
+
 
 var config = {
     distFolder: 'app/dist',
@@ -21,7 +26,7 @@ gulp.task('clean', function() {
 
 gulp.task('scripts', function() {
     gulp.src(config.scripts,  { read: false })
-    .pipe(browserify({
+    .pipe(gulpBrow({
         // insertGlobals : true,
         // debug : !gulp.env.production,
         // exclude: ['jquery', 'lodash', 'bootstrap', 'react', 'flux'],
@@ -36,11 +41,21 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(config.distFolder))
 });
 
+// gulp.task('build', function() {
+//     gulp.src('app/**/*.coffee')
+//     .pipe(coffeex({ bare: true }))
+//     .pipe(gulp.dest('build'));
+
+//     browserify('./build/main.js')
+//     .bundle()
+//     .pipe(source('app.js'))
+//     .pipe(gulp.dest('./app/dist/'));
+// });
+
 gulp.task('styles', function() {
     gulp.src(config.styles)
     .pipe(gulp.dest(config.distFolder))
 });
-
 
 gulp.task('watch', function() {
     gulp.watch(config.srcFolder, ['scripts']);
