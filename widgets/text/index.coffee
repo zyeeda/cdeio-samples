@@ -5,10 +5,10 @@
 ###
 
 React = require 'react'
-Widget = require 'colorvest/dist/core/widget'
+Colorvest = require 'colorvest'
 Text_ = require './text.react'
 
-class Text extends Widget
+class Text extends Colorvest.Widget
 
     constructor: (@options) ->
         @el = options.el
