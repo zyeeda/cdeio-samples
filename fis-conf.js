@@ -1,5 +1,6 @@
 fis.config.set('settings.postpackager.simple.autoCombine', true);
 fis.config.set('settings.postpackager.simple.output', 'dist/app');
+fis.config.set('project.include', /^\/app|assets|dist|modules|widgets\/(.*)$|index.html/i);
 fis.config.set('project.exclude', '**/_*.scss');
 
 fis.config.merge({
@@ -53,10 +54,6 @@ fis.config.merge({
             {
                 reg: 'dist/app.css',
                 release: 'dist/app.css'
-            },
-            {
-                reg: 'map.json',
-                release: 'map.json'
             },
             {
                 reg: '**',

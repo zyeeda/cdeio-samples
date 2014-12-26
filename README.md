@@ -21,21 +21,7 @@ ln -s node_modules/fis/bin/fis fis
 
 npm install -g fis
 
-npm install -g fis-parser-coffee-react 
-
-npm install -g fis-parser-coffee-script
-
 npm install -g fis-parser-sass
-
-npm install -g fis-parser-less
-
-npm install -g fis-parser-jsx-react
-
-npm install -g fis-parser-marked
-
-npm install -g fis-postprocessor-require-async
-
-npm install -g fis-postprocessor-jswrapper
 
 npm install -g fis-postpackager-autoload
 

@@ -10,11 +10,6 @@
         "colorvest": "latest"
     },
     "devDependencies": {
-        "fis": "latest",
-        "fis-parser-sass": "latest",
-        "fis-postpackager-autoload": "latest",
-        "fis-postpackager-simple": "latest",
-
         "gulp": "^3.8.10",
         "gulp-browserify": "^0.5.0",
         "gulp-clean": "^0.3.1",
