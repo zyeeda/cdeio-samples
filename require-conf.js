@@ -1,4 +1,4 @@
-exports.path = [
+exports.paths = [
     {
         id: 'bootstrap.css',
         reg: '/bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -11,7 +11,12 @@ exports.path = [
     {
         id: 'jquery',
         reg: '/bower_components/jquery/dist/jquery.js',
-        release: 'vendor/jquery/jquery.js'
+        release: 'vendor/jquery/jquery.js',
+    },
+    {
+        id: 'lodash',
+        reg: '/bower_components/lodash/dist/lodash.js',
+        release: 'vendor/lodash/lodash.js',
     },
     {
         id: 'bootstrap',
@@ -20,24 +25,19 @@ exports.path = [
         requires: ['jquery', 'bootstrap.css'],
     },
     {
-        id: 'underscore',
-        reg: '/bower_components/lodash/dist/lodash.underscore.js',
-        release: 'vendor/underscore/underscore.js',
-    },
-    {
-        id: 'backbone',
-        reg: '/bower_components/backbone/backbone.js',
-        release: 'vendor/backbone/backbone.js',
-        requires: ['jquery', 'underscore'],
-    },
-    {
         id: 'react',
         reg: '/bower_components/react/react.js',
         release: 'vendor/react/react.js',
     },
     {
+        id: 'flux',
+        reg: '/bower_components/flux/dist/Flux.js',
+        release: 'vendor/flux/flux.js',
+    },
+    {
         id: 'colorvest',
-        reg: '/bower_components/colorvest/colorvest.js',
-        release: 'vendor/colorvest/colorvest.js'
+        reg: '/bower_components/colorvest/dist/colorvest.js',
+        release: 'vendor/colorvest/colorvest.js',
+        requires: ['jquery', 'lodash', 'bootstrap', 'react', 'flux', 'index.css']
     }
 ];

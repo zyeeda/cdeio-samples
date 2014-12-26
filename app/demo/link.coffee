@@ -1,4 +1,3 @@
-Colorvest = require 'colorvest'
 Link = require 'widgets/link'
 
 app = window.app = new Colorvest.StackApp

@@ -2,11 +2,13 @@
     "name": "colorvest-samples",
     "version": "3.0.0",
     "dependencies": {
-        "bootstrap": "latest",
+        "jquery": "latest",
         "lodash": "latest",
+        "bootstrap": "latest",
         "react": "latest",
-        "backbone": "latest",
-        "mod": "https://github.com/fex-team/mod.git"
+        "flux": "latest",
+        "mod": "https://github.com/fex-team/mod.git",
+        "colorvest": "https://github.com/zyeeda/colorvest.git#develop"
     },
     "devDependencies": {
     }

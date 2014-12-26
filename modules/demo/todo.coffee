@@ -1,4 +1,3 @@
-Colorvest = require 'colorvest'
 Todo = require 'widgets/todo'
 Text = require 'widgets/text'
 Button = require 'widgets/button'
