@@ -1,49 +1,23 @@
-# Widget = require 'colorvest/core/widget'
+###
+    表单文本框
+    author: child
+    date: 2014-12-22
+###
 
-joinClasses = (className = '', others...) ->
-    names = []
-    names.push className if className isnt ''
-    names.push name for name in others
-    names.join ' '
+Widget = require 'colorvest/core/widget'
+ReactText = require 'widgets/text/text.react'
 
-heightMapping =
-    large: 'input-lg'
-    default: ''
-    small: 'input-sm'
-    xsmall: 'input-sm'
+class Text extends Widget
 
-getHeight = (h) ->
-    height = heightMapping[h]
-    height = '' if _.isUndefined h
-    height
-
-Text = React.createClass
+    constructor: (@options) ->
+        @el = options.el
     onBlur: (e) ->
-    renderHelp: ->
-        (
-            <span className="help-block" key="help">
-                {@props.help}
-            </span>
-        ) if @props.help?
-
     render: ->
-
-        color = 'has-'+@props.color if not _.isUndefined @props.color 
-        height = getHeight @props.heightSizing if not _.isUndefined @props.heightSizing
-        width = @props.widthSizing if not _.isUndefined @props.widthSizing
-
-        width = 'col-lg-' + width if width?
-
-        <div className={joinClasses 'form-group', color, height, width}>
-            <input
-                {...@props} 
-                type="text"
-                ref="input"
-                key="input"
-                readOnly = {'readOnly' if @props.readonly is true}
-                className = {joinClasses 'form-control'}
-                />
-            {@renderHelp()}
-        </div>
+        @rc = React.render(<ReactText {...@options} />, @el)
+        console.log 'rc is :', @rc
 
 module.exports = Text
+# module.exports = React.createFactory(Text);
+# module.exports = React.createFactory(React.createClass(Text));
+
+# TODO 如何继承
