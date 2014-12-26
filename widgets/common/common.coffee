@@ -1,4 +1,4 @@
-data = require 'widgets/common/data'
+data = require './data'
 common = 
 	getColor: (c) ->
 		color = data.colorMapping[c]

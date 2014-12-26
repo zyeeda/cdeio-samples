@@ -1,4 +1,6 @@
-common = require 'widgets/common/common'
+React = require 'react'
+_ = require 'lodash'
+common = require '../common/common'
 
 Button = React.createClass
 	mixins: [common]

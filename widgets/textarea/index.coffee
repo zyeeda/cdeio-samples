@@ -1,3 +1,6 @@
+React = require 'react'
+_ = require 'lodash'
+
 joinClasses = (className = '', others...) ->
     names = []
     names.push className if className isnt ''

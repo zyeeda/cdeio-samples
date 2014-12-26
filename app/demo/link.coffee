@@ -1,5 +1,6 @@
-Link = require 'widgets/link'
-Textarea = require 'widgets/textarea'
+Colorvest = require 'colorvest'
+Link = require '../../widgets/link'
+Textarea = require '../../widgets/textarea'
 
 app = window.app = new Colorvest.StackApp
 	layout: 'stack'
