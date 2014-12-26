@@ -1,15 +1,15 @@
 React = require 'react'
+Colorvest = require 'colorvest'
 _ = require 'lodash'
-common = require '../common/common'
 
-Button = React.createClass
-	mixins: [common]
+Button_ = React.createClass
+	mixins: [Colorvest.utils.widgetHelper]
 	getDefaultProps: ->
 		color: 'default'
 		size: 'default'
 
 	render: ->
-		color = @getColor @props.color if not _.isUndefined @props.color
+		color = 'btn btn-' + @props.color if not _.isUndefined @props.color
 		size = @getSize @props.size if not _.isUndefined @props.size
 		hidden = 'hidden' if @props.hidden is 'true'
 
@@ -19,4 +19,4 @@ Button = React.createClass
 			>{@props.label}
 		</button>
 
-module.exports = Button
+module.exports = Button_

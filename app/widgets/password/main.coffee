@@ -1,5 +1,4 @@
-React = require 'react'
-_ = require 'lodash'
+
 heightMapping =
     large: 'input-lg'
     default: ''
