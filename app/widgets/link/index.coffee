@@ -1,23 +1,12 @@
 React = require 'react'
-_ = require 'lodash'
-common = require '../common/common'
+Colorvest = require 'colorvest'
+Link_ = require './link.react'
 
-Link = React.createClass
-	mixins: [common]
-	getDefaultProps: ->
-		size: 'default'
+class Link extends Colorvest.Widget
 
-	render: ->
-		Component = (@props.displayStyle if @props.displayStyle is 'button') || 'a'
-		color = 'btn btn-default' if Component is 'button'
-		color = @getColor @props.color if not _.isUndefined @props.color
-		size = @getSize @props.size if not _.isUndefined @props.size
-		hidden = 'hidden' if @props.hidden is 'true'
-
-		<Component
-			{...@props}
-			className = {@joinClasses color, size, hidden}
-			>{@props.text}
-		</Component>
+    constructor: (@options) ->
+        @el = options.el
+    render: ->
+        @rc = React.render(<Link_ {...@options} />, @el)
 
 module.exports = Link

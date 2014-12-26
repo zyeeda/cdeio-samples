@@ -9,6 +9,5 @@ class Button extends Colorvest.Widget
         @el = options.el
     render: ->
         @rc = React.render(<Button_ {...@options} />, @el)
-        console.log 'this is a button:'
 
 module.exports = Button
