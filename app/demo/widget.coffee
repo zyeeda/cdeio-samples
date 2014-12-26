@@ -1,6 +1,7 @@
-Text = require 'widgets/text'
-Button = require 'widgets/button'
-Link = require 'widgets/link'
+Colorvest = require 'colorvest'
+Text = require '../../widgets/text'
+# Button = require '../../widgets/button'
+# Link = require '../../widgets/link'
 
 app = window.app = new Colorvest.StackApp
     layout: 'stack'

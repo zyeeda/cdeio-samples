@@ -4,8 +4,9 @@
     date: 2014-12-22
 ###
 
-Widget = require 'colorvest/core/widget'
-ReactText = require 'widgets/text/text.react'
+React = require 'react'
+Widget = require 'colorvest/dist/core/widget'
+Text_ = require './text.react'
 
 class Text extends Widget
 
@@ -13,11 +14,7 @@ class Text extends Widget
         @el = options.el
     onBlur: (e) ->
     render: ->
-        @rc = React.render(<ReactText {...@options} />, @el)
+        @rc = React.render(<Text_ {...@options} />, @el)
         console.log 'rc is :', @rc
 
 module.exports = Text
-# module.exports = React.createFactory(Text);
-# module.exports = React.createFactory(React.createClass(Text));
-
-# TODO 如何继承
