@@ -1,6 +1,7 @@
 Colorvest = require 'colorvest'
 $ = require 'jquery'
 Text = require '../../widgets/text'
+Label = require '../../widgets/label'
 # Button = require '../../widgets/button'
 # Link = require '../../widgets/link'
 
@@ -26,3 +27,12 @@ t = new Text
 
 t.render()
 
+l = new Label 
+	text: 'text in label demo'
+	id: 'label'
+	color: "info" 
+	heightSizing: "small" 
+	columnSizing: "3"
+	el: $('#second').get(0)
+
+l.render()
