@@ -14,8 +14,14 @@ class Label extends Colorvest.Widget
         @el = options.el
     render: ->
         # console.log 'text in label is :', @props.text
+        if @options.hidden is true
+            visiable = 'sr-only'
+        else 
+            visiable = ''
+
+        # console.log 'label onClick is : ', @options.onClick
         @rc = React.render(
-            <label {...@options}   >
+            <label {...@options} className={Colorvest.utils.widgetHelper.joinClasses visiable }>
                 {@options.text}
             </label>
             , @el)

@@ -23,16 +23,21 @@ t = new Text
 	color: "info" 
 	heightSizing: "small" 
 	columnSizing: "3"
+	onChange: ->
+		console.log 'text value is : ', t.getValue()
 	el: $('#first').get(0)
 
 t.render()
 
 l = new Label 
-	text: 'text in label demo'
+	text: 'text in label'
 	id: 'label'
 	color: "info" 
 	heightSizing: "small" 
 	columnSizing: "3"
+	onClick: ->
+		console.log 'lable is clicked ...'
 	el: $('#second').get(0)
+
 
 l.render()

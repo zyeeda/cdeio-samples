@@ -9,13 +9,17 @@ _ = require 'lodash'
 
 Text_ = React.createClass   
     mixins: [Colorvest.utils.widgetHelper]
+
     renderHelp: ->
         (
             <span className="help-block" key="help">
                 {@props.help}
             </span>
         ) if @props.help?
-    
+
+    getValue: ->
+        @refs.input.getDOMNode().value
+
     render: ->
         color = 'has-'+@props.color if not _.isUndefined @props.color 
         heightSizing = @getHeightSizing @props.heightSizing if not _.isUndefined @props.heightSizing
@@ -36,5 +40,3 @@ Text_ = React.createClass
             {@renderHelp()}
         </div>
 module.exports = Text_
-# module.exports = React.createFactory(Text);
-# module.exports = React.createFactory(React.createClass(Text));

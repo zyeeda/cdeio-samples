@@ -14,9 +14,10 @@ class Text extends Colorvest.Widget
         @options = options
         @el = options.el
 
-    onBlur: (e) ->
+    getValue: ->
+        @rc.getValue()
+        
     render: ->
         @rc = React.render(<Text_ {...@options} />, @el)
-        # console.log 'rc is :', @rc
 
 module.exports = Text
