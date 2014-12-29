@@ -8,6 +8,9 @@ Textarea_ = React.createClass
         rows: '4'
         color: 'info'
 
+    getValue: ->
+        @refs.input.getDOMNode().value
+
     render: ->
         color = 'has-'+@props.color if not _.isUndefined @props.color 
         heightSizing = @getHeightSizing @props.heightSizing if not _.isUndefined @props.heightSizing
@@ -18,8 +21,8 @@ Textarea_ = React.createClass
         <div className = {@joinClasses 'form-group', color, heightSizing, columnSizing}>
             <textarea
                 {...@props}
-                readOnly = {'readOnly' if @props.readonly is 'true'}
-                disabled = {'disabled' if @props.disabled is 'true'}
+                ref = "input"
+                readOnly = {'readOnly' if @props.readonly is true}
                 className = {@joinClasses 'form-control'}
                 >
             </textarea>

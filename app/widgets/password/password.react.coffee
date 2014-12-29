@@ -5,6 +5,9 @@ _ = require 'lodash'
 Password_ = React.createClass 
     mixins: [Colorvest.utils.widgetHelper]
 
+    getValue: ->
+        @refs.input.getDOMNode().value
+
     render: ->
         color = 'has-' + @props.color if not _.isUndefined @props.color
         heightSizing = @getHeightSizing @props.heightSizing if not _.isUndefined @props.heightSizing
@@ -19,7 +22,6 @@ Password_ = React.createClass
                 ref="input"
                 key="input"
                 className={@joinClasses 'form-control'}
-                readOnly = {'readonly' if @props.readonly is true}
                 required = {'required' if @props.required is true}
                 />
         </div>

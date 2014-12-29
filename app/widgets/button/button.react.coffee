@@ -11,10 +11,11 @@ Button_ = React.createClass
     render: ->
         color = 'btn btn-' + @props.color if not _.isUndefined @props.color
         size = @getSize @props.size if not _.isUndefined @props.size
-        hidden = 'hidden' if @props.hidden is 'true'
+        hidden = 'hidden' if @props.hidden is true
 
         <button
             {...@props}
+            disabled = {'disabled' if @props.disabled is true}
             className = {@joinClasses color, size, hidden}
             >{@props.label}
         </button>

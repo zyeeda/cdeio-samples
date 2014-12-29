@@ -3,7 +3,7 @@ $ = require 'jquery'
 Text = require '../../widgets/text'
 Label = require '../../widgets/label'
 # Button = require '../../widgets/button'
-# Link = require '../../widgets/link'
+Link = require '../../widgets/link'
 # Password = require '../../widgets/password'
 # Textarea = require '../../widgets/textarea'
 
@@ -42,3 +42,17 @@ l = new Label
 	el: $('#second').get(0)
 
 l.render()
+
+b = new Link
+	text: '按钮'
+	displayStyle: 'button'
+	href: 'http://www.baidu.com'
+	disabled: true
+	color: 'info'
+	size: 'large'
+	disabled: true
+	onClick: ->
+		console.log 'link'
+	el: $('#third').get(0)
+
+b.render()
