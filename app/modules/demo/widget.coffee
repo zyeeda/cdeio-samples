@@ -4,6 +4,8 @@ Text = require '../../widgets/text'
 Label = require '../../widgets/label'
 # Button = require '../../widgets/button'
 # Link = require '../../widgets/link'
+# Password = require '../../widgets/password'
+# Textarea = require '../../widgets/textarea'
 
 app = window.app = new Colorvest.StackApp
     layout: 'stack'
