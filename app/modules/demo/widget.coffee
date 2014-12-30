@@ -27,8 +27,8 @@ t = new Text
     # id: 'name'
     placeholder: "text - sample"
     color: "info" 
-    heightSizing: "small" 
-    columnSizing: "3"
+    heightSize: "small" 
+    columnSize: "3"
     onChange: ->
         console.log 'text value is : ', t.getValue()
     el: $('#text').get(0)
@@ -48,8 +48,8 @@ tof = new Text
     name: 'zs'
     placeholder: "text - sample - in - form"
     color: "info"
-    heightSizing: "small"
-    columnSizing: "4"
+    heightSize: "small"
+    columnSize: "4"
     onChange: ->
         console.log 'text value is : ', tof.getValue()
     el: formInstance.getDOMNode()
@@ -61,8 +61,8 @@ p = new Password
     name: 'zs'
     placeholder: "password - sample"
     color: "info" 
-    heightSizing: "small" 
-    columnSizing: "3"
+    heightSize: "small" 
+    columnSize: "3"
     onChange: ->
         # console.log 'password value is : ', p.getValue()
     el: $('#password').get(0)
@@ -74,8 +74,8 @@ l = new Label
     text: 'text in label'
     id: 'label'
     color: "info" 
-    heightSizing: "small" 
-    columnSizing: "3"
+    heightSize: "small" 
+    columnSize: "3"
     onClick: ->
         console.log 'lable is clicked ...'
         console.log 'text of label is : ', l
@@ -84,12 +84,12 @@ l = new Label
 l.render()
 
 lk = new Link
-	text: '按钮'
-	displayStyle: 'button'
-	href: 'http://www.baidu.com'
+	text: 'link'
+	displayStyle: 'link'
+	href: 'http://www.baidu.com' # 此设置在 displayStyle=link时 无效
 	color: 'info'
 	size: 'large'
-	disabled: true
+	# disabled: true
 	onClick: ->
 		console.log 'link'
 	el: $('#link').get(0)
