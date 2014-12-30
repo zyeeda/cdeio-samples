@@ -6,7 +6,10 @@ class Textarea extends Colorvest.Widget
 
     constructor: (@options) ->
         @el = options.el
-    onBlur: (e) ->
+
+    getValue: ->
+        @rc.getValue()
+        
     render: ->
         @rc = React.render(<Textarea_ {...@options} />, @el)
 

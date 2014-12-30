@@ -28,14 +28,13 @@ Text_ = React.createClass
         columnSizing = 'col-lg-' + columnSizing if columnSizing?
 
         <div className={@joinClasses 'form-group', color, heightSizing, columnSizing}>
-            <input type="text"
+            <input type={@props.type if @props.type is 'password' || 'text'}
                 ref="input"
                 key="input"
                 {...@props}
                 readOnly = {'readonly' if @props.readonly is true}
                 required = {'required' if @props.required is true}
                 className = {@joinClasses 'form-control'}
-                placeholder = {@props.placeholder}
                 />
             {@renderHelp()}
         </div>
