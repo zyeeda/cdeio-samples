@@ -15,6 +15,8 @@ Button_ = React.createClass
 
         <button
             {...@props}
+            ref = "button"
+            key = "button"
             disabled = {'disabled' if @props.disabled is true}
             className = {@joinClasses color, size, hidden}
             >{@props.label}
