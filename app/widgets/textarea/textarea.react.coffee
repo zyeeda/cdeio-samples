@@ -18,6 +18,8 @@ Textarea_ = React.createClass
         <div className = {@joinClasses 'form-group', color, heightSizing, columnSizing}>
             <textarea
                 {...@props}
+                ref = "textarea"
+                key = "textarea"
                 readOnly = {'readOnly' if @props.readonly is 'true'}
                 disabled = {'disabled' if @props.disabled is 'true'}
                 className = {@joinClasses 'form-control'}

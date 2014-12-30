@@ -10,13 +10,6 @@ _ = require 'lodash'
 Text_ = React.createClass   
     mixins: [Colorvest.utils.widgetHelper]
 
-    renderHelp: ->
-        (
-            <span className="help-block" key="help">
-                {@props.help}
-            </span>
-        ) if @props.help?
-
     getValue: ->
         @refs.input.getDOMNode().value
 
@@ -26,17 +19,15 @@ Text_ = React.createClass
         columnSizing = @props.columnSizing if not _.isUndefined @props.columnSizing
 
         columnSizing = 'col-lg-' + columnSizing if columnSizing?
-
-        <div className={@joinClasses 'form-group', color, heightSizing, columnSizing}>
+        <div className={@joinClasses @props.className, color, heightSizing, columnSizing} >
             <input type="text"
+                {...@props}
                 ref="input"
                 key="input"
-                {...@props}
                 readOnly = {'readonly' if @props.readonly is true}
                 required = {'required' if @props.required is true}
                 className = {@joinClasses 'form-control'}
                 placeholder = {@props.placeholder}
                 />
-            {@renderHelp()}
         </div>
 module.exports = Text_

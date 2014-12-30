@@ -15,6 +15,8 @@ Button_ = React.createClass
 
         <button
             {...@props}
+            ref = "button"
+            key = "button"
             className = {@joinClasses color, size, hidden}
             >{@props.label}
         </button>
