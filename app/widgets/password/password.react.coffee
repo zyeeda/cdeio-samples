@@ -1,6 +1,5 @@
 React = require 'react'
 Colorvest = require 'colorvest'
-_ = require 'lodash'
 
 Password_ = React.createClass 
     mixins: [Colorvest.utils.widgetHelper]
@@ -10,8 +9,8 @@ Password_ = React.createClass
 
     render: ->
         color = 'has-' + @props.color if not _.isUndefined @props.color
-        heightSize = @getHeightSize @props.heightSize if not _.isUndefined @props.heightSize
-        columnSize = @props.columnSize if not _.isUndefined @props.columnSize
+        heightSize = @getHeightSize @props.heightSize if @props.heightSize?
+        columnSize = @props.columnSize if @props.columnSize?
         
         columnSize = 'col-lg-' + columnSize if columnSize?
 

@@ -1,6 +1,5 @@
 React = require 'react'
 Colorvest = require 'colorvest'
-_ = require 'lodash'
 
 Textarea_ = React.createClass
     mixins: [Colorvest.utils.widgetHelper]
@@ -12,9 +11,9 @@ Textarea_ = React.createClass
         @refs.textarea.getDOMNode().value
 
     render: ->
-        color = 'has-'+@props.color if not _.isUndefined @props.color 
-        heightSizing = @getHeightSize @props.heightSizing if not _.isUndefined @props.heightSizing
-        columnSizing = @props.columnSizing if not _.isUndefined @props.columnSizing
+        color = 'has-'+@props.color if @props.color?
+        heightSizing = @getHeightSize @props.heightSizing if @props.heightSizing?
+        columnSizing = @props.columnSizing if not @props.columnSizing?
 
         columnSizing = 'col-lg-' + columnSizing if columnSizing?
 

@@ -5,7 +5,6 @@
 ###
 React = require 'react'
 Colorvest = require 'colorvest'
-_ = require 'lodash'
 
 Text_ = React.createClass
     mixins: [Colorvest.utils.widgetHelper]
@@ -14,9 +13,9 @@ Text_ = React.createClass
         @refs.input.getDOMNode().value
 
     render: ->
-        color = 'has-'+@props.color if not _.isUndefined @props.color
-        heightSize = @getHeightSize @props.heightSize if not _.isUndefined @props.heightSize
-        columnSize = @props.columnSize if not _.isUndefined @props.columnSize
+        color = 'has-'+@props.color if @props.color?
+        heightSize = @getHeightSize 'input',@props.heightSize if @props.heightSize?
+        columnSize = @props.columnSize if @props.columnSize?
 
         columnSize = 'col-lg-' + columnSize if columnSize?
         <div className={@joinClasses @props.className, color, heightSize, columnSize} >
