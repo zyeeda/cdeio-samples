@@ -5,7 +5,6 @@ Text = require '../../widgets/text'
 Label = require '../../widgets/label'
 Button = require '../../widgets/button'
 Link = require '../../widgets/link'
-Password = require '../../widgets/password'
 Textarea = require '../../widgets/textarea'
 
 app = window.app = new Colorvest.StackApp
@@ -57,12 +56,13 @@ tof = new Text
 tof.render()
 
 # Password
-p = new Password 
+p = new Text 
     name: 'zs'
     placeholder: "password - sample"
     color: "info" 
     heightSize: "small" 
     columnSize: "3"
+    type: 'password'
     onChange: ->
         # console.log 'password value is : ', p.getValue()
     el: $('#password').get(0)

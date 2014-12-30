@@ -13,12 +13,12 @@ Textarea_ = React.createClass
 
     render: ->
         color = 'has-'+@props.color if not _.isUndefined @props.color 
-        heightSizing = @getHeightSize @props.heightSizing if not _.isUndefined @props.heightSizing
-        columnSizing = @props.columnSizing if not _.isUndefined @props.columnSizing
+        heightSize = @getHeightSize @props.heightSize if not _.isUndefined @props.heightSize
+        columnSize = @props.columnSize if not _.isUndefined @props.columnSize
 
-        columnSizing = 'col-lg-' + columnSizing if columnSizing?
+        columnSize = 'col-lg-' + columnSize if columnSize?
 
-        <div className = {@joinClasses 'form-group', color, heightSizing, columnSizing}>
+        <div className = {@joinClasses 'form-group', color, heightSize, columnSize}>
             <textarea
                 {...@props}
                 ref = "textarea"
