@@ -14,8 +14,8 @@ app = window.app = new Colorvest.StackApp
         {region: 'text', height: 100, content: ""}
         {region: 'password', height: 100, content: ""}
         {region: 'label', height: 100, content: ""}
-        {region: 'fourth', height: 100, content: ""}
-        {region: 'fifth', height: 100, content: ""}
+        {region: 'button', height: 100, content: ""}
+        {region: 'link', height: 100, content: ""}
         {region: 'form', height: 100, content: ""}
         ]
 app.react = React
@@ -83,3 +83,15 @@ l = new Label
 
 l.render()
 
+lk = new Link
+	text: '按钮'
+	displayStyle: 'button'
+	href: 'http://www.baidu.com'
+	color: 'info'
+	size: 'large'
+	disabled: true
+	onClick: ->
+		console.log 'link'
+	el: $('#link').get(0)
+
+lk.render()

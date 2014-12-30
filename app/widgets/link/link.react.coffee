@@ -11,10 +11,11 @@ Link_ = React.createClass
         Component = (@props.displayStyle if @props.displayStyle is 'button') || 'a'
         color = ('btn btn-' + @props.color if not _.isUndefined @props.color) || 'btn btn-default' if Component is 'button'
         size = @getSize @props.size if not _.isUndefined @props.size
-        hidden = 'hidden' if @props.hidden is 'true'
+        hidden = 'hidden' if @props.hidden is true
 
         <Component
             {...@props}
+            disabled = {'disabled' if @props.disabled is true}
             className = {@joinClasses color, size, hidden}
             >{@props.text}
         </Component>

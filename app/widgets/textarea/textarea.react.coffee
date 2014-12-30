@@ -8,9 +8,12 @@ Textarea_ = React.createClass
         rows: '4'
         color: 'info'
 
+    getValue: ->
+        @refs.textarea.getDOMNode().value
+
     render: ->
         color = 'has-'+@props.color if not _.isUndefined @props.color 
-        heightSizing = @getHeightSizing @props.heightSizing if not _.isUndefined @props.heightSizing
+        heightSizing = @getHeightSize @props.heightSizing if not _.isUndefined @props.heightSizing
         columnSizing = @props.columnSizing if not _.isUndefined @props.columnSizing
 
         columnSizing = 'col-lg-' + columnSizing if columnSizing?
@@ -20,8 +23,8 @@ Textarea_ = React.createClass
                 {...@props}
                 ref = "textarea"
                 key = "textarea"
-                readOnly = {'readOnly' if @props.readonly is 'true'}
-                disabled = {'disabled' if @props.disabled is 'true'}
+                disabled = {'disabled' if @props.disabled is true}
+                readOnly = {'readOnly' if @props.readonly is true}
                 className = {@joinClasses 'form-control'}
                 >
             </textarea>
