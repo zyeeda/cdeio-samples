@@ -9,7 +9,7 @@ Link_ = React.createClass
     render: ->
         Component = (@props.displayStyle if @props.displayStyle is 'button') || 'a'
         color = ('btn btn-' + @props.color if @props.color?) || 'btn btn-default' if Component is 'button'
-        size = @getHeigthSize 'button', @props.size if @props.size?
+        size = @getHeightSize 'button', @props.size if @props.size?
         hidden = 'hidden' if @props.hidden is true
 
         <Component

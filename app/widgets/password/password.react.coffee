@@ -8,7 +8,7 @@ Password_ = React.createClass
         @refs.input.getDOMNode().value
 
     render: ->
-        color = 'has-' + @props.color if not _.isUndefined @props.color
+        color = 'has-' + @props.color if @props.color?
         heightSize = @getHeightSize @props.heightSize if @props.heightSize?
         columnSize = @props.columnSize if @props.columnSize?
         
