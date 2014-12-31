@@ -1,13 +1,20 @@
-
 React = require 'react'
 Colorvest = require 'colorvest'
-Button_ = require './button.react'
 
-class Button extends Colorvest.Widget
+Button = React.createClass
+    mixins: [Colorvest.utils.widgetHelper]
+    getDefaultProps: ->
+        color: 'default'
+        size: 'default'
 
-    constructor: (@options) ->
-        @el = options.el
     render: ->
-        @rc = React.render(<Button_ {...@options} />, @el)
+        color = 'btn btn-' + @props.color if @props.color?
+        size = @getHeightSize 'button', @props.size if @props.size?
+
+        <button
+            {...@props}
+            className = "#{color} #{size}"
+            >{@props.label}
+        </button>
 
 module.exports = Button

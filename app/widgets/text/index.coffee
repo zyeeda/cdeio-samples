@@ -6,18 +6,25 @@
 
 React = require 'react'
 Colorvest = require 'colorvest'
-Text_ = require './text.react'
 
-class Text extends Colorvest.Widget
-
-    constructor: (@options) ->
-        @options = options
-        @el = options.el
+Text = React.createClass
+    mixins: [Colorvest.utils.widgetHelper]
 
     getValue: ->
-        @rc.getValue()
-        
-    render: ->
-        @rc = React.render(<Text_ {...@options} />, @el)
+        @refs.input.getDOMNode().value
 
+    render: ->
+        color = 'has-'+@props.color if @props.color?
+        heightSize = @getHeightSize 'input',@props.heightSize if @props.heightSize?
+        columnSize = @props.columnSize if @props.columnSize?
+
+        columnSize = 'col-lg-' + columnSize if columnSize?
+        <div className='#{className} #{color} #{heightSize} #{columnSize}' >
+            <input type='text'
+                {...@props}
+                ref='input'
+                readOnly = {'readonly' if @props.readOnly is true}
+                className = 'form-control'
+                />
+        </div>
 module.exports = Text
