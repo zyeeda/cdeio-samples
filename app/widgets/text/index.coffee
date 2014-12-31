@@ -6,18 +6,31 @@
 
 React = require 'react'
 Colorvest = require 'colorvest'
-Text_ = require './text.react'
+_ = require 'lodash'
 
-class Text extends Colorvest.Widget
+getColor = (color='') ->
+    c = color
+    c = 'has-' + c if c isnt ''
+    c
 
-    constructor: (@options) ->
-        @options = options
-        @el = options.el
+module.exports = React.createClass
+    mixins: [Colorvest.utils.widgetUtil]
 
     getValue: ->
-        @rc.getValue()
-        
-    render: ->
-        @rc = React.render(<Text_ {...@options} />, @el)
+        @refs.input.getDOMNode().value
 
-module.exports = Text
+    render: ->
+        color = getColor @props.color
+        className = @getClassName @props.className
+        heightSize = @getHeightSize 'input', @props.heightSize 
+        columnSize = @getColumnSize @props.columnSize
+
+        others = _.omit @props, 'className', 'color', 'heightSize', 'columnSize'
+
+        <div className={"#{className} #{color} #{heightSize} #{columnSize}"} >
+            <input type="text"
+                {...others}
+                ref="input"
+                className = {"form-control"}
+                />
+        </div>

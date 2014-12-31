@@ -6,25 +6,18 @@
 
 React = require 'react'
 Colorvest = require 'colorvest'
-widgetHelper = Colorvest.utils.widgetHelper
+_ = require 'lodash'
 
-class Label extends Colorvest.Widget
+module.exports = React.createClass
+    mixins: [Colorvest.utils.widgetUtil]
 
-    constructor: (@options) ->
-        @options = options
-        @el = options.el
     render: ->
-        if @options.hidden is true
-            visiable = 'sr-only'
-        else 
-            visiable = ''
+        className = @getClassName @props.className
+        text = @props.text
+        others = _.omit @props, 'className', 'text'
 
-        @rc = React.render(
-            <label {...@options}  
-                key="label" 
-                className={widgetHelper.joinClasses @options.className, visiable }>
-                {@options.text}
-            </label>
-            , @el)
-
-module.exports = Label
+        <label 
+            {...others}
+            className={className}>
+            {text}
+        </label>
