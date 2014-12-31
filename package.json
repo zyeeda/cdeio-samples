@@ -10,15 +10,7 @@
     "colorvest": "latest"
   },
   "devDependencies": {
-    "coffee-react-transform": "2.1.0",
-    "coffee-reactify": "^2.1.0",
-    "coffee-script": "1.8.0",
-    "gulp": "^3.8.10",
-    "gulp-browserify": "^0.5.0",
-    "gulp-clean": "^0.3.1",
-    "gulp-concat": "^2.4.2",
-    "gulp-gzip": "^0.0.8",
-    "gulp-sourcemaps": "^1.2.8"
+    "coffee-reactify": "^2.1.0"
   },
   "author": "cheft",
   "license": "ISC"

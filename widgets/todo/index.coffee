@@ -1,3 +1,7 @@
+###
+@require widgets/todo.css
+###
+
 React = require 'react'
 TodoList = require './list'
 
