@@ -24,8 +24,14 @@ module.exports = React.createClass
         className = @getClassName @props.className
         heightSize = @getHeightSize 'input', @props.heightSize 
         columnSize = @getColumnSize @props.columnSize
-
-        others = _.omit @props, 'className', 'color', 'heightSize', 'columnSize'
+        
+        exclusions = [
+            'className'
+            'color'
+            'heightSize'
+            'columnSize'
+        ]
+        others = _.omit @props, exclusions
 
         <div className={"#{className} #{color} #{heightSize} #{columnSize}"} >
             <input type="text"

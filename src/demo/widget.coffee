@@ -6,12 +6,7 @@ Label = require '../../widgets/label'
 Button = require '../../widgets/button'
 Link = require '../../widgets/link'
 Textarea = require '../../widgets/textarea'
-
-Form = React.createClass
-    render: ->
-        <form ref='form' className='form-horizontal' >
-            {@props.children}
-        </form>
+Form = require '../../widgets/form'
 
 app = window.app = new Colorvest.StackApp
     layout: 'stack'
@@ -27,6 +22,7 @@ app = window.app = new Colorvest.StackApp
                 readOnly=false
                 required=false
                 hidden
+                title='title'
                 />
         }
         {
@@ -42,7 +38,7 @@ app = window.app = new Colorvest.StackApp
             region: 'label'
             height: 50
             content: <Label
-                text= 'text in label1'
+                text= 'text in label'
                 color= 'info' 
                 heightSize= 'small' 
                 columnSize= '3'
