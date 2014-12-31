@@ -1,20 +1,21 @@
 React = require 'react'
 Colorvest = require 'colorvest'
 
-Button = React.createClass
-    mixins: [Colorvest.utils.widgetHelper]
-    getDefaultProps: ->
-        color: 'default'
-        size: 'default'
+getColor = (color='') ->
+    c = color
+    c = 'btn btn-' + c if c isnt ''
+    c
+
+module.exports = React.createClass
+    mixins: [Colorvest.utils.widgetUtil]
 
     render: ->
-        color = 'btn btn-' + @props.color if @props.color?
-        size = @getHeightSize 'button', @props.size if @props.size?
+        className = @getClassName @props.className
+        color = getColor @props.color
+        size = @getHeightSize 'button', @props.size
 
         <button
             {...@props}
-            className = "#{color} #{size}"
+            className = "#{className} #{color} #{size}"
             >{@props.label}
         </button>
-
-module.exports = Button

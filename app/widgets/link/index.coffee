@@ -1,38 +1,21 @@
 React = require 'react'
 Colorvest = require 'colorvest'
 
-Link = React.createClass
-    # mixins: [Colorvest.utils.widgetHelper]
+getColor = (color='') ->
+    c = color
+    c = 'btn btn-' + c if c isnt ''
+    c
 
-    sizeMapping:
-        large: 'lg'
-        default: ''
-        small: 'sm'
-        xsmall: 'xs'
-
-    typeMapping:
-        button: 'btn'
-        input: 'input'
-
-    getDefaultProps: ->
-        size: 'default'
-
-    getHeightSize: (type="input", size="default") ->
-        sz = @sizeMapping[size]
-        tp = @typeMapping[type]
-
-        heightSize = tp + "-" + sz if sz? and tp?
-        heightSize
+module.exports = React.createClass
+    mixins: [Colorvest.utils.widgetUtil]
 
     render: ->
-        color = ('btn btn-' + @props.color if @props.color?) || 'btn btn-default'
-        size = @getHeightSize 'button', @props.size if @props.size?
-        className = ("#{color} #{size}" if @props.displayStyle is 'button') || "#{size}"
+        className = @getClassName @props.className
+        color = getColor @props.color
+        size = @getHeightSize 'button', @props.size
 
         <a  
             {...@props}
-            className = "#{className}"
+            className = {("#{className} #{color} #{size}" if @props.displayStyle is 'button') || "#{className} #{size}"}
             >{@props.text}
         </a>
-
-module.exports = Link

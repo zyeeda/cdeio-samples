@@ -13,8 +13,8 @@ Select = React.createClass
 				key="select"
 				className='form-control'
 				>
-				options.map (op) ->
-					<option value={op.value}>{op.value}</option>
+				# options.map (op) ->
+				# 	<option value={op.value}>{op.value}</option>
 			</select>
 		</div>
 

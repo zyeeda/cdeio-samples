@@ -1,30 +1,28 @@
 React = require 'react'
 Colorvest = require 'colorvest'
 
-Textarea = React.createClass
-    mixins: [Colorvest.utils.widgetHelper]
-    getDefaultProps: ->
-        rows: '4'
-        color: 'info'
+getColor = (color='') ->
+    c = color
+    c = 'has-' + c if c isnt ''
+    c
+
+module.exports = React.createClass
+    mixins: [Colorvest.utils.widgetUtil]
 
     getValue: ->
         @refs.textarea.getDOMNode().value
 
     render: ->
-        color = 'has-'+@props.color if @props.color? 
-        heightSize = @getHeightSize @props.heightSize if @props.heightSize?
-        columnSize = @props.columnSize if @props.columnSize?
+        className = @getClassName @props.className
+        color = getColor @props.color
+        heightSize = @getHeightSize 'input', @props.heightSize
+        columnSize = @getColumnSize @props.columnSize
 
-        columnSize = 'col-lg-' + columnSize if columnSize?
-
-        <div className = "'form-group' #{className} #{color} #{heightSize} #{columnSize}">
+        <div className = "#{className} #{color} #{heightSize} #{columnSize}">
             <textarea
                 {...@props}
                 ref = 'textarea'
-                readOnly = {'readonly' if @props.readOnly is true}
                 className = 'form-control'
                 >
             </textarea>
         </div>
-
-module.exports = Textarea

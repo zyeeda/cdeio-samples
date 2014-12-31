@@ -6,25 +6,31 @@
 
 React = require 'react'
 Colorvest = require 'colorvest'
+_ = require 'lodash'
 
-Text = React.createClass
-    mixins: [Colorvest.utils.widgetHelper]
+getColor = (color='') ->
+    c = color
+    c = 'has-' + c if c isnt ''
+    c
+
+module.exports = React.createClass
+    mixins: [Colorvest.utils.widgetUtil]
 
     getValue: ->
         @refs.input.getDOMNode().value
 
     render: ->
-        color = 'has-'+@props.color if @props.color?
-        heightSize = @getHeightSize 'input',@props.heightSize if @props.heightSize?
-        columnSize = @props.columnSize if @props.columnSize?
+        color = getColor @props.color
+        className = @getClassName @props.className
+        heightSize = @getHeightSize 'input', @props.heightSize 
+        columnSize = @getColumnSize @props.columnSize
 
-        columnSize = 'col-lg-' + columnSize if columnSize?
-        <div className='#{className} #{color} #{heightSize} #{columnSize}' >
-            <input type='text'
-                {...@props}
-                ref='input'
-                readOnly = {'readonly' if @props.readOnly is true}
-                className = 'form-control'
+        others = _.omit @props, 'className', 'color', 'heightSize', 'columnSize'
+
+        <div className={"#{className} #{color} #{heightSize} #{columnSize}"} >
+            <input type="text"
+                {...others}
+                ref="input"
+                className = {"form-control"}
                 />
         </div>
-module.exports = Text

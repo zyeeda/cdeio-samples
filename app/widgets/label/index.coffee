@@ -6,12 +6,18 @@
 
 React = require 'react'
 Colorvest = require 'colorvest'
+_ = require 'lodash'
 
-Label = React.createClass
+module.exports = React.createClass
+    mixins: [Colorvest.utils.widgetUtil]
+
     render: ->
-        <label {...@props}  
-            className=""
-            >{@props.text}
-        </label>
+        className = @getClassName @props.className
+        text = @props.text
+        others = _.omit @props, 'className', 'text'
 
-module.exports = Label
+        <label 
+            {...others}
+            className={className}>
+            {text}
+        </label>
