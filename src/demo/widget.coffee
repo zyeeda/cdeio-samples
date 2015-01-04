@@ -42,17 +42,17 @@ app = window.app = new Colorvest.StackApp
         }
         {
             region: 'button'
-            height: 100
+            height: 50
             content: ''
         }
         {
             region: 'link'
-            height: 100
+            height: 50
             content: ''
         }
         {
             region: 'form'
-            height: 100
+            height: 50
             content: 
                 <Form>
                     <Text
