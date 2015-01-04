@@ -7,10 +7,23 @@ Button = require '../../widgets/button'
 Link = require '../../widgets/link'
 Textarea = require '../../widgets/textarea'
 Form = require '../../widgets/form'
+Select = require '../../widgets/select'
 
 app = window.app = new Colorvest.StackApp
     layout: 'stack'
     regions: [
+        {
+            region: 'select'
+            height: 50
+            content: <Select
+                columnSize='4'
+                defaultValue='b'
+                    >
+                    <option value="a">aaa</option>
+                    <option value="b">bbb</option>
+                    <option value="c">ccc</option>
+                </Select>
+        }
         {
             region: 'text'
             height: 50
@@ -49,14 +62,8 @@ app = window.app = new Colorvest.StackApp
             region: 'button'
             height: 50
             content: ''
-        }
-        {
-            region: 'link'
-            height: 50
-            content: ''
             content: <Button
                 label='button'
-                size='large'
                 />
         }
         {

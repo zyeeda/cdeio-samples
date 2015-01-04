@@ -10,8 +10,8 @@ module.exports = React.createClass
     mixins: [Colorvest.utils.widgetUtil]
 
     render: ->
-        className = @getClassName @props.className
         color = getColor @props.color
+        className = @getClassName @props.className
         size = @getHeightSize 'button', @props.size
 
         <button
