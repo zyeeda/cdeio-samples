@@ -1,306 +1,350 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var App, React, StackApp,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+(function() {
+  var App, React, StackApp,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-React = require('react');
+  React = require('react');
 
-App = require('../core/app');
+  App = require('../core/app');
 
-StackApp = (function(_super) {
-  __extends(StackApp, _super);
+  StackApp = (function(_super) {
+    __extends(StackApp, _super);
 
-  function StackApp() {
-    return StackApp.__super__.constructor.apply(this, arguments);
-  }
+    function StackApp() {
+      return StackApp.__super__.constructor.apply(this, arguments);
+    }
 
-  StackApp.prototype.mapRegions = function(item) {
-    return React.createElement("div", {
-      "id": item.region,
-      "style": {
-        height: item.height
-      },
-      "className": "col-xs-12"
-    }, item.content);
+    StackApp.prototype.mapRegions = function(item) {
+      return React.createElement("div", {
+        "id": item.region,
+        "key": Math.random(),
+        "style": {
+          height: item.height
+        },
+        "className": "col-xs-12"
+      }, item.content);
+    };
+
+    StackApp.prototype.render = function() {
+      return React.createElement("div", {
+        "className": "container-fluid"
+      }, React.createElement("div", {
+        "className": "row"
+      }, this.options.regions.map(this.mapRegions)));
+    };
+
+    return StackApp;
+
+  })(App);
+
+  module.exports = StackApp;
+
+}).call(this);
+
+},{"../core/app":3,"react":155}],2:[function(require,module,exports){
+(function() {
+  var Colorvest, StackApp, Widget;
+
+  StackApp = require('./app/stack');
+
+  Widget = require('./core/widget');
+
+  Colorvest = {
+    StackApp: StackApp,
+    Widget: Widget
   };
 
-  StackApp.prototype.render = function() {
-    return React.createElement("div", {
-      "className": "container-fluid"
-    }, React.createElement("div", {
-      "className": "row"
-    }, this.options.regions.map(this.mapRegions)));
+  Colorvest.utils = {
+    widgetUtil: require('./utils/widget-util')
   };
 
-  return StackApp;
+  module.exports = Colorvest;
 
-})(App);
+}).call(this);
 
-module.exports = StackApp;
+},{"./app/stack":1,"./core/widget":7,"./utils/widget-util":8}],3:[function(require,module,exports){
+(function() {
+  var App, BaseWidget, React,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-},{"../core/app":2,"react":155}],2:[function(require,module,exports){
-var App, BaseWidget, React,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  React = require('react');
 
-React = require('react');
+  BaseWidget = require('./base-widget');
 
-BaseWidget = require('./base-widget');
+  App = (function(_super) {
+    __extends(App, _super);
 
-App = (function(_super) {
-  __extends(App, _super);
+    function App() {
+      return App.__super__.constructor.apply(this, arguments);
+    }
 
-  function App() {
-    return App.__super__.constructor.apply(this, arguments);
-  }
+    App.prototype.start = function() {
+      return React.render(this.render(), document.body);
+    };
 
-  App.prototype.start = function() {
-    return React.render(this.render(), document.body);
-  };
+    return App;
 
-  return App;
+  })(BaseWidget);
 
-})(BaseWidget);
+  module.exports = App;
 
-module.exports = App;
+}).call(this);
 
-},{"./base-widget":3,"react":155}],3:[function(require,module,exports){
-var BaseWidget, Layout, Region;
+},{"./base-widget":4,"react":155}],4:[function(require,module,exports){
+(function() {
+  var BaseWidget, Layout, Region;
 
-Layout = require('./layout');
+  Layout = require('./layout');
 
-Region = require('./region');
+  Region = require('./region');
 
-BaseWidget = (function() {
-  function BaseWidget(options) {
-    this.options = options;
-    this.name = options.name;
-    this.initLayout();
-    this.initRegions();
-  }
+  BaseWidget = (function() {
+    function BaseWidget(options) {
+      this.options = options;
+      this.name = options.name;
+      this.initLayout();
+      this.initRegions();
+    }
 
-  BaseWidget.prototype.getLayout = function() {};
+    BaseWidget.prototype.getLayout = function() {};
 
-  BaseWidget.prototype.getParent = function() {
-    var region, _i, _len, _ref;
-    _ref = this.layout.regions;
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      region = _ref[_i];
-      if (region.widget.name === this.name) {
-        return region;
+    BaseWidget.prototype.getParent = function() {
+      var region, _i, _len, _ref;
+      _ref = this.layout.regions;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        region = _ref[_i];
+        if (region.widget.name === this.name) {
+          return region;
+        }
       }
-    }
-  };
+    };
 
-  BaseWidget.prototype.find = function() {};
+    BaseWidget.prototype.find = function() {};
 
-  BaseWidget.prototype.findRegion = function(name) {
-    var region, _i, _len, _ref;
-    _ref = this.layout.regions;
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      region = _ref[_i];
-      if (region.widget.name === this.name) {
-        return region;
+    BaseWidget.prototype.findRegion = function(name) {
+      var region, _i, _len, _ref;
+      _ref = this.layout.regions;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        region = _ref[_i];
+        if (region.widget.name === this.name) {
+          return region;
+        }
       }
-    }
-    return this.layout.regions[name];
-  };
+      return this.layout.regions[name];
+    };
 
-  BaseWidget.prototype.findWidget = function(name) {
-    var region, _i, _len, _ref;
-    _ref = this.layout.regions;
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      region = _ref[_i];
-      if (region.widget.name === name) {
-        return region.widget;
+    BaseWidget.prototype.findWidget = function(name) {
+      var region, _i, _len, _ref;
+      _ref = this.layout.regions;
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        region = _ref[_i];
+        if (region.widget.name === name) {
+          return region.widget;
+        }
       }
+    };
+
+    BaseWidget.prototype.initLayout = function() {
+      this.layout = new Layout({
+        name: this.options.layout,
+        parent: this
+      });
+      return this.layout;
+    };
+
+    BaseWidget.prototype.initRegions = function() {
+      var region, _i, _len, _ref, _results;
+      this.layout.regions = [];
+      _ref = this.options.regions;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        region = _ref[_i];
+        _results.push(this.layout.regions.push(new Region({
+          name: region.region,
+          height: region.height,
+          content: region.content,
+          parent: this.layout
+        })));
+      }
+      return _results;
+    };
+
+    return BaseWidget;
+
+  })();
+
+  module.exports = BaseWidget;
+
+}).call(this);
+
+},{"./layout":5,"./region":6}],5:[function(require,module,exports){
+(function() {
+  var Layout;
+
+  Layout = (function() {
+    function Layout(options) {
+      this.options = options;
+      this.name = options.name;
+      this.parent = options.parent;
     }
-  };
 
-  BaseWidget.prototype.initLayout = function() {
-    this.layout = new Layout({
-      name: this.options.layout,
-      parent: this
-    });
-    return this.layout;
-  };
+    Layout.prototype.getParent = function() {
+      return this.parent;
+    };
 
-  BaseWidget.prototype.initRegions = function() {
-    var region, _i, _len, _ref, _results;
-    this.layout.regions = [];
-    _ref = this.options.regions;
-    _results = [];
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      region = _ref[_i];
-      _results.push(this.layout.regions.push(new Region({
-        name: region.region,
-        height: region.height,
-        content: region.content,
-        parent: this.layout
-      })));
-    }
-    return _results;
-  };
+    Layout.prototype.getRegions = function() {
+      return this.regions;
+    };
 
-  return BaseWidget;
+    return Layout;
 
-})();
+  })();
 
-module.exports = BaseWidget;
+  module.exports = Layout;
 
-},{"./layout":4,"./region":5}],4:[function(require,module,exports){
-var Layout;
-
-Layout = (function() {
-  function Layout(options) {
-    this.options = options;
-    this.name = options.name;
-    this.parent = options.parent;
-  }
-
-  Layout.prototype.getParent = function() {
-    return this.parent;
-  };
-
-  Layout.prototype.getRegions = function() {
-    return this.regions;
-  };
-
-  return Layout;
-
-})();
-
-module.exports = Layout;
-
-},{}],5:[function(require,module,exports){
-var Region;
-
-Region = (function() {
-  function Region(options) {
-    this.options = options;
-    this.name = options.name;
-    this.height = options.height;
-    this.content = options.content;
-    this.parent = options.parent;
-  }
-
-  Region.prototype.getParent = function() {
-    return this.parent;
-  };
-
-  Region.prototype.getWidget = function() {
-    return this.widget;
-  };
-
-  Region.prototype.mountWidget = function(widget) {
-    return this.widget = widget;
-  };
-
-  Region.prototype.unmountWidget = function() {
-    return this.widget = void 0;
-  };
-
-  return Region;
-
-})();
-
-module.exports = Region;
+}).call(this);
 
 },{}],6:[function(require,module,exports){
-var BaseWidget, Widget,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+(function() {
+  var Region;
 
-BaseWidget = require('./base-widget');
+  Region = (function() {
+    function Region(options) {
+      this.options = options;
+      this.name = options.name;
+      this.height = options.height;
+      this.content = options.content;
+      this.parent = options.parent;
+    }
 
-Widget = (function(_super) {
-  __extends(Widget, _super);
+    Region.prototype.getParent = function() {
+      return this.parent;
+    };
 
-  function Widget() {
-    return Widget.__super__.constructor.apply(this, arguments);
-  }
+    Region.prototype.getWidget = function() {
+      return this.widget;
+    };
 
-  Widget.prototype.mountWidget = function(widget, regionName) {
-    var region;
-    region = this.findRegion(regionName);
-    return region.mountWidget(widget);
+    Region.prototype.mountWidget = function(widget) {
+      return this.widget = widget;
+    };
+
+    Region.prototype.unmountWidget = function() {
+      return this.widget = void 0;
+    };
+
+    return Region;
+
+  })();
+
+  module.exports = Region;
+
+}).call(this);
+
+},{}],7:[function(require,module,exports){
+(function() {
+  var BaseWidget, Widget,
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  BaseWidget = require('./base-widget');
+
+  Widget = (function(_super) {
+    __extends(Widget, _super);
+
+    function Widget() {
+      return Widget.__super__.constructor.apply(this, arguments);
+    }
+
+    Widget.prototype.mountWidget = function(widget, regionName) {
+      var region;
+      region = this.findRegion(regionName);
+      return region.mountWidget(widget);
+    };
+
+    Widget.prototype.unmountWidget = function(layout) {
+      var region;
+      region = this.findRegion(regionName);
+      return region.unmountWidget();
+    };
+
+    Widget.prototype.activeRegion = function(regionName) {};
+
+    Widget.prototype.render = function() {};
+
+    return Widget;
+
+  })(BaseWidget);
+
+  module.exports = Widget;
+
+}).call(this);
+
+},{"./base-widget":4}],8:[function(require,module,exports){
+(function() {
+  var sizeMapping, typeMapping, _;
+
+  _ = require('lodash');
+
+  sizeMapping = {
+    large: 'lg',
+    "default": '',
+    small: 'sm',
+    xsmall: 'xs'
   };
 
-  Widget.prototype.unmountWidget = function(layout) {
-    var region;
-    region = this.findRegion(regionName);
-    return region.unmountWidget();
+  typeMapping = {
+    button: 'btn',
+    input: 'input'
   };
 
-  Widget.prototype.activeRegion = function(regionName) {};
-
-  Widget.prototype.render = function() {};
-
-  return Widget;
-
-})(BaseWidget);
-
-module.exports = Widget;
-
-},{"./base-widget":3}],7:[function(require,module,exports){
-var Colorvest, StackApp, Widget;
-
-StackApp = require('./app/stack');
-
-Widget = require('./core/widget');
-
-Colorvest = {
-  StackApp: StackApp,
-  Widget: Widget
-};
-
-Colorvest.utils = {
-  widgetHelper: require('./utils/widget-helper')
-};
-
-module.exports = Colorvest;
-
-},{"./app/stack":1,"./core/widget":6,"./utils/widget-helper":8}],8:[function(require,module,exports){
-var heightSizingMapping, widgetHelper, _,
-  __slice = [].slice;
-
-_ = require('lodash');
-
-heightSizingMapping = {
-  large: 'input-lg',
-  "default": '',
-  small: 'input-sm',
-  xsmall: 'input-sm'
-};
-
-widgetHelper = {
-  joinClasses: function() {
-    var className, name, names, others, _i, _len;
-    className = arguments[0], others = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
-    if (className == null) {
-      className = '';
+  module.exports = {
+    getHeightSize: function(type, size) {
+      var heightSize, sz, tp;
+      if (type == null) {
+        type = "input";
+      }
+      if (size == null) {
+        size = "default";
+      }
+      sz = sizeMapping[size];
+      if (sz == null) {
+        console.warn("不存在与 '" + size + "' 对应的设置，请查看 heightSize 设置是否正确。");
+      }
+      tp = typeMapping[type];
+      if (tp == null) {
+        console.error("参数 type 的类型不正确，error(type=" + type + ")。");
+      }
+      if ((sz != null) && (tp != null)) {
+        heightSize = tp + "-" + sz;
+      }
+      heightSize = heightSize || '';
+      return heightSize;
+    },
+    getColumnSize: function(size) {
+      var s;
+      if (size == null) {
+        size = '';
+      }
+      s = size;
+      if (s !== '') {
+        s = 'col-sm-' + s;
+      }
+      return s;
+    },
+    getClassName: function(className) {
+      var cn;
+      if (className == null) {
+        className = '';
+      }
+      cn = className;
+      return cn;
     }
-    names = [];
-    for (_i = 0, _len = others.length; _i < _len; _i++) {
-      name = others[_i];
-      names.push(name);
-    }
-    if (className !== '') {
-      names.push(className);
-    }
-    return names.join(' ');
-  },
-  getHeightSizing: function(sizing) {
-    var heightSizing;
-    heightSizing = heightSizingMapping[sizing];
-    if (_.isUndefined(sizing)) {
-      heightSizing = '';
-    }
-    return heightSizing;
-  }
-};
+  };
 
-module.exports = widgetHelper;
+}).call(this);
 
 },{"lodash":9}],9:[function(require,module,exports){
 (function (global){
@@ -25343,7 +25387,7 @@ app.start();
 
 
 
-},{"../../widgets/todo":158,"colorvest":7,"react":155}],157:[function(require,module,exports){
+},{"../../widgets/todo":158,"colorvest":2,"react":155}],157:[function(require,module,exports){
 require('./demo/todo');
 
 
