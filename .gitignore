@@ -15,4 +15,6 @@ bower_components
 lib
 dist
 
+_app.js
+public
 modules/**/*.js
