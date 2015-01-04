@@ -34643,7 +34643,6 @@ app = window.app = new Colorvest.StackApp({
     }, {
       region: 'button',
       height: 50,
-      content: '',
       content: React.createElement(Button, {
         "label": 'button'
       })
@@ -34881,7 +34880,7 @@ module.exports = React.createClass({
     return React.createElement("div", {
       "className": "" + className + " " + color + " " + heightSize + " " + columnSize
     }, React.createElement("input", React.__spread({
-      "type": "text"
+      "type": (this.props.type === 'password' || 'text' ? this.props.type : void 0)
     }, others, {
       "ref": "input"
     }, {

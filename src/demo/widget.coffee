@@ -61,7 +61,6 @@ app = window.app = new Colorvest.StackApp
         {
             region: 'button'
             height: 50
-            content: ''
             content: <Button
                 label='button'
                 />

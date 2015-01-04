@@ -34,7 +34,7 @@ module.exports = React.createClass
         others = _.omit @props, exclusions
 
         <div className={"#{className} #{color} #{heightSize} #{columnSize}"} >
-            <input type="text"
+            <input type={@props.type if @props.type is 'password' || 'text'}
                 {...others}
                 ref="input"
                 className = {"form-control"}
