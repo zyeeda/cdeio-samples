@@ -17,7 +17,6 @@ app = window.app = new Colorvest.StackApp
             content: <Text
                 name='zs'
                 placeholder='text - sample' 
-                color='info'
                 heightSize='small'
                 columnSize='4'
                 readOnly=false
@@ -27,9 +26,14 @@ app = window.app = new Colorvest.StackApp
                 />
         }
         {
-            region: 'password'
+            region: 'textarea'
             height: 50
-            content: ''}
+            content: <Textarea
+                placeholder='textarea'
+                heightSize='large'
+                columnSize='5'
+                />
+        }
         {
             region: 'label'
             height: 50
@@ -38,6 +42,7 @@ app = window.app = new Colorvest.StackApp
                 color= 'info' 
                 heightSize= 'small' 
                 columnSize= '3'
+                hidden
                 />
         }
         {
@@ -49,6 +54,18 @@ app = window.app = new Colorvest.StackApp
             region: 'link'
             height: 50
             content: ''
+            content: <Button
+                label='button'
+                size='large'
+                />
+        }
+        {
+            region: 'link'
+            height: 100
+            content: <Link 
+                displayStyle='button'
+                text='link'
+                />
         }
         {
             region: 'form'
@@ -71,33 +88,3 @@ app = window.app = new Colorvest.StackApp
         ]
 
 app.start()
-
-
-
-# Password
-# p = new Text 
-#     name: 'zs'
-#     placeholder: 'password - sample'
-#     color: 'info' 
-#     heightSize: 'small' 
-#     columnSize: '3'
-#     type: 'password'
-#     onChange: ->
-#         # console.log 'password value is : ', p.getValue()
-#     el: $('#password').get(0)
-
-# p.render()
-
-
-# lk = new Link
-# 	text: 'link'
-# 	displayStyle: 'link'
-# 	href: 'http://www.baidu.com' # 此设置在 displayStyle=link时 无效
-# 	color: 'info'
-# 	size: 'large'
-# 	# disabled: true
-# 	onClick: ->
-# 		console.log 'link'
-# 	el: $('#link').get(0)
-
-# lk.render()

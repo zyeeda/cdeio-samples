@@ -1,20 +1,22 @@
 Colorvest = require 'colorvest'
 React = require 'react'
-_ = require 'nodash'
 
 Select = React.createClass
 	mixins: [Colorvest.utils.widgetHelper]
 	
 	render: ->
+		options = @props.options
 		<div className="">
 			<select
 				{...@props}
 				ref="select"
 				key="select"
-				className={@joinClasses 'form-control'}
+				className='form-control'
 				>
-				
-
+				# options.map (op) ->
+				# 	<option value={op.value}>{op.value}</option>
 			</select>
 		</div>
+
+module.exports = Select
 		

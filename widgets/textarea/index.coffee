@@ -1,16 +1,28 @@
 React = require 'react'
 Colorvest = require 'colorvest'
-Textarea_ = require './textarea.react'
 
-class Textarea extends Colorvest.Widget
+getColor = (color='') ->
+    c = color
+    c = 'has-' + c if c isnt ''
+    c
 
-    constructor: (@options) ->
-        @el = options.el
+module.exports = React.createClass
+    mixins: [Colorvest.utils.widgetUtil]
 
     getValue: ->
-        @rc.getValue()
-        
-    render: ->
-        @rc = React.render(<Textarea_ {...@options} />, @el)
+        @refs.textarea.getDOMNode().value
 
-module.exports = Textarea
+    render: ->
+        className = @getClassName @props.className
+        color = getColor @props.color
+        heightSize = @getHeightSize 'input', @props.heightSize
+        columnSize = @getColumnSize @props.columnSize
+
+        <div className = "#{className} #{color} #{heightSize} #{columnSize}">
+            <textarea
+                {...@props}
+                ref = 'textarea'
+                className = 'form-control'
+                >
+            </textarea>
+        </div>
