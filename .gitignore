@@ -30,6 +30,8 @@ target
 bin
 .bpmn
 
+node_modules
+
 WEB-INF/classes
 WEB-INF/lib
 WEB-INF/app/cdeio
