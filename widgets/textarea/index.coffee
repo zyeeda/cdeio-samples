@@ -18,7 +18,7 @@ module.exports = React.createClass
         heightSize = @getHeightSize 'input', @props.heightSize
         columnSize = @getColumnSize @props.columnSize
 
-        <div className = "#{className} #{color} #{heightSize} #{columnSize}">
+        <div className = {"#{className} #{color} #{heightSize} #{columnSize}"}>
             <textarea
                 {...@props}
                 ref = 'textarea'

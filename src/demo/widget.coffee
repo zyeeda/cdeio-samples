@@ -8,10 +8,38 @@ Link = require '../../widgets/link'
 Textarea = require '../../widgets/textarea'
 Form = require '../../widgets/form'
 Select = require '../../widgets/select'
+File = require '../../widgets/file'
+Checkbox = require '../../widgets/checkbox'
+Radio = require '../../widgets/radio'
 
 app = window.app = new Colorvest.StackApp
     layout: 'stack'
     regions: [
+        {
+            region: 'radio'
+            height: 50
+            content:
+                <Form>
+                    <Radio defaultChecked name='radio' />
+                    <br/>
+                    <Radio name='radio' />
+                </Form>
+        }
+        {
+            region: 'checkbox'
+            height: 50
+            content: 
+                <Form>
+                    <Checkbox defaultChecked /> &nbsp
+                    <Checkbox checked/> &nbsp
+                    <Checkbox /> &nbsp
+                </Form>
+        }
+        {
+            region: 'file'
+            height: 50
+            content: <File />
+        }
         {
             region: 'select'
             height: 50

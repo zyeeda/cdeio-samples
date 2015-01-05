@@ -16,6 +16,6 @@ module.exports = React.createClass
 
         <button
             {...@props}
-            className = "#{className} #{color} #{size}"
+            className = {"#{className} #{color} #{size}"}
             >{@props.label}
         </button>
