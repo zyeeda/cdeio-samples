@@ -1,5 +1,6 @@
 @import url('../../scripts/cdeio/themes/ace.css');
 @import url('prettify.css');
+@import url('login.css');
 
 .c-ds-footer {
     height: 100%;
