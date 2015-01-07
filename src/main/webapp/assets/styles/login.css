@@ -35,22 +35,17 @@
 	height: 55px;
 }
 
-.svg-user:before {
+.svg-icon:before {
 	background: #1bb3b3;
 	color: #96DADA;
 	width: 30px;
-	height: 30px;
+	height: 28px;
 	margin-left: -6px;
-	/*background: url(../images/user.svg);*/
+	padding-top: 2px;
 }
 
-.svg-lock:before {
-	background: #1bb3b3;
-	color: #96DADA;
-	width: 30px;
-	height: 30px;
-	margin-left: -6px;
-	/*background: url(../images/lock.svg);*/
+.captcha {
+	height: 32px;
 }
 
 .login-box input {

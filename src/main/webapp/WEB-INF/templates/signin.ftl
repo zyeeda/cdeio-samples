@@ -32,7 +32,7 @@
 
         <label>
             <span class="block input-icon">
-                <i class="icon-user svg-user"></i>
+                <i class="icon-user svg-icon"></i>
                 <input type="text" id="username" name="username" class="span12" placeholder="账号">
                 
             </span>
@@ -40,27 +40,27 @@
 
         <label>
             <span class="block input-icon">
-                <i class="icon-lock svg-lock"></i>
+                <i class="icon-lock svg-icon"></i>
                 <input type="password" id="password" name="password" class="span12" placeholder="密码">
             </span>
         </label>
 
         <div class="space-1"></div>
-    
+        
         <#if request.getAttribute("signInToken")??>
         <#assign signInToken = request.getAttribute("signInToken")>
         <#if signInToken.isCaptchaRequired()>
         <label>
             <span class="block input-icon">
-                <i class="icon-qrcode svg-lock" onclick="javascript:changeCaptcha();"></i>
+                <i class="icon-qrcode svg-icon" onclick="javascript:changeCaptcha();"></i>
                 <input type="text" name="captcha" class="span8" placeholder="验证码">
-                <img id="captcha" class="span4 pull-right" src="/captcha.jpg" alt="验证码" onclick="javascript:changeCaptcha();" />
+                <img id="captcha" class="span4 pull-right captcha" src="../captcha.jpg" alt="验证码" onclick="javascript:changeCaptcha();" />
             </span>
         </label>
         <div class="space-1"></div>
         </#if>
         </#if>
-
+        
         <div class="clearfix">
             <label class="inline remember">
                 <input type="checkbox" class="ace">
@@ -84,7 +84,7 @@
     }
 
     function changeCaptcha() {
-        document.getElementById('captcha').setAttribute('src', '/captcha.jpg?' + new Date().getTime());
+        document.getElementById('captcha').setAttribute('src', '../captcha.jpg?' + new Date().getTime());
     }
 </script>
 </@bp.signin>

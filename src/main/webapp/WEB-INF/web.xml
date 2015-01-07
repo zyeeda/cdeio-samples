@@ -33,6 +33,14 @@
             <param-name>kaptcha.image.height</param-name>
             <param-value>52</param-value>
         </init-param>
+        <init-param>  
+            <param-name>kaptcha.textproducer.font.color</param-name>  
+            <param-value>98,111,127</param-value>  
+        </init-param>
+        <init-param>  
+            <param-name>kaptcha.border.color</param-name>  
+            <param-value>240,244,243</param-value>  
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>kaptcha</servlet-name>
