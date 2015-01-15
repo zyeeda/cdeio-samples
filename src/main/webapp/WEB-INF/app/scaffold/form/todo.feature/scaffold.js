@@ -17,7 +17,7 @@ exports.labels = {
 };
 
 exports.fieldGroups = {
-    defaults: ['name', {name: 'description', type: 'textarea'}
+    defaults: [{name: 'description', type: 'textarea'}, 'name'
     ],
     attach:['startDate',
         {name: 'status', type: 'dropdown', defaultValue: '一般',
@@ -48,7 +48,7 @@ exports.forms = {
     defaults: {
         groups: [
             {name: 'defaults', label: '任务信息'},
-            {name: 'attach', label: '附加信息', columns: 2},
+            {name: 'attach', label: '附加信息', columns: 1},
             {name: 'inLineUserGrid', columns: 2}
         ]
     }

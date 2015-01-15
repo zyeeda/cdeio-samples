@@ -21,7 +21,7 @@ define([
         
         app.done(function() {
             if (location.hash) {
-                app.startFeature('main/viewport', { container: $(document.body), ignoreExists: true }).done(function() {
+                app.startFeature('main/viewport', { container: $(document.body), ignoreExists: true, avoidLoadingFeature: false}).done(function() {
                     deferred.resolve();
                 });
             } else {
