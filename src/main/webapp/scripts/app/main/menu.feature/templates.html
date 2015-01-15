@@ -18,6 +18,11 @@
   <button class="btn btn-small btn-danger">
     <i class="icon-cogs"></i>
   </button> -->
+
+  <img class="large-user-photo" src="{{settings.currentUser.photo}}" alt="用户头像" />
+  <span class="large-user-name"><small>欢迎,</small> {{settings.currentUser.realName}}</span>
+  <div class="large-user-btns" onclick="javascript:location.href='#profile'"><i class="icon-cog"></i></div>
+
 </div>
 
 <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
@@ -25,6 +30,9 @@
   <span class="btn btn-info"></span>
   <span class="btn btn-warning"></span>
   <span class="btn btn-danger"></span> -->
+
+  <img class="mini-user-photo" src="{{settings.currentUser.photo}}" alt="用户头像" />
+
 </div>
 {{/view}}
 
