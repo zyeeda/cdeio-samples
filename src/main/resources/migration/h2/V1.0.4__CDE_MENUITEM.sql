@@ -21,6 +21,7 @@ VALUES
 	('100001008','工作流','undefined','工作流',0,NULL,'#/',130,'100'),
 	('100001009','字段','undefined','字段',0,NULL,'#',80,'100'),
 	('100001009001','基础','green icon-key','基础',0,NULL,'#feature/scaffold/field/scaffold:todo',85,'100001009'),
+	('100001009002','GridPicker','green icon-key','GridPicker',0,NULL,'#feature/scaffold/field/scaffold:task',305,'100001009'),
 	('100001009008','验证规则','green icon-key','验证规则',0,NULL,'#feature/scaffold/field/scaffold:account',90,'100001009'),
 	('300001','任务','green icon-key','任务',0,NULL,'#/',135,'100001008'),
 	('300001001','人工任务','green icon-key','人工任务',0,NULL,'#feature/generate/bpm/task/scaffold:userTask',140,'300001'),

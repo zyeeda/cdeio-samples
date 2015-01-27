@@ -30,12 +30,12 @@ exports.results = [
 
 	{id: "100001009", name: "字段", /*iconClass: "green icon-key",*/ parent: {id: "100", name: "动态脚手架"}},
 	{id: "100001009001", name: "基础", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:todo", parent: {id: "100001009", name: "字段"}},
-	/*{id: "100001009003", name: "下拉列表", iconClass: "green icon-key", path: "#/", parent: {id: "100001009", name: "字段"}},
-	{id: "100001009004", name: "日期选择器", iconClass: "green icon-key", path: "#/", parent: {id: "100001009", name: "字段"}},
-	{id: "100001009002", name: "GridPicker", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:project", parent: {id: "100001009", name: "字段"}},
-	{id: "100001009005", name: "TreePicker", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:tag", parent: {id: "100001009", name: "字段"}},
-	{id: "100001009006", name: "FilePicker", iconClass: "green icon-key", path: "#/", parent: {id: "100001009"}},
-	{id: "100001009007", name: "InlineGrid", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:user", parent: {id: "100001009", name: "字段"}},*/
+	// {id: "100001009003", name: "下拉列表", iconClass: "green icon-key", path: "#/", parent: {id: "100001009", name: "字段"}},
+	// {id: "100001009004", name: "日期选择器", iconClass: "green icon-key", path: "#/", parent: {id: "100001009", name: "字段"}},
+	{id: "100001009002", name: "GridPicker", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:task", parent: {id: "100001009", name: "字段"}},
+	// {id: "100001009005", name: "TreePicker", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:tag", parent: {id: "100001009", name: "字段"}},
+	// {id: "100001009006", name: "FilePicker", iconClass: "green icon-key", path: "#/", parent: {id: "100001009"}},
+	// {id: "100001009007", name: "InlineGrid", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:user", parent: {id: "100001009", name: "字段"}},
 	{id: "100001009008", name: "验证规则", iconClass: "green icon-key", path: "#feature/scaffold/field/scaffold:account", parent: {id: "100001009", name: "字段"}},
 
 

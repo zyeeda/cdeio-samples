@@ -122,6 +122,12 @@ exports.docs = {
     'scaffold/field/account': {
         java: 'com/zyeeda/cdeio/example/scaffold/field/entity/FieldAccount.java'
     },
+    'scaffold/field/task': {
+        java: 'com/zyeeda/cdeio/example/scaffold/field/entity/FieldTask.java'
+    },
+    'scaffold/field/user': {
+        java: 'com/zyeeda/cdeio/example/scaffold/field/entity/FieldUser.java'
+    },
     'scaffold/form/project': {
         java: 'com/zyeeda/cdeio/example/scaffold/form/entity/FormProject.java'
     },
