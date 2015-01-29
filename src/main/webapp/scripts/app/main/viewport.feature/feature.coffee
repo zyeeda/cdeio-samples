@@ -41,9 +41,9 @@ define
                 d.resolve()
 
             $('.menu-toggler').on 'click', ->
-                $('.sidebar').toggleClass('display')
-                $(this).toggleClass('display')
-                false
+                # $('.sidebar').toggleClass('display')
+                # $(this).toggleClass('display')
+                # false
 
             d.promise()
 

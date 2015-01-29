@@ -30,6 +30,7 @@ exports.grid = {
 
 exports.forms = {
     defaults: {
-        groups: [{name: 'defaults', columns: 2}]
+        groups: [{name: 'defaults', columns: 2}],
+        size: 'large'
     }
 };

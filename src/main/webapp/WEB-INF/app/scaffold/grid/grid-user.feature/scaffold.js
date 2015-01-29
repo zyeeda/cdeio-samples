@@ -15,7 +15,7 @@ exports.labels = {
 exports.fieldGroups = {
     defaults: [
         'name', 'code',
-        {name: 'sex', type: 'dropdown', defaultValue: '男', source: [{id: '男', text: '男'}, {id: '女', text: '女'}]},
+        {name: 'sex', type: 'dropdown', source: [{id: '男', text: '男'}, {id: '女', text: '女'}]},
         'birthday', 'email'
     ]
 };
