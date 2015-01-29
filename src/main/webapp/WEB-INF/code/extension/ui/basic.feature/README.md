@@ -21,7 +21,7 @@ define([], function () {
     };
 })
 ```
-后端  scaffold.js 文件中定义了名为 `trash` 的按钮，前端 scaffold.js 文件中定义了按钮 `trash` 对应的响应时间，该事件在暗流点击的时候会弹一个内容为 “ 这是个回收站按钮 ” 的提示框。
+后端  scaffold.js 文件中定义了名为 `trash` 的按钮，前端 scaffold.js 文件中定义了按钮 `trash` 对应的响应事件，该事件在按钮点击的时候会弹一个内容为 “ 这是个回收站按钮 ” 的提示框。
 
 <span class="badge badge-warning">注</span>&nbsp; ：后端 scaffold.js 文件中 `enableFrontendExtension = true` 启用前台交互扩展，这样就可以给按钮添加事件了。
 

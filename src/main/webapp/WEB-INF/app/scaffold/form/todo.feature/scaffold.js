@@ -17,10 +17,12 @@ exports.labels = {
 };
 
 exports.fieldGroups = {
-    defaults: [{name: 'description', type: 'textarea'}, 'name'
+    defaults: [
+        'name', 
+        {name: 'description', type: 'textarea'}
     ],
     attach:['startDate',
-        {name: 'status', type: 'dropdown', defaultValue: '一般',
+        {name: 'status', type: 'dropdown', 
             source:[
                 {id: '紧急', text: '紧急'},
                 {id: '重大', text: '重大'},
@@ -45,11 +47,13 @@ exports.grid = {
 };
 
 exports.forms = {
+
     defaults: {
         groups: [
-            {name: 'defaults', label: '任务信息'},
-            {name: 'attach', label: '附加信息', columns: 1},
+            {name: 'defaults', label: '任务信息', columns: 1},
+            {name: 'attach', label: '附加信息', columns: 2},
             {name: 'inLineUserGrid', columns: 2}
-        ]
+        ],
+        size: 'large'
     }
 };
