@@ -64,3 +64,7 @@ define [
                 htmls.push processNode(item, true)
 
             '<ul class="nav nav-list" id="menu">' + htmls.join('') + '</ul>'
+
+        afterRender: () ->
+            $('#setting-cog').on 'click', ->
+                console.log '1111'

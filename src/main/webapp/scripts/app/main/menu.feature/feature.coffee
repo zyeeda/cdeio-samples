@@ -6,8 +6,8 @@ define ['underscore', 'cdeio/vendors/jquery/jquery.slimscroll.min'], (_) ->
             bottom: 'sidebar-collapse'
 
     views: [
-        name: 'inline:shortcut', region: 'top', events: 
-            'click setting-cog': 'setting'
+        name: 'inline:shortcut', region: 'top'
+        , events: 'click icon-cog': 'setting'
     ,
         name: 'menu', region: 'center'
     ,
@@ -52,18 +52,26 @@ define ['underscore', 'cdeio/vendors/jquery/jquery.slimscroll.min'], (_) ->
             menuItem.prev().hasClass 'menu-min'
 
         onStart: () ->
-            console.log '----onStart.....'
-            console.log @views
-            shortcut = @views['inline:shortcut']
-            setting = shortcut.$ 'setting-cog'
-            setting.attr 'data-content' , '<div id="setting-container"><div>'
-            setting.popover html: true
+            # console.log '----onStart.....'
+            # console.log @views
+            
+            # shortcut = @views['inline:shortcut']
+            # setting = shortcut.$ 'setting-cog'
+            # # setting.attr 'data-content' , '<div id="setting-container"><div>'
+            # # setting.popover html: true
 
             # setting.on 'click', ->
-                # console.log 'clicked ...'
-                # setting.popover 'show'
-                # app.startFeature 'profile/viewport',
-                #     container: $('#setting-container')
+            #     console.log 'clicked ...'
+            #     setting.popover
+            #         title: 'xinxi'
+            #         content: '11111'
+            #             # app.startFeature 'profile/viewport',
+            #             # container: $('#setting-container')
+            #         html: true
+            #     setting.popover 'show'
+            #     # app.startFeature 'profile/viewport',
+            #     #     container: $('#setting-container')
+    
         # onStart: () ->
         #     logoHeight = 46
         #     shortcutsHeight = 40

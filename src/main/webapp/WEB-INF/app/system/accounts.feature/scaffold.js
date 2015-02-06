@@ -17,12 +17,33 @@ exports.labels = {
     telephone: '电话',
     disabled: '状态',
     oldPassword: '原密码',
-    newPassword: '新密码',
+    newPassword1: '新密码',
     newPassword2: '重复密码',
     department: '部门',
     'department.id': '部门',
     dataLevel: '数据权限'
 };
+
+exports.fieldGroups = {
+    defaults: ['realName', 'email', 'mobile', 'telephone'],
+    editPwdInfo: [
+        {name: 'oldPassword', type: 'password', required: true, validations: {rules: {required: true, rangelength:[6, 60]}, messages: {required: '不能为空', rangelength:'个数必须在6和60之间'}}},
+        {name: 'newPassword1', type: 'password', required: true, validations: {rules: {required: true, rangelength:[6, 60]}, messages: {required: '不能为空', rangelength:'个数必须在6和60之间'}}},
+        {name: 'newPassword2', type: 'password', required: true, validations: {rules: {required: true, equalTo: 'newPassword'}, messages: {required: '不能为空', equalTo: '不匹配'}}}
+    ]
+};
+
+exports.forms = {
+    changePassword: {
+        size: 'mini',
+        groups: ['editPwdInfo']
+    }
+};
+
+exports.feature = {
+    views: ['form:changePassword']
+};
+
 
 exports.picker = {
     grid: {
@@ -43,3 +64,19 @@ exports['inline-grid'] = {
         { name: 'department.name', header: '部门'}
     ]
 };
+
+var {mark}  = require('cdeio/mark');
+var {json} = require('cdeio/response');
+var _ = require('underscore');
+
+exports.doWithRouter = function(router){
+    router.put('/password', mark('services', 'system/accounts').on(function (accountSvc, request){
+        var data = request.params;
+        var result = accountSvc.editPwdInfo(data);
+        var filter = exports.filters.defaults;
+        if (result.violations) {
+            return json(result, _.extend({ status: 422 }, filter));
+        }
+        return json(result, filter);
+    }));
+}

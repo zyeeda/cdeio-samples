@@ -9,6 +9,7 @@
 
     <persistence-unit name="default" transaction-type="JTA">
         <mapping-file>META-INF/mappings/extension/service/task.orm.xml</mapping-file>
+        <mapping-file>META-INF/mappings/sso/openid/realm.orm.xml</mapping-file>
 
         <class>com.zyeeda.cdeio.commons.organization.entity.Account</class>
         <class>com.zyeeda.cdeio.commons.organization.entity.Department</class>
