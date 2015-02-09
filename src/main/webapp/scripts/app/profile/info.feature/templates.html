@@ -15,6 +15,7 @@
 <div class="info-content">
 	<div class="info-img">
 		<img class="large-user-photo photo" src="{{settings.currentUser.photo}}" alt="用户头像" />
+		<button id="change-password-btn" class="btn btn-default btn-change-password">修改密码</button>
 	</div>
 	<div class="info-detailed">
 		<span>欢迎,{{settings.currentUser.realName}}</span>
@@ -28,13 +29,13 @@
 		</div>
 	</div>
 </div>
-<div class="info-password">
+<div class="info-password" hidden>
 	<div class="changePassword"></div>
+	<div class="btn-groups">
+		<button id="submit-password" class="btn btn-small btn-info btn-password">提交</button>
+		<button id="reset-password" class="btn btn-small btn-warning btn-password">重置</button>
+		<button id="quit-password" class="btn btn-small btn-default btn-password">取消</button>
+	</div>
 </div>
-<div class="btn-groups">
-	<button id="change-password-btn" class="btn btn-default btn-password">修改密码</button>
-	<button id="submit-password" class="btn btn-small btn-info btn-password view-hide">提交</button>
-	<button id="reset-password" class="btn btn-small btn-warning btn-password view-hide">重置</button>
-	<button id="quit-password" class="btn btn-small btn-default btn-password view-hide">取消</button>
-</div>
+
 {{/view}}
