@@ -61,11 +61,6 @@ define(['jquery', 'underscore', 'handlebars'], function($, _, H) {
           return htmls.push(processNode(item, true));
         });
         return '<ul class="nav nav-list" id="menu">' + htmls.join('') + '</ul>';
-      },
-      afterRender: function() {
-        return $('#setting-cog').on('click', function() {
-          return console.log('1111');
-        });
       }
     }
   };
