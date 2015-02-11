@@ -15,7 +15,7 @@ exports.fieldGroups = {
     defaults: ['name',
        {name: 'sex',
         type: 'dropdown',
-        defaultValue: '',
+        defaultValue: '男',
         source: [
             {id: '男', text: '男'},
             {id: '女', text: '女'}
