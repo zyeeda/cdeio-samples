@@ -31,7 +31,7 @@
     </Call>
 
     <!-- MySQL -->
-    <!-- <New class="org.eclipse.jetty.plus.jndi.Resource">
+    <!--<New class="org.eclipse.jetty.plus.jndi.Resource">
         <Arg><Ref refid='wac' /></Arg>
         <Arg>jdbc/defaultDS</Arg>
         <Arg>
@@ -49,7 +49,7 @@
                 <Call name="init"></Call>
             </New>
         </Arg>
-    </New> -->
+    </New>-->
 
     <!-- H2 -->
     <New class="org.eclipse.jetty.plus.jndi.Resource">

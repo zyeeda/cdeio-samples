@@ -12,17 +12,18 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
     <parent>
         <groupId>com.zyeeda</groupId>
         <artifactId>origin</artifactId>
-        <version>3</version>
+        <version>4-SNAPSHOT</version>
     </parent>
 
     <artifactId>cdeio-samples</artifactId>
-    <version>2.5.1-SNAPSHOT</version>
-    <name>Zyeeda Cdeio Sample Project</name>
+    <version>2.1.0-SNAPSHOT</version>
+    <name>Zyeeda CDE.IO Sample Project</name>
     <url>http://www.zyeeda.com</url>
     <packaging>war</packaging>
 
     <properties>
-        <cdeio.version>2.0.0-SNAPSHOT</cdeio.version>
+        <cdeio.version>2.1.0-SNAPSHOT</cdeio.version>
+        <hibernate.search.version>4.1.1.Final</hibernate.search.version>
         <jetty.config>${project.build.outputDirectory}/META-INF/jetty</jetty.config>
         <argLine>-Dfile.encoding=UTF-8</argLine>
 
@@ -39,34 +40,28 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
         <dependency>
             <groupId>com.zyeeda</groupId>
             <artifactId>cdeio-core</artifactId>
-            <version>2.5.0-SNAPSHOT</version>
+            <version>${cdeio.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zyeeda</groupId>
             <artifactId>cdeio-bpm</artifactId>
-            <version>2.5.0-SNAPSHOT</version>
+            <version>${cdeio.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zyeeda</groupId>
             <artifactId>cdeio-sso-openid</artifactId>
-            <version>2.5.0-SNAPSHOT</version>
+            <version>${cdeio.version}</version>
         </dependency>
         <dependency>
             <groupId>com.zyeeda</groupId>
             <artifactId>cdeio-proxy</artifactId>
-            <version>2.5.0-SNAPSHOT</version>
+            <version>${cdeio.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-search</artifactId>
-            <version>4.1.1.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.181</version>
+            <version>${hibernate.search.version}</version>
         </dependency>
     </dependencies>
 
@@ -140,7 +135,7 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <!-- MySQL -->
-                <!-- <configuration>
+                <!--<configuration>
                     <url>jdbc:mysql://${mysql.server.host}:${mysql.server.port}/${mysql.server.database}?pinGlobalTxToPhysicalConnection=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8</url>
                     <user>${mysql.server.user}</user>
                     <password>${mysql.server.password}</password>
@@ -149,7 +144,7 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
                         <location>classpath:migration/mysql</location>
                     </locations>
                     <encoding>UTF-8</encoding>
-                </configuration> -->
+                </configuration>-->
                 <!-- H2 -->
                 <configuration>
                     <url>jdbc:h2:~/cdeio-samples</url>
@@ -157,7 +152,7 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
                     <locations>
                         <location>classpath:migration/h2</location>
                     </locations>
-                    <encoding>UTF-8</encoding>  
+                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
         </plugins>
