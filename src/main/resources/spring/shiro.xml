@@ -87,18 +87,18 @@
     </bean>
     -->
 
+    <!--
+     | JPA realm configuration.
     <bean id="realm" class="com.zyeeda.cdeio.sso.openid.provider.realm.JpaRealm"
         p:credentialsMatcher-ref="passwordMatcher" />
+    -->
 
     <!--
-     | User mock realm for test only.
-     | When username and password match, the authentication succeeds.
+     | Mock realm configuration, for test only.
+     | When the username and password match, the authentication succeeds.
      -->
-
-    <!-- 
     <bean id="realm" class="com.zyeeda.cdeio.sso.openid.provider.realm.MockRealm"
         p:credentialsMatcher-ref="passwordMatcher" />
-     -->
 
     <bean id="passwordMatcher" class="org.apache.shiro.authc.credential.PasswordMatcher"
         p:passwordService-ref="passwordService" />
