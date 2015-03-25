@@ -22,8 +22,8 @@ exports.fieldGroups = {
     ],
     filterGroup: [
         {name: 'name', type:'text'},
-        {name: 'code', type: 'number-range'},
         {name: 'sex', type: 'dropdown', defaultValue: '男', source: [{id: '男', text: '男'}, {id: '女', text: '女'}]},
+        {name: 'code', type: 'number-range'},
         {name: 'birthday', type: 'date-range'}
     ]
 };
@@ -31,7 +31,7 @@ exports.fieldGroups = {
 exports.forms = {
     filter: {
         groups: [{
-            name: 'filterGroup', columns: 4
+            name: 'filterGroup'
         }]
     }
 };
