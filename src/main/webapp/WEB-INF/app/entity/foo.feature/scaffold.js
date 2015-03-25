@@ -13,5 +13,20 @@ exports.labels = {
 };
 
 exports.fieldGroups = {
-	defaults: ['name', 'description', 'diabled', {name: 'bars', type: 'inline-grid', allowAdd: true, allowEdit: true}]
+	defaults: ['name', 'description', 'diabled'],
+	inlineUserGrid: [{
+		name: 'bars', 
+		type: 'inline-grid', 
+		allowAdd: true, 
+		allowEdit: true
+	}]
 };
+
+exports.forms = {
+	defaults: {
+		groups: [
+			{name: 'defaults'},
+			{name: 'inlineUserGrid', columns: 2}
+		]
+	}	
+}
