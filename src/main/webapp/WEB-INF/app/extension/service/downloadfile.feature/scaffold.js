@@ -32,7 +32,7 @@ exports.labels = {
 // 配置form页面布局方式
 exports.forms = {
 	defaults: {
-		groups: [{name: 'defaults', columns: 2}]
+		groups: [{name: 'defaults'}]
 	}
 };
 
