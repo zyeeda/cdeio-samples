@@ -14,31 +14,13 @@
 
 .login-layout .widget-body {
 	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .login-box {
 	margin-top: 10%;
 	background-color: inherit !important;
-	
-	/* Internet Explorer 10 */
-	display:-ms-flexbox;
-	-ms-flex-pack:center;
-	-ms-flex-align:center;
-
-	/* Firefox */
-	display:-moz-box;
-	-moz-box-pack:center;
-	-moz-box-align:center;
-
-	/* Safari, Opera, and Chrome */
-	display:-webkit-box;
-	-webkit-box-pack:center;
-	-webkit-box-align:center;
-
-	/* W3C */
-	display:box;
-	box-pack:center;
-	box-align:center;
 }
 
 .login-container {
