@@ -15,7 +15,7 @@
                     <div class="span3">
                         {{#each groupList}}
                             {{#if currId}}
-                            <button id="btn-{{id}}" val="{{id}}" index="{{index}}" class="btn btn-small btn-purple se-question-number">{{index}}</button>
+                            <button id="btn-{{id}}" val="{{id}}" index="{{index}}" class="btn btn-small btn-primary se-question-number">{{index}}</button>
                             {{else}}
                             <button id="btn-{{id}}" val="{{id}}" data-toggle="tooltip" data-trigger="hover" data-placement="bottom" data-title="{{tooltipContent}}" index="{{index}}" class="btn btn-small {{hasAnswerClass}} se-question-number se-question-other-number">{{index}}</button>
                             {{/if}}
