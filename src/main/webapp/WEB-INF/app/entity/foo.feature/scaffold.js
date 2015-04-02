@@ -13,7 +13,13 @@ exports.labels = {
 };
 
 exports.fieldGroups = {
-	defaults: ['name', 'description', 'diabled'],
+	defaults: ['name', 'description',
+		{name: 'diabled', defaultValue: true, type: 'dropdown', 
+			source: [
+				{id: true, text: '是'},
+				{id: false, text: '否'},
+			]}
+	],
 	inlineUserGrid: [{
 		name: 'bars', 
 		type: 'inline-grid', 
