@@ -10,7 +10,7 @@ define({
             'field2',
             {name: 'field5', type: 'datepicker', label: 'Date Picker'},
             {name: 'field3', colspan: 2},
-            {name: 'field4', type: 'dropdown', source: [{id: 1, text: 'First One'}, {id: 2, text: 'Second One'}]}
+            {name: 'field4', type: 'dropdown', defaultValue: '1', source: [{id: 1, text: 'First One'}, {id: 2, text: 'Second One'}]}
         ]
     },
     form: {

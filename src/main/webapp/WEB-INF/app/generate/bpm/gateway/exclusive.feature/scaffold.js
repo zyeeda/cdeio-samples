@@ -24,7 +24,7 @@ exports.labels = {
 
 exports.fieldGroups = {
     'base-info-group': [
-        'name', 'age', 'sex', 'phone', 'workingLife', 'address'
+        'name', 'age', {name: 'sex', type: 'dropdown', source: [{id: '男', text: '男'}, {id: '女', text: '女'}], defaultValue: '男'}, 'phone', 'workingLife', 'address'
     ]
 };
 

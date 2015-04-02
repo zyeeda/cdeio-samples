@@ -22,7 +22,7 @@ exports.fieldGroups = {
         {name: 'description', type: 'textarea'}
     ],
     attach:['startDate',
-        {name: 'status', type: 'dropdown', 
+        {name: 'status', type: 'dropdown', defaultValue: '一般',
             source:[
                 {id: '紧急', text: '紧急'},
                 {id: '重大', text: '重大'},

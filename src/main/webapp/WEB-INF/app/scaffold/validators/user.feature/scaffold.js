@@ -14,7 +14,8 @@ exports.labels = {
 exports.fieldGroups = {
     defaults: ['name', 
         {name: 'status',
-        type: 'dropdown', 
+        type: 'dropdown',
+        defaultValue: '启用', 
         source: [
             {id: '启用',text: '启用'},
             {id: '禁用',text: '禁用'}
