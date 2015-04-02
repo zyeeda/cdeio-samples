@@ -5,7 +5,7 @@ var {SettingItem} = com.zyeeda.cdeio.commons.resource.entity;
 var {SecurityUtils} = org.apache.shiro;
 var logger = require('ringo/logging').getLogger(module.id);
 
-getSession = function() {
+var getSession = function() {
     var subject = SecurityUtils.getSubject(),
         p = subject.getPrincipal(),
         service = createService(),
@@ -44,8 +44,7 @@ getSession = function() {
     }
 
     return o;
-},
-
+};
 
 exports.filters = {
     defaults: {
