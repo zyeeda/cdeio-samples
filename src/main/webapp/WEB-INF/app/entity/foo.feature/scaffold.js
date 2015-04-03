@@ -1,8 +1,8 @@
 exports.filters = {
     defaults: {
-    	'!fooFilter': '',
-    	'!barFilter': 'foo'
-	}
+        '!fooFilter': '',
+        '!barFilter': 'foo'
+    }
 };
 
 exports.labels = {
@@ -13,26 +13,26 @@ exports.labels = {
 };
 
 exports.fieldGroups = {
-	defaults: ['name', 'description',
-		{name: 'diabled', defaultValue: true, type: 'dropdown', 
-			source: [
-				{id: true, text: '是'},
-				{id: false, text: '否'},
-			]}
-	],
-	inlineUserGrid: [{
-		name: 'bars', 
-		type: 'inline-grid', 
-		allowAdd: true, 
-		allowEdit: true
-	}]
+    defaults: ['name', 'description',
+        {name: 'diabled', defaultValue: true, type: 'dropdown',
+            source: [
+                {id: true, text: '是'},
+                {id: false, text: '否'},
+            ]}
+    ],
+    inlineUserGrid: [{
+        name: 'bars',
+        type: 'inline-grid',
+        allowAdd: true,
+        allowEdit: true
+    }]
 };
 
 exports.forms = {
-	defaults: {
-		groups: [
-			{name: 'defaults'},
-			{name: 'inlineUserGrid', columns: 2}
-		]
-	}	
+    defaults: {
+        groups: [
+            {name: 'defaults', label: '基本信息', labelIcon: 'icon-flag'},
+            {name: 'inlineUserGrid', columns: 2}
+        ]
+    }
 }
