@@ -41,10 +41,10 @@ exports.fieldGroups = {
         multiple: true
     }],
     attachment: [
-        {name: 'files', type: 'file-picker', preview: 'left', multiple: true}
+        {name: 'files', type: 'file-picker', preview: 'left', multiple: true, url: 'invoke/scaffold/extension/service/uploadfile/upload'}
     ],
     attachment2: [
-        {name: 'attachment', type: 'file-picker', preview: 'left', multiple: true}
+        {name: 'attachment', type: 'file-picker', preview: 'left', url: 'invoke/scaffold/extension/service/uploadfile/upload'}
     ]
 };
 

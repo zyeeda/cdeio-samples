@@ -53,7 +53,7 @@ exports.fieldGroups = {
         allowPick: true
     }],
     attachment: [
-        {name: 'files', type: 'file-picker', preview: 'left', multiple: true}
+        {name: 'files', type: 'file-picker', preview: 'left', multiple: true, url: 'invoke/scaffold/extension/service/uploadfile/upload'}
     ]
 };
 

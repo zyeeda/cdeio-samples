@@ -3,6 +3,7 @@ package com.zyeeda.cdeio.example.scaffold.form.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -18,7 +19,6 @@ import javax.validation.constraints.NotNull;
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
 import com.zyeeda.cdeio.commons.resource.entity.Attachment;
-import com.zyeeda.cdeio.example.extension.service.entity.Set;
 import com.zyeeda.cdeio.validation.constraint.NullableSize;
 
 @Entity
