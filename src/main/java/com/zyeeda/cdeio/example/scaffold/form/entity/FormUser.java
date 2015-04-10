@@ -35,6 +35,7 @@ public class FormUser extends DomainEntity {
 	private Date birthday;
 	private String email;
 	private List<FormTodo> todos;
+	private List<FormProject> projects;
 
 	@Column(name = "F_NAME",length = 80)
 	@NotNull
@@ -85,6 +86,16 @@ public class FormUser extends DomainEntity {
 		this.todos = todos;
 	}
 
+	@ManyToMany
+    @JoinTable(name = "ZDA_FORM_PROJECT_USER",
+    joinColumns=@JoinColumn(name = "F_PROJECT_ID"),
+    inverseJoinColumns = @JoinColumn(name = "F_USER_ID"))
+    public List<FormProject> getProjects() {
+        return projects;
+    }
+    public void setProjects(List<FormProject> projects) {
+        this.projects = projects;
+    }
 
 
 

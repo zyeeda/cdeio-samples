@@ -1,6 +1,9 @@
 exports.filters = {
     defaults: {
-        '!formProjectFilter': ''
+        '!formProjectFilter': '',
+        '!formUserFilter': 'users',
+        '!formTodoFilter': 'todos',
+        '!attachmentFilter': ''
     }
 };
 
@@ -12,12 +15,37 @@ exports.labels = {
     startDate: '开始时间',
     people: '负责人',
     intro: '费用说明',
-    cost: '总费用'
+    cost: '总费用',
+    attachment: '附件',
+    files: '多附件'
 };
 
 exports.fieldGroups = {
     defaults: ['name', 'startDate', 'desc', 'people'],
-    tabs: [{name: 'cost', validations: {rules: {number: true}}}, 'intro']
+    tabs: [{name: 'cost', validations: {rules: {number: true}}}, 'intro'],
+    inLineUserGrid: [{
+        label: '任务分配',
+        type: 'inline-grid',
+        name: 'users',
+        colspan: 2,
+        allowAdd: false,
+        multiple: true,
+        crossPage: true,
+        allowPick: true
+    }],
+    inLineTodoGrid: [{
+        label: 'todos',
+        type: 'inline-grid',
+        name: 'todos',
+        colspan: 2,
+        multiple: true
+    }],
+    attachment: [
+        {name: 'files', type: 'file-picker', preview: 'left', multiple: true}
+    ],
+    attachment2: [
+        {name: 'attachment', type: 'file-picker', preview: 'left', multiple: true}
+    ]
 };
 
 exports.grid = {
@@ -28,11 +56,15 @@ exports.forms = {
     defaults: {
         groups: [
             {name: 'defaults', columns: 2},
-            {name: 'tabs', columns: 2}
+            {name: 'tabs', columns: 2},
+            {name: 'inLineUserGrid', columns: 2},
+            {name: 'inLineTodoGrid', columns: 2},
+            {name: 'attachment', columns: 1},
+            {name: 'attachment2', columns: 1}
         ],
         tabs: [
-            {title: '项目信息', groups: ['defaults']},
-            {title: '费用明细', groups: ['tabs']}
+            {title: '项目信息', groups: ['defaults', 'inLineUserGrid', 'inLineTodoGrid', 'attachment']},
+            {title: '费用明细', groups: ['tabs', 'attachment2']}
         ],
         size: 'large'
     }

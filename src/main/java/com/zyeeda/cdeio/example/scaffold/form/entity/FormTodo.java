@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -16,6 +16,8 @@ import javax.validation.constraints.NotNull;
 
 import com.zyeeda.cdeio.commons.annotation.scaffold.Scaffold;
 import com.zyeeda.cdeio.commons.base.entity.DomainEntity;
+import com.zyeeda.cdeio.commons.resource.entity.Attachment;
+import com.zyeeda.cdeio.example.extension.service.entity.Set;
 
 @Entity
 @Table(name = "SA_FORM_TODO")
@@ -31,6 +33,10 @@ public class FormTodo extends DomainEntity {
 	private String status;
 	private Date startDate;
 	private List<FormUser> users;
+	private List<FormProject> projects;
+	
+    private Attachment attachment;
+    private Set<Attachment> files = null;
 
 	@Column(name = "F_NAME", length = 60)
 	@NotNull
@@ -85,9 +91,36 @@ public class FormTodo extends DomainEntity {
 		this.users = users;
 	}
 
+	@ManyToMany
+	@JoinTable(name = "ZDA_FORM_TODO_PROJECT",
+	joinColumns=@JoinColumn(name = "F_TODO_ID"),
+	inverseJoinColumns = @JoinColumn(name = "F_PROJECT_ID"))
+	public List<FormProject> getProjects() {
+		return projects;
+	}
 
+	public void setProjects(List<FormProject> projects) {
+		this.projects = projects;
+	}
+	
+    @OneToOne
+    @JoinColumn(name = "F_ATTACHMENT_ID")
+    public Attachment getAttachment (){
+        return attachment;
+    }
 
+    public void setAttachment (Attachment attachment){
+        this.attachment = attachment;
+    }
+    
+    @ManyToMany
+    @JoinTable(name = "F_TODO_FILES", joinColumns = @JoinColumn(name = "F_TODO"), inverseJoinColumns = @JoinColumn(name = "F_FILE"))
+    public Set<Attachment> getFiles() {
+        return files;
+    }
 
-
+    public void setFiles(Set<Attachment> files) {
+        this.files = files;
+    }
 
 }

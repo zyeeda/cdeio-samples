@@ -1,7 +1,8 @@
 exports.filters = {
     defaults: {
         '!formTodoFilter': '',
-        '!formUserFilter': 'todos'
+        '!formUserFilter': 'todos',
+        '!formProjectFilter': 'todos'
     }
 };
 
@@ -14,6 +15,8 @@ exports.labels = {
     startDate: '开始时间',
     users: '执行者',
     'users.name': '执行者',
+    projects: '项目',
+    files: '多附件'
 };
 
 exports.fieldGroups = {
@@ -39,7 +42,19 @@ exports.fieldGroups = {
         multiple: true,
         crossPage: true,
         allowPick: true
-    }]
+    }],
+    inLineProjectGrid: [{
+        label: '项目细节',
+        type: 'inline-grid',
+        name: 'projects',
+        colspan: 2,
+        allowAdd: false,
+        multiple: true,
+        allowPick: true
+    }],
+    attachment: [
+        {name: 'files', type: 'file-picker', preview: 'left', multiple: true}
+    ]
 };
 
 exports.grid = {
@@ -51,7 +66,9 @@ exports.forms = {
     defaults: {
         groups: [
             {name: 'defaults', label: '任务信息', columns: 1},
-            {name: 'attach', label: '附加信息', columns: 2},
+            {name: 'inLineProjectGrid', columns: 2},
+            {name: 'attachment', label: '附件上传', columns: 1},
+            {name: 'attach', label: '附加信息', columns: 1},
             {name: 'inLineUserGrid', columns: 2}
         ],
         size: 'large'
