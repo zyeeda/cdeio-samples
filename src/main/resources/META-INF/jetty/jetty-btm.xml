@@ -10,5 +10,10 @@
         <Set name="logPart1Filename"><SystemProperty name="jetty.home" default="." />/work/btm/btm1.tlog</Set>
         <Set name="logPart2Filename"><SystemProperty name="jetty.home" default="." />/work/btm/btm2.tlog</Set>
     </Call>
+    <Call name="addManaged">
+        <Arg>
+            <New class="bitronix.tm.integration.jetty9.BTMLifeCycle"/>
+        </Arg>
+    </Call>
 </Configure>
 
