@@ -22,7 +22,18 @@ exports.labels = {
 
 exports.fieldGroups = {
     defaults: ['name', 'startDate', 'desc', 'people'],
-    tabs: [{name: 'cost', validations: {rules: {number: true}}}, 'intro'],
+    cost: [{
+        name: 'cost',
+        validations: {
+            rules: {number: true}
+        }
+    }, 'intro', {
+        name: 'attachment',
+        type: 'file-picker',
+        preview: 'left',
+        url: 'invoke/scaffold/extension/service/uploadfile/upload',
+        colspan: 2
+    }],
     inLineUserGrid: [{
         label: '任务分配',
         type: 'inline-grid',
@@ -42,9 +53,6 @@ exports.fieldGroups = {
     }],
     attachment: [
         {name: 'files', type: 'file-picker', preview: 'left', multiple: true, url: 'invoke/scaffold/extension/service/uploadfile/upload/files'}
-    ],
-    attachment2: [
-        {name: 'attachment', type: 'file-picker', preview: 'left', url: 'invoke/scaffold/extension/service/uploadfile/upload'}
     ]
 };
 
@@ -55,16 +63,16 @@ exports.grid = {
 exports.forms = {
     defaults: {
         groups: [
-            {name: 'defaults', columns: 2},
-            {name: 'tabs', columns: 2},
-            {name: 'inLineUserGrid', columns: 2},
-            {name: 'inLineTodoGrid', columns: 2},
-            {name: 'attachment', columns: 1},
-            {name: 'attachment2', columns: 1}
+            {name: 'defaults', label: '基本信息', columns: 2},
+            {name: 'cost', columns: 2},
+            {name: 'inLineUserGrid', label: '用户', columns: 2},
+            {name: 'inLineTodoGrid', label: '任务', columns: 2},
+            {name: 'attachment', label: '附件1', columns: 1},
+            {name: 'attachment2', label: '附件2', columns: 1}
         ],
         tabs: [
             {title: '项目信息', groups: ['defaults', 'inLineUserGrid', 'inLineTodoGrid', 'attachment']},
-            {title: '费用明细', groups: ['tabs', 'attachment2']}
+            {title: '费用明细', groups: ['cost']}
         ],
         size: 'large'
     }

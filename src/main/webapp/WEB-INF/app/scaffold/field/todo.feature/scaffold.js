@@ -1,5 +1,3 @@
-
-
 exports.filters = {
     defaults: {
         '!fieldTodoFilter': '',
@@ -57,7 +55,7 @@ exports.forms = {
     defaults: {
         groups: [
             {name: 'defaults', columns: 2},
-            {name: 'inLineUserGrid', columns:2}
+            {name: 'inLineUserGrid', label: '任务分配', columns:2}
         ]
     }
 };

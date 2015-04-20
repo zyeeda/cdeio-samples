@@ -44,7 +44,6 @@ exports.fieldGroups = {
         allowPick: true
     }],
     inLineProjectGrid: [{
-        label: '项目细节',
         type: 'inline-grid',
         name: 'projects',
         colspan: 2,
@@ -52,9 +51,13 @@ exports.fieldGroups = {
         multiple: true,
         allowPick: true
     }],
-    attachment: [
-        {name: 'files', type: 'file-picker', preview: 'left', multiple: true, url: 'invoke/scaffold/extension/service/uploadfile/upload'}
-    ]
+    attachment: [{
+        name: 'files',
+        type: 'file-picker',
+        preview: 'left',
+        multiple: true,
+        url: 'invoke/scaffold/extension/service/uploadfile/upload'
+    }]
 };
 
 exports.grid = {
@@ -62,14 +65,13 @@ exports.grid = {
 };
 
 exports.forms = {
-
     defaults: {
         groups: [
             {name: 'defaults', label: '任务信息', columns: 1},
-            {name: 'inLineProjectGrid', columns: 2},
+            {name: 'inLineProjectGrid', label: '项目细节', columns: 2},
             {name: 'attachment', label: '附件上传', columns: 1},
             {name: 'attach', label: '附加信息', columns: 1},
-            {name: 'inLineUserGrid', columns: 2}
+            {name: 'inLineUserGrid', label: '任务分配', columns: 2}
         ],
         size: 'large'
     }
