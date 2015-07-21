@@ -38,6 +38,27 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
 
     <dependencies>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.zyeeda</groupId>
             <artifactId>cdeio-core</artifactId>
             <version>${cdeio.version}</version>
@@ -90,33 +111,11 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
         </resources>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>properties-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>set-system-properties</goal>
-                        </goals>
-                        <configuration>
-                            <properties>
-                                <!--
-                                 | Make jetty use the project level logback configuration file.
-                                -->
-                                <property>
-                                    <name>logback.configurationFile</name>
-                                    <value>src/main/resources/logback.xml</value>
-                                </property>
-                            </properties>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <configuration>
                     <jettyXml>
-                        ${jetty.config}/jetty.xml,${jetty.config}/jetty-http.xml,${jetty.config}/jetty-ssl.xml,${jetty.config}/jetty-https.xml,${jetty.config}/jetty-plus.xml,${jetty.config}/jetty-btm.xml
+                        ${jetty.config}/jetty.xml,${jetty.config}/jetty-http.xml,${jetty.config}/jetty-ssl.xml,${jetty.config}/jetty-https.xml,${jetty.config}/jetty-plus.xml,${jetty.config}/jetty-btm.xml,${jetty.config}/jetty-requestlog.xml
                     </jettyXml>
 
                     <webApp>
@@ -125,6 +124,7 @@ $License: Copyright &copyright 2014 Shenzhen Zyeeda Information Technology Co. L
                         -->
                         <contextPath>/cdeio-samples</contextPath>
                     </webApp>
+                    <contextXml>src/main/webapp/WEB-INF/context.xml</contextXml>
                 </configuration>
             </plugin>
             <plugin>
