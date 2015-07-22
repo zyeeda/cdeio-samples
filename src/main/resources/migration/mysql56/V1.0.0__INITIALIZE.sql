@@ -23,6 +23,40 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `cdeio-samples` /*!40100 DEFAULT CHARAC
 
 USE `cdeio-samples`;
 
+
+--
+-- Table structure for table `ACT_EVT_LOG`
+--
+
+DROP TABLE IF EXISTS `ACT_EVT_LOG`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ACT_EVT_LOG` (
+  `LOG_NR_` bigint(20) NOT NULL AUTO_INCREMENT,
+  `TYPE_` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `PROC_DEF_ID_` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `PROC_INST_ID_` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `EXECUTION_ID_` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `TASK_ID_` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `TIME_STAMP_` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+  `USER_ID_` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `DATA_` longblob,
+  `LOCK_OWNER_` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `LOCK_TIME_` timestamp(3) NULL DEFAULT NULL,
+  `IS_PROCESSED_` tinyint(4) DEFAULT '0',
+  PRIMARY KEY (`LOG_NR_`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_EVT_LOG`
+--
+
+LOCK TABLES `ACT_EVT_LOG` WRITE;
+/*!40000 ALTER TABLE `ACT_EVT_LOG` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_EVT_LOG` ENABLE KEYS */;
+UNLOCK TABLES;
+
 --
 -- Table structure for table `ACT_GE_BYTEARRAY`
 --
@@ -42,6 +76,15 @@ CREATE TABLE `ACT_GE_BYTEARRAY` (
   CONSTRAINT `ACT_FK_BYTEARR_DEPL` FOREIGN KEY (`DEPLOYMENT_ID_`) REFERENCES `ACT_RE_DEPLOYMENT` (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_GE_BYTEARRAY`
+--
+
+LOCK TABLES `ACT_GE_BYTEARRAY` WRITE;
+/*!40000 ALTER TABLE `ACT_GE_BYTEARRAY` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_GE_BYTEARRAY` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_GE_PROPERTY`
@@ -89,6 +132,15 @@ CREATE TABLE `ACT_HI_ACTINST` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ACT_HI_ACTINST`
+--
+
+LOCK TABLES `ACT_HI_ACTINST` WRITE;
+/*!40000 ALTER TABLE `ACT_HI_ACTINST` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_HI_ACTINST` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ACT_HI_ATTACHMENT`
 --
 
@@ -106,9 +158,19 @@ CREATE TABLE `ACT_HI_ATTACHMENT` (
   `PROC_INST_ID_` varchar(64) COLLATE utf8_bin DEFAULT NULL,
   `URL_` varchar(4000) COLLATE utf8_bin DEFAULT NULL,
   `CONTENT_ID_` varchar(64) COLLATE utf8_bin DEFAULT NULL,
+  `TIME_` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_HI_ATTACHMENT`
+--
+
+LOCK TABLES `ACT_HI_ATTACHMENT` WRITE;
+/*!40000 ALTER TABLE `ACT_HI_ATTACHMENT` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_HI_ATTACHMENT` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_HI_COMMENT`
@@ -130,6 +192,15 @@ CREATE TABLE `ACT_HI_COMMENT` (
   PRIMARY KEY (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_HI_COMMENT`
+--
+
+LOCK TABLES `ACT_HI_COMMENT` WRITE;
+/*!40000 ALTER TABLE `ACT_HI_COMMENT` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_HI_COMMENT` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_HI_DETAIL`
@@ -164,6 +235,15 @@ CREATE TABLE `ACT_HI_DETAIL` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ACT_HI_DETAIL`
+--
+
+LOCK TABLES `ACT_HI_DETAIL` WRITE;
+/*!40000 ALTER TABLE `ACT_HI_DETAIL` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_HI_DETAIL` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ACT_HI_IDENTITYLINK`
 --
 
@@ -183,6 +263,15 @@ CREATE TABLE `ACT_HI_IDENTITYLINK` (
   KEY `ACT_IDX_HI_IDENT_LNK_PROCINST` (`PROC_INST_ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_HI_IDENTITYLINK`
+--
+
+LOCK TABLES `ACT_HI_IDENTITYLINK` WRITE;
+/*!40000 ALTER TABLE `ACT_HI_IDENTITYLINK` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_HI_IDENTITYLINK` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_HI_PROCINST`
@@ -205,12 +294,22 @@ CREATE TABLE `ACT_HI_PROCINST` (
   `SUPER_PROCESS_INSTANCE_ID_` varchar(64) COLLATE utf8_bin DEFAULT NULL,
   `DELETE_REASON_` varchar(4000) COLLATE utf8_bin DEFAULT NULL,
   `TENANT_ID_` varchar(255) COLLATE utf8_bin DEFAULT '',
+  `NAME_` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`ID_`),
   UNIQUE KEY `PROC_INST_ID_` (`PROC_INST_ID_`),
   KEY `ACT_IDX_HI_PRO_INST_END` (`END_TIME_`),
   KEY `ACT_IDX_HI_PRO_I_BUSKEY` (`BUSINESS_KEY_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_HI_PROCINST`
+--
+
+LOCK TABLES `ACT_HI_PROCINST` WRITE;
+/*!40000 ALTER TABLE `ACT_HI_PROCINST` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_HI_PROCINST` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_HI_TASKINST`
@@ -245,6 +344,15 @@ CREATE TABLE `ACT_HI_TASKINST` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ACT_HI_TASKINST`
+--
+
+LOCK TABLES `ACT_HI_TASKINST` WRITE;
+/*!40000 ALTER TABLE `ACT_HI_TASKINST` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_HI_TASKINST` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ACT_HI_VARINST`
 --
 
@@ -268,9 +376,19 @@ CREATE TABLE `ACT_HI_VARINST` (
   `LAST_UPDATED_TIME_` datetime(3) DEFAULT NULL,
   PRIMARY KEY (`ID_`),
   KEY `ACT_IDX_HI_PROCVAR_PROC_INST` (`PROC_INST_ID_`),
-  KEY `ACT_IDX_HI_PROCVAR_NAME_TYPE` (`NAME_`,`VAR_TYPE_`)
+  KEY `ACT_IDX_HI_PROCVAR_NAME_TYPE` (`NAME_`,`VAR_TYPE_`),
+  KEY `ACT_IDX_HI_PROCVAR_TASK_ID` (`TASK_ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_HI_VARINST`
+--
+
+LOCK TABLES `ACT_HI_VARINST` WRITE;
+/*!40000 ALTER TABLE `ACT_HI_VARINST` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_HI_VARINST` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_ID_GROUP`
@@ -287,6 +405,15 @@ CREATE TABLE `ACT_ID_GROUP` (
   PRIMARY KEY (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_ID_GROUP`
+--
+
+LOCK TABLES `ACT_ID_GROUP` WRITE;
+/*!40000 ALTER TABLE `ACT_ID_GROUP` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_ID_GROUP` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_ID_INFO`
@@ -309,6 +436,15 @@ CREATE TABLE `ACT_ID_INFO` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ACT_ID_INFO`
+--
+
+LOCK TABLES `ACT_ID_INFO` WRITE;
+/*!40000 ALTER TABLE `ACT_ID_INFO` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_ID_INFO` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ACT_ID_MEMBERSHIP`
 --
 
@@ -324,6 +460,15 @@ CREATE TABLE `ACT_ID_MEMBERSHIP` (
   CONSTRAINT `ACT_FK_MEMB_USER` FOREIGN KEY (`USER_ID_`) REFERENCES `ACT_ID_USER` (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_ID_MEMBERSHIP`
+--
+
+LOCK TABLES `ACT_ID_MEMBERSHIP` WRITE;
+/*!40000 ALTER TABLE `ACT_ID_MEMBERSHIP` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_ID_MEMBERSHIP` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_ID_USER`
@@ -345,6 +490,15 @@ CREATE TABLE `ACT_ID_USER` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ACT_ID_USER`
+--
+
+LOCK TABLES `ACT_ID_USER` WRITE;
+/*!40000 ALTER TABLE `ACT_ID_USER` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_ID_USER` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ACT_RE_DEPLOYMENT`
 --
 
@@ -360,6 +514,15 @@ CREATE TABLE `ACT_RE_DEPLOYMENT` (
   PRIMARY KEY (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_RE_DEPLOYMENT`
+--
+
+LOCK TABLES `ACT_RE_DEPLOYMENT` WRITE;
+/*!40000 ALTER TABLE `ACT_RE_DEPLOYMENT` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_RE_DEPLOYMENT` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_RE_MODEL`
@@ -393,6 +556,15 @@ CREATE TABLE `ACT_RE_MODEL` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ACT_RE_MODEL`
+--
+
+LOCK TABLES `ACT_RE_MODEL` WRITE;
+/*!40000 ALTER TABLE `ACT_RE_MODEL` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_RE_MODEL` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ACT_RE_PROCDEF`
 --
 
@@ -411,12 +583,22 @@ CREATE TABLE `ACT_RE_PROCDEF` (
   `DGRM_RESOURCE_NAME_` varchar(4000) COLLATE utf8_bin DEFAULT NULL,
   `DESCRIPTION_` varchar(4000) COLLATE utf8_bin DEFAULT NULL,
   `HAS_START_FORM_KEY_` tinyint(4) DEFAULT NULL,
+  `HAS_GRAPHICAL_NOTATION_` tinyint(4) DEFAULT NULL,
   `SUSPENSION_STATE_` int(11) DEFAULT NULL,
   `TENANT_ID_` varchar(255) COLLATE utf8_bin DEFAULT '',
   PRIMARY KEY (`ID_`),
   UNIQUE KEY `ACT_UNIQ_PROCDEF` (`KEY_`,`VERSION_`,`TENANT_ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_RE_PROCDEF`
+--
+
+LOCK TABLES `ACT_RE_PROCDEF` WRITE;
+/*!40000 ALTER TABLE `ACT_RE_PROCDEF` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_RE_PROCDEF` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_RU_EVENT_SUBSCR`
@@ -445,6 +627,15 @@ CREATE TABLE `ACT_RU_EVENT_SUBSCR` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ACT_RU_EVENT_SUBSCR`
+--
+
+LOCK TABLES `ACT_RU_EVENT_SUBSCR` WRITE;
+/*!40000 ALTER TABLE `ACT_RU_EVENT_SUBSCR` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_RU_EVENT_SUBSCR` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ACT_RU_EXECUTION`
 --
 
@@ -467,6 +658,8 @@ CREATE TABLE `ACT_RU_EXECUTION` (
   `SUSPENSION_STATE_` int(11) DEFAULT NULL,
   `CACHED_ENT_STATE_` int(11) DEFAULT NULL,
   `TENANT_ID_` varchar(255) COLLATE utf8_bin DEFAULT '',
+  `NAME_` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `LOCK_TIME_` timestamp(3) NULL DEFAULT NULL,
   PRIMARY KEY (`ID_`),
   KEY `ACT_IDX_EXEC_BUSKEY` (`BUSINESS_KEY_`),
   KEY `ACT_FK_EXE_PROCINST` (`PROC_INST_ID_`),
@@ -479,6 +672,15 @@ CREATE TABLE `ACT_RU_EXECUTION` (
   CONSTRAINT `ACT_FK_EXE_SUPER` FOREIGN KEY (`SUPER_EXEC_`) REFERENCES `ACT_RU_EXECUTION` (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_RU_EXECUTION`
+--
+
+LOCK TABLES `ACT_RU_EXECUTION` WRITE;
+/*!40000 ALTER TABLE `ACT_RU_EXECUTION` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_RU_EXECUTION` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_RU_IDENTITYLINK`
@@ -507,6 +709,15 @@ CREATE TABLE `ACT_RU_IDENTITYLINK` (
   CONSTRAINT `ACT_FK_TSKASS_TASK` FOREIGN KEY (`TASK_ID_`) REFERENCES `ACT_RU_TASK` (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_RU_IDENTITYLINK`
+--
+
+LOCK TABLES `ACT_RU_IDENTITYLINK` WRITE;
+/*!40000 ALTER TABLE `ACT_RU_IDENTITYLINK` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_RU_IDENTITYLINK` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_RU_JOB`
@@ -540,6 +751,15 @@ CREATE TABLE `ACT_RU_JOB` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `ACT_RU_JOB`
+--
+
+LOCK TABLES `ACT_RU_JOB` WRITE;
+/*!40000 ALTER TABLE `ACT_RU_JOB` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_RU_JOB` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `ACT_RU_TASK`
 --
 
@@ -565,6 +785,7 @@ CREATE TABLE `ACT_RU_TASK` (
   `CATEGORY_` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `SUSPENSION_STATE_` int(11) DEFAULT NULL,
   `TENANT_ID_` varchar(255) COLLATE utf8_bin DEFAULT '',
+  `FORM_KEY_` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`ID_`),
   KEY `ACT_IDX_TASK_CREATE` (`CREATE_TIME_`),
   KEY `ACT_FK_TASK_EXE` (`EXECUTION_ID_`),
@@ -575,6 +796,15 @@ CREATE TABLE `ACT_RU_TASK` (
   CONSTRAINT `ACT_FK_TASK_PROCINST` FOREIGN KEY (`PROC_INST_ID_`) REFERENCES `ACT_RU_EXECUTION` (`ID_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ACT_RU_TASK`
+--
+
+LOCK TABLES `ACT_RU_TASK` WRITE;
+/*!40000 ALTER TABLE `ACT_RU_TASK` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ACT_RU_TASK` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ACT_RU_VARIABLE`
