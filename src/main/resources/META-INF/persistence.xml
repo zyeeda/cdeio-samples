@@ -15,8 +15,8 @@
         <class>com.zyeeda.cdeio.commons.organization.entity.Department</class>
         <class>com.zyeeda.cdeio.commons.resource.entity.MenuItem</class>
         <class>com.zyeeda.cdeio.commons.resource.entity.SettingItem</class>
-        <class>com.zyeeda.cdeio.commons.authc.entity.Permission</class>
-        <class>com.zyeeda.cdeio.commons.authc.entity.Role</class>
+        <class>com.zyeeda.cdeio.commons.authz.entity.Permission</class>
+        <class>com.zyeeda.cdeio.commons.authz.entity.Role</class>
         <class>com.zyeeda.cdeio.commons.resource.entity.Attachment</class>
         <class>com.zyeeda.cdeio.bpm.entity.TaskEntity</class>
         <class>com.zyeeda.cdeio.bpm.entity.IdentityLinkEntity</class>

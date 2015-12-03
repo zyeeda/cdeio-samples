@@ -5,7 +5,7 @@ var {mark} = require('cdeio/mark');
 
 exports.cdeio = {
     entityPackages : [
-        // 'com.zyeeda.cdeio.commons.authc.entity',
+        'com.zyeeda.cdeio.commons.authz.entity',
         'com.zyeeda.cdeio.commons.organization.entity',
         'com.zyeeda.cdeio.commons.resource.entity',
         'com.zyeeda.cdeio.example.entity.entity',
