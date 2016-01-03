@@ -26,7 +26,8 @@ exports.cdeio = {
         'com.zyeeda.cdeio.example.entity.generate.bpm.subprocess',
         'com.zyeeda.cdeio.example.entity.generate.bpm.multiple',
         'com.zyeeda.cdeio.example.extension.ui.form.entity',
-        'com.zyeeda.cdeio.example.extension.tree.entity'
+        'com.zyeeda.cdeio.example.extension.tree.entity',
+        'com.zyeeda.cdeio.example.relation.entity'
     ],
 
     orms: [
