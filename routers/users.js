@@ -1,9 +1,5 @@
 import Router from 'koa-router'
 
-// import cdeio from 'cdeio'
-
-// console.log('cdeio = ', cdeio)
-
 const router = new Router()
 
 router.get('/', function* getAll() {
