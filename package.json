@@ -21,8 +21,8 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "dev": "node --harmony ./bin/api-server.js | bunyan",
-    "prod": "NODE_ENV=production node --harmony ./bin/api-server.js | bunyan",
+    "dev": "node --harmony ./bin/api-server.js | bunyan -L",
+    "prod": "NODE_ENV=production node --harmony ./bin/api-server.js | bunyan -L",
     "lint": "eslint .",
     "test": "karma start"
   },
