@@ -43,6 +43,7 @@ src/main/webapp/scripts/main-dist.js
 src/main/webapp/scripts/libs.bak
 src/main/webapp/scripts/cdeio
 src/main/webapp/build
+src/main/webapp-build
 test-output
 
 src/main/webapp/WEB-INF/files
