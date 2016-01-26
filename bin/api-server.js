@@ -16,7 +16,7 @@ const bootstrap = () => {
     }
   }
 
-  require('cdeio').start()
+  require('cdeio/lib/server')
 }
 
 bootstrap()

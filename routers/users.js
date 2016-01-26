@@ -1,9 +1,11 @@
 import Router from 'koa-router'
 
+import {models} from 'cdeio/lib/server/models'
+
 const router = new Router()
 
 router.get('/', function* getAll() {
-  const users = yield cdeio.models.Account.findAll({
+  const users = yield models.Account.findAll({
     attributes: ['id', 'name', 'mobile', 'password', 'account_name']
   })
 
