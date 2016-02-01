@@ -9,7 +9,7 @@ router.get('/', function* getAll() {
     attributes: ['id', 'name', 'mobile', 'password', 'account_name']
   })
 
-  this.body =  users
+  this.body = users
 })
 
 router.get('/test', function* getAllUsers() {
